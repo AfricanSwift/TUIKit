@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Attribute Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Attribute" class="dashAnchor"></a>
+    <a title="Attribute Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html"> Docs</a> (64% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html"> Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        Attribute Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/RenderStyle.html">RenderStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/TUIBorders.html">TUIBorders</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/TUIColorComposite.html">TUIColorComposite</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/TUIColorSpace.html">TUIColorSpace</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiS0__S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiSS_S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiVs9Character_S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2peFTVS_4AnsiS0__T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2peFTVS_4AnsiSS_T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2eeFTVS_18TUIRenderParameterS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2eeFTVS_8TUIPointS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2eeFTVS_7TUISizeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2eeFTVS_12TUIRectangleS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:ZF6TUIKitoi2eeFTVS_4AnsiS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi.html">Ansi</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Color.html">– Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Line.html">– Line</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Erase.html">– Erase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Scroll.html">– Scroll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Page.html">– Page</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Character.html">– Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Attribute.html">– Attribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Window.html">– Window</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Report.html">– Report</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/OSC.html">– OSC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Cursor.html">– Cursor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Column.html">– Column</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Row.html">– Row</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Style.html">– Style</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Display.html">– Display</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Set.html">– Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Tab.html">– Tab</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Foreground.html">– Foreground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Ansi/Background.html">– Background</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Example_Figfont.html">Example_Figfont</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/Example_WWDCLogo.html">Example_WWDCLogo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V6TUIKit12TUICharacter">TUICharacter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUIPoint.html">TUIPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUIRectangle.html">TUIRectangle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUIRenderParameter.html">TUIRenderParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:V6TUIKit9TUIScreen">TUIScreen</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUISize.html">TUISize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUIView.html">TUIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/TUIViewSize.html">TUIViewSize</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Attribute</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Attribute</span></code></pre>
+
+                </div>
+              </div>
+            <p>Character Attributes (SGR).</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute5resetFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/reset()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute5resetFT_S0_">reset()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reset all attributes (default)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute6boldOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/boldOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute6boldOnFT_S0_">boldOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bold On</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">boldOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute7boldOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/boldOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute7boldOffFT_S0_">boldOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bold Off</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">boldOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute5dimOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/dimOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute5dimOnFT_S0_">dimOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dim On (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">dimOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute6dimOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/dimOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute6dimOffFT_S0_">dimOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Dim Off (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">dimOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute8italicOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/italicOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute8italicOnFT_S0_">italicOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Italicized On (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">italicOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute9italicOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/italicOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute9italicOffFT_S0_">italicOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Italicized Off (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">italicOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute11underlineOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/underlineOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute11underlineOnFT_S0_">underlineOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Underline On</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">underlineOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute12underlineOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/underlineOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute12underlineOffFT_S0_">underlineOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Underline Off</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">underlineOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute11blinkSlowOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/blinkSlowOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute11blinkSlowOnFT_S0_">blinkSlowOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Slowly blinking (less then 150 per minute)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blinkSlowOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute12blinkSlowOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/blinkSlowOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute12blinkSlowOffFT_S0_">blinkSlowOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Steady (not blinking)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blinkSlowOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute12blinkRapidOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/blinkRapidOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute12blinkRapidOnFT_S0_">blinkRapidOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Rapidly blinking (150 per minute or more)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blinkRapidOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute13blinkRapidOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/blinkRapidOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute13blinkRapidOffFT_S0_">blinkRapidOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Steady (not blinking)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blinkRapidOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute9inverseOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/inverseOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute9inverseOnFT_S0_">inverseOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inverse</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">inverseOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute10inverseOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/inverseOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute10inverseOffFT_S0_">inverseOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Positive (not inverse).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">inverseOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute9visibleOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/visibleOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute9visibleOnFT_S0_">visibleOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Visible, i.e., not hidden (VT300).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">visibleOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute10visibleOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/visibleOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute10visibleOffFT_S0_">visibleOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invisible, i.e., hidden (VT300).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">visibleOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute12crossedOutOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/crossedOutOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute12crossedOutOnFT_S0_">crossedOutOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Crossed-out characters (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">crossedOutOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute13crossedOutOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/crossedOutOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute13crossedOutOffFT_S0_">crossedOutOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Not crossed-out (ISO 6429).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">crossedOutOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute17underlineDoubleOnFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/underlineDoubleOn()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute17underlineDoubleOnFT_S0_">underlineDoubleOn()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Doubly-underlined (ISO 6429)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">underlineDoubleOn</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFVV6TUIKit4Ansi9Attribute18underlineDoubleOffFT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/underlineDoubleOff()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFVV6TUIKit4Ansi9Attribute18underlineDoubleOffFT_S0_">underlineDoubleOff()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Doubly-underlined (ISO 6429) Off</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">underlineDoubleOff</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../../Structs/Ansi.html">Ansi</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Ansi</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-06-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

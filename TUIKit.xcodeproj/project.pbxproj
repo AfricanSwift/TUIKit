@@ -1,0 +1,1059 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D799B4791D1AC4A500FA7853 /* wwdc16_logo */; };
+		D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C561D243EB700BEC989 /* Whimsy.flf */; };
+		D72399791D16C49A002D09DF /* TUIRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72399781D16C49A002D09DF /* TUIRender.swift */; };
+		D73101351D1349F40081072F /* TUICharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73101341D1349F40081072F /* TUICharacter.swift */; };
+		D731013B1D146DDD0081072F /* TUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731013A1D146DDD0081072F /* TUIView.swift */; };
+		D731013F1D1471850081072F /* TUIBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731013E1D1471850081072F /* TUIBorders.swift */; };
+		D73101411D14DB640081072F /* TUIGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73101401D14DB640081072F /* TUIGeometry.swift */; };
+		D746BB6B1D245FFB00DFA8F7 /* TUIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */; };
+		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
+		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
+		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
+		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
+		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
+		D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F71D125BF600C56E49 /* Ansi+Attribute.swift */; };
+		D77A290E1D125BF600C56E49 /* Ansi+C0+C1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F81D125BF600C56E49 /* Ansi+C0+C1.swift */; };
+		D77A290F1D125BF600C56E49 /* Ansi+Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F91D125BF600C56E49 /* Ansi+Character.swift */; };
+		D77A29101D125BF600C56E49 /* Ansi+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FA1D125BF600C56E49 /* Ansi+Color.swift */; };
+		D77A29111D125BF600C56E49 /* Ansi+Color+CMYK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FB1D125BF600C56E49 /* Ansi+Color+CMYK.swift */; };
+		D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FC1D125BF600C56E49 /* Ansi+Color+HSL.swift */; };
+		D77A29131D125BF600C56E49 /* Ansi+Color+LAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FD1D125BF600C56E49 /* Ansi+Color+LAB.swift */; };
+		D77A29141D125BF600C56E49 /* Ansi+Color+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FE1D125BF600C56E49 /* Ansi+Color+RGB.swift */; };
+		D77A29151D125BF600C56E49 /* Ansi+Color+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28FF1D125BF600C56E49 /* Ansi+Color+Utility.swift */; };
+		D77A29161D125BF600C56E49 /* Ansi+Color+XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29001D125BF600C56E49 /* Ansi+Color+XYZ.swift */; };
+		D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29011D125BF600C56E49 /* Ansi+Compress.swift */; };
+		D77A29181D125BF600C56E49 /* Ansi+Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29021D125BF600C56E49 /* Ansi+Cursor.swift */; };
+		D77A29191D125BF600C56E49 /* Ansi+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29031D125BF600C56E49 /* Ansi+Display.swift */; };
+		D77A291A1D125BF600C56E49 /* Ansi+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29041D125BF600C56E49 /* Ansi+Extras.swift */; };
+		D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29051D125BF600C56E49 /* Ansi+Line.swift */; };
+		D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29061D125BF600C56E49 /* Ansi+Page.swift */; };
+		D77A291D1D125BF600C56E49 /* Ansi+Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29071D125BF600C56E49 /* Ansi+Set.swift */; };
+		D77A291E1D125BF600C56E49 /* Ansi+Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29081D125BF600C56E49 /* Ansi+Tab.swift */; };
+		D77A29201D125BF600C56E49 /* Ansi+View+Progressbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A290A1D125BF600C56E49 /* Ansi+View+Progressbar.swift */; };
+		D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A290B1D125BF600C56E49 /* Ansi+Window.swift */; };
+		D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */; };
+		D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7079E4C1D244E660088770E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */,
+				D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77A28E31D124C4F00C56E49 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = usr/share/man/man1;
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D72399781D16C49A002D09DF /* TUIRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIRender.swift; path = Source/UIElements/TUIRender.swift; sourceTree = "<group>"; };
+		D73101341D1349F40081072F /* TUICharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUICharacter.swift; path = Source/UIElements/TUICharacter.swift; sourceTree = "<group>"; };
+		D731013A1D146DDD0081072F /* TUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIView.swift; path = Source/UIElements/TUIView.swift; sourceTree = "<group>"; };
+		D731013E1D1471850081072F /* TUIBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBorders.swift; path = Source/UIElements/TUIBorders.swift; sourceTree = "<group>"; };
+		D73101401D14DB640081072F /* TUIGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIGeometry.swift; path = Source/UIElements/TUIGeometry.swift; sourceTree = "<group>"; };
+		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
+		D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIScreen.swift; path = Source/UIElements/TUIScreen.swift; sourceTree = "<group>"; };
+		D7518B391D24024300BEC989 /* Figlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Figlet.swift; path = Source/Figlet/Figlet.swift; sourceTree = "<group>"; };
+		D7518B3A1D24024300BEC989 /* FigletHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FigletHeader.swift; path = Source/Figlet/FigletHeader.swift; sourceTree = "<group>"; };
+		D7518B3E1D243A9B00BEC989 /* ANSI Terminal Standard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ANSI Terminal Standard.txt"; path = "Source/Reference/ANSI Terminal Standard.txt"; sourceTree = "<group>"; };
+		D7518B3F1D243A9B00BEC989 /* Xterm Control Sequences.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Xterm Control Sequences.txt"; path = "Source/Reference/Xterm Control Sequences.txt"; sourceTree = "<group>"; };
+		D7518B401D243A9B00BEC989 /* Fig Font Standard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Fig Font Standard.txt"; path = "Source/Reference/Fig Font Standard.txt"; sourceTree = "<group>"; };
+		D7518B411D243A9B00BEC989 /* Ansi-256Colors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ansi-256Colors.png"; path = "Source/Reference/Ansi-256Colors.png"; sourceTree = "<group>"; };
+		D7518B421D243A9B00BEC989 /* Ansi-BrightColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ansi-BrightColors.png"; path = "Source/Reference/Ansi-BrightColors.png"; sourceTree = "<group>"; };
+		D7518B431D243A9B00BEC989 /* Ansi-StandardColors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Ansi-StandardColors.png"; path = "Source/Reference/Ansi-StandardColors.png"; sourceTree = "<group>"; };
+		D7518B451D243EB600BEC989 /* 1Row.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = 1Row.flf; path = Source/Figlet/Fonts/1Row.flf; sourceTree = "<group>"; };
+		D7518B461D243EB600BEC989 /* 3-D.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "3-D.flf"; path = "Source/Figlet/Fonts/3-D.flf"; sourceTree = "<group>"; };
+		D7518B471D243EB600BEC989 /* 3D Diagonal.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "3D Diagonal.flf"; path = "Source/Figlet/Fonts/3D Diagonal.flf"; sourceTree = "<group>"; };
+		D7518B481D243EB600BEC989 /* 3D-ASCII.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "3D-ASCII.flf"; path = "Source/Figlet/Fonts/3D-ASCII.flf"; sourceTree = "<group>"; };
+		D7518B491D243EB600BEC989 /* 3x5.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = 3x5.flf; path = Source/Figlet/Fonts/3x5.flf; sourceTree = "<group>"; };
+		D7518B4A1D243EB600BEC989 /* 4Max.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = 4Max.flf; path = Source/Figlet/Fonts/4Max.flf; sourceTree = "<group>"; };
+		D7518B4B1D243EB600BEC989 /* 5 Line Oblique.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "5 Line Oblique.flf"; path = "Source/Figlet/Fonts/5 Line Oblique.flf"; sourceTree = "<group>"; };
+		D7518B4C1D243EB600BEC989 /* Acrobatic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Acrobatic.flf; path = Source/Figlet/Fonts/Acrobatic.flf; sourceTree = "<group>"; };
+		D7518B4D1D243EB600BEC989 /* Alligator.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Alligator.flf; path = Source/Figlet/Fonts/Alligator.flf; sourceTree = "<group>"; };
+		D7518B4E1D243EB600BEC989 /* Alligator2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Alligator2.flf; path = Source/Figlet/Fonts/Alligator2.flf; sourceTree = "<group>"; };
+		D7518B4F1D243EB600BEC989 /* Alpha.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Alpha.flf; path = Source/Figlet/Fonts/Alpha.flf; sourceTree = "<group>"; };
+		D7518B501D243EB600BEC989 /* Alphabet.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Alphabet.flf; path = Source/Figlet/Fonts/Alphabet.flf; sourceTree = "<group>"; };
+		D7518B511D243EB600BEC989 /* AMC 3 Line.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC 3 Line.flf"; path = "Source/Figlet/Fonts/AMC 3 Line.flf"; sourceTree = "<group>"; };
+		D7518B521D243EB600BEC989 /* AMC 3 Liv1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC 3 Liv1.flf"; path = "Source/Figlet/Fonts/AMC 3 Liv1.flf"; sourceTree = "<group>"; };
+		D7518B531D243EB600BEC989 /* AMC AAA01.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC AAA01.flf"; path = "Source/Figlet/Fonts/AMC AAA01.flf"; sourceTree = "<group>"; };
+		D7518B541D243EB600BEC989 /* AMC Neko.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Neko.flf"; path = "Source/Figlet/Fonts/AMC Neko.flf"; sourceTree = "<group>"; };
+		D7518B551D243EB600BEC989 /* AMC Razor.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Razor.flf"; path = "Source/Figlet/Fonts/AMC Razor.flf"; sourceTree = "<group>"; };
+		D7518B561D243EB600BEC989 /* AMC Razor2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Razor2.flf"; path = "Source/Figlet/Fonts/AMC Razor2.flf"; sourceTree = "<group>"; };
+		D7518B571D243EB600BEC989 /* AMC Slash.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Slash.flf"; path = "Source/Figlet/Fonts/AMC Slash.flf"; sourceTree = "<group>"; };
+		D7518B581D243EB600BEC989 /* AMC Slider.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Slider.flf"; path = "Source/Figlet/Fonts/AMC Slider.flf"; sourceTree = "<group>"; };
+		D7518B591D243EB600BEC989 /* AMC Thin.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Thin.flf"; path = "Source/Figlet/Fonts/AMC Thin.flf"; sourceTree = "<group>"; };
+		D7518B5A1D243EB600BEC989 /* AMC Tubes.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Tubes.flf"; path = "Source/Figlet/Fonts/AMC Tubes.flf"; sourceTree = "<group>"; };
+		D7518B5B1D243EB600BEC989 /* AMC Untitled.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "AMC Untitled.flf"; path = "Source/Figlet/Fonts/AMC Untitled.flf"; sourceTree = "<group>"; };
+		D7518B5C1D243EB600BEC989 /* ANSI Shadow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ANSI Shadow.flf"; path = "Source/Figlet/Fonts/ANSI Shadow.flf"; sourceTree = "<group>"; };
+		D7518B5D1D243EB600BEC989 /* Arrows.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Arrows.flf; path = Source/Figlet/Fonts/Arrows.flf; sourceTree = "<group>"; };
+		D7518B5E1D243EB600BEC989 /* ASCII New Roman.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ASCII New Roman.flf"; path = "Source/Figlet/Fonts/ASCII New Roman.flf"; sourceTree = "<group>"; };
+		D7518B5F1D243EB600BEC989 /* Avatar.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Avatar.flf; path = Source/Figlet/Fonts/Avatar.flf; sourceTree = "<group>"; };
+		D7518B601D243EB600BEC989 /* Banner.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Banner.flf; path = Source/Figlet/Fonts/Banner.flf; sourceTree = "<group>"; };
+		D7518B611D243EB600BEC989 /* Banner3-D.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Banner3-D.flf"; path = "Source/Figlet/Fonts/Banner3-D.flf"; sourceTree = "<group>"; };
+		D7518B621D243EB600BEC989 /* Banner3.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Banner3.flf; path = Source/Figlet/Fonts/Banner3.flf; sourceTree = "<group>"; };
+		D7518B631D243EB600BEC989 /* Banner4.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Banner4.flf; path = Source/Figlet/Fonts/Banner4.flf; sourceTree = "<group>"; };
+		D7518B641D243EB600BEC989 /* Barbwire.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Barbwire.flf; path = Source/Figlet/Fonts/Barbwire.flf; sourceTree = "<group>"; };
+		D7518B651D243EB600BEC989 /* Basic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Basic.flf; path = Source/Figlet/Fonts/Basic.flf; sourceTree = "<group>"; };
+		D7518B661D243EB600BEC989 /* Bear.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bear.flf; path = Source/Figlet/Fonts/Bear.flf; sourceTree = "<group>"; };
+		D7518B671D243EB600BEC989 /* Bell.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bell.flf; path = Source/Figlet/Fonts/Bell.flf; sourceTree = "<group>"; };
+		D7518B681D243EB600BEC989 /* Benjamin.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Benjamin.flf; path = Source/Figlet/Fonts/Benjamin.flf; sourceTree = "<group>"; };
+		D7518B691D243EB600BEC989 /* Big Chief.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Big Chief.flf"; path = "Source/Figlet/Fonts/Big Chief.flf"; sourceTree = "<group>"; };
+		D7518B6A1D243EB600BEC989 /* Big Money-ne.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Big Money-ne.flf"; path = "Source/Figlet/Fonts/Big Money-ne.flf"; sourceTree = "<group>"; };
+		D7518B6B1D243EB600BEC989 /* Big Money-nw.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Big Money-nw.flf"; path = "Source/Figlet/Fonts/Big Money-nw.flf"; sourceTree = "<group>"; };
+		D7518B6C1D243EB600BEC989 /* Big Money-se.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Big Money-se.flf"; path = "Source/Figlet/Fonts/Big Money-se.flf"; sourceTree = "<group>"; };
+		D7518B6D1D243EB600BEC989 /* Big Money-sw.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Big Money-sw.flf"; path = "Source/Figlet/Fonts/Big Money-sw.flf"; sourceTree = "<group>"; };
+		D7518B6E1D243EB600BEC989 /* Big.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Big.flf; path = Source/Figlet/Fonts/Big.flf; sourceTree = "<group>"; };
+		D7518B6F1D243EB600BEC989 /* Bigfig.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bigfig.flf; path = Source/Figlet/Fonts/Bigfig.flf; sourceTree = "<group>"; };
+		D7518B701D243EB600BEC989 /* Block.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Block.flf; path = Source/Figlet/Fonts/Block.flf; sourceTree = "<group>"; };
+		D7518B711D243EB600BEC989 /* Blocks.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Blocks.flf; path = Source/Figlet/Fonts/Blocks.flf; sourceTree = "<group>"; };
+		D7518B721D243EB600BEC989 /* Bloody.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bloody.flf; path = Source/Figlet/Fonts/Bloody.flf; sourceTree = "<group>"; };
+		D7518B731D243EB600BEC989 /* Bolger.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bolger.flf; path = Source/Figlet/Fonts/Bolger.flf; sourceTree = "<group>"; };
+		D7518B741D243EB600BEC989 /* Braced.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Braced.flf; path = Source/Figlet/Fonts/Braced.flf; sourceTree = "<group>"; };
+		D7518B751D243EB600BEC989 /* Bright.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bright.flf; path = Source/Figlet/Fonts/Bright.flf; sourceTree = "<group>"; };
+		D7518B761D243EB600BEC989 /* Broadway KB.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Broadway KB.flf"; path = "Source/Figlet/Fonts/Broadway KB.flf"; sourceTree = "<group>"; };
+		D7518B771D243EB600BEC989 /* Broadway.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Broadway.flf; path = Source/Figlet/Fonts/Broadway.flf; sourceTree = "<group>"; };
+		D7518B781D243EB600BEC989 /* Bubble.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bubble.flf; path = Source/Figlet/Fonts/Bubble.flf; sourceTree = "<group>"; };
+		D7518B791D243EB600BEC989 /* Bulbhead.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Bulbhead.flf; path = Source/Figlet/Fonts/Bulbhead.flf; sourceTree = "<group>"; };
+		D7518B7A1D243EB600BEC989 /* Caligraphy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Caligraphy.flf; path = Source/Figlet/Fonts/Caligraphy.flf; sourceTree = "<group>"; };
+		D7518B7B1D243EB600BEC989 /* Caligraphy2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Caligraphy2.flf; path = Source/Figlet/Fonts/Caligraphy2.flf; sourceTree = "<group>"; };
+		D7518B7C1D243EB600BEC989 /* Calvin S.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Calvin S.flf"; path = "Source/Figlet/Fonts/Calvin S.flf"; sourceTree = "<group>"; };
+		D7518B7D1D243EB600BEC989 /* Cards.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cards.flf; path = Source/Figlet/Fonts/Cards.flf; sourceTree = "<group>"; };
+		D7518B7E1D243EB600BEC989 /* Catwalk.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Catwalk.flf; path = Source/Figlet/Fonts/Catwalk.flf; sourceTree = "<group>"; };
+		D7518B7F1D243EB600BEC989 /* Chiseled.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Chiseled.flf; path = Source/Figlet/Fonts/Chiseled.flf; sourceTree = "<group>"; };
+		D7518B801D243EB600BEC989 /* Chunky.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Chunky.flf; path = Source/Figlet/Fonts/Chunky.flf; sourceTree = "<group>"; };
+		D7518B811D243EB600BEC989 /* Coinstak.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Coinstak.flf; path = Source/Figlet/Fonts/Coinstak.flf; sourceTree = "<group>"; };
+		D7518B821D243EB600BEC989 /* Cola.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cola.flf; path = Source/Figlet/Fonts/Cola.flf; sourceTree = "<group>"; };
+		D7518B831D243EB600BEC989 /* Colossal.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Colossal.flf; path = Source/Figlet/Fonts/Colossal.flf; sourceTree = "<group>"; };
+		D7518B841D243EB600BEC989 /* Computer.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Computer.flf; path = Source/Figlet/Fonts/Computer.flf; sourceTree = "<group>"; };
+		D7518B851D243EB600BEC989 /* Contessa.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Contessa.flf; path = Source/Figlet/Fonts/Contessa.flf; sourceTree = "<group>"; };
+		D7518B861D243EB600BEC989 /* Contrast.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Contrast.flf; path = Source/Figlet/Fonts/Contrast.flf; sourceTree = "<group>"; };
+		D7518B871D243EB600BEC989 /* Cosmike.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cosmike.flf; path = Source/Figlet/Fonts/Cosmike.flf; sourceTree = "<group>"; };
+		D7518B881D243EB600BEC989 /* Crawford.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Crawford.flf; path = Source/Figlet/Fonts/Crawford.flf; sourceTree = "<group>"; };
+		D7518B891D243EB600BEC989 /* Crawford2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Crawford2.flf; path = Source/Figlet/Fonts/Crawford2.flf; sourceTree = "<group>"; };
+		D7518B8A1D243EB600BEC989 /* Crazy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Crazy.flf; path = Source/Figlet/Fonts/Crazy.flf; sourceTree = "<group>"; };
+		D7518B8B1D243EB600BEC989 /* Cricket.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cricket.flf; path = Source/Figlet/Fonts/Cricket.flf; sourceTree = "<group>"; };
+		D7518B8C1D243EB600BEC989 /* Cursive.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cursive.flf; path = Source/Figlet/Fonts/Cursive.flf; sourceTree = "<group>"; };
+		D7518B8D1D243EB600BEC989 /* Cyberlarge.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cyberlarge.flf; path = Source/Figlet/Fonts/Cyberlarge.flf; sourceTree = "<group>"; };
+		D7518B8E1D243EB600BEC989 /* Cybermedium.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cybermedium.flf; path = Source/Figlet/Fonts/Cybermedium.flf; sourceTree = "<group>"; };
+		D7518B8F1D243EB600BEC989 /* Cybersmall.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cybersmall.flf; path = Source/Figlet/Fonts/Cybersmall.flf; sourceTree = "<group>"; };
+		D7518B901D243EB600BEC989 /* Cygnet.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cygnet.flf; path = Source/Figlet/Fonts/Cygnet.flf; sourceTree = "<group>"; };
+		D7518B911D243EB600BEC989 /* DANC4.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = DANC4.flf; path = Source/Figlet/Fonts/DANC4.flf; sourceTree = "<group>"; };
+		D7518B921D243EB600BEC989 /* Dancing Font.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Dancing Font.flf"; path = "Source/Figlet/Fonts/Dancing Font.flf"; sourceTree = "<group>"; };
+		D7518B931D243EB600BEC989 /* Def Leppard.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Def Leppard.flf"; path = "Source/Figlet/Fonts/Def Leppard.flf"; sourceTree = "<group>"; };
+		D7518B941D243EB600BEC989 /* Delta Corps Priest 1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Delta Corps Priest 1.flf"; path = "Source/Figlet/Fonts/Delta Corps Priest 1.flf"; sourceTree = "<group>"; };
+		D7518B951D243EB600BEC989 /* Diamond.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Diamond.flf; path = Source/Figlet/Fonts/Diamond.flf; sourceTree = "<group>"; };
+		D7518B961D243EB600BEC989 /* Diet Cola.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Diet Cola.flf"; path = "Source/Figlet/Fonts/Diet Cola.flf"; sourceTree = "<group>"; };
+		D7518B971D243EB600BEC989 /* Digital.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Digital.flf; path = Source/Figlet/Fonts/Digital.flf; sourceTree = "<group>"; };
+		D7518B981D243EB600BEC989 /* Doh.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Doh.flf; path = Source/Figlet/Fonts/Doh.flf; sourceTree = "<group>"; };
+		D7518B991D243EB600BEC989 /* Doom.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Doom.flf; path = Source/Figlet/Fonts/Doom.flf; sourceTree = "<group>"; };
+		D7518B9A1D243EB600BEC989 /* Dot Matrix.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Dot Matrix.flf"; path = "Source/Figlet/Fonts/Dot Matrix.flf"; sourceTree = "<group>"; };
+		D7518B9B1D243EB600BEC989 /* Double Shorts.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Double Shorts.flf"; path = "Source/Figlet/Fonts/Double Shorts.flf"; sourceTree = "<group>"; };
+		D7518B9C1D243EB600BEC989 /* Double.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Double.flf; path = Source/Figlet/Fonts/Double.flf; sourceTree = "<group>"; };
+		D7518B9D1D243EB600BEC989 /* Dr Pepper.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Dr Pepper.flf"; path = "Source/Figlet/Fonts/Dr Pepper.flf"; sourceTree = "<group>"; };
+		D7518B9E1D243EB600BEC989 /* DWhistled.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = DWhistled.flf; path = Source/Figlet/Fonts/DWhistled.flf; sourceTree = "<group>"; };
+		D7518B9F1D243EB600BEC989 /* Efti Chess.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Chess.flf"; path = "Source/Figlet/Fonts/Efti Chess.flf"; sourceTree = "<group>"; };
+		D7518BA01D243EB600BEC989 /* Efti Font.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Font.flf"; path = "Source/Figlet/Fonts/Efti Font.flf"; sourceTree = "<group>"; };
+		D7518BA11D243EB600BEC989 /* Efti Italic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Italic.flf"; path = "Source/Figlet/Fonts/Efti Italic.flf"; sourceTree = "<group>"; };
+		D7518BA21D243EB600BEC989 /* Efti Piti.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Piti.flf"; path = "Source/Figlet/Fonts/Efti Piti.flf"; sourceTree = "<group>"; };
+		D7518BA31D243EB600BEC989 /* Efti Robot.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Robot.flf"; path = "Source/Figlet/Fonts/Efti Robot.flf"; sourceTree = "<group>"; };
+		D7518BA41D243EB600BEC989 /* Efti Wall.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Wall.flf"; path = "Source/Figlet/Fonts/Efti Wall.flf"; sourceTree = "<group>"; };
+		D7518BA51D243EB600BEC989 /* Efti Water.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Efti Water.flf"; path = "Source/Figlet/Fonts/Efti Water.flf"; sourceTree = "<group>"; };
+		D7518BA61D243EB600BEC989 /* Electronic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Electronic.flf; path = Source/Figlet/Fonts/Electronic.flf; sourceTree = "<group>"; };
+		D7518BA71D243EB600BEC989 /* Elite.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Elite.flf; path = Source/Figlet/Fonts/Elite.flf; sourceTree = "<group>"; };
+		D7518BA81D243EB600BEC989 /* Epic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Epic.flf; path = Source/Figlet/Fonts/Epic.flf; sourceTree = "<group>"; };
+		D7518BA91D243EB600BEC989 /* Fender.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fender.flf; path = Source/Figlet/Fonts/Fender.flf; sourceTree = "<group>"; };
+		D7518BAA1D243EB600BEC989 /* Filter.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Filter.flf; path = Source/Figlet/Fonts/Filter.flf; sourceTree = "<group>"; };
+		D7518BAB1D243EB600BEC989 /* Fire Font-k.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Fire Font-k.flf"; path = "Source/Figlet/Fonts/Fire Font-k.flf"; sourceTree = "<group>"; };
+		D7518BAC1D243EB600BEC989 /* Fire Font-s.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Fire Font-s.flf"; path = "Source/Figlet/Fonts/Fire Font-s.flf"; sourceTree = "<group>"; };
+		D7518BAD1D243EB600BEC989 /* Flipped.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Flipped.flf; path = Source/Figlet/Fonts/Flipped.flf; sourceTree = "<group>"; };
+		D7518BAE1D243EB600BEC989 /* Flower Power.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Flower Power.flf"; path = "Source/Figlet/Fonts/Flower Power.flf"; sourceTree = "<group>"; };
+		D7518BAF1D243EB600BEC989 /* Four Tops.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Four Tops.flf"; path = "Source/Figlet/Fonts/Four Tops.flf"; sourceTree = "<group>"; };
+		D7518BB01D243EB600BEC989 /* Fraktur.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fraktur.flf; path = Source/Figlet/Fonts/Fraktur.flf; sourceTree = "<group>"; };
+		D7518BB11D243EB600BEC989 /* Fun Face.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Fun Face.flf"; path = "Source/Figlet/Fonts/Fun Face.flf"; sourceTree = "<group>"; };
+		D7518BB21D243EB600BEC989 /* Fun Faces.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Fun Faces.flf"; path = "Source/Figlet/Fonts/Fun Faces.flf"; sourceTree = "<group>"; };
+		D7518BB31D243EB600BEC989 /* Fuzzy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fuzzy.flf; path = Source/Figlet/Fonts/Fuzzy.flf; sourceTree = "<group>"; };
+		D7518BB41D243EB600BEC989 /* Georgi16.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Georgi16.flf; path = Source/Figlet/Fonts/Georgi16.flf; sourceTree = "<group>"; };
+		D7518BB51D243EB600BEC989 /* Georgia11.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Georgia11.flf; path = Source/Figlet/Fonts/Georgia11.flf; sourceTree = "<group>"; };
+		D7518BB61D243EB600BEC989 /* Ghost.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Ghost.flf; path = Source/Figlet/Fonts/Ghost.flf; sourceTree = "<group>"; };
+		D7518BB71D243EB600BEC989 /* Ghoulish.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Ghoulish.flf; path = Source/Figlet/Fonts/Ghoulish.flf; sourceTree = "<group>"; };
+		D7518BB81D243EB600BEC989 /* Glenyn.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Glenyn.flf; path = Source/Figlet/Fonts/Glenyn.flf; sourceTree = "<group>"; };
+		D7518BB91D243EB600BEC989 /* Goofy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Goofy.flf; path = Source/Figlet/Fonts/Goofy.flf; sourceTree = "<group>"; };
+		D7518BBA1D243EB600BEC989 /* Gothic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gothic.flf; path = Source/Figlet/Fonts/Gothic.flf; sourceTree = "<group>"; };
+		D7518BBB1D243EB600BEC989 /* Graceful.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Graceful.flf; path = Source/Figlet/Fonts/Graceful.flf; sourceTree = "<group>"; };
+		D7518BBC1D243EB600BEC989 /* Gradient.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gradient.flf; path = Source/Figlet/Fonts/Gradient.flf; sourceTree = "<group>"; };
+		D7518BBD1D243EB600BEC989 /* Graffiti.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Graffiti.flf; path = Source/Figlet/Fonts/Graffiti.flf; sourceTree = "<group>"; };
+		D7518BBE1D243EB600BEC989 /* Greek.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Greek.flf; path = Source/Figlet/Fonts/Greek.flf; sourceTree = "<group>"; };
+		D7518BBF1D243EB600BEC989 /* Heart Left.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Heart Left.flf"; path = "Source/Figlet/Fonts/Heart Left.flf"; sourceTree = "<group>"; };
+		D7518BC01D243EB600BEC989 /* Heart Right.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Heart Right.flf"; path = "Source/Figlet/Fonts/Heart Right.flf"; sourceTree = "<group>"; };
+		D7518BC11D243EB600BEC989 /* Henry 3D.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Henry 3D.flf"; path = "Source/Figlet/Fonts/Henry 3D.flf"; sourceTree = "<group>"; };
+		D7518BC21D243EB600BEC989 /* Hieroglyphs.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hieroglyphs.flf; path = Source/Figlet/Fonts/Hieroglyphs.flf; sourceTree = "<group>"; };
+		D7518BC31D243EB600BEC989 /* Hollywood.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Hollywood.flf; path = Source/Figlet/Fonts/Hollywood.flf; sourceTree = "<group>"; };
+		D7518BC41D243EB600BEC989 /* Horizontal Left.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Horizontal Left.flf"; path = "Source/Figlet/Fonts/Horizontal Left.flf"; sourceTree = "<group>"; };
+		D7518BC51D243EB600BEC989 /* Horizontal Right.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Horizontal Right.flf"; path = "Source/Figlet/Fonts/Horizontal Right.flf"; sourceTree = "<group>"; };
+		D7518BC61D243EB600BEC989 /* ICL-1900.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ICL-1900.flf"; path = "Source/Figlet/Fonts/ICL-1900.flf"; sourceTree = "<group>"; };
+		D7518BC71D243EB600BEC989 /* Impossible.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Impossible.flf; path = Source/Figlet/Fonts/Impossible.flf; sourceTree = "<group>"; };
+		D7518BC81D243EB600BEC989 /* Invita.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Invita.flf; path = Source/Figlet/Fonts/Invita.flf; sourceTree = "<group>"; };
+		D7518BC91D243EB600BEC989 /* Isometric1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Isometric1.flf; path = Source/Figlet/Fonts/Isometric1.flf; sourceTree = "<group>"; };
+		D7518BCA1D243EB600BEC989 /* Isometric2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Isometric2.flf; path = Source/Figlet/Fonts/Isometric2.flf; sourceTree = "<group>"; };
+		D7518BCB1D243EB600BEC989 /* Isometric3.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Isometric3.flf; path = Source/Figlet/Fonts/Isometric3.flf; sourceTree = "<group>"; };
+		D7518BCC1D243EB600BEC989 /* Isometric4.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Isometric4.flf; path = Source/Figlet/Fonts/Isometric4.flf; sourceTree = "<group>"; };
+		D7518BCD1D243EB600BEC989 /* Italic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Italic.flf; path = Source/Figlet/Fonts/Italic.flf; sourceTree = "<group>"; };
+		D7518BCE1D243EB600BEC989 /* Ivrit.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Ivrit.flf; path = Source/Figlet/Fonts/Ivrit.flf; sourceTree = "<group>"; };
+		D7518BCF1D243EB600BEC989 /* Jacky.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Jacky.flf; path = Source/Figlet/Fonts/Jacky.flf; sourceTree = "<group>"; };
+		D7518BD01D243EB600BEC989 /* Jazmine.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Jazmine.flf; path = Source/Figlet/Fonts/Jazmine.flf; sourceTree = "<group>"; };
+		D7518BD11D243EB600BEC989 /* Jerusalem.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Jerusalem.flf; path = Source/Figlet/Fonts/Jerusalem.flf; sourceTree = "<group>"; };
+		D7518BD21D243EB600BEC989 /* JS Block Letters.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "JS Block Letters.flf"; path = "Source/Figlet/Fonts/JS Block Letters.flf"; sourceTree = "<group>"; };
+		D7518BD31D243EB600BEC989 /* JS Capital Curves.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "JS Capital Curves.flf"; path = "Source/Figlet/Fonts/JS Capital Curves.flf"; sourceTree = "<group>"; };
+		D7518BD41D243EB600BEC989 /* JS Stick Letters.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "JS Stick Letters.flf"; path = "Source/Figlet/Fonts/JS Stick Letters.flf"; sourceTree = "<group>"; };
+		D7518BD51D243EB600BEC989 /* Katakana.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Katakana.flf; path = Source/Figlet/Fonts/Katakana.flf; sourceTree = "<group>"; };
+		D7518BD61D243EB600BEC989 /* Kban.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Kban.flf; path = Source/Figlet/Fonts/Kban.flf; sourceTree = "<group>"; };
+		D7518BD71D243EB600BEC989 /* Keyboard.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Keyboard.flf; path = Source/Figlet/Fonts/Keyboard.flf; sourceTree = "<group>"; };
+		D7518BD81D243EB600BEC989 /* Knob.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Knob.flf; path = Source/Figlet/Fonts/Knob.flf; sourceTree = "<group>"; };
+		D7518BD91D243EB600BEC989 /* Konto Slant.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Konto Slant.flf"; path = "Source/Figlet/Fonts/Konto Slant.flf"; sourceTree = "<group>"; };
+		D7518BDA1D243EB600BEC989 /* Konto.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Konto.flf; path = Source/Figlet/Fonts/Konto.flf; sourceTree = "<group>"; };
+		D7518BDB1D243EB600BEC989 /* Larry 3D 2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Larry 3D 2.flf"; path = "Source/Figlet/Fonts/Larry 3D 2.flf"; sourceTree = "<group>"; };
+		D7518BDC1D243EB600BEC989 /* Larry 3D.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Larry 3D.flf"; path = "Source/Figlet/Fonts/Larry 3D.flf"; sourceTree = "<group>"; };
+		D7518BDD1D243EB600BEC989 /* LCD.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = LCD.flf; path = Source/Figlet/Fonts/LCD.flf; sourceTree = "<group>"; };
+		D7518BDE1D243EB600BEC989 /* Lean.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Lean.flf; path = Source/Figlet/Fonts/Lean.flf; sourceTree = "<group>"; };
+		D7518BDF1D243EB600BEC989 /* Letters.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Letters.flf; path = Source/Figlet/Fonts/Letters.flf; sourceTree = "<group>"; };
+		D7518BE01D243EB600BEC989 /* Lil Devil.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Lil Devil.flf"; path = "Source/Figlet/Fonts/Lil Devil.flf"; sourceTree = "<group>"; };
+		D7518BE11D243EB600BEC989 /* Line Blocks.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Line Blocks.flf"; path = "Source/Figlet/Fonts/Line Blocks.flf"; sourceTree = "<group>"; };
+		D7518BE21D243EB600BEC989 /* Linux.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Linux.flf; path = Source/Figlet/Fonts/Linux.flf; sourceTree = "<group>"; };
+		D7518BE31D243EB600BEC989 /* Lockergnome.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Lockergnome.flf; path = Source/Figlet/Fonts/Lockergnome.flf; sourceTree = "<group>"; };
+		D7518BE41D243EB600BEC989 /* Madrid.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Madrid.flf; path = Source/Figlet/Fonts/Madrid.flf; sourceTree = "<group>"; };
+		D7518BE51D243EB600BEC989 /* Marquee.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Marquee.flf; path = Source/Figlet/Fonts/Marquee.flf; sourceTree = "<group>"; };
+		D7518BE61D243EB700BEC989 /* Maxfour.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Maxfour.flf; path = Source/Figlet/Fonts/Maxfour.flf; sourceTree = "<group>"; };
+		D7518BE71D243EB700BEC989 /* Merlin1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Merlin1.flf; path = Source/Figlet/Fonts/Merlin1.flf; sourceTree = "<group>"; };
+		D7518BE81D243EB700BEC989 /* Merlin2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Merlin2.flf; path = Source/Figlet/Fonts/Merlin2.flf; sourceTree = "<group>"; };
+		D7518BE91D243EB700BEC989 /* Mike.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Mike.flf; path = Source/Figlet/Fonts/Mike.flf; sourceTree = "<group>"; };
+		D7518BEA1D243EB700BEC989 /* Mini.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Mini.flf; path = Source/Figlet/Fonts/Mini.flf; sourceTree = "<group>"; };
+		D7518BEB1D243EB700BEC989 /* Mirror.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Mirror.flf; path = Source/Figlet/Fonts/Mirror.flf; sourceTree = "<group>"; };
+		D7518BEC1D243EB700BEC989 /* Mnemonic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Mnemonic.flf; path = Source/Figlet/Fonts/Mnemonic.flf; sourceTree = "<group>"; };
+		D7518BED1D243EB700BEC989 /* Modular.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Modular.flf; path = Source/Figlet/Fonts/Modular.flf; sourceTree = "<group>"; };
+		D7518BEE1D243EB700BEC989 /* Moscow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Moscow.flf; path = Source/Figlet/Fonts/Moscow.flf; sourceTree = "<group>"; };
+		D7518BEF1D243EB700BEC989 /* Mshebrew210.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Mshebrew210.flf; path = Source/Figlet/Fonts/Mshebrew210.flf; sourceTree = "<group>"; };
+		D7518BF01D243EB700BEC989 /* Muzzle.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Muzzle.flf; path = Source/Figlet/Fonts/Muzzle.flf; sourceTree = "<group>"; };
+		D7518BF11D243EB700BEC989 /* Nancyj-Fancy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Nancyj-Fancy.flf"; path = "Source/Figlet/Fonts/Nancyj-Fancy.flf"; sourceTree = "<group>"; };
+		D7518BF21D243EB700BEC989 /* Nancyj-Improved.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Nancyj-Improved.flf"; path = "Source/Figlet/Fonts/Nancyj-Improved.flf"; sourceTree = "<group>"; };
+		D7518BF31D243EB700BEC989 /* Nancyj-Underlined.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Nancyj-Underlined.flf"; path = "Source/Figlet/Fonts/Nancyj-Underlined.flf"; sourceTree = "<group>"; };
+		D7518BF41D243EB700BEC989 /* Nancyj.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Nancyj.flf; path = Source/Figlet/Fonts/Nancyj.flf; sourceTree = "<group>"; };
+		D7518BF51D243EB700BEC989 /* Nipples.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Nipples.flf; path = Source/Figlet/Fonts/Nipples.flf; sourceTree = "<group>"; };
+		D7518BF61D243EB700BEC989 /* NScript.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = NScript.flf; path = Source/Figlet/Fonts/NScript.flf; sourceTree = "<group>"; };
+		D7518BF71D243EB700BEC989 /* NT Greek.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NT Greek.flf"; path = "Source/Figlet/Fonts/NT Greek.flf"; sourceTree = "<group>"; };
+		D7518BF81D243EB700BEC989 /* NV Script.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NV Script.flf"; path = "Source/Figlet/Fonts/NV Script.flf"; sourceTree = "<group>"; };
+		D7518BF91D243EB700BEC989 /* O8.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = O8.flf; path = Source/Figlet/Fonts/O8.flf; sourceTree = "<group>"; };
+		D7518BFA1D243EB700BEC989 /* Ogre.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Ogre.flf; path = Source/Figlet/Fonts/Ogre.flf; sourceTree = "<group>"; };
+		D7518BFB1D243EB700BEC989 /* Old Banner.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Old Banner.flf"; path = "Source/Figlet/Fonts/Old Banner.flf"; sourceTree = "<group>"; };
+		D7518BFC1D243EB700BEC989 /* OS2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = OS2.flf; path = Source/Figlet/Fonts/OS2.flf; sourceTree = "<group>"; };
+		D7518BFD1D243EB700BEC989 /* Patorjk-HeX.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Patorjk-HeX.flf"; path = "Source/Figlet/Fonts/Patorjk-HeX.flf"; sourceTree = "<group>"; };
+		D7518BFE1D243EB700BEC989 /* Patorjk's Cheese.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Patorjk's Cheese.flf"; path = "Source/Figlet/Fonts/Patorjk's Cheese.flf"; sourceTree = "<group>"; };
+		D7518BFF1D243EB700BEC989 /* Pawp.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Pawp.flf; path = Source/Figlet/Fonts/Pawp.flf; sourceTree = "<group>"; };
+		D7518C001D243EB700BEC989 /* Peaks Slant.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Peaks Slant.flf"; path = "Source/Figlet/Fonts/Peaks Slant.flf"; sourceTree = "<group>"; };
+		D7518C011D243EB700BEC989 /* Peaks.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Peaks.flf; path = Source/Figlet/Fonts/Peaks.flf; sourceTree = "<group>"; };
+		D7518C021D243EB700BEC989 /* Pebbles.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Pebbles.flf; path = Source/Figlet/Fonts/Pebbles.flf; sourceTree = "<group>"; };
+		D7518C031D243EB700BEC989 /* Pepper.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Pepper.flf; path = Source/Figlet/Fonts/Pepper.flf; sourceTree = "<group>"; };
+		D7518C041D243EB700BEC989 /* Poison.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Poison.flf; path = Source/Figlet/Fonts/Poison.flf; sourceTree = "<group>"; };
+		D7518C051D243EB700BEC989 /* Puffy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Puffy.flf; path = Source/Figlet/Fonts/Puffy.flf; sourceTree = "<group>"; };
+		D7518C061D243EB700BEC989 /* Puzzle.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Puzzle.flf; path = Source/Figlet/Fonts/Puzzle.flf; sourceTree = "<group>"; };
+		D7518C071D243EB700BEC989 /* Pyramid.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Pyramid.flf; path = Source/Figlet/Fonts/Pyramid.flf; sourceTree = "<group>"; };
+		D7518C081D243EB700BEC989 /* Rammstein.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rammstein.flf; path = Source/Figlet/Fonts/Rammstein.flf; sourceTree = "<group>"; };
+		D7518C091D243EB700BEC989 /* Rectangles.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rectangles.flf; path = Source/Figlet/Fonts/Rectangles.flf; sourceTree = "<group>"; };
+		D7518C0A1D243EB700BEC989 /* Red Phoenix.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Red Phoenix.flf"; path = "Source/Figlet/Fonts/Red Phoenix.flf"; sourceTree = "<group>"; };
+		D7518C0B1D243EB700BEC989 /* Relief.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Relief.flf; path = Source/Figlet/Fonts/Relief.flf; sourceTree = "<group>"; };
+		D7518C0C1D243EB700BEC989 /* Relief2.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Relief2.flf; path = Source/Figlet/Fonts/Relief2.flf; sourceTree = "<group>"; };
+		D7518C0D1D243EB700BEC989 /* Reverse.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Reverse.flf; path = Source/Figlet/Fonts/Reverse.flf; sourceTree = "<group>"; };
+		D7518C0E1D243EB700BEC989 /* Roman.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Roman.flf; path = Source/Figlet/Fonts/Roman.flf; sourceTree = "<group>"; };
+		D7518C0F1D243EB700BEC989 /* Rotated.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rotated.flf; path = Source/Figlet/Fonts/Rotated.flf; sourceTree = "<group>"; };
+		D7518C101D243EB700BEC989 /* Rounded.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rounded.flf; path = Source/Figlet/Fonts/Rounded.flf; sourceTree = "<group>"; };
+		D7518C111D243EB700BEC989 /* Rowan Cap.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Rowan Cap.flf"; path = "Source/Figlet/Fonts/Rowan Cap.flf"; sourceTree = "<group>"; };
+		D7518C121D243EB700BEC989 /* Rozzo.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Rozzo.flf; path = Source/Figlet/Fonts/Rozzo.flf; sourceTree = "<group>"; };
+		D7518C131D243EB700BEC989 /* Runic.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Runic.flf; path = Source/Figlet/Fonts/Runic.flf; sourceTree = "<group>"; };
+		D7518C141D243EB700BEC989 /* Runyc.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Runyc.flf; path = Source/Figlet/Fonts/Runyc.flf; sourceTree = "<group>"; };
+		D7518C151D243EB700BEC989 /* S Blood.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "S Blood.flf"; path = "Source/Figlet/Fonts/S Blood.flf"; sourceTree = "<group>"; };
+		D7518C161D243EB700BEC989 /* Santa Clara.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Santa Clara.flf"; path = "Source/Figlet/Fonts/Santa Clara.flf"; sourceTree = "<group>"; };
+		D7518C171D243EB700BEC989 /* Script.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Script.flf; path = Source/Figlet/Fonts/Script.flf; sourceTree = "<group>"; };
+		D7518C181D243EB700BEC989 /* Serifcap.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Serifcap.flf; path = Source/Figlet/Fonts/Serifcap.flf; sourceTree = "<group>"; };
+		D7518C191D243EB700BEC989 /* Shadow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Shadow.flf; path = Source/Figlet/Fonts/Shadow.flf; sourceTree = "<group>"; };
+		D7518C1A1D243EB700BEC989 /* Shimrod.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Shimrod.flf; path = Source/Figlet/Fonts/Shimrod.flf; sourceTree = "<group>"; };
+		D7518C1B1D243EB700BEC989 /* Short.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Short.flf; path = Source/Figlet/Fonts/Short.flf; sourceTree = "<group>"; };
+		D7518C1C1D243EB700BEC989 /* SL Script.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "SL Script.flf"; path = "Source/Figlet/Fonts/SL Script.flf"; sourceTree = "<group>"; };
+		D7518C1D1D243EB700BEC989 /* Slant Relief.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Slant Relief.flf"; path = "Source/Figlet/Fonts/Slant Relief.flf"; sourceTree = "<group>"; };
+		D7518C1E1D243EB700BEC989 /* Slant.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Slant.flf; path = Source/Figlet/Fonts/Slant.flf; sourceTree = "<group>"; };
+		D7518C1F1D243EB700BEC989 /* Slide.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Slide.flf; path = Source/Figlet/Fonts/Slide.flf; sourceTree = "<group>"; };
+		D7518C201D243EB700BEC989 /* Small Caps.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Caps.flf"; path = "Source/Figlet/Fonts/Small Caps.flf"; sourceTree = "<group>"; };
+		D7518C211D243EB700BEC989 /* Small Isometric1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Isometric1.flf"; path = "Source/Figlet/Fonts/Small Isometric1.flf"; sourceTree = "<group>"; };
+		D7518C221D243EB700BEC989 /* Small Keyboard.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Keyboard.flf"; path = "Source/Figlet/Fonts/Small Keyboard.flf"; sourceTree = "<group>"; };
+		D7518C231D243EB700BEC989 /* Small Poison.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Poison.flf"; path = "Source/Figlet/Fonts/Small Poison.flf"; sourceTree = "<group>"; };
+		D7518C241D243EB700BEC989 /* Small Script.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Script.flf"; path = "Source/Figlet/Fonts/Small Script.flf"; sourceTree = "<group>"; };
+		D7518C251D243EB700BEC989 /* Small Shadow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Shadow.flf"; path = "Source/Figlet/Fonts/Small Shadow.flf"; sourceTree = "<group>"; };
+		D7518C261D243EB700BEC989 /* Small Slant.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Slant.flf"; path = "Source/Figlet/Fonts/Small Slant.flf"; sourceTree = "<group>"; };
+		D7518C271D243EB700BEC989 /* Small Tengwar.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Small Tengwar.flf"; path = "Source/Figlet/Fonts/Small Tengwar.flf"; sourceTree = "<group>"; };
+		D7518C281D243EB700BEC989 /* Small.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Small.flf; path = Source/Figlet/Fonts/Small.flf; sourceTree = "<group>"; };
+		D7518C291D243EB700BEC989 /* Soft.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Soft.flf; path = Source/Figlet/Fonts/Soft.flf; sourceTree = "<group>"; };
+		D7518C2A1D243EB700BEC989 /* Speed.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Speed.flf; path = Source/Figlet/Fonts/Speed.flf; sourceTree = "<group>"; };
+		D7518C2B1D243EB700BEC989 /* Spliff.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Spliff.flf; path = Source/Figlet/Fonts/Spliff.flf; sourceTree = "<group>"; };
+		D7518C2C1D243EB700BEC989 /* Stacey.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stacey.flf; path = Source/Figlet/Fonts/Stacey.flf; sourceTree = "<group>"; };
+		D7518C2D1D243EB700BEC989 /* Stampate.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stampate.flf; path = Source/Figlet/Fonts/Stampate.flf; sourceTree = "<group>"; };
+		D7518C2E1D243EB700BEC989 /* Stampatello.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stampatello.flf; path = Source/Figlet/Fonts/Stampatello.flf; sourceTree = "<group>"; };
+		D7518C2F1D243EB700BEC989 /* Standard.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Standard.flf; path = Source/Figlet/Fonts/Standard.flf; sourceTree = "<group>"; };
+		D7518C301D243EB700BEC989 /* Star Strips.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Star Strips.flf"; path = "Source/Figlet/Fonts/Star Strips.flf"; sourceTree = "<group>"; };
+		D7518C311D243EB700BEC989 /* Star Wars.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Star Wars.flf"; path = "Source/Figlet/Fonts/Star Wars.flf"; sourceTree = "<group>"; };
+		D7518C321D243EB700BEC989 /* Stellar.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stellar.flf; path = Source/Figlet/Fonts/Stellar.flf; sourceTree = "<group>"; };
+		D7518C331D243EB700BEC989 /* Stforek.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stforek.flf; path = Source/Figlet/Fonts/Stforek.flf; sourceTree = "<group>"; };
+		D7518C341D243EB700BEC989 /* Stick Letters.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Stick Letters.flf"; path = "Source/Figlet/Fonts/Stick Letters.flf"; sourceTree = "<group>"; };
+		D7518C351D243EB700BEC989 /* Stop.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Stop.flf; path = Source/Figlet/Fonts/Stop.flf; sourceTree = "<group>"; };
+		D7518C361D243EB700BEC989 /* Straight.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Straight.flf; path = Source/Figlet/Fonts/Straight.flf; sourceTree = "<group>"; };
+		D7518C371D243EB700BEC989 /* Stronger Than All.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Stronger Than All.flf"; path = "Source/Figlet/Fonts/Stronger Than All.flf"; sourceTree = "<group>"; };
+		D7518C381D243EB700BEC989 /* Sub-Zero.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Sub-Zero.flf"; path = "Source/Figlet/Fonts/Sub-Zero.flf"; sourceTree = "<group>"; };
+		D7518C391D243EB700BEC989 /* Swamp Land.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Swamp Land.flf"; path = "Source/Figlet/Fonts/Swamp Land.flf"; sourceTree = "<group>"; };
+		D7518C3A1D243EB700BEC989 /* Swan.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Swan.flf; path = Source/Figlet/Fonts/Swan.flf; sourceTree = "<group>"; };
+		D7518C3B1D243EB700BEC989 /* Sweet.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Sweet.flf; path = Source/Figlet/Fonts/Sweet.flf; sourceTree = "<group>"; };
+		D7518C3C1D243EB700BEC989 /* Tanja.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tanja.flf; path = Source/Figlet/Fonts/Tanja.flf; sourceTree = "<group>"; };
+		D7518C3D1D243EB700BEC989 /* Tengwar.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tengwar.flf; path = Source/Figlet/Fonts/Tengwar.flf; sourceTree = "<group>"; };
+		D7518C3E1D243EB700BEC989 /* Test1.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Test1.flf; path = Source/Figlet/Fonts/Test1.flf; sourceTree = "<group>"; };
+		D7518C3F1D243EB700BEC989 /* The Edge.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "The Edge.flf"; path = "Source/Figlet/Fonts/The Edge.flf"; sourceTree = "<group>"; };
+		D7518C401D243EB700BEC989 /* Thick.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Thick.flf; path = Source/Figlet/Fonts/Thick.flf; sourceTree = "<group>"; };
+		D7518C411D243EB700BEC989 /* Thin.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Thin.flf; path = Source/Figlet/Fonts/Thin.flf; sourceTree = "<group>"; };
+		D7518C421D243EB700BEC989 /* THIS.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = THIS.flf; path = Source/Figlet/Fonts/THIS.flf; sourceTree = "<group>"; };
+		D7518C431D243EB700BEC989 /* Thorned.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Thorned.flf; path = Source/Figlet/Fonts/Thorned.flf; sourceTree = "<group>"; };
+		D7518C441D243EB700BEC989 /* Three Point.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Three Point.flf"; path = "Source/Figlet/Fonts/Three Point.flf"; sourceTree = "<group>"; };
+		D7518C451D243EB700BEC989 /* Ticks Slant.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Ticks Slant.flf"; path = "Source/Figlet/Fonts/Ticks Slant.flf"; sourceTree = "<group>"; };
+		D7518C461D243EB700BEC989 /* Ticks.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Ticks.flf; path = Source/Figlet/Fonts/Ticks.flf; sourceTree = "<group>"; };
+		D7518C471D243EB700BEC989 /* Tiles.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tiles.flf; path = Source/Figlet/Fonts/Tiles.flf; sourceTree = "<group>"; };
+		D7518C481D243EB700BEC989 /* Tinker-Toy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Tinker-Toy.flf"; path = "Source/Figlet/Fonts/Tinker-Toy.flf"; sourceTree = "<group>"; };
+		D7518C491D243EB700BEC989 /* Tombstone.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tombstone.flf; path = Source/Figlet/Fonts/Tombstone.flf; sourceTree = "<group>"; };
+		D7518C4A1D243EB700BEC989 /* Train.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Train.flf; path = Source/Figlet/Fonts/Train.flf; sourceTree = "<group>"; };
+		D7518C4B1D243EB700BEC989 /* Trek.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Trek.flf; path = Source/Figlet/Fonts/Trek.flf; sourceTree = "<group>"; };
+		D7518C4C1D243EB700BEC989 /* Tsalagi.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tsalagi.flf; path = Source/Figlet/Fonts/Tsalagi.flf; sourceTree = "<group>"; };
+		D7518C4D1D243EB700BEC989 /* Tubular.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Tubular.flf; path = Source/Figlet/Fonts/Tubular.flf; sourceTree = "<group>"; };
+		D7518C4E1D243EB700BEC989 /* Twisted.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Twisted.flf; path = Source/Figlet/Fonts/Twisted.flf; sourceTree = "<group>"; };
+		D7518C4F1D243EB700BEC989 /* Two Point.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Two Point.flf"; path = "Source/Figlet/Fonts/Two Point.flf"; sourceTree = "<group>"; };
+		D7518C501D243EB700BEC989 /* Univers.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Univers.flf; path = Source/Figlet/Fonts/Univers.flf; sourceTree = "<group>"; };
+		D7518C511D243EB700BEC989 /* USA Flag.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "USA Flag.flf"; path = "Source/Figlet/Fonts/USA Flag.flf"; sourceTree = "<group>"; };
+		D7518C521D243EB700BEC989 /* Varsity.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Varsity.flf; path = Source/Figlet/Fonts/Varsity.flf; sourceTree = "<group>"; };
+		D7518C531D243EB700BEC989 /* Wavy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wavy.flf; path = Source/Figlet/Fonts/Wavy.flf; sourceTree = "<group>"; };
+		D7518C541D243EB700BEC989 /* Weird.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Weird.flf; path = Source/Figlet/Fonts/Weird.flf; sourceTree = "<group>"; };
+		D7518C551D243EB700BEC989 /* Wet Letter.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Wet Letter.flf"; path = "Source/Figlet/Fonts/Wet Letter.flf"; sourceTree = "<group>"; };
+		D7518C561D243EB700BEC989 /* Whimsy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Whimsy.flf; path = Source/Figlet/Fonts/Whimsy.flf; sourceTree = "<group>"; };
+		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
+		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
+		D77A28E51D124C4F00C56E49 /* TUIKit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TUIKit; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77A28E81D124C4F00C56E49 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D77A28F61D125BF600C56E49 /* Ansi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ansi.swift; path = Source/Ansi/Ansi.swift; sourceTree = "<group>"; };
+		D77A28F71D125BF600C56E49 /* Ansi+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Attribute.swift"; path = "Source/Ansi/Ansi+Attribute.swift"; sourceTree = "<group>"; };
+		D77A28F81D125BF600C56E49 /* Ansi+C0+C1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+C0+C1.swift"; path = "Source/Ansi/Ansi+C0+C1.swift"; sourceTree = "<group>"; };
+		D77A28F91D125BF600C56E49 /* Ansi+Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Character.swift"; path = "Source/Ansi/Ansi+Character.swift"; sourceTree = "<group>"; };
+		D77A28FA1D125BF600C56E49 /* Ansi+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color.swift"; path = "Source/Ansi/Ansi+Color.swift"; sourceTree = "<group>"; };
+		D77A28FB1D125BF600C56E49 /* Ansi+Color+CMYK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+CMYK.swift"; path = "Source/Ansi/Ansi+Color+CMYK.swift"; sourceTree = "<group>"; };
+		D77A28FC1D125BF600C56E49 /* Ansi+Color+HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+HSL.swift"; path = "Source/Ansi/Ansi+Color+HSL.swift"; sourceTree = "<group>"; };
+		D77A28FD1D125BF600C56E49 /* Ansi+Color+LAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+LAB.swift"; path = "Source/Ansi/Ansi+Color+LAB.swift"; sourceTree = "<group>"; };
+		D77A28FE1D125BF600C56E49 /* Ansi+Color+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+RGB.swift"; path = "Source/Ansi/Ansi+Color+RGB.swift"; sourceTree = "<group>"; };
+		D77A28FF1D125BF600C56E49 /* Ansi+Color+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+Utility.swift"; path = "Source/Ansi/Ansi+Color+Utility.swift"; sourceTree = "<group>"; };
+		D77A29001D125BF600C56E49 /* Ansi+Color+XYZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color+XYZ.swift"; path = "Source/Ansi/Ansi+Color+XYZ.swift"; sourceTree = "<group>"; };
+		D77A29011D125BF600C56E49 /* Ansi+Compress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Compress.swift"; path = "Source/Ansi/Ansi+Compress.swift"; sourceTree = "<group>"; };
+		D77A29021D125BF600C56E49 /* Ansi+Cursor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Cursor.swift"; path = "Source/Ansi/Ansi+Cursor.swift"; sourceTree = "<group>"; };
+		D77A29031D125BF600C56E49 /* Ansi+Display.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Display.swift"; path = "Source/Ansi/Ansi+Display.swift"; sourceTree = "<group>"; };
+		D77A29041D125BF600C56E49 /* Ansi+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Extras.swift"; path = "Source/Ansi/Ansi+Extras.swift"; sourceTree = "<group>"; };
+		D77A29051D125BF600C56E49 /* Ansi+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Line.swift"; path = "Source/Ansi/Ansi+Line.swift"; sourceTree = "<group>"; };
+		D77A29061D125BF600C56E49 /* Ansi+Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Page.swift"; path = "Source/Ansi/Ansi+Page.swift"; sourceTree = "<group>"; };
+		D77A29071D125BF600C56E49 /* Ansi+Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Set.swift"; path = "Source/Ansi/Ansi+Set.swift"; sourceTree = "<group>"; };
+		D77A29081D125BF600C56E49 /* Ansi+Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Tab.swift"; path = "Source/Ansi/Ansi+Tab.swift"; sourceTree = "<group>"; };
+		D77A290A1D125BF600C56E49 /* Ansi+View+Progressbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+View+Progressbar.swift"; path = "TUIKit/Source/Ansi/Ansi+View+Progressbar.swift"; sourceTree = "<group>"; };
+		D77A290B1D125BF600C56E49 /* Ansi+Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Window.swift"; path = "Source/Ansi/Ansi+Window.swift"; sourceTree = "<group>"; };
+		D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Extensions.swift"; path = "Source/Foundation/Custom+Extensions.swift"; sourceTree = "<group>"; };
+		D77A29321D12667800C56E49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D799B4791D1AC4A500FA7853 /* wwdc16_logo */ = {isa = PBXFileReference; lastKnownFileType = text; name = wwdc16_logo; path = Source/Examples/wwdc16_logo; sourceTree = "<group>"; };
+		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D77A28E21D124C4F00C56E49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D73101331D1349AA0081072F /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				D73101341D1349F40081072F /* TUICharacter.swift */,
+				D731013A1D146DDD0081072F /* TUIView.swift */,
+				D731013E1D1471850081072F /* TUIBorders.swift */,
+				D73101401D14DB640081072F /* TUIGeometry.swift */,
+				D72399781D16C49A002D09DF /* TUIRender.swift */,
+				D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
+		D73101361D135B2F0081072F /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				D77A28FA1D125BF600C56E49 /* Ansi+Color.swift */,
+				D77A28FB1D125BF600C56E49 /* Ansi+Color+CMYK.swift */,
+				D77A28FC1D125BF600C56E49 /* Ansi+Color+HSL.swift */,
+				D77A28FD1D125BF600C56E49 /* Ansi+Color+LAB.swift */,
+				D77A28FE1D125BF600C56E49 /* Ansi+Color+RGB.swift */,
+				D77A28FF1D125BF600C56E49 /* Ansi+Color+Utility.swift */,
+				D77A29001D125BF600C56E49 /* Ansi+Color+XYZ.swift */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		D7518B381D24021E00BEC989 /* Figlet */ = {
+			isa = PBXGroup;
+			children = (
+				D7518B441D243C4A00BEC989 /* Fonts */,
+				D7518B391D24024300BEC989 /* Figlet.swift */,
+				D7518B3A1D24024300BEC989 /* FigletHeader.swift */,
+			);
+			name = Figlet;
+			sourceTree = "<group>";
+		};
+		D7518B3D1D243A4800BEC989 /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				D7518B3E1D243A9B00BEC989 /* ANSI Terminal Standard.txt */,
+				D7518B3F1D243A9B00BEC989 /* Xterm Control Sequences.txt */,
+				D7518B401D243A9B00BEC989 /* Fig Font Standard.txt */,
+				D7518B411D243A9B00BEC989 /* Ansi-256Colors.png */,
+				D7518B421D243A9B00BEC989 /* Ansi-BrightColors.png */,
+				D7518B431D243A9B00BEC989 /* Ansi-StandardColors.png */,
+			);
+			name = Reference;
+			sourceTree = "<group>";
+		};
+		D7518B441D243C4A00BEC989 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D7518B451D243EB600BEC989 /* 1Row.flf */,
+				D7518B461D243EB600BEC989 /* 3-D.flf */,
+				D7518B471D243EB600BEC989 /* 3D Diagonal.flf */,
+				D7518B481D243EB600BEC989 /* 3D-ASCII.flf */,
+				D7518B491D243EB600BEC989 /* 3x5.flf */,
+				D7518B4A1D243EB600BEC989 /* 4Max.flf */,
+				D7518B4B1D243EB600BEC989 /* 5 Line Oblique.flf */,
+				D7518B4C1D243EB600BEC989 /* Acrobatic.flf */,
+				D7518B4D1D243EB600BEC989 /* Alligator.flf */,
+				D7518B4E1D243EB600BEC989 /* Alligator2.flf */,
+				D7518B4F1D243EB600BEC989 /* Alpha.flf */,
+				D7518B501D243EB600BEC989 /* Alphabet.flf */,
+				D7518B511D243EB600BEC989 /* AMC 3 Line.flf */,
+				D7518B521D243EB600BEC989 /* AMC 3 Liv1.flf */,
+				D7518B531D243EB600BEC989 /* AMC AAA01.flf */,
+				D7518B541D243EB600BEC989 /* AMC Neko.flf */,
+				D7518B551D243EB600BEC989 /* AMC Razor.flf */,
+				D7518B561D243EB600BEC989 /* AMC Razor2.flf */,
+				D7518B571D243EB600BEC989 /* AMC Slash.flf */,
+				D7518B581D243EB600BEC989 /* AMC Slider.flf */,
+				D7518B591D243EB600BEC989 /* AMC Thin.flf */,
+				D7518B5A1D243EB600BEC989 /* AMC Tubes.flf */,
+				D7518B5B1D243EB600BEC989 /* AMC Untitled.flf */,
+				D7518B5C1D243EB600BEC989 /* ANSI Shadow.flf */,
+				D7518B5D1D243EB600BEC989 /* Arrows.flf */,
+				D7518B5E1D243EB600BEC989 /* ASCII New Roman.flf */,
+				D7518B5F1D243EB600BEC989 /* Avatar.flf */,
+				D7518B601D243EB600BEC989 /* Banner.flf */,
+				D7518B611D243EB600BEC989 /* Banner3-D.flf */,
+				D7518B621D243EB600BEC989 /* Banner3.flf */,
+				D7518B631D243EB600BEC989 /* Banner4.flf */,
+				D7518B641D243EB600BEC989 /* Barbwire.flf */,
+				D7518B651D243EB600BEC989 /* Basic.flf */,
+				D7518B661D243EB600BEC989 /* Bear.flf */,
+				D7518B671D243EB600BEC989 /* Bell.flf */,
+				D7518B681D243EB600BEC989 /* Benjamin.flf */,
+				D7518B691D243EB600BEC989 /* Big Chief.flf */,
+				D7518B6A1D243EB600BEC989 /* Big Money-ne.flf */,
+				D7518B6B1D243EB600BEC989 /* Big Money-nw.flf */,
+				D7518B6C1D243EB600BEC989 /* Big Money-se.flf */,
+				D7518B6D1D243EB600BEC989 /* Big Money-sw.flf */,
+				D7518B6E1D243EB600BEC989 /* Big.flf */,
+				D7518B6F1D243EB600BEC989 /* Bigfig.flf */,
+				D7518B701D243EB600BEC989 /* Block.flf */,
+				D7518B711D243EB600BEC989 /* Blocks.flf */,
+				D7518B721D243EB600BEC989 /* Bloody.flf */,
+				D7518B731D243EB600BEC989 /* Bolger.flf */,
+				D7518B741D243EB600BEC989 /* Braced.flf */,
+				D7518B751D243EB600BEC989 /* Bright.flf */,
+				D7518B761D243EB600BEC989 /* Broadway KB.flf */,
+				D7518B771D243EB600BEC989 /* Broadway.flf */,
+				D7518B781D243EB600BEC989 /* Bubble.flf */,
+				D7518B791D243EB600BEC989 /* Bulbhead.flf */,
+				D7518B7A1D243EB600BEC989 /* Caligraphy.flf */,
+				D7518B7B1D243EB600BEC989 /* Caligraphy2.flf */,
+				D7518B7C1D243EB600BEC989 /* Calvin S.flf */,
+				D7518B7D1D243EB600BEC989 /* Cards.flf */,
+				D7518B7E1D243EB600BEC989 /* Catwalk.flf */,
+				D7518B7F1D243EB600BEC989 /* Chiseled.flf */,
+				D7518B801D243EB600BEC989 /* Chunky.flf */,
+				D7518B811D243EB600BEC989 /* Coinstak.flf */,
+				D7518B821D243EB600BEC989 /* Cola.flf */,
+				D7518B831D243EB600BEC989 /* Colossal.flf */,
+				D7518B841D243EB600BEC989 /* Computer.flf */,
+				D7518B851D243EB600BEC989 /* Contessa.flf */,
+				D7518B861D243EB600BEC989 /* Contrast.flf */,
+				D7518B871D243EB600BEC989 /* Cosmike.flf */,
+				D7518B881D243EB600BEC989 /* Crawford.flf */,
+				D7518B891D243EB600BEC989 /* Crawford2.flf */,
+				D7518B8A1D243EB600BEC989 /* Crazy.flf */,
+				D7518B8B1D243EB600BEC989 /* Cricket.flf */,
+				D7518B8C1D243EB600BEC989 /* Cursive.flf */,
+				D7518B8D1D243EB600BEC989 /* Cyberlarge.flf */,
+				D7518B8E1D243EB600BEC989 /* Cybermedium.flf */,
+				D7518B8F1D243EB600BEC989 /* Cybersmall.flf */,
+				D7518B901D243EB600BEC989 /* Cygnet.flf */,
+				D7518B911D243EB600BEC989 /* DANC4.flf */,
+				D7518B921D243EB600BEC989 /* Dancing Font.flf */,
+				D7518B931D243EB600BEC989 /* Def Leppard.flf */,
+				D7518B941D243EB600BEC989 /* Delta Corps Priest 1.flf */,
+				D7518B951D243EB600BEC989 /* Diamond.flf */,
+				D7518B961D243EB600BEC989 /* Diet Cola.flf */,
+				D7518B971D243EB600BEC989 /* Digital.flf */,
+				D7518B981D243EB600BEC989 /* Doh.flf */,
+				D7518B991D243EB600BEC989 /* Doom.flf */,
+				D7518B9A1D243EB600BEC989 /* Dot Matrix.flf */,
+				D7518B9B1D243EB600BEC989 /* Double Shorts.flf */,
+				D7518B9C1D243EB600BEC989 /* Double.flf */,
+				D7518B9D1D243EB600BEC989 /* Dr Pepper.flf */,
+				D7518B9E1D243EB600BEC989 /* DWhistled.flf */,
+				D7518B9F1D243EB600BEC989 /* Efti Chess.flf */,
+				D7518BA01D243EB600BEC989 /* Efti Font.flf */,
+				D7518BA11D243EB600BEC989 /* Efti Italic.flf */,
+				D7518BA21D243EB600BEC989 /* Efti Piti.flf */,
+				D7518BA31D243EB600BEC989 /* Efti Robot.flf */,
+				D7518BA41D243EB600BEC989 /* Efti Wall.flf */,
+				D7518BA51D243EB600BEC989 /* Efti Water.flf */,
+				D7518BA61D243EB600BEC989 /* Electronic.flf */,
+				D7518BA71D243EB600BEC989 /* Elite.flf */,
+				D7518BA81D243EB600BEC989 /* Epic.flf */,
+				D7518BA91D243EB600BEC989 /* Fender.flf */,
+				D7518BAA1D243EB600BEC989 /* Filter.flf */,
+				D7518BAB1D243EB600BEC989 /* Fire Font-k.flf */,
+				D7518BAC1D243EB600BEC989 /* Fire Font-s.flf */,
+				D7518BAD1D243EB600BEC989 /* Flipped.flf */,
+				D7518BAE1D243EB600BEC989 /* Flower Power.flf */,
+				D7518BAF1D243EB600BEC989 /* Four Tops.flf */,
+				D7518BB01D243EB600BEC989 /* Fraktur.flf */,
+				D7518BB11D243EB600BEC989 /* Fun Face.flf */,
+				D7518BB21D243EB600BEC989 /* Fun Faces.flf */,
+				D7518BB31D243EB600BEC989 /* Fuzzy.flf */,
+				D7518BB41D243EB600BEC989 /* Georgi16.flf */,
+				D7518BB51D243EB600BEC989 /* Georgia11.flf */,
+				D7518BB61D243EB600BEC989 /* Ghost.flf */,
+				D7518BB71D243EB600BEC989 /* Ghoulish.flf */,
+				D7518BB81D243EB600BEC989 /* Glenyn.flf */,
+				D7518BB91D243EB600BEC989 /* Goofy.flf */,
+				D7518BBA1D243EB600BEC989 /* Gothic.flf */,
+				D7518BBB1D243EB600BEC989 /* Graceful.flf */,
+				D7518BBC1D243EB600BEC989 /* Gradient.flf */,
+				D7518BBD1D243EB600BEC989 /* Graffiti.flf */,
+				D7518BBE1D243EB600BEC989 /* Greek.flf */,
+				D7518BBF1D243EB600BEC989 /* Heart Left.flf */,
+				D7518BC01D243EB600BEC989 /* Heart Right.flf */,
+				D7518BC11D243EB600BEC989 /* Henry 3D.flf */,
+				D7518BC21D243EB600BEC989 /* Hieroglyphs.flf */,
+				D7518BC31D243EB600BEC989 /* Hollywood.flf */,
+				D7518BC41D243EB600BEC989 /* Horizontal Left.flf */,
+				D7518BC51D243EB600BEC989 /* Horizontal Right.flf */,
+				D7518BC61D243EB600BEC989 /* ICL-1900.flf */,
+				D7518BC71D243EB600BEC989 /* Impossible.flf */,
+				D7518BC81D243EB600BEC989 /* Invita.flf */,
+				D7518BC91D243EB600BEC989 /* Isometric1.flf */,
+				D7518BCA1D243EB600BEC989 /* Isometric2.flf */,
+				D7518BCB1D243EB600BEC989 /* Isometric3.flf */,
+				D7518BCC1D243EB600BEC989 /* Isometric4.flf */,
+				D7518BCD1D243EB600BEC989 /* Italic.flf */,
+				D7518BCE1D243EB600BEC989 /* Ivrit.flf */,
+				D7518BCF1D243EB600BEC989 /* Jacky.flf */,
+				D7518BD01D243EB600BEC989 /* Jazmine.flf */,
+				D7518BD11D243EB600BEC989 /* Jerusalem.flf */,
+				D7518BD21D243EB600BEC989 /* JS Block Letters.flf */,
+				D7518BD31D243EB600BEC989 /* JS Capital Curves.flf */,
+				D7518BD41D243EB600BEC989 /* JS Stick Letters.flf */,
+				D7518BD51D243EB600BEC989 /* Katakana.flf */,
+				D7518BD61D243EB600BEC989 /* Kban.flf */,
+				D7518BD71D243EB600BEC989 /* Keyboard.flf */,
+				D7518BD81D243EB600BEC989 /* Knob.flf */,
+				D7518BD91D243EB600BEC989 /* Konto Slant.flf */,
+				D7518BDA1D243EB600BEC989 /* Konto.flf */,
+				D7518BDB1D243EB600BEC989 /* Larry 3D 2.flf */,
+				D7518BDC1D243EB600BEC989 /* Larry 3D.flf */,
+				D7518BDD1D243EB600BEC989 /* LCD.flf */,
+				D7518BDE1D243EB600BEC989 /* Lean.flf */,
+				D7518BDF1D243EB600BEC989 /* Letters.flf */,
+				D7518BE01D243EB600BEC989 /* Lil Devil.flf */,
+				D7518BE11D243EB600BEC989 /* Line Blocks.flf */,
+				D7518BE21D243EB600BEC989 /* Linux.flf */,
+				D7518BE31D243EB600BEC989 /* Lockergnome.flf */,
+				D7518BE41D243EB600BEC989 /* Madrid.flf */,
+				D7518BE51D243EB600BEC989 /* Marquee.flf */,
+				D7518BE61D243EB700BEC989 /* Maxfour.flf */,
+				D7518BE71D243EB700BEC989 /* Merlin1.flf */,
+				D7518BE81D243EB700BEC989 /* Merlin2.flf */,
+				D7518BE91D243EB700BEC989 /* Mike.flf */,
+				D7518BEA1D243EB700BEC989 /* Mini.flf */,
+				D7518BEB1D243EB700BEC989 /* Mirror.flf */,
+				D7518BEC1D243EB700BEC989 /* Mnemonic.flf */,
+				D7518BED1D243EB700BEC989 /* Modular.flf */,
+				D7518BEE1D243EB700BEC989 /* Moscow.flf */,
+				D7518BEF1D243EB700BEC989 /* Mshebrew210.flf */,
+				D7518BF01D243EB700BEC989 /* Muzzle.flf */,
+				D7518BF11D243EB700BEC989 /* Nancyj-Fancy.flf */,
+				D7518BF21D243EB700BEC989 /* Nancyj-Improved.flf */,
+				D7518BF31D243EB700BEC989 /* Nancyj-Underlined.flf */,
+				D7518BF41D243EB700BEC989 /* Nancyj.flf */,
+				D7518BF51D243EB700BEC989 /* Nipples.flf */,
+				D7518BF61D243EB700BEC989 /* NScript.flf */,
+				D7518BF71D243EB700BEC989 /* NT Greek.flf */,
+				D7518BF81D243EB700BEC989 /* NV Script.flf */,
+				D7518BF91D243EB700BEC989 /* O8.flf */,
+				D7518BFA1D243EB700BEC989 /* Ogre.flf */,
+				D7518BFB1D243EB700BEC989 /* Old Banner.flf */,
+				D7518BFC1D243EB700BEC989 /* OS2.flf */,
+				D7518BFD1D243EB700BEC989 /* Patorjk-HeX.flf */,
+				D7518BFE1D243EB700BEC989 /* Patorjk's Cheese.flf */,
+				D7518BFF1D243EB700BEC989 /* Pawp.flf */,
+				D7518C001D243EB700BEC989 /* Peaks Slant.flf */,
+				D7518C011D243EB700BEC989 /* Peaks.flf */,
+				D7518C021D243EB700BEC989 /* Pebbles.flf */,
+				D7518C031D243EB700BEC989 /* Pepper.flf */,
+				D7518C041D243EB700BEC989 /* Poison.flf */,
+				D7518C051D243EB700BEC989 /* Puffy.flf */,
+				D7518C061D243EB700BEC989 /* Puzzle.flf */,
+				D7518C071D243EB700BEC989 /* Pyramid.flf */,
+				D7518C081D243EB700BEC989 /* Rammstein.flf */,
+				D7518C091D243EB700BEC989 /* Rectangles.flf */,
+				D7518C0A1D243EB700BEC989 /* Red Phoenix.flf */,
+				D7518C0B1D243EB700BEC989 /* Relief.flf */,
+				D7518C0C1D243EB700BEC989 /* Relief2.flf */,
+				D7518C0D1D243EB700BEC989 /* Reverse.flf */,
+				D7518C0E1D243EB700BEC989 /* Roman.flf */,
+				D7518C0F1D243EB700BEC989 /* Rotated.flf */,
+				D7518C101D243EB700BEC989 /* Rounded.flf */,
+				D7518C111D243EB700BEC989 /* Rowan Cap.flf */,
+				D7518C121D243EB700BEC989 /* Rozzo.flf */,
+				D7518C131D243EB700BEC989 /* Runic.flf */,
+				D7518C141D243EB700BEC989 /* Runyc.flf */,
+				D7518C151D243EB700BEC989 /* S Blood.flf */,
+				D7518C161D243EB700BEC989 /* Santa Clara.flf */,
+				D7518C171D243EB700BEC989 /* Script.flf */,
+				D7518C181D243EB700BEC989 /* Serifcap.flf */,
+				D7518C191D243EB700BEC989 /* Shadow.flf */,
+				D7518C1A1D243EB700BEC989 /* Shimrod.flf */,
+				D7518C1B1D243EB700BEC989 /* Short.flf */,
+				D7518C1C1D243EB700BEC989 /* SL Script.flf */,
+				D7518C1D1D243EB700BEC989 /* Slant Relief.flf */,
+				D7518C1E1D243EB700BEC989 /* Slant.flf */,
+				D7518C1F1D243EB700BEC989 /* Slide.flf */,
+				D7518C201D243EB700BEC989 /* Small Caps.flf */,
+				D7518C211D243EB700BEC989 /* Small Isometric1.flf */,
+				D7518C221D243EB700BEC989 /* Small Keyboard.flf */,
+				D7518C231D243EB700BEC989 /* Small Poison.flf */,
+				D7518C241D243EB700BEC989 /* Small Script.flf */,
+				D7518C251D243EB700BEC989 /* Small Shadow.flf */,
+				D7518C261D243EB700BEC989 /* Small Slant.flf */,
+				D7518C271D243EB700BEC989 /* Small Tengwar.flf */,
+				D7518C281D243EB700BEC989 /* Small.flf */,
+				D7518C291D243EB700BEC989 /* Soft.flf */,
+				D7518C2A1D243EB700BEC989 /* Speed.flf */,
+				D7518C2B1D243EB700BEC989 /* Spliff.flf */,
+				D7518C2C1D243EB700BEC989 /* Stacey.flf */,
+				D7518C2D1D243EB700BEC989 /* Stampate.flf */,
+				D7518C2E1D243EB700BEC989 /* Stampatello.flf */,
+				D7518C2F1D243EB700BEC989 /* Standard.flf */,
+				D7518C301D243EB700BEC989 /* Star Strips.flf */,
+				D7518C311D243EB700BEC989 /* Star Wars.flf */,
+				D7518C321D243EB700BEC989 /* Stellar.flf */,
+				D7518C331D243EB700BEC989 /* Stforek.flf */,
+				D7518C341D243EB700BEC989 /* Stick Letters.flf */,
+				D7518C351D243EB700BEC989 /* Stop.flf */,
+				D7518C361D243EB700BEC989 /* Straight.flf */,
+				D7518C371D243EB700BEC989 /* Stronger Than All.flf */,
+				D7518C381D243EB700BEC989 /* Sub-Zero.flf */,
+				D7518C391D243EB700BEC989 /* Swamp Land.flf */,
+				D7518C3A1D243EB700BEC989 /* Swan.flf */,
+				D7518C3B1D243EB700BEC989 /* Sweet.flf */,
+				D7518C3C1D243EB700BEC989 /* Tanja.flf */,
+				D7518C3D1D243EB700BEC989 /* Tengwar.flf */,
+				D7518C3E1D243EB700BEC989 /* Test1.flf */,
+				D7518C3F1D243EB700BEC989 /* The Edge.flf */,
+				D7518C401D243EB700BEC989 /* Thick.flf */,
+				D7518C411D243EB700BEC989 /* Thin.flf */,
+				D7518C421D243EB700BEC989 /* THIS.flf */,
+				D7518C431D243EB700BEC989 /* Thorned.flf */,
+				D7518C441D243EB700BEC989 /* Three Point.flf */,
+				D7518C451D243EB700BEC989 /* Ticks Slant.flf */,
+				D7518C461D243EB700BEC989 /* Ticks.flf */,
+				D7518C471D243EB700BEC989 /* Tiles.flf */,
+				D7518C481D243EB700BEC989 /* Tinker-Toy.flf */,
+				D7518C491D243EB700BEC989 /* Tombstone.flf */,
+				D7518C4A1D243EB700BEC989 /* Train.flf */,
+				D7518C4B1D243EB700BEC989 /* Trek.flf */,
+				D7518C4C1D243EB700BEC989 /* Tsalagi.flf */,
+				D7518C4D1D243EB700BEC989 /* Tubular.flf */,
+				D7518C4E1D243EB700BEC989 /* Twisted.flf */,
+				D7518C4F1D243EB700BEC989 /* Two Point.flf */,
+				D7518C501D243EB700BEC989 /* Univers.flf */,
+				D7518C511D243EB700BEC989 /* USA Flag.flf */,
+				D7518C521D243EB700BEC989 /* Varsity.flf */,
+				D7518C531D243EB700BEC989 /* Wavy.flf */,
+				D7518C541D243EB700BEC989 /* Weird.flf */,
+				D7518C551D243EB700BEC989 /* Wet Letter.flf */,
+				D7518C561D243EB700BEC989 /* Whimsy.flf */,
+				D7518C571D243EB700BEC989 /* Wow.flf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D77A28DC1D124C4F00C56E49 = {
+			isa = PBXGroup;
+			children = (
+				D77A29321D12667800C56E49 /* .swiftlint.yml */,
+				D746BB681D245EE600DFA8F7 /* .gitignore */,
+				D746BB691D245F7300DFA8F7 /* pc.sh */,
+				D77A290A1D125BF600C56E49 /* Ansi+View+Progressbar.swift */,
+				D77A28E71D124C4F00C56E49 /* TUIKit */,
+				D77A28E61D124C4F00C56E49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D77A28E61D124C4F00C56E49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77A28E51D124C4F00C56E49 /* TUIKit */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D77A28E71D124C4F00C56E49 /* TUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D77A28F51D125BE300C56E49 /* Ansi */,
+				D77A292C1D1260E900C56E49 /* Documentation */,
+				D799B4781D1AC42B00FA7853 /* Examples */,
+				D7518B381D24021E00BEC989 /* Figlet */,
+				D77A29231D125F9500C56E49 /* Foundation */,
+				D7518B3D1D243A4800BEC989 /* Reference */,
+				D73101331D1349AA0081072F /* UIElements */,
+				D77A28E81D124C4F00C56E49 /* main.swift */,
+			);
+			path = TUIKit;
+			sourceTree = "<group>";
+		};
+		D77A28F51D125BE300C56E49 /* Ansi */ = {
+			isa = PBXGroup;
+			children = (
+				D73101361D135B2F0081072F /* Color */,
+				D77A28F61D125BF600C56E49 /* Ansi.swift */,
+				D77A28F71D125BF600C56E49 /* Ansi+Attribute.swift */,
+				D77A28F81D125BF600C56E49 /* Ansi+C0+C1.swift */,
+				D77A28F91D125BF600C56E49 /* Ansi+Character.swift */,
+				D77A29011D125BF600C56E49 /* Ansi+Compress.swift */,
+				D77A29021D125BF600C56E49 /* Ansi+Cursor.swift */,
+				D77A29031D125BF600C56E49 /* Ansi+Display.swift */,
+				D77A29041D125BF600C56E49 /* Ansi+Extras.swift */,
+				D77A29051D125BF600C56E49 /* Ansi+Line.swift */,
+				D77A29061D125BF600C56E49 /* Ansi+Page.swift */,
+				D77A29071D125BF600C56E49 /* Ansi+Set.swift */,
+				D77A29081D125BF600C56E49 /* Ansi+Tab.swift */,
+				D77A290B1D125BF600C56E49 /* Ansi+Window.swift */,
+			);
+			name = Ansi;
+			sourceTree = "<group>";
+		};
+		D77A29231D125F9500C56E49 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		D77A292C1D1260E900C56E49 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		D799B4781D1AC42B00FA7853 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				D799B4791D1AC4A500FA7853 /* wwdc16_logo */,
+				D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */,
+				D7518C581D243F6900BEC989 /* Example+Figfont.swift */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D77A28E41D124C4F00C56E49 /* TUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77A28EC1D124C4F00C56E49 /* Build configuration list for PBXNativeTarget "TUIKit" */;
+			buildPhases = (
+				D77A28E11D124C4F00C56E49 /* Sources */,
+				D77A28E21D124C4F00C56E49 /* Frameworks */,
+				D77A28E31D124C4F00C56E49 /* CopyFiles */,
+				D77A29221D125DD600C56E49 /* ShellScript */,
+				D7079E4C1D244E660088770E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TUIKit;
+			productName = TUIKit;
+			productReference = D77A28E51D124C4F00C56E49 /* TUIKit */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D77A28DD1D124C4F00C56E49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = africanswift;
+				TargetAttributes = {
+					D77A28E41D124C4F00C56E49 = {
+						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = D77A28E01D124C4F00C56E49 /* Build configuration list for PBXProject "TUIKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D77A28DC1D124C4F00C56E49;
+			productRefGroup = D77A28E61D124C4F00C56E49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D77A28E41D124C4F00C56E49 /* TUIKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D77A29221D125DD600C56E49 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D77A28E11D124C4F00C56E49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D73101351D1349F40081072F /* TUICharacter.swift in Sources */,
+				D77A29141D125BF600C56E49 /* Ansi+Color+RGB.swift in Sources */,
+				D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */,
+				D731013F1D1471850081072F /* TUIBorders.swift in Sources */,
+				D77A29151D125BF600C56E49 /* Ansi+Color+Utility.swift in Sources */,
+				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
+				D731013B1D146DDD0081072F /* TUIView.swift in Sources */,
+				D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */,
+				D77A290F1D125BF600C56E49 /* Ansi+Character.swift in Sources */,
+				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
+				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
+				D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */,
+				D77A29131D125BF600C56E49 /* Ansi+Color+LAB.swift in Sources */,
+				D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */,
+				D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */,
+				D77A29181D125BF600C56E49 /* Ansi+Cursor.swift in Sources */,
+				D73101411D14DB640081072F /* TUIGeometry.swift in Sources */,
+				D77A29191D125BF600C56E49 /* Ansi+Display.swift in Sources */,
+				D77A28E91D124C4F00C56E49 /* main.swift in Sources */,
+				D77A291D1D125BF600C56E49 /* Ansi+Set.swift in Sources */,
+				D77A291A1D125BF600C56E49 /* Ansi+Extras.swift in Sources */,
+				D77A29111D125BF600C56E49 /* Ansi+Color+CMYK.swift in Sources */,
+				D77A291E1D125BF600C56E49 /* Ansi+Tab.swift in Sources */,
+				D77A29101D125BF600C56E49 /* Ansi+Color.swift in Sources */,
+				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
+				D77A29201D125BF600C56E49 /* Ansi+View+Progressbar.swift in Sources */,
+				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
+				D746BB6B1D245FFB00DFA8F7 /* TUIScreen.swift in Sources */,
+				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
+				D72399791D16C49A002D09DF /* TUIRender.swift in Sources */,
+				D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */,
+				D77A29161D125BF600C56E49 /* Ansi+Color+XYZ.swift in Sources */,
+				D77A290E1D125BF600C56E49 /* Ansi+C0+C1.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D77A28EA1D124C4F00C56E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D77A28EB1D124C4F00C56E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D77A28ED1D124C4F00C56E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = s;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D77A28EE1D124C4F00C56E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_OPTIMIZATION_LEVEL = s;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D77A28E01D124C4F00C56E49 /* Build configuration list for PBXProject "TUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77A28EA1D124C4F00C56E49 /* Debug */,
+				D77A28EB1D124C4F00C56E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77A28EC1D124C4F00C56E49 /* Build configuration list for PBXNativeTarget "TUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77A28ED1D124C4F00C56E49 /* Debug */,
+				D77A28EE1D124C4F00C56E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D77A28DD1D124C4F00C56E49 /* Project object */;
+}

@@ -1,0 +1,15 @@
+disabled_rules: # rule identifiers to exclude from running
+- opening_brace
+- trailing_whitespace
+- statement_position
+- type_name
+- variable_name
+- nesting
+- force_cast
+- leading_whitespace
+line_length: 120
+file_length:
+  warning: 1000
+  error: 1500
+function_body_length:
+  warning: 60
