@@ -1,4 +1,4 @@
-
+//
 //          File:   Example+WWDCLogo.swift
 //    Created by:   African Swift
 
@@ -6,7 +6,7 @@ import Foundation
 
 public struct Example_WWDCLogo
 {
-  private static func generateRandomColor() -> Ansi
+  internal static func generateRandomColor() -> Ansi
   {
     let limit = 0.1
     let r = arc4random_uniform(255).toDouble() / 255

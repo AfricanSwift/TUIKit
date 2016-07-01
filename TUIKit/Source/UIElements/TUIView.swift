@@ -1,4 +1,4 @@
-
+//
 //          File:   TUIView.swift
 //    Created by:   African Swift
 
@@ -7,7 +7,7 @@ import Darwin
 public struct TUIView
 {
   public private(set) var origin: TUIPoint
-  public private(set) var size: TUIViewSize
+  public private(set) var size: TUIWindowSize
   private var invalidate: Bool
   private let border: TUIBorders
   private var parent: TUIScreen?
@@ -25,37 +25,23 @@ public struct TUIView
       .filter { $0.type != .none }
   }
   
-  /// Calculate Sizes (Character and Pixel)
-  ///
-  /// - parameter width: Int
-  /// - parameter height: Int
-  /// - returns: Tuple (character: TUISize, pixel: TUISize)
-  private static func calcSize(width: Int, height: Int) ->
-    (character: TUISize, pixel: TUISize)
-  {
-    let w = Int(ceil(Double(width) / 2.0))
-    let h = Int(ceil(Double(height) / 4.0))
-    return (character: TUISize(width: w, height: h),
-            pixel: TUISize(width: w * 2, height: h * 4))
-  }
-  
   /// Default initializer
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter width: Int
-  /// - parameter height: Int
-  /// - parameter border: TUIBorders
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - width: Int
+  ///   - height: Int
+  ///   - border: TUIBorders
   public init(x: Int, y: Int, width: Int, height: Int, border: TUIBorders)
   {
     self.origin = TUIPoint(x: x, y: y)
-    let size = TUIView.calcSize(width: width, height: height)
-    self.size = TUIViewSize(pixel: size.pixel, character: size.character)
+    self.size = TUIWindowSize(width: width, height: height)
     self.invalidate = true
     self.border = border
     self.buffer = init2D(
-      dimension1: self.size.character.height.toInt(),
-      dimension2: self.size.character.width.toInt(),
+      d1: self.size.character.height.toInt(),
+      d2: self.size.character.width.toInt(),
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
@@ -67,8 +53,9 @@ public extension TUIView
 {
   /// Move View
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
   public mutating func move(x: Int, y: Int)
   {
     self.origin = TUIPoint(x: x, y: y)
@@ -79,8 +66,9 @@ public extension TUIView
   
   /// Resize View
   ///
-  /// - parameter width: Int
-  /// - parameter height: Int
+  /// - parameters:
+  ///   - width: Int
+  ///   - height: Int
   public mutating func resize(width: Int, height: Int)
   {
     self = TUIView.init(
@@ -98,8 +86,8 @@ public extension TUIView
   public mutating func clear()
   {
     self.buffer = init2D(
-      dimension1: self.size.character.height.toInt(),
-      dimension2: self.size.character.width.toInt(),
+      d1: self.size.character.height.toInt(),
+      d2: self.size.character.width.toInt(),
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
@@ -112,7 +100,8 @@ public extension TUIView
 {
   /// Draw Pixel
   ///
-  /// - parameter parameters: TUIRenderParameter
+  /// - parameters:
+  ///   - parameters: TUIRenderParameter
   /// - returns: [Ansi]
   public mutating func draw(
     parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
@@ -133,9 +122,10 @@ public extension TUIView
   
   /// Draw Pixel
   ///
-  /// - parameter x: Double
-  /// - parameter y: Double
-  /// - parameter color: Ansi.Color
+  /// - parameters:
+  ///   - x: Double
+  ///   - y: Double
+  ///   - color: Ansi.Color
   public mutating func drawPixel(x: Double, y: Double, color: Ansi.Color)
   {
     let char = (x: round(x).toInt() / 2, y: round(y).toInt() / 4)
@@ -145,10 +135,11 @@ public extension TUIView
   
   /// Draw Character
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter character: Character
-  /// - parameter color: Ansi.Color
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - character: Character
+  ///   - color: Ansi.Color
   public mutating func drawCharacter(
     x: Int, y: Int, character: Character, color: Ansi.Color)
   {
@@ -158,10 +149,11 @@ public extension TUIView
   
   /// Draw Ansi Character
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter character: Character
-  /// - parameter ansi: Ansi
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - character: Character
+  ///   - ansi: Ansi
   public mutating func drawAnsiCharacter(
     x: Int, y: Int, character: Character, ansi: Ansi)
   {
@@ -171,11 +163,12 @@ public extension TUIView
   
   /// Draw Text
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter text: String
-  /// - parameter color: Ansi.Color
-  /// - parameter linewrap: Bool
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - text: String
+  ///   - color: Ansi.Color
+  ///   - linewrap: Bool
   public mutating func drawText(
     x: Int, y: Int, text: String, color: Ansi.Color, linewrap: Bool = false)
   {
@@ -206,10 +199,11 @@ public extension TUIView
   
   /// Limited to SGR Control Codes (Attributes & Colors)
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter text: String
-  /// - parameter linewrap: Bool
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - text: String
+  ///   - linewrap: Bool
   public mutating func drawAnsiText(
     x: Int, y: Int, text: String, linewrap: Bool = false)
   {

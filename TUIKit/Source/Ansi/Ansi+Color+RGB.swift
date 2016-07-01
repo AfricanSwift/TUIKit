@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+RGB.swift
 //    Created by:   African Swift
 
@@ -8,7 +8,9 @@ import Darwin
 public extension Ansi.Color
 {
   /// Convert LAB to RGB
-  /// - parameter lab: Ansi.Color.LABComponents
+  ///
+  /// - parameters:
+  ///   - lab: Ansi.Color.LABComponents
   /// - returns: Ansi.Color.RGBComponents
   private static func convertLABToRGB(
     lab value: Ansi.Color.LABComponents) -> Ansi.Color.RGBComponents
@@ -22,7 +24,9 @@ public extension Ansi.Color
 public extension Ansi.Color
 {
   /// Convert XYZ to RGB
-  /// - parameter xyz: Ansi.Color.XYZComponents
+  ///
+  /// - parameters:
+  ///   - xyz: Ansi.Color.XYZComponents
   /// - returns: Ansi.Color.RGBComponents
   private static func convertXYZToRGB(
     xyz value: Ansi.Color.XYZComponents) -> Ansi.Color.RGBComponents
@@ -53,7 +57,9 @@ public extension Ansi.Color
 public extension Ansi.Color
 {
   /// Convert HSL to RGB
-  /// - parameter hsl: Ansi.Color.HSLComponents
+  ///
+  /// - parameters:
+  ///   - hsl: Ansi.Color.HSLComponents
   /// - returns: Ansi.Color.RGBComponents
   internal static func convertHSLtoRGB(
     hsl value: Ansi.Color.HSLComponents) -> Ansi.Color.RGBComponents {
@@ -107,7 +113,9 @@ public extension Ansi.Color
 public extension Ansi.Color
 {
   /// Convert CMYK to RGB
-  /// - parameter cmyk: Ansi.Color.HSLComponents
+  ///
+  /// - parameters:
+  ///   - cmyk: Ansi.Color.HSLComponents
   /// - returns: Ansi.Color.RGBComponents
   internal static func convertCMYKtoRGB(
     cmyk value: Ansi.Color.CMYKComponents) -> Ansi.Color.RGBComponents

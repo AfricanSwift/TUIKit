@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+LAB.swift
 //    Created by:   African Swift
 
@@ -8,7 +8,9 @@ import Darwin
 public extension Ansi.Color
 {
   /// Convert RGB to LAB
-  /// - parameter rgb: Ansi.Color.RGBComponents
+  ///
+  /// - parameters:
+  ///   - rgb: Ansi.Color.RGBComponents
   /// - returns: Ansi.Color.LABComponents
   internal static func convertRGBtoLAB(
     rgb value: Ansi.Color.RGBComponents) -> Ansi.Color.LABComponents
@@ -32,7 +34,9 @@ public extension Ansi.Color
 public extension Ansi.Color
 {
   /// Convert XYZ to LAB
-  /// - parameter xyz: Ansi.Color.XYZComponents
+  ///
+  /// - parameters:
+  ///   - xyz: Ansi.Color.XYZComponents
   /// - returns: Ansi.Color.LABComponents
   private static func convertXYZToLAB(
     xyz value: Ansi.Color.XYZComponents) -> Ansi.Color.LABComponents

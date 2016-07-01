@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Extras.swift
 //    Created by:   African Swift
 
@@ -11,7 +11,8 @@ public extension Ansi
   /// Flash the screen
   /// Reverse the video and then restore
   ///
-  /// - parameter delay: Double (default delay = 0.5 seconds)
+  /// - parameters:
+  ///   - delay: Double (default delay = 0.5 seconds)
   public static func flashScreen(_ delay: Double = 0.5)
   {
     /// Switch to alternate screen buffer to save current state

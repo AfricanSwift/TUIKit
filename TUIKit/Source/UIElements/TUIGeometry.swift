@@ -1,4 +1,4 @@
-
+//
 //          File:   TUIGeometry.swift
 //    Created by:   African Swift
 
@@ -17,8 +17,9 @@ public struct TUIPoint
   
   /// Default TUIPoint Initializer
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
   public init(x: Int = 0, y: Int = 0)
   {
     self.x = Double(x)
@@ -27,8 +28,9 @@ public struct TUIPoint
   
   /// Default TUIPoint Initializer
   ///
-  /// - parameter x: Double
-  /// - parameter y: Double
+  /// - parameters:
+  ///   - x: Double
+  ///   - y: Double
   public init(x: Double, y: Double)
   {
     self.x = x
@@ -41,8 +43,9 @@ extension TUIPoint: Equatable {}
 
 /// Equatable Operator for TUIPoint
 ///
-/// - parameter lhs: TUIPoint
-/// - parameter rhs: TUIPoint
+/// - parameters:
+///   - lhs: TUIPoint
+///   - rhs: TUIPoint
 /// - returns: Bool, True if lhs and rhs are equivalent
 public func == (lhs: TUIPoint, rhs: TUIPoint) -> Bool
 {
@@ -62,8 +65,9 @@ public struct TUISize
   
   /// Default Initializer
   ///
-  /// - parameter width: Int
-  /// - parameter height: Int
+  /// - parameters:
+  ///   - width: Int
+  ///   - height: Int
   public init(width: Int = 0, height: Int = 0)
   {
     self.width = Double(width)
@@ -72,8 +76,9 @@ public struct TUISize
   
   /// Default Initializer
   ///
-  /// - parameter width: Double
-  /// - parameter height: Double
+  /// - parameters:
+  ///   - width: Double
+  ///   - height: Double
   public init(width: Double, height: Double)
   {
     self.width = width
@@ -88,8 +93,9 @@ extension TUISize: Equatable {}
 
 /// Equatable Operator for TUISize
 ///
-/// - parameter lhs: TUISize
-/// - parameter rhs: TUISize
+/// - parameters:
+///   = lhs: TUISize
+///   - rhs: TUISize
 /// - returns: Bool, True if lhs and rhs are equivalent
 public func == (lhs: TUISize, rhs: TUISize) -> Bool
 {
@@ -102,10 +108,34 @@ public func == (lhs: TUISize, rhs: TUISize) -> Bool
 ///
 /// - pixel is based on the braille symbols
 /// - 2 x 4 pixels per character (width x height)
-public struct TUIViewSize
+public struct TUIWindowSize
 {
   public var pixel: TUISize
   public var character: TUISize
+  
+  /// Default initializer
+  ///
+  /// - parameters:
+  ///   - width: Int (pixel width)
+  ///   - height: Int (pixel height)
+  public init(width: Int, height: Int)
+  {
+    let w = Int(ceil(Double(width) / 2.0))
+    let h = Int(ceil(Double(height) / 4.0))
+    self.pixel = TUISize(width: w * 2, height: h * 4)
+    self.character = TUISize(width: w, height: h)
+  }
+  
+  /// Default initializer
+  ///
+  /// - parameters:
+  ///   - columns: Int (character width)
+  ///   - rows: Int (character height)
+  public init(columns: Int, rows: Int)
+  {
+    self.pixel = TUISize(width: columns * 2, height: rows * 4)
+    self.character = TUISize(width: columns, height: rows)
+  }
 }
 
 // MARK: - TUIRectangle -
@@ -121,10 +151,11 @@ public struct TUIRectangle
   
   /// Default Initializer
   ///
-  /// - parameter x: Int
-  /// - parameter y: Int
-  /// - parameter width: Int
-  /// - parameter height: Int
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - width: Int
+  ///   - height: Int
   public init(x: Int = 0, y: Int = 0, width: Int = 0, height: Int = 0)
   {
     self.origin = TUIPoint(x: x, y: y)
@@ -133,10 +164,11 @@ public struct TUIRectangle
   
   /// Default Initializer
   ///
-  /// - parameter x: Double
-  /// - parameter y: Double
-  /// - parameter width: Double
-  /// - parameter height: Double
+  /// - parameters:
+  ///   - x: Double
+  ///   - y: Double
+  ///   - width: Double
+  ///   - height: Double
   public init(x: Double = 0.0, y: Double = 0.0, width: Double = 0.0, height: Double = 0.0)
   {
     self.origin = TUIPoint(x: x, y: y)
@@ -145,8 +177,9 @@ public struct TUIRectangle
   
   /// Default Initializer
   ///
-  /// - parameter origin: TUIPoint
-  /// - parameter size: TUISize
+  /// - parameters:
+  ///   - origin: TUIPoint
+  ///   - size: TUISize
   public init(origin: TUIPoint, size: TUISize)
   {
     self.origin = origin
@@ -159,8 +192,9 @@ extension TUIRectangle: Equatable {}
 
 /// Equatable Operator for TUIRectangle
 ///
-/// - parameter lhs: TUIRectangle
-/// - parameter rhs: TUIRectangle
+/// - parameters:
+///   - lhs: TUIRectangle
+///   - rhs: TUIRectangle
 /// - returns: Bool, True if lhs and rhs are equivalent
 public func == (lhs: TUIRectangle, rhs: TUIRectangle) -> Bool
 {

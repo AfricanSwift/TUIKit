@@ -1,4 +1,4 @@
-
+//
 //          File:   TUIRender.swift
 //    Created by:   African Swift
 
@@ -62,8 +62,10 @@ public enum RenderStyle
   ]
   
   /// ASCII color ramp character based on NSColor grayscale intensity
-  /// - parameter color: Ansi.Color
-  /// - parameter ramp: [String]
+  ///
+  /// - parameters:
+  ///   - color: Ansi.Color
+  ///   - ramp: [String]
   /// - returns: Ansi
   private static func asciiRamp(
     color: Ansi.Color,
@@ -74,8 +76,10 @@ public enum RenderStyle
   }
   
   /// ASCII color ramp character based on Braille value / Braille max value (0xFF)
-  /// - parameter character: TUICharacter
-  /// - parameter ramp: [String]
+  ///
+  /// - parameters:
+  ///   - character: TUICharacter
+  ///   - ramp: [String]
   /// - returns: Ansi
   private static func asciiBrailleRamp(
     character: TUICharacter,
@@ -86,8 +90,10 @@ public enum RenderStyle
   }
   
   /// Block2 Ramp
-  /// - parameter color: Ansi.Color
-  /// - parameter character: TUICharacter
+  ///
+  /// - parameters:
+  ///   - color: Ansi.Color
+  ///   - character: TUICharacter
   /// - returns: Ansi
   private static func block2Ramp(
     color: Ansi.Color,
@@ -111,8 +117,10 @@ public enum RenderStyle
   }
   
   /// rampGen
-  /// - parameter character: TUICharacter
-  /// - parameter color: Ansi.Color
+  ///
+  /// - parameters:
+  ///   - character: TUICharacter
+  ///   - color: Ansi.Color
   /// - returns: Ansi
   internal func rampGen(
     character: TUICharacter,
@@ -189,8 +197,9 @@ extension TUIRenderParameter: Equatable { }
 
 /// Equatable Operator for RenderParameter
 ///
-/// - parameter lhs: TUICharacter.RenderParameter
-/// - parameter rhs: TUICharacter.RenderParameter
+/// - parameters:
+///   - lhs: TUICharacter.RenderParameter
+///   - rhs: TUICharacter.RenderParameter
 /// - returns: Bool, True if lhs and rhs are equivalent
 public func == (
   lhs: TUIRenderParameter,

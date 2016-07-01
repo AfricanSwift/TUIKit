@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Tab.swift
 //    Created by:   African Swift
 
@@ -12,7 +12,8 @@ public extension Ansi
   {
     /// Cursor Forward Tabulation (CHT)
     ///
-    /// - parameter quantity: Tab quantity forward (default = 1)
+    /// - parameters:
+    ///   - quantity: Tab quantity forward (default = 1)
     /// - returns: Ansi
     public static func forward(quantity: Int = 1) -> Ansi
     {
@@ -21,7 +22,8 @@ public extension Ansi
     
     /// Cursor Backward Tabulation (CBT)
     ///
-    /// - parameter quantity:  Tab quantity backwards (default = 1)
+    /// - parameters:
+    ///   - quantity:  Tab quantity backwards (default = 1)
     /// - returns: Ansi
     public static func backward(quantity: Int = 1) -> Ansi
     {

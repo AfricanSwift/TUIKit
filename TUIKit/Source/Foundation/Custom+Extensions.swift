@@ -1,8 +1,7 @@
-
+//
 //          File:   Custom+Extensions.swift
 //    Created by:   African Swift
 
-import Darwin
 import Foundation
 
 // MARK: - Threading -
@@ -11,8 +10,10 @@ infix operator ~> {}
 /// Executes the lefthand closure on a background thread and,
 /// upon completion, the righthand closure on the main thread.
 /// Passes the background closure's output, if any, to the main closure.
-/// - parameter backgroundClosure: code to execute on background thread
-/// - parameter mainClosure: code to execute on main thread after background completes
+///
+/// - parameters:
+///   - backgroundClosure: code to execute on background thread
+///   - mainClosure: code to execute on main thread after background completes
 /// - returns: Void
 internal func ~> <R> (
   backgroundClosure: () -> R,
@@ -27,6 +28,7 @@ internal func ~> <R> (
 }
 
 /// Serial dispatch queue used by the ~> operator
+///
 /// - returns: dispatch_queue_t
 private let queue = DispatchQueue(
   label: "serial-worker",
@@ -35,7 +37,9 @@ private let queue = DispatchQueue(
 // MARK: - Array Extensions -
 internal extension Array {
   /// Return Array of type T with tuple of Array Index and Element
-  /// - parameter function: map function to execute
+  ///
+  /// - parameters:
+  ///   - function: map function to execute
   /// - returns: (Int, Element)
   internal func mapWithIndex<T>(_ function: (Int, Element) -> T) -> [T] {
     return zip((self.indices), self).map(function)
@@ -43,282 +47,60 @@ internal extension Array {
 }
 
 /// Initialize 2D array
-/// - parameter dimension1: 1st array dimension
-/// - parameter dimension2: 2nd array dimension
-/// - parameter repeatedValue: Initial array value
+///
+/// - parameters:
+///   - d1: 1st array dimension
+///   - d2: 2nd array dimension
+///   - repeatedValue: Initial array value
 /// - returns: Two dimensional array of type T
-internal func init2D<T>(
-  dimension1: Int,
-             dimension2: Int,
-             repeatedValue value: T) -> [[T]] {
-  return Array(repeating: Array(repeating: value,
-                count: dimension2),
-               count: dimension1)
+internal func init2D<T>(d1: Int, d2: Int, repeatedValue value: T) -> [[T]]
+{
+  return Array(
+    repeating: Array(
+      repeating: value, count: d2), count: d1)
 }
 
 /// Initialize 3D array
-/// - parameter dimension1: 1st array dimension
-/// - parameter dimension2: 2nd array dimension
-/// - parameter dimension3: 3rd array dimension
-/// - parameter repeatedValue: Initial array value
+///
+/// - parameters:
+///   - d1: 1st array dimension
+///   - d2: 2nd array dimension
+///   - d3: 3rd array dimension
+///   - repeatedValue: Initial array value
 /// - returns: Three dimensional array of type T
-internal func init3D<T>(
-  dimension1: Int,
-             dimension2: Int,
-             dimension3: Int,
-             repeatedValue value: T) -> [[[T]]] {
-  return Array(repeating: Array(repeating: Array(repeating: value,
-                  count: dimension3),
-                count: dimension2),
-               count: dimension1)
+internal func init3D<T>(d1: Int, d2: Int, d3: Int, repeatedValue value: T) -> [[[T]]]
+{
+  return Array(
+    repeating: Array(
+      repeating: Array(
+        repeating: value, count: d3), count: d2), count: d1)
 }
 
 /// Initialize 4D array
-/// - parameter dimension1: 1st array dimension
-/// - parameter dimension2: 2nd array dimension
-/// - parameter dimension3: 3rd array dimension
-/// - parameter dimension4: 4th array dimension
-/// - parameter repeatedValue: Initial array value
+///
+/// - parameters:
+///   - d1: 1st array dimension
+///   - d2: 2nd array dimension
+///   - d3: 3rd array dimension
+///   - d4: 4th array dimension
+///   - repeatedValue: Initial array value
 /// - returns: Fourth dimensional array of type T
-internal func init4D<T>(
-  dimension1: Int,
-             dimension2: Int,
-             dimension3: Int,
-             dimension4: Int,
-             repeatedValue value: T) -> [[[[T]]]] {
-  return Array(repeating: Array(repeating: Array(repeating: Array(repeating: value,
-                    count: dimension4),
-                  count: dimension3),
-                count: dimension2),
-               count: dimension1)
-}
-
-// MARK: - Character Extensions -
-internal extension Character
+internal func init4D<T>(d1: Int, d2: Int, d3: Int, d4: Int, repeatedValue value: T) -> [[[[T]]]]
 {
-  /// Convert Character to Scalar Value
-  ///
-  /// - returns: String.UnicodeScalarView
-  internal func unicodeScalars() -> String.UnicodeScalarView
-  {
-    return String(self).unicodeScalars
-  }
- 
-  /// Convert to Ansi
-  ///
-  /// - returns: Ansi
-  internal func toAnsi() -> Ansi
-  {
-    return Ansi(String(self))
-  }
-  
-  /// Character to String
-  ///
-  /// - returns: String
-  internal func toString() -> String
-  {
-    return String(self)
-  }
-}
-
-
-// MARK: - String Extensions -
-internal extension String {
-  /// Convert to Ansi
-  /// - returns: Ansi
-  internal func toAnsi() -> Ansi
-  {
-    return Ansi(String(self))
-  }
-  
-  /// Checks whether a String is Numeric
-  /// - returns: Bool
-  internal func isNumeric() -> Bool {
-    return Int(self) != nil
-  }
-  
-  /// Extract and return filename
-  /// - returns: String
-  internal var lastPathComponent: String {
-    get {
-      return (self as NSString).lastPathComponent
-    }
-  }
-  
-  /// Strips whitespace and newline characters
-  ///
-  /// - returns: String
-  internal func trim() -> String {
-    return self.trimmingCharacters(in: .whitespacesAndNewlines)
-  }
-  
-  /// String subscripting
-  ///
-  /// - parameter with: Range<Int> to use for extraction
-  /// - returns: String extracted from range
-  internal func substring(with range: Range<Int>) -> String?
-  {
-    guard let start = self.index(
-      self.startIndex, offsetBy: range.lowerBound, limitedBy: self.endIndex),
-      let end = self.index(
-        self.startIndex, offsetBy: range.upperBound, limitedBy: self.endIndex)
-      else {
-        return nil
-    }
-    return self.substring(with: start..<end)
-  }
-  
-  /// String subscripting
-  ///
-  /// - parameter atIndex: Int to use for extraction
-  /// - returns: Character?
-  internal func substring(atIndex index: Int) -> Character?
-  {
-    guard let start = self.index(
-      self.startIndex, offsetBy: index, limitedBy: self.endIndex),
-      let end = self.index(
-        self.startIndex, offsetBy: index + 1, limitedBy: self.endIndex)
-      else { return nil }
-    return Character(self.substring(with: start..<end))
-  }
-  
-//  /// Trim spaces at the end of a String
-//  /// - returns: String without spaces at the end.
-//  internal func trimEnd() -> String
-//  {
-//    var lastWhitespaceIndex = -1
-//    for (index, value) in self.characters.enumerated().reversed()
-//    {
-//      guard value == " " else { break }
-//      lastWhitespaceIndex = index
-//    }
-//    
-//    if lastWhitespaceIndex < 0
-//    {
-//      return self
-//    }
-//    return self[self.startIndex..<self.characters.index(self.startIndex, offsetBy: lastWhitespaceIndex)]
-//  }
-//  
-//  /// String subscripting
-//  /// - parameter range: Range to use for extraction
-//  /// - returns: String extracted from range
-//  internal subscript (range: Range<Int>) -> String?
-//  {
-//    let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
-//    let end = self.characters.index(self.startIndex, offsetBy: range.upperBound)
-//    return substring(with: start ..< end)
-//  }
-//  
-//  ///  Character subscripting
-//  ///  - parameter index: Index to use for extraction
-//  ///  - returns: String extracted at index
-//  internal subscript (index: Int) -> String?
-//  {
-//    return String(self.characters.map{ $0 }[index])
-//  }
-//  
-//  /// Replace specified strings
-//  /// - parameter pattern:     Regular expression pattern
-//  /// - parameter replacement: Replacement value
-//  /// - parameter fromIndex:   Optional starting index for the search
-//  /// - returns: Updated String with replacement values
-//  internal func replace(
-//    pattern: String,
-//            replacement: String,
-//            fromIndex: Int = 0) -> String?
-//  {
-//    guard let regex = try? RegularExpression(pattern: pattern, options: [.caseInsensitive])
-//      else
-//    {
-//      print("\(pattern) -- exit")
-//      return nil
-//    }
-//    
-//    let range = NSRange(location: fromIndex, length: self.characters.count - fromIndex)
-//    return regex.stringByReplacingMatches(
-//      in: self,
-//      options: [.withTransparentBounds],
-//      range: range,
-//      withTemplate: replacement)
-//  }
-//  
-//  /// Search for match(es) against a regular expression
-//  /// - parameter regex: Regular expression pattern
-//  /// - returns: String array containing the matching values, or empty array (no match)
-//  internal func matchesForRegex(_ regex: String) -> [String]
-//  {
-//    do
-//    {
-//      let regex = try RegularExpression(pattern: regex, options: [])
-//      let stringValue = self as NSString
-//      let range = NSRange(location: 0, length: stringValue.length)
-//      
-//      let results = regex.matches(
-//        in: self,
-//        options: [],
-//        range: range)
-//      return results.map { stringValue.substring(with: $0.range) }
-//    }
-//    catch let error as NSError
-//    {
-//      print("Regular Expression Error: \(error.localizedDescription)")
-//      return []
-//    }
-//  }
-}
-
-// MARK: - Double Extensions -
-internal extension Double {
-  /// Convert Double to Int
-  /// - returns: Int
-  internal func toInt() -> Int
-  {
-    return Int(self)
-  }
-  
-  internal func toUInt() -> UInt
-  {
-    return UInt(self)
-  }
-  
-  internal func toUInt32() -> UInt32
-  {
-    return UInt32(self)
-  }
-}
-
-// MARK: - Int Extensions -
-internal extension Int {
-  /// Convert Int to Double
-  /// - returns: Double
-  internal func toDouble() -> Double {
-    return Double(self)
-  }
-}
-
-// MARK: - UInt32 Extensions -
-internal extension UInt32 {
-  /// Convert UInt32 to Int
-  ///
-  /// - returns: Int
-  internal func toInt() -> Int {
-    return Int(self)
-  }
-  
-  /// Convert UInt32 to Int
-  ///
-  /// - returns: Int
-  internal func toDouble() -> Double {
-    return Double(self)
-  }
+  return Array(
+    repeating: Array(
+      repeating: Array(
+        repeating: Array(
+          repeating: value, count: d4), count: d3), count: d2), count: d1)
 }
 
 // MARK: - Code / Execution Timing -
 
 /// Measure closure exection
-/// - parameter title: String
-/// - parameter closure: closure to measure execution duration
+///
+/// - parameters:
+///   - title: String
+///   - closure: closure to measure execution duration
 internal func measure(_ title: String = "", closure: () -> Void)
 {
   let start = Date().timeIntervalSince1970
@@ -338,7 +120,7 @@ internal func measure(_ title: String = "", closure: () -> Void)
 ///     {
 ///       print(i)
 ///     }
-/// - Authors: Joe Groff (Apple)
+/// - Author: Joe Groff (Apple)
 internal struct Loop: Sequence, IteratorProtocol
 {
   let condition: () -> Bool

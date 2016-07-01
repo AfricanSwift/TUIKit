@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+Ansicodes.swift
 //    Created by:   African Swift
 
@@ -7,8 +7,10 @@ import Darwin
 // MARK: - Foreground: Static Base Colors -
 public extension Ansi.Color
 {
-  /// Averages current color with a provided color.
-  /// - parameter color: Ansi.Color
+  /// Averages current color with a provided color
+  ///
+  /// - parameters:
+  ///   - color: Ansi.Color
   /// - returns: Ansi.Color
   internal func averageWith(color: Ansi.Color) -> Ansi.Color
   {
@@ -37,6 +39,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Black.
+    ///
     /// - returns: Ansi
     public static func black() -> Ansi
     {
@@ -44,6 +47,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Red.
+    ///
     /// - returns: Ansi
     public static func red() -> Ansi
     {
@@ -51,6 +55,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Green.
+    ///
     /// - returns: Ansi
     public static func green() -> Ansi
     {
@@ -58,6 +63,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Brown.
+    ///
     /// - returns: Ansi
     public static func brown() -> Ansi
     {
@@ -65,6 +71,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Blue.
+    ///
     /// - returns: Ansi
     public static func blue() -> Ansi
     {
@@ -72,6 +79,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Magenta.
+    ///
     /// - returns: Ansi
     public static func magenta() -> Ansi
     {
@@ -79,6 +87,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Cyan.
+    ///
     /// - returns: Ansi
     public static func cyan() -> Ansi
     {
@@ -86,6 +95,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightGray.
+    ///
     /// - returns: Ansi
     public static func lightGray() -> Ansi
     {
@@ -93,6 +103,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to default.
+    ///
     /// - returns: Ansi
     public static func reset() -> Ansi
     {
@@ -100,6 +111,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to DarkGray.
+    ///
     /// - returns: Ansi
     public static func darkGray() -> Ansi
     {
@@ -107,6 +119,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightRed.
+    ///
     /// - returns: Ansi
     public static func lightRed() -> Ansi
     {
@@ -114,6 +127,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightGreen.
+    ///
     /// - returns: Ansi
     public static func lightGreen() -> Ansi
     {
@@ -121,6 +135,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to Yellow.
+    ///
     /// - returns: Ansi
     public static func yellow() -> Ansi
     {
@@ -128,6 +143,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightBlue.
+    ///
     /// - returns: Ansi
     public static func lightBlue() -> Ansi
     {
@@ -135,6 +151,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightMagenta.
+    ///
     /// - returns: Ansi
     public static func lightMagenta() -> Ansi
     {
@@ -142,6 +159,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to LightCyan.
+    ///
     /// - returns: Ansi
     public static func lightCyan() -> Ansi
     {
@@ -149,6 +167,7 @@ public extension Ansi.Color
     }
     
     /// Set foreground color to White.
+    ///
     /// - returns: Ansi
     public static func white() -> Ansi
     {
@@ -156,7 +175,9 @@ public extension Ansi.Color
     }
     
     /// Ansi 256 colors
-    /// - parameter index: Ansi Color Value (0 - 256)
+    ///
+    /// - parameters:
+    ///   - index: Ansi Color Value (0 - 256)
     /// - returns: Ansi
     public static func color256(index: Int) -> Ansi
     {
@@ -164,9 +185,11 @@ public extension Ansi.Color
     }
     
     /// Ansi RGB colors
-    /// - parameter red: Red Channel Value (0 - 255)
-    /// - parameter green: Green Channel Value (0 - 255)
-    /// - parameter blue: Blue Channel Value (0 - 255)
+    ///
+    /// - parameters:
+    ///   - red: Red Channel Value (0 - 255)
+    ///   - green: Green Channel Value (0 - 255)
+    ///   - blue: Blue Channel Value (0 - 255)
     /// - returns: Ansi
     public static func colorRGB(red: Int, green: Int, blue: Int) -> Ansi
     {
@@ -174,9 +197,11 @@ public extension Ansi.Color
     }
     
     /// Ansi RGB to 256 colors
-    /// - parameter red: Red Channel Value (0 - 255)
-    /// - parameter green: Green Channel Value (0 - 255)
-    /// - parameter blue: Blue Channel Value (0 - 255)
+    //
+    /// - parameters:
+    ///   - red: Red Channel Value (0 - 255)
+    ///   - green: Green Channel Value (0 - 255)
+    ///   - blue: Blue Channel Value (0 - 255)
     /// - returns: Ansi
     public static func colorRGB256(red: Int, green: Int, blue: Int) -> Ansi
     {
@@ -208,6 +233,7 @@ public extension Ansi.Color
       let b = color is background ? (color as? background) : nil
       
       /// Switch over standard Ansi colors
+      ///
       /// - returns: Ansi
       func matchStandardColor() -> Ansi
       {
@@ -236,6 +262,7 @@ public extension Ansi.Color
       }
       
       /// Switch over high intensity Ansi colors
+      ///
       /// - returns: Ansi
       func matchHighIntensityColor() -> Ansi
       {
@@ -264,6 +291,7 @@ public extension Ansi.Color
       }
       
       /// Switch over extended Ansi colors
+      ///
       /// - returns: Ansi
       func matchExtendedColor() -> Ansi
       {
@@ -295,6 +323,7 @@ public extension Ansi.Color
 public extension String
 {
   /// Ansi Foreground Color
+  ///
   /// - returns: String (with prepended Ansi Color)
   public var foreground: ((Ansi.Color.Choices) -> String)
   {
@@ -328,6 +357,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Black.
+    ///
     /// - returns: Ansi
     public static func black() -> Ansi
     {
@@ -335,6 +365,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Red.
+    ///
     /// - returns: Ansi
     public static func red() -> Ansi
     {
@@ -342,6 +373,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Green.
+    ///
     /// - returns: Ansi
     public static func green() -> Ansi
     {
@@ -349,6 +381,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Brown.
+    ///
     /// - returns: Ansi
     public static func brown() -> Ansi
     {
@@ -356,6 +389,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Blue.
+    ///
     /// - returns: Ansi
     public static func blue() -> Ansi
     {
@@ -363,6 +397,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Magenta.
+    ///
     /// - returns: Ansi
     public static func magenta() -> Ansi
     {
@@ -370,6 +405,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Cyan.
+    ///
     /// - returns: Ansi
     public static func cyan() -> Ansi
     {
@@ -377,6 +413,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightGray.
+    ///
     /// - returns: Ansi
     public static func lightGray() -> Ansi
     {
@@ -384,6 +421,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to default.
+    ///
     /// - returns: Ansi
     public static func reset() -> Ansi
     {
@@ -391,6 +429,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to DarkGray.
+    ///
     /// - returns: Ansi
     public static func darkGray() -> Ansi
     {
@@ -398,6 +437,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightRed.
+    ///
     /// - returns: Ansi
     public static func lightRed() -> Ansi
     {
@@ -405,6 +445,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightGreen.
+    ///
     /// - returns: Ansi
     public static func lightGreen() -> Ansi
     {
@@ -412,6 +453,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to Yellow.
+    ///
     /// - returns: Ansi
     public static func yellow() -> Ansi
     {
@@ -419,6 +461,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightBlue.
+    ///
     /// - returns: Ansi
     public static func lightBlue() -> Ansi
     {
@@ -426,6 +469,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightMagenta.
+    ///
     /// - returns: Ansi
     public static func lightMagenta() -> Ansi
     {
@@ -433,6 +477,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to LightCyan.
+    ///
     /// - returns: Ansi
     public static func lightCyan() -> Ansi
     {
@@ -440,6 +485,7 @@ public extension Ansi.Color
     }
     
     /// Set background color to White.
+    ///
     /// - returns: Ansi
     public static func white() -> Ansi
     {
@@ -447,7 +493,9 @@ public extension Ansi.Color
     }
     
     /// Ansi 256 colors
-    /// - parameter index: Ansi Color Value (0 - 256)
+    ///
+    /// - parameters:
+    ///   - index: Ansi Color Value (0 - 256)
     /// - returns: Ansi
     public static func color256(index: Int) -> Ansi
     {
@@ -455,9 +503,11 @@ public extension Ansi.Color
     }
     
     /// Ansi RGB colors
-    /// - parameter red: Red Channel Value (0 - 255)
-    /// - parameter green: Green Channel Value (0 - 255)
-    /// - parameter blue: Blue Channel Value (0 - 255)
+    ///
+    /// - parameters:
+    ///   - red: Red Channel Value (0 - 255)
+    ///   - green: Green Channel Value (0 - 255)
+    ///   - blue: Blue Channel Value (0 - 255)
     /// - returns: Ansi
     public static func colorRGB(red: Int, green: Int, blue: Int) -> Ansi
     {
@@ -465,9 +515,11 @@ public extension Ansi.Color
     }
     
     /// Ansi RGB to 256 colors
-    /// - parameter red: Red Channel Value (0 - 255)
-    /// - parameter green: Green Channel Value (0 - 255)
-    /// - parameter blue: Blue Channel Value (0 - 255)
+    ///
+    /// - parameters:
+    ///   - red: Red Channel Value (0 - 255)
+    ///   - green: Green Channel Value (0 - 255)
+    ///   - blue: Blue Channel Value (0 - 255)
     /// - returns: Ansi
     public static func colorRGB256(red: Int, green: Int, blue: Int) -> Ansi
     {
@@ -485,6 +537,7 @@ public extension Ansi.Color
 public extension String
 {
   /// Ansi Background Color
+  ///
   /// - returns: String (with prepended Ansi Color)
   public var background: ((Ansi.Color.Choices) -> String)
   {
@@ -499,6 +552,7 @@ public extension String
 public extension Ansi.Color
 {
   /// Convert to nearest Ansi grayscale color
+  ///
   /// - returns: Ansi
   public func foregroundGray() -> Ansi
   {
@@ -507,6 +561,7 @@ public extension Ansi.Color
   }
   
   /// Convert to nearest Ansi grayscale color
+  ///
   /// - returns: Ansi
   public func backgroundGray() -> Ansi
   {
@@ -515,6 +570,7 @@ public extension Ansi.Color
   }
   
   /// Convert to nearest 16 Ansi color
+  ///
   /// - returns: Ansi
   public func foreground16() -> Ansi
   {
@@ -523,6 +579,7 @@ public extension Ansi.Color
   }
   
   /// Convert to nearest 16 Ansi color
+  ///
   /// - returns: Ansi
   public func background16() -> Ansi
   {
@@ -531,6 +588,7 @@ public extension Ansi.Color
   }
   
   /// Convert to nearest 256 Ansi color
+  ///
   /// - returns: Ansi
   public func foreground256() -> Ansi
   {
@@ -539,6 +597,7 @@ public extension Ansi.Color
   }
   
   /// Convert to nearest 256 Ansi color
+  ///
   /// - returns: Ansi
   public func background256() -> Ansi
   {
@@ -547,6 +606,7 @@ public extension Ansi.Color
   }
   
   /// Convert to RGB color (limited support)
+  ///
   /// - returns: Ansi
   public func foregroundRGB() -> Ansi
   {
@@ -557,6 +617,7 @@ public extension Ansi.Color
   }
   
   /// Convert to RGB color (limited support)
+  ///
   /// - returns: Ansi
   public func backgroundRGB() -> Ansi
   {

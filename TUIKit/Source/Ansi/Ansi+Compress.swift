@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Compress.swift
 //    Created by:   African Swift
 
@@ -10,7 +10,9 @@ internal extension Ansi
   private typealias IndexChars = (current: String, next2: String)
   
   /// Validate is an indexed character is a compressable SGR function
-  /// - parameter v: IndexChars
+  ///
+  /// - parameters:
+  ///   -  v: IndexChars
   /// - returns: Bool
   private static func compressableSGR(_ v: IndexChars) -> Bool
   {
@@ -38,8 +40,10 @@ internal extension Ansi
     text: String)
   
   /// Tokenize CSI Ansi
-  /// - parameter input: Ansi
-  /// - parameter separator: String
+  ///
+  /// - parameters:
+  ///   -  input: Ansi
+  ///   - separator: String
   /// - returns: [Token]
   /// - throws: TokenizerError.SeparatorNotFound
   internal static func tokenizer(
@@ -79,8 +83,10 @@ internal extension Ansi
   
   /// Tokenize an indivudual Ansi CSI compressable tag
   /// Used in conjunction with Ansi.compress()
-  /// - parameter tag: String
-  /// - parameter separator: String
+  ///
+  /// - parameters:
+  ///   - tag: String
+  ///   - separator: String
   /// - returns: Token
   internal static func tokenize(tag: String, separator: String) -> Token
   {
@@ -216,11 +222,13 @@ internal extension Ansi
     return Ansi(output)
   }
   
-  /// Process "m" Character Attributes (SGR).
-  /// - parameter currentToken: Token
-  /// - parameter tokens: [Token]
-  /// - parameter currentOutput: String
-  /// - parameter currentIndex: Int
+  /// Process "m" Character Attributes (SGR)
+  ///
+  /// - parameters:
+  ///   - currentToken: Token
+  ///   - tokens: [Token]
+  ///   - currentOutput: String
+  ///   - currentIndex: Int
   /// - returns: (output: String, index: Int)
   private static func processAttributeTokens(
     currentToken token: Token,
@@ -286,11 +294,13 @@ internal extension Ansi
     return (output, index)
   }
   
-  /// Process Quantity Attributes (SGR).
-  /// - parameter currentToken: Token
-  /// - parameter tokens: [Token]
-  /// - parameter currentOutput: String
-  /// - parameter currentIndex: Int
+  /// Process Quantity Attributes (SGR)
+  ///
+  /// - parameters:
+  ///   - currentToken: Token
+  ///   - tokens: [Token]
+  ///   - currentOutput: String
+  ///   - currentIndex: Int
   /// - returns: (output: String, index: Int)
   private static func processQuantityTokens(
     currentToken token: Token,

@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+XYZ.swift
 //    Created by:   African Swift
 
@@ -7,7 +7,9 @@ import Darwin
 internal extension Ansi.Color
 {
   /// Convert RGB to XYZ
-  /// - parameter rgb: Ansi.Color.RGBComponents
+  ///
+  /// - parameters:
+  ///   - rgb: Ansi.Color.RGBComponents
   /// - returns: Ansi.Color.XYZComponents
   internal static func convertRGBToXYZ(
     rgb value: Ansi.Color.RGBComponents) -> Ansi.Color.XYZComponents
@@ -39,7 +41,9 @@ internal extension Ansi.Color
   }
   
   /// Convert LAB to XYZ
-  /// - parameter lab: Ansi.Color.LABComponents
+  ///
+  /// - parameters:
+  ///   - lab: Ansi.Color.LABComponents
   /// - returns: Ansi.Color.XYZComponents
   internal static func convertLABToXYZ(
     lab value: Ansi.Color.LABComponents) -> Ansi.Color.XYZComponents

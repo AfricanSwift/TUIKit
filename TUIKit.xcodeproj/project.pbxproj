@@ -18,6 +18,7 @@
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
+		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
 		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
 		D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F71D125BF600C56E49 /* Ansi+Attribute.swift */; };
@@ -42,6 +43,9 @@
 		D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A290B1D125BF600C56E49 /* Ansi+Window.swift */; };
 		D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */; };
 		D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */; };
+		D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DBE1D25D695000FFE2C /* Custom+String.swift */; };
+		D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */; };
+		D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -360,6 +364,9 @@
 		D7518C561D243EB700BEC989 /* Whimsy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Whimsy.flf; path = Source/Figlet/Fonts/Whimsy.flf; sourceTree = "<group>"; };
 		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
 		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
+		D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUIKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		D76581011D25446400FC4E8C /* Terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Terminal.c; path = Source/Helpers/Terminal.c; sourceTree = "<group>"; };
+		D76581021D25446400FC4E8C /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminal.h; path = Source/Helpers/Terminal.h; sourceTree = "<group>"; };
 		D77A28E51D124C4F00C56E49 /* TUIKit */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TUIKit; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77A28E81D124C4F00C56E49 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D77A28F61D125BF600C56E49 /* Ansi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ansi.swift; path = Source/Ansi/Ansi.swift; sourceTree = "<group>"; };
@@ -387,6 +394,9 @@
 		D77A29321D12667800C56E49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D799B4791D1AC4A500FA7853 /* wwdc16_logo */ = {isa = PBXFileReference; lastKnownFileType = text; name = wwdc16_logo; path = Source/Examples/wwdc16_logo; sourceTree = "<group>"; };
 		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
+		D7E49DBE1D25D695000FFE2C /* Custom+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+String.swift"; path = "Source/Foundation/Custom+String.swift"; sourceTree = "<group>"; };
+		D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Character.swift"; path = "Source/Foundation/Custom+Character.swift"; sourceTree = "<group>"; };
+		D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Numbers.swift"; path = "Source/Foundation/Custom+Numbers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -732,6 +742,16 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		D76580FF1D2543FB00FC4E8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D76581021D25446400FC4E8C /* Terminal.h */,
+				D76581011D25446400FC4E8C /* Terminal.c */,
+				D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		D77A28DC1D124C4F00C56E49 = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +780,7 @@
 				D799B4781D1AC42B00FA7853 /* Examples */,
 				D7518B381D24021E00BEC989 /* Figlet */,
 				D77A29231D125F9500C56E49 /* Foundation */,
+				D76580FF1D2543FB00FC4E8C /* Helpers */,
 				D7518B3D1D243A4800BEC989 /* Reference */,
 				D73101331D1349AA0081072F /* UIElements */,
 				D77A28E81D124C4F00C56E49 /* main.swift */,
@@ -792,6 +813,9 @@
 			isa = PBXGroup;
 			children = (
 				D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */,
+				D7E49DBE1D25D695000FFE2C /* Custom+String.swift */,
+				D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */,
+				D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -901,12 +925,16 @@
 				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
 				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
 				D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */,
+				D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */,
 				D77A29131D125BF600C56E49 /* Ansi+Color+LAB.swift in Sources */,
 				D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */,
 				D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */,
 				D77A29181D125BF600C56E49 /* Ansi+Cursor.swift in Sources */,
 				D73101411D14DB640081072F /* TUIGeometry.swift in Sources */,
+				D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */,
+				D76581031D25446400FC4E8C /* Terminal.c in Sources */,
 				D77A29191D125BF600C56E49 /* Ansi+Display.swift in Sources */,
+				D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */,
 				D77A28E91D124C4F00C56E49 /* main.swift in Sources */,
 				D77A291D1D125BF600C56E49 /* Ansi+Set.swift in Sources */,
 				D77A291A1D125BF600C56E49 /* Ansi+Extras.swift in Sources */,
@@ -1013,9 +1041,12 @@
 		D77A28ED1D124C4F00C56E49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TUIKit/TUIKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1024,9 +1055,12 @@
 		D77A28EE1D124C4F00C56E49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_OPTIMIZATION_LEVEL = s;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TUIKit/TUIKit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};

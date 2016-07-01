@@ -30,7 +30,8 @@ internal extension Figlet
 {
   /// Scans file to identify newline terminator
   ///
-  /// - parameter file: String
+  /// - parameters:
+  ///   - file: String
   /// - returns: Character?
   private static func getTerminator(file: String) -> Character?
   {
@@ -54,7 +55,9 @@ internal extension Figlet
   
   /// Default initializer
   ///
-  /// - parameter fontFile: String
+  /// - parameters:
+  ///   - fontFile: String
+  /// - throws: Figlet.Error
   internal init?(fontFile path: String) throws
   {
     do
@@ -120,7 +123,8 @@ internal extension Figlet
 {
   /// Array index for character scanline
   ///
-  /// - parameter index: Int
+  /// - parameters:
+  ///   - index: Int
   /// - returns: Int
   private func getLetterIndex(_ index: Int) -> Int
   {
@@ -130,7 +134,8 @@ internal extension Figlet
   
   /// Remove delimiting endMark and hardBlank characters
   ///
-  /// - parameters scanline: String
+  /// - parameters:
+  ///   - scanline: String
   /// - returns: String
   private func removeDelimiters(_ scanline: String) -> String
   {
@@ -151,8 +156,9 @@ internal extension Figlet
   
   /// Scan lines for a specific charCode
   ///
-  /// - parameter array: [String]
-  /// - parameter index: Int
+  /// - parameters:
+  ///   - array: [String]
+  ///   - index: Int
   /// - returns: [String]
   private func getLetter(array: [String], index: Int) -> [String]
   {
@@ -166,7 +172,8 @@ internal extension Figlet
 {
   /// Draw text using a figlet font
   ///
-  /// - parameter text: String
+  /// - parameters:
+  ///   - text: String
   /// - returns: String
   internal func drawText(text: String) -> [String] {
     var result = [String]()

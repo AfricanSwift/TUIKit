@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Attribute.swift
 //    Created by:   African Swift
 
@@ -197,7 +197,8 @@ public extension Ansi.Attribute
     
     /// String to Ansi Attributes
     ///
-    /// - parameter attribute: Ansi.Attribute.Type
+    /// - parameters:
+    ///   - attribute: Ansi.Attribute.Type
     /// - returns: Ansi
     private func toAnsi(attribute: Ansi.Attribute.Type) -> Ansi
     {

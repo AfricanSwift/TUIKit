@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Page.swift
 //    Created by:   African Swift
 
@@ -12,7 +12,8 @@ public extension Ansi
   {
     /// Scroll To Previous Page (PP)
     ///
-    /// - parameter quantity: Scroll quantity (default = 1) pages previous
+    /// - parameters:
+    ///   - quantity: Scroll quantity (default = 1) pages previous
     /// - returns: Ansi
     public static func previous(quantity: Int = 1) -> Ansi
     {
@@ -21,7 +22,8 @@ public extension Ansi
     
     /// Scroll To Next Page (NP)
     ///
-    /// - parameter quantity: Scroll quantity (default = 1) pages next
+    /// - parameters:
+    ///   - quantity: Scroll quantity (default = 1) pages next
     /// - returns: Ansi
     public static func next(quantity: Int = 1) -> Ansi
     {

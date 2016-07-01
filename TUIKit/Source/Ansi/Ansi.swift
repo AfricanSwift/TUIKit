@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi.swift
 //    Created by:   African Swift
 
@@ -112,6 +112,13 @@ public struct Ansi
     /// Alpha - Common for all colorspaces
     public private(set) var alpha: Double
     
+    /// Default initializer
+    ///
+    /// - parameters:
+    ///   - red: Double
+    ///   - green: Double
+    ///   - blue: Double
+    ///   - alpha: Double
     public init(red: Double, green: Double, blue: Double, alpha: Double)
     {
       precondition(
@@ -131,6 +138,13 @@ public struct Ansi
       self.alpha = alpha
     }
     
+    /// Default initializer
+    ///
+    /// - parameters:
+    ///   - hue: Double
+    ///   - saturation: Double
+    ///   - lightness: Double
+    ///   - alpha: Double
     public init(hue: Double, saturation: Double, lightness: Double, alpha: Double)
     {
       precondition(
@@ -167,7 +181,8 @@ extension Ansi: StringLiteralConvertible
   
   /// Create an instance initialized to `value`
   ///
-  /// - parameter stringLiteral: String
+  /// - parameters:
+  ///   - stringLiteral: String
   public init(stringLiteral value: String)
   {
     self.value = value
@@ -175,7 +190,8 @@ extension Ansi: StringLiteralConvertible
   
   /// Create an instance initialized to `value`
   ///
-  /// - parameter extendedGraphemeClusterLiteral: String
+  /// - parameters:
+  ///   -  extendedGraphemeClusterLiteral: String
   public init(extendedGraphemeClusterLiteral value: String)
   {
     self.value = value
@@ -183,7 +199,8 @@ extension Ansi: StringLiteralConvertible
   
   /// Create an instance initialized to `value`
   ///
-  /// - parameter unicodeScalarLiteral: String
+  /// - parameters:
+  ///   -  unicodeScalarLiteral: String
   public init(unicodeScalarLiteral value: String)
   {
     self.value = value

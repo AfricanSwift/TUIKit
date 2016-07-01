@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+HSL.swift
 //    Created by:   African Swift
 
@@ -8,7 +8,9 @@ import Darwin
 public extension Ansi.Color
 {
   /// Convert RGB to HSL
-  /// - parameter rgb: Ansi.Color.RGBComponents
+  ///
+  /// - parameters:
+  ///   - rgb: Ansi.Color.RGBComponents
   /// - returns: Ansi.Color.HSLComponents
   internal static func convertRGBtoHSL(
     rgb value: Ansi.Color.RGBComponents) -> Ansi.Color.HSLComponents
@@ -85,7 +87,9 @@ public extension Ansi.Color
 {
   
   /// Adjust hue (Increase or Decrease).
-  /// - parameter amount: Degree as ratio -1.0 to 1.0 (-360 to 360 degrees)
+  ///
+  /// - parameters:
+  ///   - amount: Degree as ratio -1.0 to 1.0 (-360 to 360 degrees)
   /// - returns: Ansi.Color
   public func adjustHue(_ amount: Double) -> Ansi.Color
   {
@@ -97,7 +101,9 @@ public extension Ansi.Color
   }
   
   /// Adjust Lightness (Increase or Decrease).
-  /// - parameter amount: Double between -1.0 and 1.0
+  ///
+  /// - parameters:
+  ///   - amount: Double between -1.0 and 1.0
   /// - returns: Ansi.Color
   public func adjustLightness(_ amount: Double) -> Ansi.Color
   {
@@ -109,7 +115,9 @@ public extension Ansi.Color
   }
   
   /// Adjust Saturation (Increase or Decrease).
-  /// - parameter amount: Double between -1.0 and 1.0
+  ///
+  /// - parameters:
+  ///   - amount: Double between -1.0 and 1.0
   /// - returns: Ansi.Color
   public func adjustSaturation(_ amount: Double) -> Ansi.Color
   {
@@ -122,12 +130,15 @@ public extension Ansi.Color
   
   /// Returns a complementary color for the given NSColor
   /// from the opposite side of the color wheel 50% = 180 degrees.
+  ///
+  /// - returns: Ansi.Color
   public func complementaryHue() -> Ansi.Color
   {
     return self.adjustHue(0.5)
   }
   
   /// Converts the given NSColor to grayscale
+  ///
   /// - returns: Ansi.Color
   public func contrastColor() -> Ansi.Color
   {

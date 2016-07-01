@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Window.swift
 //    Created by:   African Swift
 
@@ -12,8 +12,9 @@ public extension Ansi
   {
     /// Move window to x,y
     ///
-    /// - parameter x: Int
-    /// - parameter y: Int
+    /// - parameters:
+    ///   - x: Int
+    ///   - y: Int
     /// - returns: Ansi
     public static func move(x: Int, y: Int) -> Ansi
     {
@@ -22,8 +23,9 @@ public extension Ansi
     
     /// Resize window to pixel: height/width
     ///
-    /// - parameter width: Int
-    /// - parameter height: Int
+    /// - parameters:
+    ///   - width: Int
+    ///   - height: Int
     /// - returns: Ansi
     public static func resize(width: Int, height: Int) -> Ansi
     {
@@ -32,8 +34,9 @@ public extension Ansi
     
     /// Resize text area to character: width/height
     ///
-    /// - parameter width: Int
-    /// - parameter height: Int
+    /// - parameters:
+    ///   - width: Int
+    ///   - height: Int
     /// - returns: Ansi
     public static func resizeTextArea(width: Int, height: Int) -> Ansi
     {
@@ -168,7 +171,8 @@ public extension Ansi.Window
   {
     /// Change Icon Name and Window Title
     ///
-    /// - parameter name: String
+    /// - parameters:
+    ///   - name: String
     /// - returns: Ansi
     public static func iconNameAndTitle(name: String) -> Ansi
     {
@@ -177,7 +181,8 @@ public extension Ansi.Window
     
     /// Change Icon Name
     ///
-    /// - parameter name: String
+    /// - parameters:
+    ///   - name: String
     /// - returns: Ansi
     public static func iconName(name: String) -> Ansi
     {
@@ -186,7 +191,8 @@ public extension Ansi.Window
     
     /// Change Window Title
     ///
-    /// - parameter title: String
+    /// - parameters:
+    ///   - title: String
     /// - returns: Ansi
     public static func windowTitle(title: String) -> Ansi
     {

@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Cursor.swift
 //    Created by:   African Swift
 
@@ -11,7 +11,8 @@ public extension Ansi
   {
     /// Cursor Up (CUU)
     ///
-    /// - parameter quantity: Move up quantity of lines (default = 1)
+    /// - parameters:
+    ///   - quantity: Move up quantity of lines (default = 1)
     /// - returns: Ansi
     public static func up(quantity: Int = 1) -> Ansi
     {
@@ -20,7 +21,8 @@ public extension Ansi
     
     /// Cursor Down (CUD)
     ///
-    /// - parameter quantity: Move down quantity lines (default = 1).
+    /// - parameters:
+    ///   - quantity: Move down quantity lines (default = 1).
     /// - returns: Ansi
     public static func down(quantity: Int = 1) -> Ansi
     {
@@ -29,7 +31,8 @@ public extension Ansi
     
     /// Cursor Forward (CUF)
     ///
-    /// - parameter quantity: Move forward quantity (default = 1) of characters,
+    /// - parameters:
+    ///   - quantity: Move forward quantity (default = 1) of characters,
     /// - returns: Ansi
     public static func forward(quantity: Int = 1) -> Ansi
     {
@@ -38,7 +41,8 @@ public extension Ansi
     
     /// Cursor Backward (CUB)
     ///
-    /// - parameter quantity: Move backward quantity (default = 1) of characters,
+    /// - parameters:
+    ///   - quantity: Move backward quantity (default = 1) of characters,
     /// - returns: Ansi
     public static func backward(quantity: Int = 1) -> Ansi
     {
@@ -47,7 +51,8 @@ public extension Ansi
     
     /// Cursor Character Absolute (CHA)
     ///
-    /// - parameter column: Move to column (default = 1)
+    /// - parameters:
+    ///   - column: Move to column (default = 1)
     /// - returns: Ansi
     public static func column(column: Int = 1) -> Ansi
     {
@@ -56,8 +61,9 @@ public extension Ansi
     
     /// Cursor Position [row;column] (CUP)
     ///
-    /// - parameter row: Move to row (default = 1)
-    /// - parameter column: Move to column (default = 1)
+    /// - parameters:
+    ///   - row: Move to row (default = 1)
+    ///   - column: Move to column (default = 1)
     /// - returns: Ansi
     public static func position(row: Int = 1, column: Int = 1) -> Ansi
     {
@@ -66,8 +72,9 @@ public extension Ansi
     
     /// Horizontal and Vertical Position (HVP)
     ///
-    /// - parameter row: Move to row (default = 1)
-    /// - parameter column: Move to column (default = 1)
+    /// - parameters:
+    ///   - row: Move to row (default = 1)
+    ///   - column: Move to column (default = 1)
     /// - returns: Ansi
     public static func horizontalVerticalPosition(
       row: Int = 1,
@@ -98,7 +105,8 @@ public extension Ansi.Cursor
     
     /// String to Ansi Cursor
     ///
-    /// - parameter cursor: Ansi.Cursor.Type
+    /// - parameters:
+    ///   - cursor: Ansi.Cursor.Type
     /// - returns: Ansi
     private func toAnsi(cursor: Ansi.Cursor.Type) -> Ansi
     {
@@ -154,7 +162,8 @@ public extension Ansi.Cursor
   {
     /// Horizontal Position Absolute (HPA)
     ///
-    /// - parameter column: Move to absolute column (default = 1)
+    /// - parameters:
+    ///   - column: Move to absolute column (default = 1)
     /// - returns: Ansi
     public static func absolute(column: Int = 1) -> Ansi
     {
@@ -163,7 +172,8 @@ public extension Ansi.Cursor
     
     /// Horizontal Position Relative (HPR)
     ///
-    /// - parameter quantity: Move to relative column (default = current column + 1)
+    /// - parameters:
+    ///   - quantity: Move to relative column (default = current column + 1)
     /// - returns: Ansi
     public static func relative(quantity: Int = 1) -> Ansi
     {
@@ -179,7 +189,8 @@ public extension Ansi.Cursor
   {
     /// Line Position Absolute (VPA)
     ///
-    /// - parameter row: Move to absolute row (default = 1)
+    /// - parameters:
+    ///   - row: Move to absolute row (default = 1)
     /// - returns: Ansi
     public static func absolute(row: Int = 1) -> Ansi
     {
@@ -188,7 +199,8 @@ public extension Ansi.Cursor
     
     /// Line Position Relative (VPR)
     ///
-    /// - parameter quantity: Move to relative row (default = current row + 1)
+    /// - parameters:
+    ///   - quantity: Move to relative row (default = current row + 1)
     /// - returns: Ansi
     public static func relative(quantity: Int = 1) -> Ansi
     {

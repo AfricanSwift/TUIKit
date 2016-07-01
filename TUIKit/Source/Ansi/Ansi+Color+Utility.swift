@@ -1,16 +1,17 @@
-
+//
 //          File:   Color.swift
 //    Created by:   African Swift
 
 import Darwin
-import AppKit
+//import AppKit
 
 // MARK: - Compuphase color distance =
 public extension Ansi.Color
 {
   /// Distance between 2 colors
   ///
-  /// - parameter color: 2nd color
+  /// - parameters:
+  ///   - color: 2nd color
   /// - returns: Double representing comparable color distance
   public func distanceTo(color: Ansi.Color) -> Double
   {
@@ -67,7 +68,8 @@ public extension Ansi.Color
 {
   /// Calculates the average of an array of colors
   ///
-  /// - parameter colors: NSColor Array
+  /// - parameters:
+  ///   - colors: NSColor Array
   /// - returns: NSColor average
   public static func average(colors: [Ansi.Color]) -> Ansi.Color
   {
@@ -134,10 +136,11 @@ public extension Ansi.Color
 {
   /// Convert NSImage.Pixel to Ansi.Color
   ///
-  /// - parameter red: UInt8
-  /// - parameter green:
-  /// - parameter blue: UInt8
-  /// - parameter alpha: UInt8
+  /// - parameter s:
+  ///   - red: UInt8
+  ///   - green: UInt8
+  ///   - blue: UInt8
+  ///   - alpha: UInt8
   /// - returns: Ansi.Color
   public static func convertPixel(
     red: UInt8,

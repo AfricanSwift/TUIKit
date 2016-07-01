@@ -1,4 +1,4 @@
-
+//
 //          File:   TUICharacter.swift
 //    Created by:   African Swift
 
@@ -71,15 +71,12 @@ public struct TUICharacter
   
   /// Convenience init for a pixel (braille)
   ///
-  /// - parameter x: Double
-  /// - parameter y: Double
-  /// - parameter action: SetAction (.on, .off, .invert)
-  /// - parameter color: Ansi.Color
-  internal init(
-    x: Double,
-    y: Double,
-    action: SetAction,
-    color: Ansi.Color)
+  /// - parameters:
+  ///   - x: Double
+  ///   - y: Double
+  ///   - action: SetAction (.on, .off, .invert)
+  ///   - color: Ansi.Color
+  internal init(x: Double, y: Double, action: SetAction, color: Ansi.Color)
   {
     self.init()
     self.setPixel(x: x, y: y, action: action, color: color)
@@ -121,19 +118,15 @@ internal extension TUICharacter
   
   /// Set Pixel
   ///
-  /// - parameter x: Double value
-  /// - parameter y: Double value
-  /// - parameter action: SetAction value
-  /// - parameter color: Ansi.Color value
-  internal mutating func setPixel(
-    x: Double,
-      y: Double,
-      action: SetAction,
-      color: Ansi.Color)
+  /// - parameters:
+  ///   - x: Double value
+  ///   - y: Double value
+  ///   - action: SetAction value
+  ///   - color: Ansi.Color value
+  internal mutating func setPixel(x: Double, y: Double, action: SetAction, color: Ansi.Color)
   {
     let offset = (x: round(x).toInt() % 2, y: round(y).toInt() % 4)
     let mapHex = braille.pixel[offset.y][offset.x]
-    
     if self.type == .character
     {
       self.color.removeAll()
@@ -174,11 +167,10 @@ internal extension TUICharacter
   
   /// Set Character
   ///
-  /// - parameter character: Character value
-  /// - parameter color: Ansi.Color value
-  internal mutating func setCharacter(
-    character: Character,
-              color: Ansi.Color)
+  /// - parameters:
+  ///   - character: Character value
+  ///   - color: Ansi.Color value
+  internal mutating func setCharacter(character: Character, color: Ansi.Color)
   {
     if character == Character(" ")
     {
@@ -195,11 +187,10 @@ internal extension TUICharacter
   
   /// Set Ansi Character
   ///
-  /// - parameter character: Character value
-  /// - parameter ansi: Ansi value
-  internal mutating func setAnsiCharacter(
-    character: Character,
-              ansi: Ansi)
+  /// - parameters:
+  ///   - character: Character value
+  ///   - ansi: Ansi value
+  internal mutating func setAnsiCharacter(character: Character, ansi: Ansi)
   {
     if character == Character(" ")
     {
@@ -256,7 +247,8 @@ private extension TUICharacter
   
   /// render Ansi.Color Composite
   ///
-  /// - parameter composite: TUIColorComposite
+  /// - parameters:
+  ///   - composite: TUIColorComposite
   /// - returns: Ansi.Color
   private func renderColor(composite: TUIColorComposite) -> Ansi.Color?
   {
@@ -271,12 +263,11 @@ private extension TUICharacter
   
   /// colorToAnsi: Ansi.Color control codes
   ///
-  /// - parameter colorspace: TUIColorSpace
-  /// - parameter color: Ansi.Color
+  /// - parameters:
+  ///   - colorspace: TUIColorSpace
+  ///   - color: Ansi.Color
   /// - returns: Ansi
-  private func colorToAnsi(
-    colorspace: TUIColorSpace,
-               color: Ansi.Color) -> Ansi
+  private func colorToAnsi(colorspace: TUIColorSpace, color: Ansi.Color) -> Ansi
   {
     switch colorspace
     {
@@ -303,14 +294,15 @@ internal extension TUICharacter
 {
   /// Ansi Render
   ///
-  /// - parameter colorspace: ColorSpace
-  /// - parameter composite: ColorComposite
-  /// - parameter style: RenderStyle
+  /// - parameters:
+  ///   - colorspace: ColorSpace
+  ///   - composite: ColorComposite
+  ///   - style: RenderStyle
   /// - returns: Ansi
   private func render(
     colorspace: TUIColorSpace = .foreground256,
-               composite: TUIColorComposite = .first,
-               style: RenderStyle = .drawille) -> Ansi
+    composite: TUIColorComposite = .first,
+    style: RenderStyle = .drawille) -> Ansi
   {
     
     if self.type == .ansi
@@ -347,7 +339,8 @@ internal extension TUICharacter
   ///       style: RenderStyle = .drawille)
   /// ````
   ///
-  /// - parameter parameters: RenderParameters (Optional)
+  /// - parameters:
+  ///   - parameters: RenderParameters (Optional)
   /// - returns: Ansi
   internal mutating func toAnsi(
     parameters: TUIRenderParameter = TUICharacter.renderDefault) -> Ansi

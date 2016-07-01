@@ -1,4 +1,4 @@
-
+//
 //          File:   Example+WWDCLogo.swift
 //    Created by:   African Swift
 
@@ -14,10 +14,10 @@ public struct Example_Figfont
       exit(1)
     }
     
-    print(
-      test.drawText(text: "Figfont").joined(separator: "\n")
-      .attribute(.blinkslow)
-      .foreground(.red)
-      .resetall)
+    for line in test.drawText(text: "Figfont")
+    {
+      print(Example_WWDCLogo.generateRandomColor() + line)
+    }
+    print("".resetall)
   }
 }

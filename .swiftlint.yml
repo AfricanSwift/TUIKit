@@ -6,7 +6,6 @@ disabled_rules: # rule identifiers to exclude from running
 - variable_name
 - nesting
 - force_cast
-- leading_whitespace
 line_length: 120
 file_length:
   warning: 1000

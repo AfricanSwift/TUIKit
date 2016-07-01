@@ -1,4 +1,4 @@
-
+//
 //          File:   TUIBorders.swift
 //    Created by:   African Swift
 
@@ -36,14 +36,14 @@ public indirect enum TUIBorders
   /// __ASCII Borders__
   ///
   /// ````
-  /// +--+--+    -------
-  /// |  |  |    |  |  |
-  /// |--+--|    |--+--|
-  /// |  |  |    |  |  |
-  /// +--+--+    -------
-  /// ascii      ascii2
+  /// +--+--+    -------    /-----\
+  /// |  |  |    |  |  |    |  |  |
+  /// |--+--|    |--+--|    |--+--|
+  /// |  |  |    |  |  |    |  |  |
+  /// +--+--+    -------    \-----/
+  /// ascii      ascii2     ascii3
   /// ````
-  case ascii, ascii2
+  case ascii, ascii2, ascii3
   
   /// __Other Borders__
   ///
@@ -68,15 +68,16 @@ public indirect enum TUIBorders
   ///
   /// - returns: [.single, .double, .double2, .double3,
   /// .block100, .block75, .block50, .halfblock,
-  /// .ascii, ascii2, .none, ]
+  /// .ascii, ascii2, ascii3, .none ]
   internal static var allCases: [TUIBorders] =
     [.single, .double, .double2, .double3,
     .block100, .block75, .block50, .halfblock,
-    .ascii, ascii2, .none, ]
+    .ascii, ascii2, ascii3, .none ]
   
   /// Standard TUIBox(es) : single, double, double2 and double3
   ///
-  /// - parameter attribute: Ansi (custom Ansi attributes and/or color)
+  /// - parameters:
+  ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
   private func matchStandardBoxes(attribute attr: Ansi) -> TUIBox?
   {
@@ -118,7 +119,8 @@ public indirect enum TUIBorders
   
   /// Block TUIBox(es) : halfBlock, block100, block75 and block50
   ///
-  /// - parameter attribute: Ansi (custom Ansi attributes and/or color)
+  /// - parameters:
+  ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
   private func matchBlockBoxes(attribute attr: Ansi) -> TUIBox?
   {
@@ -160,7 +162,8 @@ public indirect enum TUIBorders
 
   /// Other TUIBox(es) : ascii, custom and none
   ///
-  /// - parameter attribute: Ansi (custom Ansi attributes and/or color)
+  /// - parameters:
+  ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
   private func matchOtherBoxes(attribute attr: Ansi) -> TUIBox?
   {
@@ -180,6 +183,13 @@ public indirect enum TUIBorders
           bottom: TUIBoxLine(left: "-", middle: "-", right: "-", attribute: attr),
           horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-", attribute: attr),
           vertical: TUIBoxLine(left: "|", middle: "|", right: "|", attribute: attr))
+      case ascii3:
+        return TUIBox(
+          top: TUIBoxLine(left: "\u{2F}", middle: "-", right: "\u{5C}", attribute: attr),
+          middle: TUIBoxLine(left: "|", middle: "+", right: "|", attribute: attr),
+          bottom: TUIBoxLine(left: "\u{5C}", middle: "-", right: "\u{2F}", attribute: attr),
+          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-", attribute: attr),
+          vertical: TUIBoxLine(left: "|", middle: "|", right: "|", attribute: attr))
       case custom(let customBorder, let customAttr):
         return customBorder.toTUIBox(attribute: customAttr)
       case none:
@@ -191,7 +201,8 @@ public indirect enum TUIBorders
   
   /// Output to TUIBox
   ///
-  /// - parameter attribute: Ansi (custom Ansi attributes and/or color)
+  /// - parameters:
+  ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
   internal func toTUIBox(
     attribute attr: Ansi = Ansi.Color.Foreground.lightGray()) -> TUIBox?
@@ -209,10 +220,11 @@ internal struct TUIBoxLine
   
   /// Default initializer
   ///
-  /// - parameter left: Ansi
-  /// - parameter middle: Ansi
-  /// - parameter right: Ansi
-  /// - parameter attribute: Ansi
+  /// - parameters:
+  ///   - left: Ansi
+  ///   - middle: Ansi
+  ///   - right: Ansi
+  ///   - attribute: Ansi
   internal init(
     left: Character,
     middle: Character,
@@ -235,10 +247,11 @@ internal struct TUIBoxHorizontal
   
   /// Default initializer
   ///
-  /// - parameter top: Ansi
-  /// - parameter middle: Ansi
-  /// - parameter bottom: Ansi
-  /// - parameter attribute: Ansi
+  /// - parameters:
+  ///   - top: Ansi
+  ///   - middle: Ansi
+  ///   - bottom: Ansi
+  ///   - attribute: Ansi
   internal init(
     top: Character,
     middle: Character,
@@ -263,11 +276,12 @@ internal struct TUIBox
   
   /// Default initializer
   ///
-  /// - parameter top: TUIBoxLine
-  /// - parameter middle: TUIBoxLine
-  /// - parameter bottom: TUIBoxLine
-  /// - parameter horizontal: TUIBoxHorizontal
-  /// - parameter vertical: TUIBoxLine
+  /// - parameters:
+  ///   - top: TUIBoxLine
+  ///   - middle: TUIBoxLine
+  ///   - bottom: TUIBoxLine
+  ///   - horizontal: TUIBoxHorizontal
+  ///   - vertical: TUIBoxLine
   internal init(
     top: TUIBoxLine,
     middle: TUIBoxLine,

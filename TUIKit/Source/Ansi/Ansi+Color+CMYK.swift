@@ -1,4 +1,4 @@
-
+//
 //          File:   Color+CMYK.swift
 //    Created by:   African Swift
 
@@ -8,7 +8,9 @@ import Darwin
 internal extension  Ansi.Color
 {
   /// Convert RGB to CMY
-  /// - parameter rgb: Ansi.Color.RGBComponents
+  ///
+  /// - parameters:
+  ///   - rgb: Ansi.Color.RGBComponents
   /// - returns: Ansi.Color.CMYKComponents
   internal static func convertRGBtoCMYK(
     rgb value: Ansi.Color.RGBComponents) ->  Ansi.Color.CMYKComponents

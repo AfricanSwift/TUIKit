@@ -1,4 +1,4 @@
-
+//
 //          File:   Ansi+Line.swift
 //    Created by:   African Swift
 
@@ -12,7 +12,8 @@ public extension Ansi
   {
     /// Cursor Next Line (CNL)
     ///
-    /// - parameter quantity: Move to first position of quantity lines down (default = 1)
+    /// - parameters:
+    ///   - quantity: Move to first position of quantity lines down (default = 1)
     /// - returns: Ansi
     public static func next(quantity: Int = 1) -> Ansi
     {
@@ -21,7 +22,8 @@ public extension Ansi
     
     /// Cursor Preceding Line (CPL)
     ///
-    /// - parameter quantity: Move to first position of quantity lines up (default = 1)
+    /// - parameters:
+    ///   - quantity: Move to first position of quantity lines up (default = 1)
     /// - returns: Ansi
     public static func previous(quantity: Int = 1) -> Ansi
     {
@@ -30,7 +32,8 @@ public extension Ansi
     
     /// Insert Line(s) (IL)
     ///
-    /// - parameter quantity:  Insert quantity (default = 1) of lines
+    /// - parameters:
+    ///   - quantity:  Insert quantity (default = 1) of lines
     /// - returns: Ansi
     public static func insert(quantity: Int = 1) -> Ansi
     {
@@ -39,7 +42,8 @@ public extension Ansi
     
     /// Delete Line(s) (DL)
     ///
-    /// - parameter quantity:  Delete quantity (default = 1) lines,
+    /// - parameters:
+    ///   - quantity:  Delete quantity (default = 1) lines,
     /// - returns: Ansi
     public static func delete(quantity: Int = 1) -> Ansi
     {
@@ -90,7 +94,8 @@ public extension Ansi.Line
   {
     /// Scroll up lines (SU)
     ///
-    /// - parameter quantity: Scroll quantity (default = 1) lines up,
+    /// - parameters:
+    ///   - quantity: Scroll quantity (default = 1) lines up,
     /// - returns: Ansi
     public static func up(quantity: Int = 1) -> Ansi
     {
@@ -99,7 +104,8 @@ public extension Ansi.Line
     
     /// Scroll down lines (SD)
     ///
-    /// - parameter quantity: Scroll quantity (default = 1) lines down,
+    /// - parameters:
+    ///   - quantity: Scroll quantity (default = 1) lines down,
     /// - returns: Ansi
     public static func down(quantity: Int = 1) -> Ansi
     {
@@ -108,8 +114,9 @@ public extension Ansi.Line
     
     /// Set Scrolling Region (DECSTBM)
     ///
-    /// - parameter top: Int (default = full size of window)
-    /// - parameter bottom: Int
+    /// - parameters:
+    ///   - top: Int (default = full size of window)
+    ///   - bottom: Int
     /// - returns: Ansi
     public static func setRegion(top: Int = 0, bottom: Int = 0) -> Ansi
     {
