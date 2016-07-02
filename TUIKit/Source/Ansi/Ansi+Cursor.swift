@@ -277,15 +277,37 @@ public extension Ansi.Cursor
 {
   public struct Report
   {
+    
+    private static let statusCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)5n"),
+      response: "\u{1B}[#n")
+    
+    /// Report Device Status Report (DSR)
+    /// Ps = 5  -> Status Report.
+    /// Result ("OK") is CSI 0 n
+    ///
+    /// - returns: Int?
+    public static func status() -> Int?
+    {
+      guard let response = Ansi.Terminal.responseTTY(command: statusCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "n", with: "")
+      return Int(values) ?? -1
+    }
+    
+    
+    
     /// Report Device Status Report (DSR)
     /// Ps = 5  -> Status Report.
     /// Result ("OK") is CSI 0 n
     ///
     /// - returns: Ansi
-    public static func status() -> Ansi
-    {
-      return Ansi("\(Ansi.C1.CSI)5n")
-    }
+//    public static func status() -> Ansi
+//    {
+//      return Ansi("\(Ansi.C1.CSI)5n")
+//    }
     
     /// Report Cursor Position (CPR) [row;column].
     /// Result is CSI r ; c R

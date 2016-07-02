@@ -23,11 +23,10 @@ public struct TUIWindow {
   /// Default initializer
   public init?()
   {
-    guard let size = TUIWindow.ttysize() else {
-      return nil
-    }
-    
-    self.origin = TUIPoint(x: 0, y: 0)
+    guard let size = TUIWindow.ttysize(), let position = Ansi.Window.Report.position()
+      else { return nil }
+
+    self.origin = position
     self.size = size
     
     self.invalidate = true
@@ -64,5 +63,11 @@ public struct TUIWindow {
     defer { free(ttySize) }
     S_ioctl(0, S_TIOCGWINSZ, ttySize)
     return UnsafeMutablePointer<TTYSize>(ttySize)[0].toTUIWindowSize()
+  }
+  
+  public mutating func move(x: Int, y: Int)
+  {
+    Ansi.Window.move(x: x, y: y).stdout()
+    self.origin = TUIPoint(x: x, y: y)
   }
 }

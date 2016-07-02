@@ -34,5 +34,9 @@ internal extension Ansi
     /// OSC
     /// Operating System Command (OSC is 0x9d)
     internal static let OSC = Ansi.C0.ESC + "]"
+    
+    /// ESC \
+    /// String Terminator (ST  is 0x9c).
+    internal static let ST = "\u{9C}"
   }
 }

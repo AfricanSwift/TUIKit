@@ -109,20 +109,29 @@ public extension Ansi.Window
   /// Window Reports: state, position, pixelSize, ...
   public struct Report
   {
-    
+    /// __State__
+    ///
+    /// - **open**: window is open (non-iconified)
+    /// - **iconified**: window is iconified
+    /// - **indeterminate**: unknown state
     public enum State
     {
-      case open, iconified, none
+      case open, iconified, indeterminate
     }
     
-    private static let state1 = Ansi.Terminal.Command(
+    private static let stateCommand = Ansi.Terminal.Command(
       request: Ansi("\(Ansi.C1.CSI)11t"),
       response: "\u{1B}[#t")
     
-    public static func state2() -> State?
+    /// Report xterm window state
+    /// - If window is open (non-iconified), it returns CSI 1 t .
+    /// - If window is iconified, it returns CSI 2 t
+    ///
+    /// - returns: Ansi.Window.Report.State
+    public static func state() -> State
     {
-      guard let response = Ansi.Terminal.responseTTY(command: state1)
-        else { return nil }
+      guard let response = Ansi.Terminal.responseTTY(command: stateCommand)
+        else { return .indeterminate }
       let value = response
         .replacingOccurrences(of: Ansi.C1.CSI, with: "")
         .replacingOccurrences(of: "t", with: "")
@@ -133,63 +142,84 @@ public extension Ansi.Window
         case "2":
           return State.iconified
         default:
-          return State.none
+          return State.indeterminate
       }
     }
     
-    /// Report xterm window state  
-    /// If window is open (non-iconified), it returns CSI 1 t .
-    /// If window is iconified, it returns CSI 2 t
-    ///
-    /// - returns: Ansi
-    public static func state() -> Ansi
-    {
-      return Ansi("\(Ansi.C1.CSI)11t")
-    }
+    private static let positionCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)13t"),
+      response: "\u{1B}[3;#;#t")
     
     /// Report window position
     /// Result is CSI 3 ; x ; y t
     ///
-    /// - returns: Ansi
-    public static func position() -> Ansi
+    /// - returns: TUIPoint?
+    public static func position() -> TUIPoint?
     {
-      return Ansi("\(Ansi.C1.CSI)13t")
+      guard let response = Ansi.Terminal.responseTTY(command: positionCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "t", with: "")
+        .characters.split(separator: ";").map {String($0)}
+      return TUIPoint(x: Int(values[1]) ?? 0, y: Int(values[2]) ?? 0)
     }
+    
+    private static let pixelSizeCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)14t"),
+      response: "\u{1B}[4;#;#t")
     
     /// Report window in pixels
     /// Result is CSI  4 ; height ; width t
     ///
-    /// - returns: Ansi
-    public static func pixelSize() -> Ansi
+    /// - returns: TUISize?
+    public static func pixelSize() -> TUISize?
     {
-      return Ansi("\(Ansi.C1.CSI)14t")
+      guard let response = Ansi.Terminal.responseTTY(command: pixelSizeCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "t", with: "")
+        .characters.split(separator: ";").map {String($0)}
+      return TUISize(width: Int(values[2]) ?? 0, height: Int(values[1]) ?? 0)
     }
     
-    /// Report the size of the text area in characters.
+    private static let characterTextAreaSizeCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)18t"),
+      response: "\u{1B}[8;#;#t")
+    
+    // Report the size of the text area in characters.
     /// Result is CSI  8  ;  height ;  width t
     ///
-    /// - returns: Ansi
-    public static func characterTextAreaSize() -> Ansi
+    /// - returns: TUISIze?
+    public static func characterTextAreaSize() -> TUISize?
     {
-      return Ansi("\(Ansi.C1.CSI)18t")
+      guard let response = Ansi.Terminal.responseTTY(command: characterTextAreaSizeCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "t", with: "")
+        .characters.split(separator: ";").map {String($0)}
+      return TUISize(width: Int(values[2]) ?? 0, height: Int(values[1]) ?? 0)
     }
     
-    /// Report screen size in characters
+    private static let characterScreenSizeCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)19t"),
+      response: "\u{1B}[9;#;#t")
+    
+    // Report screen size in characters
     /// Result is CSI  9  ;  height ;  width t
     ///
-    /// - returns: Ansi
-    public static func characterScreenSize() -> Ansi
+    /// - returns: TUISize?
+    public static func characterScreenSize() -> TUISize?
     {
-      return Ansi("\(Ansi.C1.CSI)19t")
-    }
-    
-    /// Report xterm window's icon label
-    /// Result is OSC  L  label ST
-    ///
-    /// - returns: Ansi
-    public static func iconLabel() -> Ansi
-    {
-      return Ansi("\(Ansi.C1.CSI)20t")
+      guard let response = Ansi.Terminal.responseTTY(command: characterScreenSizeCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "t", with: "")
+        .characters.split(separator: ";").map {String($0)}
+      return TUISize(width: Int(values[2]) ?? 0, height: Int(values[1]) ?? 0)
     }
   }
 }

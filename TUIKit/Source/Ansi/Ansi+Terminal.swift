@@ -73,7 +73,7 @@ public extension Ansi.Terminal
   private static func readValue(tty: Int32) -> Int32
   {
     // Maximum time (ms) to allow read to block
-    let maximumBlockDuration = 0.6
+    let maximumBlockDuration = 0.2
     
     var buffer = [UInt8](repeating: 0, count: 4)
     var n: ssize_t
@@ -249,6 +249,9 @@ public extension Ansi.Terminal
     // Submit ansi request and flush standard out
     command.request.stdout()
     Ansi.flush()
+    
+    //FIXME: replace with VMIN
+    Thread.sleep(forTimeInterval: 0.02)
     
     // Retrieve response
     return Ansi.Terminal.readResponse(tty: tty, expected: command.response)
