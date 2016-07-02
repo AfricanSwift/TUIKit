@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Character Extensions -
+// MARK: -
+// MARK: Character Extensions -
 internal extension Character
 {
   /// Convert Character to Scalar Value

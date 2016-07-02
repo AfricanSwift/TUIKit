@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Erase Display -
+// MARK: -
+// MARK: Erase Display -
 public extension Ansi
 {
   /// Display

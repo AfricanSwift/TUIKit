@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Character: Insert, Delete, ... -
+// MARK: -
+// MARK: Character: Insert, Delete, ... -
 public extension Ansi
 {
   /// Character

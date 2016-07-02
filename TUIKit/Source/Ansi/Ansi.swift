@@ -45,7 +45,8 @@ public struct Ansi
       Ansi.Color.Background.reset()
   }
   
-  // MARK: - Ansi.Color Type -
+  // MARK: -
+  // MARK: Ansi.Color Type -
   
   /// Ansi.Color
   public struct Color
@@ -93,7 +94,7 @@ public struct Ansi
     
     /// RGB Colorspace
     public private(set) var RGB: RGBComponents
-
+    
     /// HSB Colorspace
     public private(set) var HSL: HSLComponents
     
@@ -166,7 +167,8 @@ public struct Ansi
   }
 }
 
-// MARK: - Ansi CustomStringConvertible -
+// MARK: -
+// MARK: Ansi CustomStringConvertible -
 extension Ansi: CustomStringConvertible
 {
   public var description: String
@@ -175,7 +177,8 @@ extension Ansi: CustomStringConvertible
   }
 }
 
-// MARK: - Ansi StringLiteralConvertible -
+// MARK: -
+// MARK: Ansi StringLiteralConvertible -
 extension Ansi: StringLiteralConvertible
 {
   
@@ -207,7 +210,8 @@ extension Ansi: StringLiteralConvertible
   }
 }
 
-// MARK: - String Ansi -
+// MARK: -
+// MARK: String Ansi -
 public extension String
 {
   /// Ansi Reset All
@@ -219,7 +223,8 @@ public extension String
   }
 }
 
-// MARK: - Ansi Equatable -
+// MARK: -
+// MARK: Ansi Equatable -
 extension Ansi: Equatable {}
 
 public func == (lhs: Ansi, rhs: Ansi) -> Bool
@@ -227,7 +232,8 @@ public func == (lhs: Ansi, rhs: Ansi) -> Bool
   return lhs.value == rhs.value
 }
 
-// MARK: - Ansi Operators -
+// MARK: -
+// MARK: Ansi Operators -
 public func + (lhs: Ansi, rhs: Ansi) -> Ansi
 {
   var result = Ansi(lhs.value + rhs.value)

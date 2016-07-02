@@ -192,7 +192,8 @@ public struct TUIRenderParameter
   }
 }
 
-// MARK: - RenderParameter Equatable -
+// MARK: -
+// MARK: RenderParameter Equatable -
 extension TUIRenderParameter: Equatable { }
 
 /// Equatable Operator for RenderParameter

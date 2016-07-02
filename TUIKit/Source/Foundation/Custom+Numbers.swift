@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Double Extensions -
+// MARK: -
+// MARK: Double Extensions -
 internal extension Double
 {
   /// Convert Double to Int
@@ -32,7 +33,8 @@ internal extension Double
   }
 }
 
-// MARK: - Int Extensions -
+// MARK: -
+// MARK: Int Extensions -
 internal extension Int
 {
   /// Convert Int to Double
@@ -44,7 +46,8 @@ internal extension Int
   }
 }
 
-// MARK: - UInt32 Extensions -
+// MARK: -
+// MARK: UInt32 Extensions -
 internal extension UInt32
 {
   /// Convert UInt32 to Int
@@ -64,7 +67,8 @@ internal extension UInt32
   }
 }
 
-// MARK: - Int32 Extensions -
+// MARK: -
+// MARK: Int32 Extensions -
 internal extension Int32
 {
   /// Convert Int32 to UInt

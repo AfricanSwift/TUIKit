@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - C0 (ASCII and derivatives) -
+// MARK: -
+// MARK: C0 (ASCII and derivatives) -
 internal extension Ansi
 {
   /// C0 (ASCII and derivatives) also referred to as Single Character

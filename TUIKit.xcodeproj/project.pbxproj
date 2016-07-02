@@ -15,6 +15,7 @@
 		D731013F1D1471850081072F /* TUIBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731013E1D1471850081072F /* TUIBorders.swift */; };
 		D73101411D14DB640081072F /* TUIGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73101401D14DB640081072F /* TUIGeometry.swift */; };
 		D746BB6B1D245FFB00DFA8F7 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */; };
+		D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C59E91D27727E004A300D /* Ansi+Terminal.swift */; };
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
@@ -80,6 +81,7 @@
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
 		D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/TUIWindow.swift; sourceTree = "<group>"; };
+		D74C59E91D27727E004A300D /* Ansi+Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Terminal.swift"; path = "Source/Ansi/Ansi+Terminal.swift"; sourceTree = "<group>"; };
 		D7518B391D24024300BEC989 /* Figlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Figlet.swift; path = Source/Figlet/Figlet.swift; sourceTree = "<group>"; };
 		D7518B3A1D24024300BEC989 /* FigletHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FigletHeader.swift; path = Source/Figlet/FigletHeader.swift; sourceTree = "<group>"; };
 		D7518B3E1D243A9B00BEC989 /* ANSI Terminal Standard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ANSI Terminal Standard.txt"; path = "Source/Reference/ANSI Terminal Standard.txt"; sourceTree = "<group>"; };
@@ -805,6 +807,7 @@
 				D77A29071D125BF600C56E49 /* Ansi+Set.swift */,
 				D77A29081D125BF600C56E49 /* Ansi+Tab.swift */,
 				D77A290B1D125BF600C56E49 /* Ansi+Window.swift */,
+				D74C59E91D27727E004A300D /* Ansi+Terminal.swift */,
 			);
 			name = Ansi;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
 				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
 				D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */,
+				D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */,
 				D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */,
 				D77A29131D125BF600C56E49 /* Ansi+Color+LAB.swift in Sources */,
 				D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */,

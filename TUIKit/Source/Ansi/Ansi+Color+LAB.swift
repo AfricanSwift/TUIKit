@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - RGB to LAB -
+// MARK: -
+// MARK: RGB to LAB -
 public extension Ansi.Color
 {
   /// Convert RGB to LAB
@@ -30,7 +31,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - XYZ to LAB -
+// MARK: -
+// MARK: XYZ to LAB -
 public extension Ansi.Color
 {
   /// Convert XYZ to LAB

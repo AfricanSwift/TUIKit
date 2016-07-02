@@ -47,7 +47,8 @@ public struct TUIView
   }
 }
 
-// MARK: - View Adjustments -
+// MARK: -
+// MARK: View Adjustments -
 public extension TUIView
 {
   /// Move View
@@ -94,7 +95,8 @@ public extension TUIView
   }
 }
 
-// MARK: - Render & Draw -
+// MARK: -
+// MARK: Render & Draw -
 public extension TUIView
 {
   /// Draw Pixel

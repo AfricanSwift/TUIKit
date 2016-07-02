@@ -82,7 +82,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - HSL Adjustments -
+// MARK: -
+// MARK: HSL Adjustments -
 public extension Ansi.Color
 {
   

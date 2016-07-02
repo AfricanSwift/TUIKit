@@ -4,7 +4,8 @@
 
 import Foundation
 
-// MARK: - Next Page and Previous Page -
+// MARK: -
+// MARK: Next Page and Previous Page -
 public extension Ansi
 {
   /// Next and Previous Page

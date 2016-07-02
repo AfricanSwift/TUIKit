@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Foreground: Static Base Colors -
+// MARK: -
+// MARK: Foreground: Static Base Colors -
 public extension Ansi.Color
 {
   /// Averages current color with a provided color
@@ -215,7 +216,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - Ansi.Color.Choices -
+// MARK: -
+// MARK: Ansi.Color.Choices -
 public extension Ansi.Color
 {
   public enum Choices
@@ -319,7 +321,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - String Ansi.Color.Choices: Foreground -
+// MARK: -
+// MARK: String Ansi.Color.Choices: Foreground -
 public extension String
 {
   /// Ansi Foreground Color
@@ -334,7 +337,8 @@ public extension String
   }
 }
 
-// MARK: - Background: Static Base Colors -
+// MARK: -
+// MARK: Background: Static Base Colors -
 public extension Ansi.Color
 {
   
@@ -533,7 +537,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - String Ansi.Color.Choices: Background -
+// MARK: -
+// MARK: String Ansi.Color.Choices: Background -
 public extension String
 {
   /// Ansi Background Color
@@ -548,7 +553,8 @@ public extension String
   }
 }
 
-// MARK: - Ansi.Color Instance Colors -
+// MARK: -
+// MARK: Ansi.Color Instance Colors -
 public extension Ansi.Color
 {
   /// Convert to nearest Ansi grayscale color
@@ -628,7 +634,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - Color Transforms: Grayscale, Ansi 256, Ansi 16 -
+// MARK: -
+// MARK: Color Transforms: Grayscale, Ansi 256, Ansi 16 -
 public extension Ansi.Color
 {
   /// Calculates the nearest Ansi Grayscale color match

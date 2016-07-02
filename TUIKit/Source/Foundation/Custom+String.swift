@@ -4,7 +4,8 @@
 
 import Foundation
 
-// MARK: - String Extensions -
+// MARK: -
+// MARK: String Extensions -
 internal extension String {
   /// Convert to Ansi
   ///

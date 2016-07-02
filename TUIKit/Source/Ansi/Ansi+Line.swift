@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Next Line and Previous Line -
+// MARK: -
+// MARK: Next Line and Previous Line -
 public extension Ansi
 {
   /// Next and Previous Line
@@ -52,7 +53,8 @@ public extension Ansi
   }
 }
 
-// MARK: - Erase in Line (EL & DECSEL) -
+// MARK: -
+// MARK: Erase in Line (EL & DECSEL) -
 public extension Ansi.Line
 {
   /// Erase in Line (EL & DECSEL)
@@ -86,7 +88,8 @@ public extension Ansi.Line
   }
 }
 
-// MARK: - Scroll Up and Scroll Down -
+// MARK: -
+// MARK: Scroll Up and Scroll Down -
 public extension Ansi.Line
 {
   /// Scroll

@@ -3,7 +3,7 @@
 //    Created by:   African Swift
 
 import Foundation
-
+//
 // insertion tags
 // <p>           % complete (rounded ceiling integer, formatted as 3 digits 0 to 100)
 // <s>            status message (length chopped at screen width)
@@ -297,3 +297,6 @@ internal class ProgressBar
 // |⸩⸩⸩⸩⸩⸩...................|
 //  33% [======❘..............]
 // |⸩⸩⸩⸩⸩⸩-------------------|
+
+// ▓▓▓▓▓▓▓▓░░░░░░░ 50%
+// ▓▓▓▓▓▓▓▓░░░░░░░ 50%

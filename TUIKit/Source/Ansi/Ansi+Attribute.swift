@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Ansi Attributes -
+// MARK: -
+// MARK: Ansi Attributes -
 public extension Ansi
 {
   /// Character Attributes (SGR).
@@ -185,7 +186,8 @@ public extension Ansi
   }
 }
 
-// MARK: - Ansi.Attribute,Choices -
+// MARK: -
+// MARK: Ansi.Attribute,Choices -
 public extension Ansi.Attribute
 {
   public enum Choices
@@ -286,7 +288,8 @@ public extension Ansi.Attribute
   }
 }
 
-// MARK: - String Ansi.Attribute.Choices -
+// MARK: -
+// MARK: String Ansi.Attribute.Choices -
 public extension String
 {
   /// Ansi Attribute

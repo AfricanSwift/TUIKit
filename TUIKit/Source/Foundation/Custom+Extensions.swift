@@ -4,7 +4,9 @@
 
 import Foundation
 
-// MARK: - Threading -
+// MARK: -
+// MARK: Threading -
+
 infix operator ~> {}
 
 /// Executes the lefthand closure on a background thread and,
@@ -34,7 +36,8 @@ private let queue = DispatchQueue(
   label: "serial-worker",
   attributes: DispatchQueueAttributes.serial)
 
-// MARK: - Array Extensions -
+// MARK: -
+// MARK: Array Extensions -
 internal extension Array {
   /// Return Array of type T with tuple of Array Index and Element
   ///
@@ -94,7 +97,8 @@ internal func init4D<T>(d1: Int, d2: Int, d3: Int, d4: Int, repeatedValue value:
           repeating: value, count: d4), count: d3), count: d2), count: d1)
 }
 
-// MARK: - Code / Execution Timing -
+// MARK: -
+// MARK: Code / Execution Timing -
 
 /// Measure closure exection
 ///
@@ -111,7 +115,8 @@ internal func measure(_ title: String = "", closure: () -> Void)
   print("\(title) duration: \(result)")
 }
 
-// MARK: - Loops -
+// MARK: -
+// MARK: Loops -
 
 /// Replacement for C Style For Loop for ;;
 ///

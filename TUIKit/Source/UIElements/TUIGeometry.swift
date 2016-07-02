@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - TUIPoint -
+// MARK: -
+// MARK: TUIPoint -
 
 /// Terminal UI Point
 ///
@@ -38,7 +39,8 @@ public struct TUIPoint
   }
 }
 
-// MARK: - TUIPoint Equatable -
+// MARK: -
+// MARK: TUIPoint Equatable -
 extension TUIPoint: Equatable {}
 
 /// Equatable Operator for TUIPoint
@@ -52,7 +54,8 @@ public func == (lhs: TUIPoint, rhs: TUIPoint) -> Bool
   return lhs.x == rhs.x && lhs.y == rhs.y
 }
 
-// MARK: - TUISize -
+// MARK: -
+// MARK: TUISize -
 
 /// Terminal UI Size
 ///
@@ -86,7 +89,8 @@ public struct TUISize
   }
 }
 
-// MARK: - TUISize Equatable -
+// MARK: -
+// MARK: TUISize Equatable -
 
 /// TUISize equatable
 extension TUISize: Equatable {}
@@ -102,6 +106,7 @@ public func == (lhs: TUISize, rhs: TUISize) -> Bool
   return lhs.height == rhs.height && lhs.width == rhs.width
 }
 
+// MARL: -
 // MARK: TUIViewSize -
 
 /// Terminal UI Viewsize with two size accessors: pixel vs. character
@@ -138,7 +143,8 @@ public struct TUIWindowSize
   }
 }
 
-// MARK: - TUIRectangle -
+// MARK: -
+// MARK: TUIRectangle -
 
 /// Terminal UI Rectangle
 //
@@ -187,7 +193,8 @@ public struct TUIRectangle
   }
 }
 
-//MARK: TUIRectangle Equatable -
+// MARK: -
+// MARK: TUIRectangle Equatable -
 extension TUIRectangle: Equatable {}
 
 /// Equatable Operator for TUIRectangle

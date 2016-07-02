@@ -5,7 +5,8 @@
 import Darwin
 //import AppKit
 
-// MARK: - Compuphase color distance =
+// MARK: -
+// MARK: Compuphase color distance -
 public extension Ansi.Color
 {
   /// Distance between 2 colors
@@ -37,7 +38,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - Grayscale Intensity -
+// MARK: -
+// MARK: Grayscale Intensity -
 public extension Ansi.Color
 {
   /// Calculates weighted pixel grayscale intensity
@@ -63,7 +65,8 @@ public extension Ansi.Color
   }
 }
 
-// MARK: - Average array of Ansi.Color: square root formulation -
+// MARK: -
+// MARK: Average array of Ansi.Color: square root formulation -
 public extension Ansi.Color
 {
   /// Calculates the average of an array of colors
@@ -131,7 +134,8 @@ public extension Ansi.Color
   
 }
 
-// MARK: - Convert NSImage.Pixel to Ansi.Color -
+// MARK: -
+// MARK: Convert NSImage.Pixel to Ansi.Color -
 public extension Ansi.Color
 {
   /// Convert NSImage.Pixel to Ansi.Color
@@ -185,7 +189,8 @@ public extension Ansi.Color
 //  
 //#endif
 
-// MARK: - Convert Ansi.Color to hex string
+// MARK: -
+// MARK: Convert Ansi.Color to hex string -
 public extension Ansi.Color
 {
   /// Converts Ansi.Color to hex string e.g. ea6699

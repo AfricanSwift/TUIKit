@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - TUICharacter -
+// MARK: -
+// MARK: TUICharacter -
 public struct TUICharacter
 {
   /// Category
@@ -103,7 +104,8 @@ public struct TUICharacter
     base: 0x2800)
 }
 
-// MARK: - setPixel and setCharacter Methods  -
+// MARK: -
+// MARK: setPixel and setCharacter Methods  -
 internal extension TUICharacter
 {
   /// Pixel Set Action
@@ -217,7 +219,8 @@ internal extension TUICharacter
   }
 }
 
-// MARK: - ColorComposite and ColorSpace -
+// MARK: -
+// MARK: ColorComposite and ColorSpace -
 private extension TUICharacter
 {
   /// First Color

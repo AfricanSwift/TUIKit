@@ -5,7 +5,8 @@
 import Foundation
 import AppKit
 
-// MARK: - Cursor Sequences -
+// MARK: -
+// MARK: Cursor Sequences -
 public extension Ansi
 {
   /// Flash the screen

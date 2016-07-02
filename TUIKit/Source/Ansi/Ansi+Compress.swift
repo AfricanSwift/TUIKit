@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Tokenizer -
+// MARK: -
+// MARK: Tokenizer -
 internal extension Ansi
 {
   private typealias IndexChars = (current: String, next2: String)
@@ -141,7 +142,8 @@ internal extension Ansi
   }
 }
 
-// MARK: - Compression -
+// MARK: -
+// MARK: Compression -
 internal extension Ansi
 {
   /// Compress Ansi Type

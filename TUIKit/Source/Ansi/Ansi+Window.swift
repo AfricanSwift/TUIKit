@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Window manipulation (from dtterm, as well as extensions) -
+// MARK: -
+// MARK: Window manipulation (from dtterm, as well as extensions) -
 public extension Ansi
 {
   /// Window manipulation (from dtterm, as well as extensions).
@@ -101,12 +102,41 @@ public extension Ansi
   }
 }
 
-// MARK: - Window Report -
+// MARK: -
+// MARK: Window Report -
 public extension Ansi.Window
 {
   /// Window Reports: state, position, pixelSize, ...
   public struct Report
   {
+    
+    public enum State
+    {
+      case open, iconified, none
+    }
+    
+    private static let state1 = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)11t"),
+      response: "\u{1B}[#t")
+    
+    public static func state2() -> State?
+    {
+      guard let response = Ansi.Terminal.responseTTY(command: state1)
+        else { return nil }
+      let value = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "t", with: "")
+      switch value
+      {
+        case "1":
+          return State.open
+        case "2":
+          return State.iconified
+        default:
+          return State.none
+      }
+    }
+    
     /// Report xterm window state  
     /// If window is open (non-iconified), it returns CSI 1 t .
     /// If window is iconified, it returns CSI 2 t
@@ -164,7 +194,8 @@ public extension Ansi.Window
   }
 }
 
-// MARK: - Operating System Controls -
+// MARK: -
+// MARK: Operating System Controls -
 public extension Ansi.Window
 {
   public struct OSC

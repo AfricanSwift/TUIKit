@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - Primary Cursor Movements -
+// MARK: -
+// MARK: Primary Cursor Movements -
 public extension Ansi
 {
   public struct Cursor
@@ -95,7 +96,8 @@ public extension Ansi
   }
 }
 
-// MARK: - Ansi.Cursor,Choices -
+// MARK: -
+// MARK: Ansi.Cursor,Choices -
 public extension Ansi.Cursor
 {
   public enum Choices
@@ -139,7 +141,8 @@ public extension Ansi.Cursor
   }
 }
 
-// MARK: - String Ansi.Cursor.Choices -
+// MARK: -
+// MARK: String Ansi.Cursor.Choices -
 public extension String
 {
   /// Ansi Cursor
@@ -154,7 +157,8 @@ public extension String
   }
 }
 
-// MARK: - Column: Absolute, Relative -
+// MARK: -
+// MARK: Column: Absolute, Relative -
 public extension Ansi.Cursor
 {
   /// Column: Absolute, Relative
@@ -182,7 +186,8 @@ public extension Ansi.Cursor
   }
 }
 
-// MARK: - Row: Absolute, Relative -
+// MARK: -
+// MARK: Row: Absolute, Relative -
 public extension Ansi.Cursor
 {
   public struct Row
@@ -209,7 +214,8 @@ public extension Ansi.Cursor
   }
 }
 
-// MARK: - Set cursor style (DECSCUSR, VT520) -
+// MARK: -
+// MARK: Set cursor style (DECSCUSR, VT520) -
 public extension Ansi.Cursor
 {
   /// Set cursor style (DECSCUSR, VT520).
@@ -265,7 +271,8 @@ public extension Ansi.Cursor
   }
 }
 
-// MARK: - Set cursor style (DECSCUSR, VT520) -
+// MARK: -
+// MARK: Set cursor style (DECSCUSR, VT520) -
 public extension Ansi.Cursor
 {
   public struct Report

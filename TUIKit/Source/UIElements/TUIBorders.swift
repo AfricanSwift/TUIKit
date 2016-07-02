@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - TUIBorders -
+// MARK: -
+// MARK: TUIBorders -
 
 /// TUI collection of borders to construct view edges, tables, ...
 public indirect enum TUIBorders
@@ -211,7 +212,8 @@ public indirect enum TUIBorders
   }
 }
 
-// MARK: - TUIBoxLine -
+// MARK: -
+// MARK: TUIBoxLine -
 internal struct TUIBoxLine
 {
   internal let left: Ansi
@@ -238,7 +240,8 @@ internal struct TUIBoxLine
   }
 }
 
-// MARK: - TUIBoxHorizontal -
+// MARK: -
+// MARK: TUIBoxHorizontal -
 internal struct TUIBoxHorizontal
 {
   internal let top: Ansi
@@ -265,7 +268,8 @@ internal struct TUIBoxHorizontal
   }
 }
 
-// MARK: - TUIBox -
+// MARK: -
+// MARK: TUIBox -
 internal struct TUIBox
 {
   internal let top: TUIBoxLine

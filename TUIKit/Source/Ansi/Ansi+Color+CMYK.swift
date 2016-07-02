@@ -4,7 +4,8 @@
 
 import Darwin
 
-// MARK: - RGB to CMYK -
+// MARK: -
+// MARK: RGB to CMYK -
 internal extension  Ansi.Color
 {
   /// Convert RGB to CMY
