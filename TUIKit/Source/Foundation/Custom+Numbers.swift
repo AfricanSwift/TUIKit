@@ -5,7 +5,8 @@
 import Darwin
 
 // MARK: - Double Extensions -
-internal extension Double {
+internal extension Double
+{
   /// Convert Double to Int
   ///
   /// - returns: Int
@@ -32,28 +33,45 @@ internal extension Double {
 }
 
 // MARK: - Int Extensions -
-internal extension Int {
+internal extension Int
+{
   /// Convert Int to Double
   ///
   /// - returns: Double
-  internal func toDouble() -> Double {
+  internal func toDouble() -> Double
+  {
     return Double(self)
   }
 }
 
 // MARK: - UInt32 Extensions -
-internal extension UInt32 {
+internal extension UInt32
+{
   /// Convert UInt32 to Int
   ///
   /// - returns: Int
-  internal func toInt() -> Int {
+  internal func toInt() -> Int
+  {
     return Int(self)
   }
   
   /// Convert UInt32 to Double
   ///
   /// - returns: Double
-  internal func toDouble() -> Double {
+  internal func toDouble() -> Double
+  {
     return Double(self)
+  }
+}
+
+// MARK: - Int32 Extensions -
+internal extension Int32
+{
+  /// Convert Int32 to UInt
+  ///
+  /// - returns: UInt
+  internal func toUInt() -> UInt
+  {
+    return UInt(self)
   }
 }

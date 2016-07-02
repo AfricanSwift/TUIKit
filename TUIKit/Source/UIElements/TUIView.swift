@@ -10,7 +10,6 @@ public struct TUIView
   public private(set) var size: TUIWindowSize
   private var invalidate: Bool
   private let border: TUIBorders
-  private var parent: TUIScreen?
   private var buffer: [[TUICharacter]]
   
   /// Flat array of active buffer cell indexes

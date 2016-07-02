@@ -264,3 +264,28 @@ public extension Ansi.Cursor
     }
   }
 }
+
+// MARK: - Set cursor style (DECSCUSR, VT520) -
+public extension Ansi.Cursor
+{
+  public struct Report
+  {
+    /// Report Device Status Report (DSR)
+    /// Ps = 5  -> Status Report.
+    /// Result ("OK") is CSI 0 n
+    ///
+    /// - returns: Ansi
+    public static func status() -> Ansi
+    {
+      return Ansi("\(Ansi.C1.CSI)5n")
+    }
+    
+    /// Report Cursor Position (CPR) [row;column].
+    /// Result is CSI r ; c R
+    ///
+    /// - returns: Ansi
+    public static func position() -> Ansi
+    {
+      return Ansi("\(Ansi.C1.CSI)6n")
+    }  }
+}

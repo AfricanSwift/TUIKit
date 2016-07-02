@@ -11,3 +11,5 @@ extern const unsigned long S_TIOCGWINSZ;
 
 /// Set window size
 extern const unsigned long S_TIOCSWINSZ;
+
+struct termios saved;

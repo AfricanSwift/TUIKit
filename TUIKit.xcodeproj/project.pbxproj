@@ -14,7 +14,7 @@
 		D731013B1D146DDD0081072F /* TUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731013A1D146DDD0081072F /* TUIView.swift */; };
 		D731013F1D1471850081072F /* TUIBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D731013E1D1471850081072F /* TUIBorders.swift */; };
 		D73101411D14DB640081072F /* TUIGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73101401D14DB640081072F /* TUIGeometry.swift */; };
-		D746BB6B1D245FFB00DFA8F7 /* TUIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */; };
+		D746BB6B1D245FFB00DFA8F7 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */; };
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
@@ -79,7 +79,7 @@
 		D73101401D14DB640081072F /* TUIGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIGeometry.swift; path = Source/UIElements/TUIGeometry.swift; sourceTree = "<group>"; };
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
-		D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIScreen.swift; path = Source/UIElements/TUIScreen.swift; sourceTree = "<group>"; };
+		D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/TUIWindow.swift; sourceTree = "<group>"; };
 		D7518B391D24024300BEC989 /* Figlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Figlet.swift; path = Source/Figlet/Figlet.swift; sourceTree = "<group>"; };
 		D7518B3A1D24024300BEC989 /* FigletHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FigletHeader.swift; path = Source/Figlet/FigletHeader.swift; sourceTree = "<group>"; };
 		D7518B3E1D243A9B00BEC989 /* ANSI Terminal Standard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "ANSI Terminal Standard.txt"; path = "Source/Reference/ANSI Terminal Standard.txt"; sourceTree = "<group>"; };
@@ -418,7 +418,7 @@
 				D731013E1D1471850081072F /* TUIBorders.swift */,
 				D73101401D14DB640081072F /* TUIGeometry.swift */,
 				D72399781D16C49A002D09DF /* TUIRender.swift */,
-				D746BB6A1D245FFB00DFA8F7 /* TUIScreen.swift */,
+				D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */,
 			);
 			name = UIElements;
 			sourceTree = "<group>";
@@ -944,7 +944,7 @@
 				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
 				D77A29201D125BF600C56E49 /* Ansi+View+Progressbar.swift in Sources */,
 				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
-				D746BB6B1D245FFB00DFA8F7 /* TUIScreen.swift in Sources */,
+				D746BB6B1D245FFB00DFA8F7 /* TUIWindow.swift in Sources */,
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
 				D72399791D16C49A002D09DF /* TUIRender.swift in Sources */,
 				D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */,
