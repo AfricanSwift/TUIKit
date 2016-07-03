@@ -61,6 +61,10 @@ public extension Ansi
   }
 }
 
+// TODO: Consider replacing reading values with a function that is based on select
+// example: http://stackoverflow.com/questions/6418232/how-to-use-select-to-read-input-from-keyboard-in-c
+// example: http://stackoverflow.com/questions/8101079/making-stdin-non-blocking
+
 // MARK: -
 // MARK: readValue -
 public extension Ansi.Terminal
@@ -142,6 +146,20 @@ public extension Ansi.Terminal
     return result == -1 ? nil : settings
   }
   
+  /// Set termios control chars
+  ///
+  /// - parameters:
+  ///   - settings: inout termios
+  ///   - index: Int32
+  ///   - value: UInt8
+  private static func setc_cc(settings: inout termios, index: Int32, value: UInt8)
+  {
+    withUnsafeMutablePointer(&settings.c_cc) { tuplePointer -> Void in
+      let c_ccPointer = UnsafeMutablePointer<cc_t>(tuplePointer)
+      c_ccPointer[Int(index)] = value
+    }
+  }
+  
   /// Enabled Non Canonical Input (Disable ICANON, ECHO & CREAD)
   ///
   /// - parameters:
@@ -153,6 +171,8 @@ public extension Ansi.Terminal
     settings.c_lflag &= ~UInt(ICANON)
     settings.c_lflag &= ~UInt(ECHO)
     settings.c_cflag &= ~UInt(CREAD)
+    Ansi.Terminal.setc_cc(settings: &settings, index: VMIN, value: 1)
+    Ansi.Terminal.setc_cc(settings: &settings, index: VTIME, value: 1)
     
     // Set modified settings
     var result: Int32
@@ -249,11 +269,58 @@ public extension Ansi.Terminal
     // Submit ansi request and flush standard out
     command.request.stdout()
     Ansi.flush()
-    
-    //FIXME: replace with VMIN
+  
+    // Nominal delay, without which buffer overruns occur for consecutive requests.
     Thread.sleep(forTimeInterval: 0.02)
     
     // Retrieve response
     return Ansi.Terminal.readResponse(tty: tty, expected: command.response)
+  }
+}
+
+
+public extension Ansi.Terminal
+{
+  internal static func readAll(fd: CInt) -> String
+  {
+    var buffer = [UInt8](repeating: 0, count: 1024)
+    var usedBytes = 0
+    while true
+    {
+      print("here")
+      let readResult: ssize_t = buffer.withUnsafeMutableBufferPointer {
+        value in
+        guard let address = value.baseAddress else {
+          print("12345")
+          return ssize_t.max
+        }
+        let ptr = UnsafeMutablePointer<Void>(address + usedBytes)
+      return read(fd, ptr, size_t(buffer.count - usedBytes))
+      }
+      
+      if readResult > 0
+      {
+        usedBytes += readResult
+//        print("readResult > 0", usedBytes, readResult)
+        continue
+      }
+      
+      if readResult == 0
+      {
+//        print("readResult == 0", usedBytes, readResult)
+        break
+      }
+      print("precondition")
+      preconditionFailure("read() failed")
+    }
+    
+//    return (0..<usedBytes)
+//      .map { String(UnicodeScalar(Int(buffer[$0]))) }
+//      .joined(separator: "")
+    
+//    return String(cString: buffer[0..<usedBytes], encoding: .utf8)
+    
+    return String._fromCodeUnitSequenceWithRepair(
+      UTF8.self, input: buffer[0..<usedBytes]).0
   }
 }
