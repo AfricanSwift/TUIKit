@@ -49,6 +49,9 @@
 		D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */; };
 		D7E5BFD41D297F2D0000DF83 /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD31D297F2D0000DF83 /* TUIView+Line.swift */; };
 		D7E5BFD61D298BCC0000DF83 /* TUIView+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */; };
+		D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */; };
+		D7E5BFDA1D29BA6C0000DF83 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */; };
+		D7E5BFDB1D29BB3E0000DF83 /* Colossal.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B831D243EB600BEC989 /* Colossal.flf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +63,7 @@
 			files = (
 				D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */,
 				D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */,
+				D7E5BFDB1D29BB3E0000DF83 /* Colossal.flf in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,8 @@
 		D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Numbers.swift"; path = "Source/Foundation/Custom+Numbers.swift"; sourceTree = "<group>"; };
 		D7E5BFD31D297F2D0000DF83 /* TUIView+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Line.swift"; path = "Source/UIElements/TUIView+Line.swift"; sourceTree = "<group>"; };
 		D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Ellipse.swift"; path = "Source/UIElements/TUIView+Ellipse.swift"; sourceTree = "<group>"; };
+		D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+LineGraphics.swift"; path = "Source/Examples/Example+LineGraphics.swift"; sourceTree = "<group>"; };
+		D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -763,6 +769,7 @@
 		D77A28DC1D124C4F00C56E49 = {
 			isa = PBXGroup;
 			children = (
+				D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */,
 				D77A29321D12667800C56E49 /* .swiftlint.yml */,
 				D746BB681D245EE600DFA8F7 /* .gitignore */,
 				D746BB691D245F7300DFA8F7 /* pc.sh */,
@@ -842,6 +849,7 @@
 				D799B4791D1AC4A500FA7853 /* wwdc16_logo */,
 				D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */,
 				D7518C581D243F6900BEC989 /* Example+Figfont.swift */,
+				D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -923,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73101351D1349F40081072F /* TUICharacter.swift in Sources */,
+				D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */,
 				D77A29141D125BF600C56E49 /* Ansi+Color+RGB.swift in Sources */,
 				D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */,
 				D731013F1D1471850081072F /* TUIBorders.swift in Sources */,
@@ -955,6 +964,7 @@
 				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
 				D77A29201D125BF600C56E49 /* Ansi+View+Progressbar.swift in Sources */,
 				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
+				D7E5BFDA1D29BA6C0000DF83 /* LICENSE.md in Sources */,
 				D746BB6B1D245FFB00DFA8F7 /* TUIWindow.swift in Sources */,
 				D7E5BFD41D297F2D0000DF83 /* TUIView+Line.swift in Sources */,
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,

@@ -21,6 +21,14 @@ public extension Ansi.Color
     return Ansi.Color(red: red, green: green, blue: blue, alpha: 1)
   }
   
+  /// Resets Color
+  ///
+  /// - returns: Ansi
+  public static func resetAll() -> Ansi
+  {
+    return Ansi.Color.Foreground.reset() + Ansi.Color.Background.reset()
+  }
+  
   /// Foreground
   public struct Foreground
   {
