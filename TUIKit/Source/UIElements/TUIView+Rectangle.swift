@@ -57,6 +57,12 @@ public extension TUIView
     let color: Ansi.Color
     let radius: Double
     
+    /// Default initializer
+    ///
+    /// - parameters:
+    ///   - rect: TUIRectangle
+    ///   - color: Ansi.Color
+    ///   - radius: Double
     private init(rect: TUIRectangle, color: Ansi.Color, radius: Double)
     {
       self.rect = rect
@@ -68,7 +74,11 @@ public extension TUIView
     static var parts = [rr.leftLine, rr.rightLine, rr.topLine, rr.bottomLine,
                         rr.leftTopArc, rr.rightTopArc, rr.leftBottomArc, rr.rightBottomArc]
     
-    // Left Line
+    /// Left Line
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func leftLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let from = TUIPoint(
@@ -80,7 +90,11 @@ public extension TUIView
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
-    // Right Line
+    /// Right Line
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func rightLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let from = TUIPoint(
@@ -92,7 +106,11 @@ public extension TUIView
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
-    // Top Line
+    /// Top Line
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func topLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let from = TUIPoint(
@@ -104,7 +122,11 @@ public extension TUIView
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
-    // Bottom Line
+    /// Bottom Line
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func bottomLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let from = TUIPoint(
@@ -116,7 +138,11 @@ public extension TUIView
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
-    // Left Top Arc
+    /// Left Top Arc
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func leftTopArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let leftTop = TUIPoint(
@@ -131,7 +157,11 @@ public extension TUIView
         color: rr.color)
     }
     
-    // Right Top Arc
+    /// Right Top Arc
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func rightTopArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let rightTop = TUIPoint(
@@ -146,7 +176,11 @@ public extension TUIView
         color: rr.color)
     }
     
-    // Left Bottom Arc
+    /// Left Bottom Arc
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func leftBottomArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let leftBottom = TUIPoint(
@@ -161,7 +195,11 @@ public extension TUIView
         color: rr.color)
     }
     
-    // Right Bottom Arc
+    /// Right Bottom Arc
+    ///
+    /// - parameters:
+    ///   - roundedRect rr: RoundedRectangle
+    ///   - view: inout TUIView
     private static func rightBottomArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let rightBottom = TUIPoint(

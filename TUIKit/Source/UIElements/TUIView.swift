@@ -62,8 +62,6 @@ public extension TUIView
     self.invalidate = true
   }
   
-  // TODO: consider adding closure to resize i.e. to allow updates before the paint
-  
   /// Resize View
   ///
   /// - parameters:
@@ -79,8 +77,6 @@ public extension TUIView
       border: self.border)
     self.invalidate = false
   }
-  
-  // TODO: EValuate cost for this way of clearing vs. looping and switching everything off.
   
   /// Clear everything
   public mutating func clear()

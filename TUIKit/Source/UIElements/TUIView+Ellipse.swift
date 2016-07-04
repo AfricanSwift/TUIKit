@@ -15,28 +15,32 @@ public extension TUIView
     let radiusX: Double
     let radiusY: Double
     let segments: Double
-    let angleEnd: Double
+    let endAngle: Double
     var index: Double
     
     /// Default initializer for line iterator
     ///
     /// - parameters:
-    ///   - from: originating pixel position
-    ///   - to: destination pixel position
+    ///   - center: TUIPoint
+    ///   - radiusX: Double
+    ///   - radiusY: Double
+    ///   - startAngle: Double (default = 0)
+    ///   - endAngle: Double (default = 360)
+    ///   - segments: Double (default = 360)
     init(
       center: TUIPoint,
       radiusX: Double,
       radiusY: Double,
-      angleStart: Double = 0,
-      angleEnd: Double = 360,
+      startAngle: Double = 0,
+      endAngle: Double = 360,
       segments: Double = 360)
     {
       self.center = center
       self.radiusX = radiusX
       self.radiusY = radiusY
       self.segments = segments
-      self.index = angleStart
-      self.angleEnd = angleEnd
+      self.index = startAngle
+      self.endAngle = endAngle
     }
     
     /// Returns next pixel offset along draw path
@@ -44,7 +48,7 @@ public extension TUIView
     /// - returns: TUIPoint?
     mutating func next() -> TUIPoint?
     {
-      guard self.index <= self.angleEnd else
+      guard self.index <= self.endAngle else
       {
         return nil
       }
@@ -80,8 +84,8 @@ public extension TUIView
   ///   - center: TUIPoint
   ///   - radiusX: Double
   ///   - radiusY: Double
-  ///   - angleStart: Double (Optional, default is 0)
-  ///   - angleEnd: Double (Optional, default is 360)
+  ///   - startAngle: Double (Optional, default is 0)
+  ///   - endAngle: Double (Optional, default is 360)
   ///   - color: Ansi.Color (Optional, default is white)
   public mutating func drawEllipse(
     center: TUIPoint,
@@ -98,8 +102,8 @@ public extension TUIView
       center: center,
       radiusX: radiusX,
       radiusY: radiusY,
-      angleStart: startAngle,
-      angleEnd: endAngle)
+      startAngle: startAngle,
+      endAngle: endAngle)
     while let point = circle.next()
     {
       self.drawPixel(x: point.x, y: point.y, color: color)
@@ -136,10 +140,10 @@ public extension TUIView
       center: center,
       radiusX: radius,
       radiusY: radius,
-      angleStart: startAngle,
-      angleEnd: endAngle,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
-    var pointT = center
+//    var pointT = center
     var first = false
     while let point = circle.next()
     {
@@ -158,13 +162,13 @@ public extension TUIView
         self.drawPixel(x: point.x, y: point.y, color: color)
       }
       
-      pointT = point
+//      pointT = point
     }
     
-    if first == true
-    {
-      self.drawLine(from: pointT, to: center, color: color)
-    }
+//    if first == true
+//    {
+//      self.drawLine(from: pointT, to: center, color: color)
+//    }
   }
 }
 
@@ -192,8 +196,8 @@ public extension TUIView
       center: center,
       radiusX: radius,
       radiusY: radius,
-      angleStart: startAngle,
-      angleEnd: endAngle)
+      startAngle: startAngle,
+      endAngle: endAngle)
     while let point = circle.next()
     {
       self.drawPixel(x: point.x, y: point.y, color: color)
@@ -227,8 +231,8 @@ public extension TUIView
       center: center,
       radiusX: radius,
       radiusY: radius,
-      angleStart: startAngle,
-      angleEnd: endAngle,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
     
     var begin = TUIPoint()
@@ -253,14 +257,19 @@ public extension TUIView
   /// Draw Star
   ///
   /// - parameters:
-  ///   - from: originating pixel offset
-  ///   - to: destination pixel offset
+  ///   - center: TUIPoint
+  ///   - radius1: Double
+  ///   - radius2: Double
+  ///   - startAngle: Double (default = 0)
+  ///   - endAngle: Double (default = 360)
+  ///   - color: Ansi.Color (default is white)
+  ///   - segments: Double
   public mutating func drawStar(
     center: TUIPoint,
     radius1: Double,
     radius2: Double,
-    angleStart: Double = 0,
-    angleEnd: Double = 360,
+    startAngle: Double = 0,
+    endAngle: Double = 360,
     color: Ansi.Color = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1),
     segments: Double)
   {
@@ -269,20 +278,19 @@ public extension TUIView
       center: center,
       radiusX: radius1,
       radiusY: radius1,
-      angleStart: angleStart,
-      angleEnd: angleEnd,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
     
     var inner = TUIView.EllipseIterator(
       center: center,
       radiusX: radius2,
       radiusY: radius2,
-      angleStart: angleStart,
-      angleEnd: angleEnd,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
     
     var innerMark = false
-    
     var begin = TUIPoint()
     
     while let outerPoint = outer.next(), let innerPoint = inner.next()
@@ -317,15 +325,20 @@ public extension TUIView
   /// Draw Polyhedron
   ///
   /// - parameters:
-  ///   - from: originating pixel offset
-  ///   - to: destination pixel offset
+  ///   - center: TUIPoint
+  ///   - radius1: Double
+  ///   - radius2: Double
+  ///   - startAngle: Double (default = 0)
+  ///   - endAngle: Double (default = 360)
+  ///   - color: Ansi.Color (default is white)
+  ///   - segments: Double
   public mutating func drawPolyhedron(
-    center center1: TUIPoint,
+    center1: TUIPoint,
     center2: TUIPoint,
     radius1: Double,
     radius2: Double,
-    angleStart: Double = 0,
-    angleEnd: Double = 360,
+    startAngle: Double = 0,
+    endAngle: Double = 360,
     color: Ansi.Color = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1),
     segments: Double)
   {
@@ -334,16 +347,16 @@ public extension TUIView
       center: center1,
       radiusX: radius1,
       radiusY: radius1,
-      angleStart: angleStart,
-      angleEnd: angleEnd,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
     
     var inner = TUIView.EllipseIterator(
       center: center2,
       radiusX: radius2,
       radiusY: radius2,
-      angleStart: angleStart,
-      angleEnd: angleEnd,
+      startAngle: startAngle,
+      endAngle: endAngle,
       segments: segments)
     
     var begin1 = TUIPoint()
