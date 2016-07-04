@@ -14,4 +14,4 @@ import Foundation
 //}
 
 /// Demo of line graphics
-//Example_LineGraphics.demo()
+Example_LineGraphics.demo()

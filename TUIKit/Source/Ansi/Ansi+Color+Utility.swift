@@ -140,7 +140,7 @@ public extension Ansi.Color
 {
   /// Convert NSImage.Pixel to Ansi.Color
   ///
-  /// - parameter s:
+  /// - parameters:
   ///   - red: UInt8
   ///   - green: UInt8
   ///   - blue: UInt8
@@ -148,9 +148,9 @@ public extension Ansi.Color
   /// - returns: Ansi.Color
   public static func convertPixel(
     red: UInt8,
-        green: UInt8,
-        blue: UInt8,
-        alpha: UInt8) -> Ansi.Color
+    green: UInt8,
+    blue: UInt8,
+    alpha: UInt8) -> Ansi.Color
   {
     func doubleColor(component: UInt8) -> Double
     {

@@ -19,6 +19,7 @@
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
+		D757D6571D29EF94001F475A /* TUIView+Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757D6561D29EF94001F475A /* TUIView+Rectangle.swift */; };
 		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
 		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
@@ -50,7 +51,6 @@
 		D7E5BFD41D297F2D0000DF83 /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD31D297F2D0000DF83 /* TUIView+Line.swift */; };
 		D7E5BFD61D298BCC0000DF83 /* TUIView+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */; };
 		D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */; };
-		D7E5BFDA1D29BA6C0000DF83 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */; };
 		D7E5BFDB1D29BB3E0000DF83 /* Colossal.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B831D243EB600BEC989 /* Colossal.flf */; };
 /* End PBXBuildFile section */
 
@@ -372,6 +372,7 @@
 		D7518C561D243EB700BEC989 /* Whimsy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Whimsy.flf; path = Source/Figlet/Fonts/Whimsy.flf; sourceTree = "<group>"; };
 		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
 		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
+		D757D6561D29EF94001F475A /* TUIView+Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Rectangle.swift"; path = "Source/UIElements/TUIView+Rectangle.swift"; sourceTree = "<group>"; };
 		D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUIKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		D76581011D25446400FC4E8C /* Terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Terminal.c; path = Source/Helpers/Terminal.c; sourceTree = "<group>"; };
 		D76581021D25446400FC4E8C /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminal.h; path = Source/Helpers/Terminal.h; sourceTree = "<group>"; };
@@ -428,6 +429,7 @@
 				D73101341D1349F40081072F /* TUICharacter.swift */,
 				D731013A1D146DDD0081072F /* TUIView.swift */,
 				D7E5BFD31D297F2D0000DF83 /* TUIView+Line.swift */,
+				D757D6561D29EF94001F475A /* TUIView+Rectangle.swift */,
 				D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */,
 				D731013E1D1471850081072F /* TUIBorders.swift */,
 				D73101401D14DB640081072F /* TUIGeometry.swift */,
@@ -939,6 +941,7 @@
 				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
 				D731013B1D146DDD0081072F /* TUIView.swift in Sources */,
 				D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */,
+				D757D6571D29EF94001F475A /* TUIView+Rectangle.swift in Sources */,
 				D77A290F1D125BF600C56E49 /* Ansi+Character.swift in Sources */,
 				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
 				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
@@ -964,7 +967,6 @@
 				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
 				D77A29201D125BF600C56E49 /* Ansi+View+Progressbar.swift in Sources */,
 				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
-				D7E5BFDA1D29BA6C0000DF83 /* LICENSE.md in Sources */,
 				D746BB6B1D245FFB00DFA8F7 /* TUIWindow.swift in Sources */,
 				D7E5BFD41D297F2D0000DF83 /* TUIView+Line.swift in Sources */,
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
