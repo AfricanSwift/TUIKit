@@ -4,13 +4,41 @@
 
 import Darwin
 
+// MARK: -
+// MARK: TUIView -
 public struct TUIView
 {
   public private(set) var origin: TUIPoint
   public private(set) var size: TUIWindowSize
+  
+  /// Flag indicating if the cache is invalid
+  /// Controls rendering
   private var invalidate: Bool
-  private let border: TUIBorders
+  
+  // Optional TUIBorder for the view
+  public let border: TUIBorder
   private var buffer: [[TUICharacter]]
+  private let borderColor: Ansi
+  public let backgroundColor: Ansi
+  
+  /// Cache (rendered Ansi)
+  public var cache: [Ansi]
+  
+  /// Border parts
+  internal var borderParts: (top: Ansi, bottom: Ansi, left: Ansi, right: Ansi) {
+    let color = self.borderColor != "" ? self.borderColor : Ansi.Color.resetAll()
+    guard let box = border.toTUIBox() else {
+      return ("", "", "", "")
+    }
+    let width = Int(self.size.character.width)
+    let topline = String(repeating: box.horizontal.top, count: width)
+    let bottomline = String(repeating: box.horizontal.bottom, count: width)
+    return
+      (Ansi("\(color)\(box.top.left)\(topline)\(box.top.right)\(Ansi.Color.resetAll())"),
+       Ansi("\(color)\(box.bottom.left)\(bottomline)\(box.bottom.right)\(Ansi.Color.resetAll())"),
+       Ansi("\(color)\(box.vertical.left)\(Ansi.Color.resetAll())"),
+       Ansi("\(color)\(box.vertical.right)\(Ansi.Color.resetAll())"))
+  }
   
   /// Flat array of active buffer cell indexes
   internal var activeIndex: [(x: Int, y: Int, type: TUICharacter.Category)] {
@@ -32,7 +60,8 @@ public struct TUIView
   ///   - width: Int
   ///   - height: Int
   ///   - border: TUIBorders
-  public init(x: Int, y: Int, width: Int, height: Int, border: TUIBorders)
+  public init(x: Int, y: Int, width: Int, height: Int, border: TUIBorder = .single,
+              borderColor: Ansi = "", backgroundColor: Ansi = "")
   {
     self.origin = TUIPoint(x: x, y: y)
     self.size = TUIWindowSize(width: width, height: height)
@@ -44,6 +73,12 @@ public struct TUIView
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
+    self.borderColor = borderColor
+    self.backgroundColor = backgroundColor
+    
+    var cacheSize = self.size.character.height.toInt()
+    if case .none = border { } else { cacheSize += 2 }
+    self.cache = [Ansi](repeating: Ansi(""), count: cacheSize)
   }
 }
 
@@ -95,26 +130,69 @@ public extension TUIView
 // MARK: Render & Draw -
 public extension TUIView
 {
+  // Render view cache
+  ///
+  /// - parameters:
+  ///   - parameters: TUIRenderParameter
+  /// - returns: [Ansi]
+  private mutating func render(parameters: TUIRenderParameter)
+  {
+    guard self.invalidate else { return }
+    
+    var hasBorder = true
+    if case .none = view.border
+    {
+      hasBorder = false
+    }
+    
+    let left = hasBorder ? view.borderParts.left : ""
+    let right = hasBorder ? view.borderParts.right : ""
+    
+    if hasBorder {
+      self.cache[0] = view.borderParts.top + "\n"
+      self.cache[self.cache.count - 1] = view.borderParts.bottom 
+    }
+    if hasBorder { }
+    
+    let offset = hasBorder ? 1 : 0
+    
+    for y in self.buffer.indices
+    {
+      var lineBuffer = Ansi("")
+      for x in self.buffer[0].indices
+      {
+        lineBuffer += self.buffer[y][x].toAnsi(parameters: parameters)
+      }
+      self.cache[y + offset] = (left + view.backgroundColor + lineBuffer + right + "\n")
+    }
+    self.invalidate = false
+  }
+  
   /// Draw Pixel
   ///
   /// - parameters:
   ///   - parameters: TUIRenderParameter
   /// - returns: [Ansi]
-  public mutating func draw(
-    parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
+//  public mutating func draw(
+//    parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
+//  {
+//
+//    var result = [Ansi]()
+//    for y in self.buffer.indices
+//    {
+//      var xbuffer = Ansi("")
+//      for x in self.buffer[0].indices
+//      {
+//        xbuffer += self.buffer[y][x].toAnsi(parameters: parameters)
+//      }
+//      result.append(xbuffer.compress())
+//    }
+//    return result
+//  }
+  public mutating func draw(parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
   {
-
-    var result = [Ansi]()
-    for y in self.buffer.indices
-    {
-      var xbuffer = Ansi("")
-      for x in self.buffer[0].indices
-      {
-        xbuffer += self.buffer[y][x].toAnsi(parameters: parameters)
-      }
-      result.append(xbuffer.compress())
-    }
-    return result
+    if self.invalidate { render(parameters: parameters) }
+    return self.cache
   }
   
   /// Draw Pixel
@@ -192,6 +270,7 @@ public extension TUIView
         .setCharacter(character: char[i], color: color)
       index += 1
     }
+    self.invalidate = true
   }
   
   /// Limited to SGR Control Codes (Attributes & Colors)
@@ -242,5 +321,6 @@ public extension TUIView
         isFirstChar = false
       }
     }
+    self.invalidate = true
   }
 }

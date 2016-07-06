@@ -277,7 +277,6 @@ public extension Ansi.Cursor
 {
   public struct Report
   {
-    
     private static let statusCommand = Ansi.Terminal.Command(
       request: Ansi("\(Ansi.C1.CSI)5n"),
       response: "\u{1B}[#n")
@@ -297,6 +296,24 @@ public extension Ansi.Cursor
       return Int(values) ?? -1
     }
     
+    private static let positionCommand = Ansi.Terminal.Command(
+      request: Ansi("\(Ansi.C1.CSI)6n"),
+      response: "\u{1B}#;#R")
+    
+    /// Report Cursor Position (CPR) [row;column].
+    /// Result is CSI r ; c R
+    ///
+    /// - returns: TUIPoint?
+    public static func position() -> TUIPoint?
+    {
+      guard let response = Ansi.Terminal.responseTTY(command: positionCommand)
+        else { return nil }
+      let values = response
+        .replacingOccurrences(of: Ansi.C1.CSI, with: "")
+        .replacingOccurrences(of: "R", with: "")
+        .characters.split(separator: ";").map {String($0)}
+      return TUIPoint(x: Int(values[1]) ?? 0, y: Int(values[0]) ?? 0)
+    }
     
     
     /// Report Device Status Report (DSR)
@@ -309,12 +326,13 @@ public extension Ansi.Cursor
 //      return Ansi("\(Ansi.C1.CSI)5n")
 //    }
     
-    /// Report Cursor Position (CPR) [row;column].
-    /// Result is CSI r ; c R
-    ///
-    /// - returns: Ansi
-    public static func position() -> Ansi
-    {
-      return Ansi("\(Ansi.C1.CSI)6n")
-    }  }
+//    /// Report Cursor Position (CPR) [row;column].
+//    /// Result is CSI r ; c R
+//    ///
+//    /// - returns: Ansi
+//    public static func position() -> Ansi
+//    {
+//      return Ansi("\(Ansi.C1.CSI)6n")
+//    }
+  }
 }

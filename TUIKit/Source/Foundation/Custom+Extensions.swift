@@ -120,11 +120,13 @@ internal func measure(_ title: String = "", closure: () -> Void)
 
 /// Replacement for C Style For Loop for ;;
 ///
-///     var i: Int = 0 // initialization
-///     for i in Loop(i < 10, i += 1)
-///     {
-///       print(i)
-///     }
+/// ````
+/// var i: Int = 0 // initialization
+/// for i in Loop(i < 10, i += 1)
+/// {
+///     print(i)
+/// }
+/// ````
 /// - Author: Joe Groff (Apple)
 internal struct Loop: Sequence, IteratorProtocol
 {

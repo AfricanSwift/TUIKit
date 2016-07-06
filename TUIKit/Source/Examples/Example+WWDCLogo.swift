@@ -42,7 +42,7 @@ public struct Example_WWDCLogo
       Ansi.Cursor.position(
         row: view.origin.y.toInt(),
         column: view.origin.x.toInt()).stdout()
-      print(view.draw(parameters: renderparm).map { $0.toString() }.joined(separator: "\n"))
+//      print(view.draw(parameters: renderparm).map { $0.toString() }.joined(separator: "\n"))
     }
     
     let path = "wwdc16_logo"

@@ -35,7 +35,7 @@ public struct TUIWindow {
       y: 0,
       width: size.pixel.width.toInt(),
       height: size.pixel.width.toInt(),
-      border: TUIBorders.none)
+      border: TUIBorder.none)
     
     self.backbuffer = self.buffer
   }

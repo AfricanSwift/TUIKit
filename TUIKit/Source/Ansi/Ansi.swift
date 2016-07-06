@@ -248,6 +248,13 @@ public func + (lhs: Ansi, rhs: String) -> Ansi
   return result
 }
 
+public func + (lhs: String, rhs: Ansi) -> Ansi
+{
+  var result = Ansi(lhs + rhs.value)
+  result.isCompressed = false
+  return result
+}
+
 public func + (lhs: Ansi, rhs: Character) -> Ansi
 {
   var result = lhs + rhs.toAnsi()

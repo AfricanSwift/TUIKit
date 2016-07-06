@@ -8,7 +8,7 @@ import Darwin
 // MARK: TUIBorders -
 
 /// TUI collection of borders to construct view edges, tables, ...
-public indirect enum TUIBorders
+public indirect enum TUIBorder
 {
   /// __Standard Borders__
   ///
@@ -54,23 +54,23 @@ public indirect enum TUIBorders
   /// let attr = Ansi.Color.Foreground.yellow()
   ///
   /// let custom = TUIBox(
-  ///   top: TUIBoxLine(left: "┌", middle: "┬", right: "┐", attribute: attr),
-  ///   middle: TUIBoxLine(left: "├", middle: "┼", right: "┤", attribute: attr),
-  ///   bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘", attribute: attr),
-  ///   horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─", attribute: attr),
-  ///   vertical: TUIBoxLine(left: "│", middle: "│", right: "│", attribute: attr))
+  ///   top: TUIBoxLine(left: "┌", middle: "┬", right: "┐"),
+  ///   middle: TUIBoxLine(left: "├", middle: "┼", right: "┤"),
+  ///   bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘"),
+  ///   horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─"),
+  ///   vertical: TUIBoxLine(left: "│", middle: "│", right: "│"))
   /// ````
   ///
   /// **None:** example: 
   /// - borderless view
-  case custom(border: TUIBorders, attribute: Ansi), none
+  case custom(border: TUIBorder), none
   
   /// Array of all TUIBorders
   ///
   /// - returns: [.single, .double, .double2, .double3,
   /// .block100, .block75, .block50, .halfblock,
   /// .ascii, ascii2, ascii3, .none ]
-  internal static var allCases: [TUIBorders] =
+  internal static var allCases: [TUIBorder] =
     [.single, .double, .double2, .double3,
     .block100, .block75, .block50, .halfblock,
     .ascii, ascii2, ascii3, .none ]
@@ -80,41 +80,41 @@ public indirect enum TUIBorders
   /// - parameters:
   ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
-  private func matchStandardBoxes(attribute attr: Ansi) -> TUIBox?
+  private func matchStandardBoxes() -> TUIBox?
   {
     switch self
     {
       case single:
         return TUIBox(
-          top: TUIBoxLine(left: "┌", middle: "┬", right: "┐", attribute: attr),
-          middle: TUIBoxLine(left: "├", middle: "┼", right: "┤", attribute: attr),
-          bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─", attribute: attr),
-          vertical: TUIBoxLine(left: "│", middle: "│", right: "│", attribute: attr))
+          top: TUIBoxLine(left: "┌", middle: "┬", right: "┐"),
+          middle: TUIBoxLine(left: "├", middle: "┼", right: "┤"),
+          bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘"),
+          horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─"),
+          vertical: TUIBoxLine(left: "│", middle: "│", right: "│"))
       case double:
         return TUIBox(
-          top: TUIBoxLine(left: "╔", middle: "╦", right: "╗", attribute: attr),
-          middle: TUIBoxLine(left: "╠", middle: "╬", right: "╣", attribute: attr),
-          bottom: TUIBoxLine(left: "╚", middle: "╩", right: "╝", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "═", middle: "═", bottom: "═", attribute: attr),
-          vertical: TUIBoxLine(left: "║", middle: "║", right: "║", attribute: attr))
+          top: TUIBoxLine(left: "╔", middle: "╦", right: "╗"),
+          middle: TUIBoxLine(left: "╠", middle: "╬", right: "╣"),
+          bottom: TUIBoxLine(left: "╚", middle: "╩", right: "╝"),
+          horizontal: TUIBoxHorizontal(top: "═", middle: "═", bottom: "═"),
+          vertical: TUIBoxLine(left: "║", middle: "║", right: "║"))
       case double2:
         return TUIBox(
-          top: TUIBoxLine(left: "╒", middle: "╤", right: "╕", attribute: attr),
-          middle: TUIBoxLine(left: "╞", middle: "╪", right: "╡", attribute: attr),
-          bottom: TUIBoxLine(left: "╘", middle: "╧", right: "╛", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "═", middle: "═", bottom: "═", attribute: attr),
-          vertical: TUIBoxLine(left: "│", middle: "│", right: "│", attribute: attr))
+          top: TUIBoxLine(left: "╒", middle: "╤", right: "╕"),
+          middle: TUIBoxLine(left: "╞", middle: "╪", right: "╡"),
+          bottom: TUIBoxLine(left: "╘", middle: "╧", right: "╛"),
+          horizontal: TUIBoxHorizontal(top: "═", middle: "═", bottom: "═"),
+          vertical: TUIBoxLine(left: "│", middle: "│", right: "│"))
       case double3:
         return TUIBox(
-          top: TUIBoxLine(left: "╓", middle: "╥", right: "╖", attribute: attr),
-          middle: TUIBoxLine(left: "╟", middle: "╫", right: "╢", attribute: attr),
-          bottom: TUIBoxLine(left: "╙", middle: "╨", right: "╜", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─", attribute: attr),
-          vertical: TUIBoxLine(left: "║", middle: "║", right: "║", attribute: attr))
+          top: TUIBoxLine(left: "╓", middle: "╥", right: "╖"),
+          middle: TUIBoxLine(left: "╟", middle: "╫", right: "╢"),
+          bottom: TUIBoxLine(left: "╙", middle: "╨", right: "╜"),
+          horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─"),
+          vertical: TUIBoxLine(left: "║", middle: "║", right: "║"))
       default:
         // if not matched, search blocks
-        return matchBlockBoxes(attribute: attr)
+        return matchBlockBoxes()
     }
   }
   
@@ -123,41 +123,41 @@ public indirect enum TUIBorders
   /// - parameters:
   ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
-  private func matchBlockBoxes(attribute attr: Ansi) -> TUIBox?
+  private func matchBlockBoxes() -> TUIBox?
   {
     switch self
     {
       case block100:
         return TUIBox(
-          top: TUIBoxLine(left: "█", middle: "█", right: "█", attribute: attr),
-          middle: TUIBoxLine(left: "█", middle: "┼", right: "█", attribute: attr),
-          bottom: TUIBoxLine(left: "█", middle: "█", right: "█", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "█", middle: "─", bottom: "█", attribute: attr),
-          vertical: TUIBoxLine(left: "█", middle: "│", right: "█", attribute: attr))
+          top: TUIBoxLine(left: "█", middle: "█", right: "█"),
+          middle: TUIBoxLine(left: "█", middle: "┼", right: "█"),
+          bottom: TUIBoxLine(left: "█", middle: "█", right: "█"),
+          horizontal: TUIBoxHorizontal(top: "█", middle: "─", bottom: "█"),
+          vertical: TUIBoxLine(left: "█", middle: "│", right: "█"))
       case block75:
         return TUIBox(
-          top: TUIBoxLine(left: "▓", middle: "▓", right: "▓", attribute: attr),
-          middle: TUIBoxLine(left: "▓", middle: "┼", right: "▓", attribute: attr),
-          bottom: TUIBoxLine(left: "▓", middle: "▓", right: "▓", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "▓", middle: "─", bottom: "▓", attribute: attr),
-          vertical: TUIBoxLine(left: "▓", middle: "│", right: "▓", attribute: attr))
+          top: TUIBoxLine(left: "▓", middle: "▓", right: "▓"),
+          middle: TUIBoxLine(left: "▓", middle: "┼", right: "▓"),
+          bottom: TUIBoxLine(left: "▓", middle: "▓", right: "▓"),
+          horizontal: TUIBoxHorizontal(top: "▓", middle: "─", bottom: "▓"),
+          vertical: TUIBoxLine(left: "▓", middle: "│", right: "▓"))
       case block50:
         return TUIBox(
-          top: TUIBoxLine(left: "░", middle: "░", right: "░", attribute: attr),
-          middle: TUIBoxLine(left: "░", middle: "┼", right: "░", attribute: attr),
-          bottom: TUIBoxLine(left: "░", middle: "░", right: "░", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "░", middle: "─", bottom: "░", attribute: attr),
-          vertical: TUIBoxLine(left: "░", middle: "│", right: "░", attribute: attr))
+          top: TUIBoxLine(left: "░", middle: "░", right: "░"),
+          middle: TUIBoxLine(left: "░", middle: "┼", right: "░"),
+          bottom: TUIBoxLine(left: "░", middle: "░", right: "░"),
+          horizontal: TUIBoxHorizontal(top: "░", middle: "─", bottom: "░"),
+          vertical: TUIBoxLine(left: "░", middle: "│", right: "░"))
       case halfblock:
         return TUIBox(
-          top: TUIBoxLine(left: "▛", middle: "▀", right: "▜", attribute: attr),
-          middle: TUIBoxLine(left: "▌", middle: "┼", right: "▐", attribute: attr),
-          bottom: TUIBoxLine(left: "▙", middle: "▃", right: "▟", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "▀", middle: "─", bottom: "▃", attribute: attr),
-          vertical: TUIBoxLine(left: "▌", middle: "│", right: "▐", attribute: attr))
+          top: TUIBoxLine(left: "▛", middle: "▀", right: "▜"),
+          middle: TUIBoxLine(left: "▌", middle: "┼", right: "▐"),
+          bottom: TUIBoxLine(left: "▙", middle: "▃", right: "▟"),
+          horizontal: TUIBoxHorizontal(top: "▀", middle: "─", bottom: "▃"),
+          vertical: TUIBoxLine(left: "▌", middle: "│", right: "▐"))
       default:
         // if not matched, search other
-        return matchOtherBoxes(attribute: attr)
+        return matchOtherBoxes()
     }
   }
 
@@ -166,35 +166,33 @@ public indirect enum TUIBorders
   /// - parameters:
   ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
-  private func matchOtherBoxes(attribute attr: Ansi) -> TUIBox?
+  private func matchOtherBoxes() -> TUIBox?
   {
     switch self
     {
       case ascii:
         return TUIBox(
-          top: TUIBoxLine(left: "+", middle: "+", right: "+", attribute: attr),
-          middle: TUIBoxLine(left: "+", middle: "+", right: "+", attribute: attr),
-          bottom: TUIBoxLine(left: "+", middle: "+", right: "+", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-", attribute: attr),
-          vertical: TUIBoxLine(left: "|", middle: "|", right: "|", attribute: attr))
+          top: TUIBoxLine(left: "+", middle: "+", right: "+"),
+          middle: TUIBoxLine(left: "+", middle: "+", right: "+"),
+          bottom: TUIBoxLine(left: "+", middle: "+", right: "+"),
+          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-"),
+          vertical: TUIBoxLine(left: "|", middle: "|", right: "|"))
       case ascii2:
         return TUIBox(
-          top: TUIBoxLine(left: "-", middle: "-", right: "-", attribute: attr),
-          middle: TUIBoxLine(left: "|", middle: "+", right: "|", attribute: attr),
-          bottom: TUIBoxLine(left: "-", middle: "-", right: "-", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-", attribute: attr),
-          vertical: TUIBoxLine(left: "|", middle: "|", right: "|", attribute: attr))
+          top: TUIBoxLine(left: "-", middle: "-", right: "-"),
+          middle: TUIBoxLine(left: "|", middle: "+", right: "|"),
+          bottom: TUIBoxLine(left: "-", middle: "-", right: "-"),
+          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-"),
+          vertical: TUIBoxLine(left: "|", middle: "|", right: "|"))
       case ascii3:
         return TUIBox(
-          top: TUIBoxLine(left: "\u{2F}", middle: "-", right: "\u{5C}", attribute: attr),
-          middle: TUIBoxLine(left: "|", middle: "+", right: "|", attribute: attr),
-          bottom: TUIBoxLine(left: "\u{5C}", middle: "-", right: "\u{2F}", attribute: attr),
-          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-", attribute: attr),
-          vertical: TUIBoxLine(left: "|", middle: "|", right: "|", attribute: attr))
-      case custom(let customBorder, let customAttr):
-        return customBorder.toTUIBox(attribute: customAttr)
-      case none:
-        return nil
+          top: TUIBoxLine(left: "\u{2F}", middle: "-", right: "\u{5C}"),
+          middle: TUIBoxLine(left: "|", middle: "+", right: "|"),
+          bottom: TUIBoxLine(left: "\u{5C}", middle: "-", right: "\u{2F}"),
+          horizontal: TUIBoxHorizontal(top: "-", middle: "-", bottom: "-"),
+          vertical: TUIBoxLine(left: "|", middle: "|", right: "|"))
+      case custom(let customBorder):
+        return customBorder.toTUIBox()
       default:
         return nil
     }
@@ -205,10 +203,9 @@ public indirect enum TUIBorders
   /// - parameters:
   ///   - attribute: Ansi (custom Ansi attributes and/or color)
   /// - returns: TUIBox?
-  internal func toTUIBox(
-    attribute attr: Ansi = Ansi.Color.Foreground.lightGray()) -> TUIBox?
+  internal func toTUIBox() -> TUIBox?
   {
-    return matchStandardBoxes(attribute: attr)
+    return matchStandardBoxes()
   }
 }
 
@@ -216,56 +213,18 @@ public indirect enum TUIBorders
 // MARK: TUIBoxLine -
 internal struct TUIBoxLine
 {
-  internal let left: Ansi
-  internal let middle: Ansi
-  internal let right: Ansi
-  
-  /// Default initializer
-  ///
-  /// - parameters:
-  ///   - left: Ansi
-  ///   - middle: Ansi
-  ///   - right: Ansi
-  ///   - attribute: Ansi
-  internal init(
-    left: Character,
-    middle: Character,
-    right: Character,
-    attribute: Ansi = "")
-  {
-    let reset = attribute != "" ? Ansi.Attribute.reset() : ""
-    self.left = attribute + left + reset
-    self.middle = attribute + middle + reset
-    self.right = attribute + right + reset
-  }
+  internal let left: Character
+  internal let middle: Character
+  internal let right: Character
 }
 
 // MARK: -
 // MARK: TUIBoxHorizontal -
 internal struct TUIBoxHorizontal
 {
-  internal let top: Ansi
-  internal let middle: Ansi
-  internal let bottom: Ansi
-  
-  /// Default initializer
-  ///
-  /// - parameters:
-  ///   - top: Ansi
-  ///   - middle: Ansi
-  ///   - bottom: Ansi
-  ///   - attribute: Ansi
-  internal init(
-    top: Character,
-    middle: Character,
-    bottom: Character,
-    attribute: Ansi = "")
-  {
-    let reset = attribute != "" ? Ansi.Attribute.reset() : ""
-    self.top = attribute + top + reset
-    self.middle = attribute + middle + reset
-    self.bottom = attribute + bottom + reset
-  }
+  internal let top: Character
+  internal let middle: Character
+  internal let bottom: Character
 }
 
 // MARK: -
@@ -277,26 +236,4 @@ internal struct TUIBox
   internal let bottom: TUIBoxLine
   internal let horizontal: TUIBoxHorizontal
   internal let vertical: TUIBoxLine
-  
-  /// Default initializer
-  ///
-  /// - parameters:
-  ///   - top: TUIBoxLine
-  ///   - middle: TUIBoxLine
-  ///   - bottom: TUIBoxLine
-  ///   - horizontal: TUIBoxHorizontal
-  ///   - vertical: TUIBoxLine
-  internal init(
-    top: TUIBoxLine,
-    middle: TUIBoxLine,
-    bottom: TUIBoxLine,
-    horizontal: TUIBoxHorizontal,
-    vertical: TUIBoxLine)
-  {
-    self.top = top
-    self.middle = middle
-    self.bottom = bottom
-    self.horizontal = horizontal
-    self.vertical = vertical
-  }
 }
