@@ -4,7 +4,6 @@
 
 import Darwin
 
-// MARK: -
 // MARK: TUIPoint -
 
 /// Terminal UI Point

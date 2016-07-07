@@ -76,7 +76,6 @@ internal extension FigletHeader
     ///
     /// - parameters:
     ///   - header: [String]
-    /// - throws: Figlet.Error
     private init(header: [String]) throws
     {
       // Validate Figlet signature
@@ -125,7 +124,6 @@ internal extension FigletHeader
   /// - parameters:
   ///   - lines: [String]
   ///   - name: String
-  /// - throws: FigletHeader.Error
   internal init(lines: [String], name: String) throws
   {
     let headerline = lines[0].characters

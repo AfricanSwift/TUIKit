@@ -21,7 +21,8 @@ public struct TUIView
   private let borderColor: Ansi
   public let backgroundColor: Ansi
   
-  /// Cache (rendered Ansi)
+  /// View cache (rendered Ansi)
+  /// Used for direct view draw, unused with TUIScreen
   public var cache: [Ansi]
   
   /// Border parts
@@ -94,7 +95,6 @@ public extension TUIView
   public mutating func move(x: Int, y: Int)
   {
     self.origin = TUIPoint(x: x, y: y)
-    self.invalidate = true
   }
   
   /// Resize View
@@ -130,32 +130,57 @@ public extension TUIView
 // MARK: Render & Draw -
 public extension TUIView
 {
-  // Render view cache
+  /// Draw
+  ///
+  /// - parameters:
+  ///   - atOrigin: Bool (default = true): controls whether the view is
+  ///     drawn at origin or the cursor offset
+  ///   - parameters: TUIRenderParameter
+  public mutating func draw(
+    atOrigin: Bool = false,
+    parameters: TUIRenderParameter = TUIRenderParameter())
+  {
+    if self.invalidate
+    {
+      render(parameters: parameters)
+    }
+    
+    var y = Int(self.origin.y)
+    let x = Int(self.origin.x)
+    
+    for line in self.cache
+    {
+      _ = atOrigin ? Ansi.Cursor.position(row: y, column: x).stdout() : ()
+      line.stdout()
+      y += 1
+    }
+    Ansi.resetAll().stdout()
+  }
+  
+  /// Render view cache
   ///
   /// - parameters:
   ///   - parameters: TUIRenderParameter
-  /// - returns: [Ansi]
   private mutating func render(parameters: TUIRenderParameter)
   {
     guard self.invalidate else { return }
     
     var hasBorder = true
-    if case .none = view.border
+    if case .none = self.border
     {
       hasBorder = false
     }
     
-    let left = hasBorder ? view.borderParts.left : ""
-    let right = hasBorder ? view.borderParts.right : ""
+    let left = hasBorder ? self.borderParts.left : ""
+    let right = hasBorder ? self.borderParts.right : ""
     
-    if hasBorder {
-      self.cache[0] = view.borderParts.top + "\n"
-      self.cache[self.cache.count - 1] = view.borderParts.bottom 
+    if hasBorder
+    {
+      self.cache[0] = self.borderParts.top + "\n"
+      self.cache[self.cache.count - 1] = self.borderParts.bottom + "\n"
     }
-    if hasBorder { }
     
     let offset = hasBorder ? 1 : 0
-    
     for y in self.buffer.indices
     {
       var lineBuffer = Ansi("")
@@ -163,36 +188,9 @@ public extension TUIView
       {
         lineBuffer += self.buffer[y][x].toAnsi(parameters: parameters)
       }
-      self.cache[y + offset] = (left + view.backgroundColor + lineBuffer + right + "\n")
+      self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right + "\n")
     }
     self.invalidate = false
-  }
-  
-  /// Draw Pixel
-  ///
-  /// - parameters:
-  ///   - parameters: TUIRenderParameter
-  /// - returns: [Ansi]
-//  public mutating func draw(
-//    parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
-//  {
-//
-//    var result = [Ansi]()
-//    for y in self.buffer.indices
-//    {
-//      var xbuffer = Ansi("")
-//      for x in self.buffer[0].indices
-//      {
-//        xbuffer += self.buffer[y][x].toAnsi(parameters: parameters)
-//      }
-//      result.append(xbuffer.compress())
-//    }
-//    return result
-//  }
-  public mutating func draw(parameters: TUIRenderParameter = TUIRenderParameter()) -> [Ansi]
-  {
-    if self.invalidate { render(parameters: parameters) }
-    return self.cache
   }
   
   /// Draw Pixel

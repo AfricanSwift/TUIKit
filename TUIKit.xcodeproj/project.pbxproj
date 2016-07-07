@@ -53,6 +53,7 @@
 		D7E5BFD61D298BCC0000DF83 /* TUIView+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */; };
 		D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */; };
 		D7E5BFDB1D29BB3E0000DF83 /* Colossal.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B831D243EB600BEC989 /* Colossal.flf */; };
+		D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -412,6 +413,7 @@
 		D7E5BFD51D298BCC0000DF83 /* TUIView+Ellipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Ellipse.swift"; path = "Source/UIElements/TUIView+Ellipse.swift"; sourceTree = "<group>"; };
 		D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+LineGraphics.swift"; path = "Source/Examples/Example+LineGraphics.swift"; sourceTree = "<group>"; };
 		D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+RandomViews.swift"; path = "Source/Examples/Example+RandomViews.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -855,6 +857,7 @@
 				D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */,
 				D7518C581D243F6900BEC989 /* Example+Figfont.swift */,
 				D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */,
+				D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 				D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */,
 				D731013F1D1471850081072F /* TUIBorders.swift in Sources */,
 				D77A29151D125BF600C56E49 /* Ansi+Color+Utility.swift in Sources */,
+				D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */,
 				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
 				D731013B1D146DDD0081072F /* TUIView.swift in Sources */,
 				D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */,

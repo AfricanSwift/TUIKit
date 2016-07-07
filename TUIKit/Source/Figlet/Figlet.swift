@@ -57,7 +57,6 @@ internal extension Figlet
   ///
   /// - parameters:
   ///   - fontFile: String
-  /// - throws: Figlet.Error
   internal init?(fontFile path: String) throws
   {
     do
