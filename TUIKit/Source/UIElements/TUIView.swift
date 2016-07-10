@@ -13,7 +13,7 @@ public struct TUIView
   
   /// Flag indicating if the cache is invalid
   /// Controls rendering
-  private var invalidate: Bool
+  internal var invalidate: Bool
   
   // Optional TUIBorder for the view
   public let border: TUIBorder
@@ -151,17 +151,18 @@ public extension TUIView
     for line in self.cache
     {
       _ = atOrigin ? Ansi.Cursor.position(row: y, column: x).stdout() : ()
-      line.stdout()
+      _ = atOrigin ? line.stdout() : (line + "\n").stdout()
       y += 1
     }
     Ansi.resetAll().stdout()
+    Ansi.flush()
   }
   
   /// Render view cache
   ///
   /// - parameters:
   ///   - parameters: TUIRenderParameter
-  private mutating func render(parameters: TUIRenderParameter)
+  internal mutating func render(parameters: TUIRenderParameter)
   {
     guard self.invalidate else { return }
     
@@ -176,8 +177,10 @@ public extension TUIView
     
     if hasBorder
     {
-      self.cache[0] = self.borderParts.top + "\n"
-      self.cache[self.cache.count - 1] = self.borderParts.bottom + "\n"
+//      self.cache[0] = self.borderParts.top + "\n"
+//      self.cache[self.cache.count - 1] = self.borderParts.bottom + "\n"
+      self.cache[0] = self.borderParts.top
+      self.cache[self.cache.count - 1] = self.borderParts.bottom
     }
     
     let offset = hasBorder ? 1 : 0
@@ -188,7 +191,8 @@ public extension TUIView
       {
         lineBuffer += self.buffer[y][x].toAnsi(parameters: parameters)
       }
-      self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right + "\n")
+//      self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right + "\n")
+      self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right)
     }
     self.invalidate = false
   }
@@ -271,6 +275,9 @@ public extension TUIView
     self.invalidate = true
   }
   
+  
+  // FIXME: Crashes when text is longer than view size, drawText ha safe guards, this doesn't
+  
   /// Limited to SGR Control Codes (Attributes & Colors)
   ///
   /// - parameters:
@@ -307,18 +314,49 @@ public extension TUIView
         carryOverAnsi += Ansi(Ansi.C1.CSI + t.parameter + t.function)
       }
 
-      let char = t.suffix.characters
-      var isFirstChar = true
-      for i in char.indices
-      {
-        let ansi = isFirstChar ? Ansi(Ansi.C1.CSI + t.parameter + t.function) + carryOverAnsi : ""
-        carryOverAnsi = Ansi("")
-        self.buffer[position.y][position.x + xoffset]
-          .setAnsiCharacter(character: char[i], ansi: ansi)
-        xoffset += 1
-        isFirstChar = false
-      }
+      let ans = Ansi(Ansi.C1.CSI + t.parameter + t.function) + carryOverAnsi
+      setAnsiText(text: t.suffix, y: y, x: x, xoffset: &xoffset, ansi: ans, linewrap: linewrap)
+      
+//      let char = t.suffix.characters
+//      var isFirstChar = true
+//      for i in char.indices
+//      {
+////        print("====>> ", t.suffix, position.y, position.x + xoffset)
+//        let ansi = isFirstChar ? Ansi(Ansi.C1.CSI + t.parameter + t.function) + carryOverAnsi : ""
+//        carryOverAnsi = Ansi("")
+//        self.buffer[position.y][position.x + xoffset]
+//          .setAnsiCharacter(character: char[i], ansi: ansi)
+//        xoffset += 1
+//        isFirstChar = false
+//      }
     }
     self.invalidate = true
   }
+  
+  
+  private mutating func setAnsiText(text: String, y: Int, x: Int, xoffset: inout Int, ansi: Ansi, linewrap: Bool)
+  {
+//    print("---> ", text, y, x)
+//    var xoffset = 0
+    var p = (x: x, y: y)
+    var isFirstChar = true
+    let chars = text.characters
+    
+    for index in chars.indices
+    {
+      guard p.x + xoffset <= self.size.character.width.toInt() - 1 && !linewrap else { break }
+      self.buffer[p.y][p.x + xoffset]
+        .setAnsiCharacter(character: chars[index], ansi: isFirstChar ? ansi : "")
+      xoffset += 1
+      isFirstChar = false
+      if p.x + xoffset > self.size.character.width.toInt() - 1 && linewrap
+      {
+        if p.y + 1 > self.size.character.height.toInt() - 1 { break }
+        p.x = 0
+        p.y += 1
+        xoffset = 0
+      }
+    }
+  }
+  
 }

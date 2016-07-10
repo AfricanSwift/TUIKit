@@ -20,7 +20,7 @@
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
 		D757D6571D29EF94001F475A /* TUIView+Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757D6561D29EF94001F475A /* TUIView+Rectangle.swift */; };
-		D757D6591D29F9C4001F475A /* TUIView+ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757D6581D29F9C4001F475A /* TUIView+ProgressBar.swift */; };
+		D757D6591D29F9C4001F475A /* TUIProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D757D6581D29F9C4001F475A /* TUIProgress.swift */; };
 		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
 		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
@@ -375,7 +375,7 @@
 		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
 		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
 		D757D6561D29EF94001F475A /* TUIView+Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Rectangle.swift"; path = "Source/UIElements/TUIView+Rectangle.swift"; sourceTree = "<group>"; };
-		D757D6581D29F9C4001F475A /* TUIView+ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+ProgressBar.swift"; path = "Source/UIElements/TUIView+ProgressBar.swift"; sourceTree = "<group>"; };
+		D757D6581D29F9C4001F475A /* TUIProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIProgress.swift; path = Source/UIElements/TUIProgress.swift; sourceTree = "<group>"; };
 		D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUIKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		D76581011D25446400FC4E8C /* Terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Terminal.c; path = Source/Helpers/Terminal.c; sourceTree = "<group>"; };
 		D76581021D25446400FC4E8C /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminal.h; path = Source/Helpers/Terminal.h; sourceTree = "<group>"; };
@@ -439,7 +439,7 @@
 				D73101401D14DB640081072F /* TUIGeometry.swift */,
 				D72399781D16C49A002D09DF /* TUIRender.swift */,
 				D746BB6A1D245FFB00DFA8F7 /* TUIWindow.swift */,
-				D757D6581D29F9C4001F475A /* TUIView+ProgressBar.swift */,
+				D757D6581D29F9C4001F475A /* TUIProgress.swift */,
 			);
 			name = UIElements;
 			sourceTree = "<group>";
@@ -960,7 +960,7 @@
 				D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */,
 				D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */,
 				D77A29181D125BF600C56E49 /* Ansi+Cursor.swift in Sources */,
-				D757D6591D29F9C4001F475A /* TUIView+ProgressBar.swift in Sources */,
+				D757D6591D29F9C4001F475A /* TUIProgress.swift in Sources */,
 				D73101411D14DB640081072F /* TUIGeometry.swift in Sources */,
 				D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */,
 				D76581031D25446400FC4E8C /* Terminal.c in Sources */,
@@ -1079,7 +1079,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TUIKit/TUIKit-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1093,7 +1093,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TUIKit/TUIKit-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

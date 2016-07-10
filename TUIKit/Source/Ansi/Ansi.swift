@@ -26,11 +26,19 @@ public struct Ansi
     return self.value
   }
   
+  /// Print to Standard Out
   public func stdout()
   {
     fputs(self.value, Darwin.stdout)
   }
   
+  /// Print to Standard Error
+  public func stderr()
+  {
+    fputs(self.value, Darwin.stderr)
+  }
+  
+  /// Flush Standard Out
   public static func flush()
   {
     fflush(__stdoutp)

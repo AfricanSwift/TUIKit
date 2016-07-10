@@ -84,4 +84,19 @@ internal extension String {
   {
     return try self.unicodeScalars.split(isSeparator: isSeparator)
   }
+  
+  /// Creates a string representing the given String repeated the specified
+  /// number of times. For example, use this initializer to create a string with
+  /// ten `"ab"` Strings in a row.
+  /// ````
+  /// let zeroes = String(repeating: "ab", count: 10)
+  /// print(zeroes)  // prints "abababababababababab"
+  /// ````
+  /// - Parameters:
+  ///   - repeating: String 
+  ///   - count: Int
+  internal init(repeating repeatedValue: String, count: Int)
+  {
+    self = (0..<count).map { _ in repeatedValue }.joined(separator: "")
+  }
 }

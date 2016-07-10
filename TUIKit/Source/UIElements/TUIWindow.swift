@@ -56,7 +56,7 @@ public struct TUIWindow {
   /// TTY Window Size: IOCTL (TIOCGWINSZ)
   ///
   /// - returns: TUIWindowSize?
-  private static func ttysize() -> TUIWindowSize?
+  public static func ttysize() -> TUIWindowSize?
   {
     guard let ttySize = UnsafeMutablePointer<Int32>(malloc(sizeof(TTYSize)))
       else { return nil }
