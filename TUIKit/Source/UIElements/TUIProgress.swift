@@ -67,6 +67,22 @@ public enum TUIBarStyle
   /// ````
   case gradient1, gradient2, micro1, micro2, micro3, micro4
   
+  /// ,custom(bar: TUIBar):
+  ///
+  /// ````
+  /// let c = [Character("0")]
+  /// let i = Character(".")
+  /// let cBar = TUIBar(format: [.percent, .space, .text("{"),
+  ///                            .complete(c), .incomplete(i),
+  ///                            .text("}"), .space, .elapsed,
+  ///                            .space, .message], width: 12)
+  ///
+  /// var bar = TUIProgress(style: .custom(bar: cBar), message: "Hello world!")
+  ///
+  /// // result = 50% {000000......} 00:05 Hello world!
+  /// ````
+  case custom(bar: TUIBar)
+  
   internal static var allCases: [TUIBarStyle] =
     [.bar1, .bar2, .bar3, .bar4, .bar5, .bar6, .bar7, .bar8, .bar9, .bar10,
      .bar11, .bar12, .gradient1, .gradient2, .micro1, .micro2, .micro3, .micro4]
@@ -253,7 +269,7 @@ public extension TUIBarStyle
                                 .complete(c), .incomplete(i),
                                 .text(" |"), .space, .message]
       return TUIBar(format: bits, width: 4)
-
+      
     default:
       return matchMicro()
     }
@@ -299,6 +315,10 @@ public extension TUIBarStyle
                                 .incomplete(i), .space, .message]
       return TUIBar(format: bits, width: 4)
       
+    /// Custom Progressbar
+    case .custom(let bar):
+      return bar
+      
     default:
       let c: [Character] = ["⣿"]
       let i: Character = "⠶"
@@ -310,19 +330,29 @@ public extension TUIBarStyle
   }
 }
 
+
+// TODO: More Bits: .animate(sequence: [Character], fill: ".", direction: forward or reverse)
+// example frames: 0...... .1..... ..2.... ...3...
+//
+// TODO: More Bits: .cylon(character: Character, fill: ".")
+// example frames: 0...... .0..... ..0.... ...0... (back and forward, repeat)
+//
+// TODO: More Bits: .spinner(sequence: [Character])
+// example frames: / - \ | / - \ |
 public enum TUIBarBits
 {
   /// TUIBarBits
   /// - **percent**: % complete
   /// - **message**: Status message
   /// - **elapsed**: Elapsed time in seconds
-  /// - **eta**: Estimate time to complete
+  /// - **eta**: Estimated total duration
+  /// - **remaining: Estimate time remaining
   /// - **rate**: Current rate of progression per second
   /// - **space**: Space Character
   /// - **text**: Custom text
   /// - **complete**: Complete character / sequence
   /// - **incomplete**: Incomplete character
-  case percent, message, elapsed, eta, rate, space,
+  case percent, message, elapsed, eta, remaining, rate, space,
   text(String), complete([Character]), incomplete(Character)
   
   private func status(progress: TUIProgress) -> String
@@ -337,6 +367,8 @@ public enum TUIBarBits
         return progress.color.elapsed.toString() + progress.elapsed
       case eta:
         return progress.color.eta.toString() + progress.eta
+      case .remaining:
+        return progress.color.remaining.toString() + progress.remaining
       case rate:
         return progress.color.rate.toString() + progress.rate
       case space:
@@ -353,9 +385,9 @@ public enum TUIBarBits
 
 public struct TUIBar
 {
-  public let format: [TUIBarBits]
-  public let width: Int
-  public let kern: Character?
+  private let format: [TUIBarBits]
+  public var width: Int
+  private let kern: Character?
   
   public init(format: [TUIBarBits], width: Int = 6, kern: Character? = nil)
   {
@@ -367,14 +399,15 @@ public struct TUIBar
 
 public struct TUIBarColor
 {
-  public var percent = Ansi.Color(red: 65/255, green: 55/255, blue: 146/255, alpha: 1).foreground256()
-  public var message = Ansi.Color(red: 99/255, green: 168/255, blue: 69/255, alpha: 1).foreground256()
-  public var elapsed = Ansi.Color(red: 185/255, green: 124/255, blue: 80/255, alpha: 1).foreground256()
-  public var eta = Ansi.Color(red: 179/255, green: 55/255, blue: 55/255, alpha: 1).foreground256()
-  public var rate = Ansi.Color(red: 185/255, green: 124/255, blue: 80/255, alpha: 1).foreground256()
-  public var text = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1).foreground256()
-  public var complete = Ansi.Color(red: 147/255, green: 56/255, blue: 135/255, alpha: 1).foreground256()
-  public var incomplete = Ansi.Color(red: 185/255, green: 124/255, blue: 80/255, alpha: 1).foreground256()
+  public var percent = Ansi.Color.Foreground.color256(index: 151)
+  public var message = Ansi.Color.Foreground.color256(index: 252)
+  public var elapsed = Ansi.Color.Foreground.color256(index: 139)
+  public var eta = Ansi.Color.Foreground.color256(index: 175)
+  public var remaining = Ansi.Color.Foreground.color256(index: 65)
+  public var rate = Ansi.Color.Foreground.color256(index: 207)
+  public var text = Ansi.Color.Foreground.color256(index: 32)
+  public var complete = Ansi.Color.Foreground.color256(index: 116)
+  public var incomplete = Ansi.Color.Foreground.color256(index: 136)
 }
 
 public struct TUIProgress
@@ -383,7 +416,7 @@ public struct TUIProgress
   private let start = Date()
   
   /// Progress style
-  private let style: TUIBar
+  public var style: TUIBar
   
   /// Message buffer
   private var messages = [String]()
@@ -392,14 +425,14 @@ public struct TUIProgress
   private var view: TUIView
   
   /// Percent complete
-  public var percent = 0
+  private var percent = 0
   
   /// Progress Bit Colors
   public var color = TUIBarColor()
   
   /// % rate per second
   private var rate: String {
-    return String(format: "%f.2", Double(percent) / elapsedTime)
+    return String(format: "%.2f", Double(percent) / elapsedTime)
   }
   
   /// Elapsed time in seconds
@@ -413,7 +446,7 @@ public struct TUIProgress
   private var elapsed: String {
     let minutes = Int(self.elapsedTime / 60)
     let seconds = Int((self.elapsedTime / 60 - Double(minutes)) * 60)
-    return self.color.elapsed.toString() + String(format: "%02d:%02d", minutes, seconds)
+    return String(format: "%02d:%02d", minutes, seconds)
   }
   
   /// Estimated time to completion (minutes:seconds)
@@ -422,7 +455,18 @@ public struct TUIProgress
     let eta =  (100.0 / Double(percent)) * self.elapsedTime
     let minutes = Int(eta / 60)
     let seconds = Int((eta / 60 - Double(minutes)) * 60)
-    return self.color.eta.toString() + String(format: "%02d:%02d", minutes, seconds)
+    return String(format: "%02d:%02d", minutes, seconds)
+  }
+  
+  /// Estimated remaining time to completion (minutes:seconds)
+  /// Calculation = (eta - elapsed)
+  private var remaining: String {
+    guard percent > 0 else { return "00:00" }
+    let eta =  (100.0 / Double(percent)) * self.elapsedTime
+    let remaining = eta - self.elapsedTime
+    let minutes = Int(remaining / 60)
+    let seconds = Int((remaining / 60 - Double(minutes)) * 60)
+    return String(format: "%02d:%02d", minutes, seconds)
   }
   
   public init(style: TUIBarStyle, message: String)
@@ -540,10 +584,16 @@ public struct TUIProgress
     self.messages.append(message)
   }
   
-  public func draw() -> String
+  private func draw() -> String
   {
     return self.style.format
       .map { $0.status(progress: self) }
       .joined(separator: "") + Ansi.Color.resetAll().toString()
+  }
+  
+  public func draw()
+  {
+    print("\(self.draw())\r", terminator: "")
+    Ansi.flush()
   }
 }
