@@ -276,7 +276,7 @@ public extension TUIView
   }
   
   
-  // FIXME: Crashes when text is longer than view size, drawText ha safe guards, this doesn't
+  // FIXME: Crashes when text is longer than view size, drawText has safe guards, this doesn't
   
   /// Limited to SGR Control Codes (Attributes & Colors)
   ///

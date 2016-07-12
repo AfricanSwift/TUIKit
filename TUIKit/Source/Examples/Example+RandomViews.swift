@@ -10,7 +10,7 @@ public extension Example
   {
     public static func demo()
     {
-      let current = Ansi.Window.Report.characterTextAreaSize() ?? TUISize(width: 50, height: 50)
+      let current = TUIWindow.ttysize()?.character ?? TUISize(width: 50, height: 50)
       let color1 = Ansi.Color.Foreground.white()
         + Ansi.Color.Background.colorRGB256(red: 75, green: 25, blue: 50)
       let color2 = Ansi.Color.Background.color256(index: 17)
