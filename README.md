@@ -14,12 +14,63 @@ Swift native UIKit for the terminal with functionality similar to ncurses.
 ## Planned Goals
 - Support multiple render modes: 
   - **Character:** ASCII, Unicode and Drawille (braille).
-  - **Color:** Mono, 16 Color, 256 Color and RGB
-- **UI Elements:** View, Button, Label, Rich Text Label
-- **Line graphics:** Pixel, Line, Arc, Ellipse, Rectangle, Rounded Rectangle, Pie, Polygon, Polyhedron, Star
+  - **Color:** Mono, 16 Color, 256 Color and RGB 
+- **UI Elements:** View , Button, Label, Rich Text Label
+- **Line graphics:** Pixel, Line, Arc, Ellipse, Rectangle, Rounded Rectangle, Pie, Polygon, Polyhedron, Star 
+
+> 
+## TUICharacter ![View](https://img.shields.io/badge/Beta-Ready-29bb74.svg?style=flat)
+TUICharacter is a sub-element in the UI that is built to support:
+
+- Multiple symbols: ASCII, Unicode and Drawille (braille pixels).
+- Color: Mono, 16 Color, 256 Color and RGB.
+- Combination of Ansi Color and Attributes.
+- Render caching.  
+
+Each character is designed around the braille patterning, which encodes 2x4 *(x, y)* pixels in a single character. TUICharacter accomodates either a fixed unicode character or braille value that represents a pixel. In this way collections of TUICharacters can intersperse a variety of braille pixels and unicode text.
+
+> #### TUICharacter Rendering
+Multiple rendering styles are supported for braille pixel encoded values:
+
+- **Drawille**: Renders as braille pixels
+- **Short**: Short ASCII ramp (paulbourke.net) using color intensities.
+- **Short2**: Short ASCII ramp (iJoshSmith) using color intensities.
+- **Long**: Long ASCII ramp (www.ludd.luth.se) using color intensities.
+- **DitherShort**: Short ASCII ramp using braille values.
+- **DitherLong**: Long ASCII ramp using braille values.
+- **Block**: Block ramp using braille values.
+- **Block2**: Block ramp using a combination of color intensities & braille values.
+
+**Note**: Unicode text is unaffected by the rendering style.
+
+
+### TUIView
+User interface view, built from a 2D array of TUICharacter
+
+#### TUIProgress
+Flexible design allowing full customization using TUIBarBits:
+
+- **percent**: % complete
+- **message**: Status message
+- **elapsed**: Elapsed time in seconds
+- **eta**: Estimated total duration
+- **remaining**: Estimate time remaining
+- **rate**: Current rate of progression per second
+- **space**: Space Character
+- **text**: Custom text
+- **complete**: Complete character / sequence
+- **incomplete**: Incomplete character
+- **scanner**: left to right activity scanner
+- **cylon**: similar to Battlestar Galatica namesake
+- **animate**: sequence animation
+- **spinner**: sequence spinner
+
+> Ansi
+
+> Line Graphics 
 
 ### Extended Features
-- Progress bar and Spinners
+- Progress bar and Spinners ![Progressbar](https://img.shields.io/badge/Beta-Ready-29bb74.svg?style=flat)
 - Table views
 - **Charting:** Bar, Stacker Bar, Line, Pie
 - Gauges
