@@ -1,12 +1,10 @@
 # Terminal UIKit
-
-![Platforms](https://img.shields.io/badge/Platforms-OSX-ff2974.svg)<BR>
-![Swift version](https://img.shields.io/badge/Swift-3.0-FF2974.svg)<BR>
-![ANSI support](https://img.shields.io/badge/Ansi-ECMA%2048-ff2974.svg?style=flat)
-
-## Description
 Swift native UIKit for the terminal with functionality similar to ncurses.
 
+## Status
+![Platforms](https://img.shields.io/badge/Platforms-OSX-ff2974.svg)
+![Swift version](https://img.shields.io/badge/Swift-3.0-FF2974.svg)
+![ANSI support](https://img.shields.io/badge/Ansi-ECMA%2048-ff2974.svg?style=flat)
 ## Objective
 - Implement a cross platform native Swift implementation of ncurses with a simpler and full featured API.
 - Implement a UI element and extended widget API.
@@ -18,8 +16,7 @@ Swift native UIKit for the terminal with functionality similar to ncurses.
 - **UI Elements:** View, Button, Label, Rich Text Label
 - **Line graphics:** Pixel, Line, Arc, Ellipse, Rectangle, Rounded Rectangle, Pie, Polygon, Polyhedron, Star 
 
-> 
-## TUICharacter ![View](https://img.shields.io/badge/Beta-Ready-29bb74.svg?style=flat)
+## TUICharacter
 TUICharacter is a foundational UI element built to support:
 
 - **Multiple symbol types:** Unicode character or Drawille (braille pixels).
@@ -31,7 +28,6 @@ TUICharacter is a foundational UI element built to support:
 
 TUICharacter supports either a fixed unicode character or scalar value which encodes 2x4 *(x, y)* pixels as a single braille character. In this way collections of TUICharacters can intermix a variety of braille pixels with unicode text.
 
-> 
 #### TUICharacter Rendering
 Multiple rendering styles are supported for braille pixel encoded values:
 
@@ -102,8 +98,7 @@ The following *xterm control sequence introducer (CSI*) categories are supported
 6. Window Control
 7. Private Mode: Set / Reset
 
-#### Select Graphic Rendition ![ANSI build](https://img.shields.io/badge/Build-Complete-29bb74.svg?style=flat)
-
+#### Select Graphic Rendition
 |       Character | Control Sequences                        |
 | --------------: | ---------------------------------------- |
 |      Attributes | Reset, Bold, Dim, Italic, Underline, Blink, Rapid Blink, Inverse, Positive Visible, Invisible, Crossed-Out, Double Underline. |
@@ -112,8 +107,7 @@ The following *xterm control sequence introducer (CSI*) categories are supported
 |      256 Colors | 16 Base Colors + 216 Component Colors + 24 Grayscale. <BR><BR>![256 Colors](https://raw.githubusercontent.com/AfricanSwift/TUIKit/master/TUIKit/Source/Reference/Ansi-256Colors.png) |
 |      RGB Colors | 24-bit Colors — ISO-8613-3.              |
 
-#### Cursor Control ![ANSI build](https://img.shields.io/badge/Build-Complete-29bb74.svg?style=flat)
-
+#### Cursor Control 
 |      Cursor | Control Sequences                        |
 | ----------: | ---------------------------------------- |
 | Directional | Up, Down, Forward, Backward, Absolute Position (row, column) |
