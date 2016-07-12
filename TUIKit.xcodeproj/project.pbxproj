@@ -51,7 +51,6 @@
 		D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */; };
 		D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DBE1D25D695000FFE2C /* Custom+String.swift */; };
 		D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */; };
-		D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */; };
 		D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */; };
 		D7E5BFDB1D29BB3E0000DF83 /* Colossal.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B831D243EB600BEC989 /* Colossal.flf */; };
 		D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */; };
@@ -412,7 +411,6 @@
 		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
 		D7E49DBE1D25D695000FFE2C /* Custom+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+String.swift"; path = "Source/Foundation/Custom+String.swift"; sourceTree = "<group>"; };
 		D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Character.swift"; path = "Source/Foundation/Custom+Character.swift"; sourceTree = "<group>"; };
-		D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Numbers.swift"; path = "Source/Foundation/Custom+Numbers.swift"; sourceTree = "<group>"; };
 		D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+LineGraphics.swift"; path = "Source/Examples/Example+LineGraphics.swift"; sourceTree = "<group>"; };
 		D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+RandomViews.swift"; path = "Source/Examples/Example+RandomViews.swift"; sourceTree = "<group>"; };
@@ -856,7 +854,6 @@
 				D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */,
 				D7E49DBE1D25D695000FFE2C /* Custom+String.swift */,
 				D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */,
-				D7E49DC21D25D831000FFE2C /* Custom+Numbers.swift */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -978,7 +975,6 @@
 				D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */,
 				D71F84621D347318004C9826 /* TUIView+Ellipse.swift in Sources */,
 				D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */,
-				D7E49DC31D25D831000FFE2C /* Custom+Numbers.swift in Sources */,
 				D77A29131D125BF600C56E49 /* Ansi+Color+LAB.swift in Sources */,
 				D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */,
 				D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */,

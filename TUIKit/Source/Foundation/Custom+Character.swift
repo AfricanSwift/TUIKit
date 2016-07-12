@@ -23,12 +23,4 @@ internal extension Character
   {
     return Ansi(String(self))
   }
-  
-  /// Character to String
-  ///
-  /// - returns: String
-  internal func toString() -> String
-  {
-    return String(self)
-  }
 }

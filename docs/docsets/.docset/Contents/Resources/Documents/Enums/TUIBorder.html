@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TUIBorder Enum Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/TUIBorder" class="dashAnchor"></a>
+    <a title="TUIBorder Enum Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (62% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        TUIBorder Enum Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/RenderStyle.html">RenderStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TUIBarBits.html">TUIBarBits</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TUIBarStyle.html">TUIBarStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TUIBorder.html">TUIBorder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TUIColorComposite.html">TUIColorComposite</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TUIColorSpace.html">TUIColorSpace</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiS0__S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiVs9Character_S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi1pFTSSVS_4Ansi_S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi1pFTVS_4AnsiSS_S0_">+(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2peFTVS_4AnsiS0__T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2peFTVS_4AnsiSS_T_">+=(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2eeFTVS_18TUIRenderParameterS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2eeFTVS_12TUIRectangleS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2eeFTVS_7TUISizeS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2eeFTVS_8TUIPointS0__Sb">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:ZF6TUIKitoi2eeFTVS_4AnsiS0__Sb">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi.html">Ansi</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Color.html">– Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Line.html">– Line</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Erase.html">– Erase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Scroll.html">– Scroll</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Page.html">– Page</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Character.html">– Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Attribute.html">– Attribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Terminal.html">– Terminal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Window.html">– Window</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Report.html">– Report</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/OSC.html">– OSC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Cursor.html">– Cursor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Column.html">– Column</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Row.html">– Row</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Style.html">– Style</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Report.html">– Report</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Display.html">– Display</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Set.html">– Set</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Tab.html">– Tab</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Foreground.html">– Foreground</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Choices.html">– Choices</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Ansi/Background.html">– Background</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example.html">Example</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example/WWDC.html">– WWDC</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example/LineGraphics.html">– LineGraphics</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example/ProgressBars.html">– ProgressBars</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example/RandomViews.html">– RandomViews</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Example/Figfont.html">– Figfont</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIBar.html">TUIBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIBarColor.html">TUIBarColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V6TUIKit12TUICharacter">TUICharacter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIPoint.html">TUIPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIProgress.html">TUIProgress</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIRectangle.html">TUIRectangle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIRenderParameter.html">TUIRenderParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUISize.html">TUISize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIView.html">TUIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIWindow.html">TUIWindow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TUIWindowSize.html">TUIWindowSize</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>TUIBorder</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="n">indirect</span> <span class="kd">enum</span> <span class="kt">TUIBorder</span></code></pre>
+
+                </div>
+              </div>
+            <p>TUI collection of borders to construct view edges, tables, &hellip;</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder6singleFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/single" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder6singleFMS0_S0_">single</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Standard Borders</strong></p>
+
+<pre class="highlight plaintext"><code>┌──┬──┐  ╔══╦══╗  ╒══╤══╕  ╓──╥──╖
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+├──┼──┤  ╠══╬══╣  ╞══╪══╡  ╟──╫──╢
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+└──┴──┘  ╚══╩══╝  ╘══╧══╛  ╙──╨──╜
+single   double   double2  double3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">single</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6doubleFMS0_S0_">double</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double2FMS0_S0_">double2</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double3FMS0_S0_">double3</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder6doubleFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/double" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder6doubleFMS0_S0_">double</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Standard Borders</strong></p>
+
+<pre class="highlight plaintext"><code>┌──┬──┐  ╔══╦══╗  ╒══╤══╕  ╓──╥──╖
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+├──┼──┤  ╠══╬══╣  ╞══╪══╡  ╟──╫──╢
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+└──┴──┘  ╚══╩══╝  ╘══╧══╛  ╙──╨──╜
+single   double   double2  double3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6singleFMS0_S0_">single</a></span><span class="p">,</span> <span class="n">double</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double2FMS0_S0_">double2</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double3FMS0_S0_">double3</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder7double2FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/double2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder7double2FMS0_S0_">double2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Standard Borders</strong></p>
+
+<pre class="highlight plaintext"><code>┌──┬──┐  ╔══╦══╗  ╒══╤══╕  ╓──╥──╖
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+├──┼──┤  ╠══╬══╣  ╞══╪══╡  ╟──╫──╢
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+└──┴──┘  ╚══╩══╝  ╘══╧══╛  ╙──╨──╜
+single   double   double2  double3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6singleFMS0_S0_">single</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6doubleFMS0_S0_">double</a></span><span class="p">,</span> <span class="n">double2</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double3FMS0_S0_">double3</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder7double3FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/double3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder7double3FMS0_S0_">double3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Standard Borders</strong></p>
+
+<pre class="highlight plaintext"><code>┌──┬──┐  ╔══╦══╗  ╒══╤══╕  ╓──╥──╖
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+├──┼──┤  ╠══╬══╣  ╞══╪══╡  ╟──╫──╢
+│  │  │  ║  ║  ║  │  │  │  ║  ║  ║
+└──┴──┘  ╚══╩══╝  ╘══╧══╛  ╙──╨──╜
+single   double   double2  double3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6singleFMS0_S0_">single</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder6doubleFMS0_S0_">double</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7double2FMS0_S0_">double2</a></span><span class="p">,</span> <span class="n">double3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder8block100FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/block100" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder8block100FMS0_S0_">block100</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Block Borders</strong></p>
+
+<pre class="highlight plaintext"><code>███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▛▀▀▀▀▀▜
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+█──┼──█   ▓──┼──▓   ░──┼──░   ▌──┼──▐
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▙▃▃▃▃▃▟
+block100  block75   block50   halfblock
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">block100</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block75FMS0_S0_">block75</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block50FMS0_S0_">block50</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder9halfblockFMS0_S0_">halfblock</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder7block75FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/block75" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder7block75FMS0_S0_">block75</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Block Borders</strong></p>
+
+<pre class="highlight plaintext"><code>███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▛▀▀▀▀▀▜
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+█──┼──█   ▓──┼──▓   ░──┼──░   ▌──┼──▐
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▙▃▃▃▃▃▟
+block100  block75   block50   halfblock
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder8block100FMS0_S0_">block100</a></span><span class="p">,</span> <span class="n">block75</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block50FMS0_S0_">block50</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder9halfblockFMS0_S0_">halfblock</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder7block50FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/block50" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder7block50FMS0_S0_">block50</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Block Borders</strong></p>
+
+<pre class="highlight plaintext"><code>███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▛▀▀▀▀▀▜
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+█──┼──█   ▓──┼──▓   ░──┼──░   ▌──┼──▐
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▙▃▃▃▃▃▟
+block100  block75   block50   halfblock
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder8block100FMS0_S0_">block100</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block75FMS0_S0_">block75</a></span><span class="p">,</span> <span class="n">block50</span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder9halfblockFMS0_S0_">halfblock</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder9halfblockFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/halfblock" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder9halfblockFMS0_S0_">halfblock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Block Borders</strong></p>
+
+<pre class="highlight plaintext"><code>███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▛▀▀▀▀▀▜
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+█──┼──█   ▓──┼──▓   ░──┼──░   ▌──┼──▐
+█  │  █   ▓  │  ▓   ░  │  ░   ▌  │  ▐
+███████   ▓▓▓▓▓▓▓   ░░░░░░░   ▙▃▃▃▃▃▟
+block100  block75   block50   halfblock
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder8block100FMS0_S0_">block100</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block75FMS0_S0_">block75</a></span><span class="p">,</span> <span class="n"><a href="../Enums/TUIBorder.html#/s:FO6TUIKit9TUIBorder7block50FMS0_S0_">block50</a></span><span class="p">,</span> <span class="n">halfblock</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder5asciiFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/ascii" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder5asciiFMS0_S0_">ascii</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>ASCII Borders</strong></p>
+
+<pre class="highlight plaintext"><code>+--+--+    -------    /-----\
+|  |  |    |  |  |    |  |  |
+|--+--|    |--+--|    |--+--|
+|  |  |    |  |  |    |  |  |
++--+--+    -------    \-----/
+ascii      ascii2     ascii3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">as</span><span class="n">cii</span><span class="p">,</span> <span class="k">as</span><span class="n">cii2</span><span class="p">,</span> <span class="k">as</span><span class="n">cii3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder6ascii2FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/ascii2" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder6ascii2FMS0_S0_">ascii2</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>ASCII Borders</strong></p>
+
+<pre class="highlight plaintext"><code>+--+--+    -------    /-----\
+|  |  |    |  |  |    |  |  |
+|--+--|    |--+--|    |--+--|
+|  |  |    |  |  |    |  |  |
++--+--+    -------    \-----/
+ascii      ascii2     ascii3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">as</span><span class="n">cii</span><span class="p">,</span> <span class="k">as</span><span class="n">cii2</span><span class="p">,</span> <span class="k">as</span><span class="n">cii3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder6ascii3FMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/ascii3" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder6ascii3FMS0_S0_">ascii3</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>ASCII Borders</strong></p>
+
+<pre class="highlight plaintext"><code>+--+--+    -------    /-----\
+|  |  |    |  |  |    |  |  |
+|--+--|    |--+--|    |--+--|
+|  |  |    |  |  |    |  |  |
++--+--+    -------    \-----/
+ascii      ascii2     ascii3
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">as</span><span class="n">cii</span><span class="p">,</span> <span class="k">as</span><span class="n">cii2</span><span class="p">,</span> <span class="k">as</span><span class="n">cii3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder6customFMS0_FT6borderS0__S0_"></a>
+                    <a name="//apple_ref/swift/Element/custom" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder6customFMS0_FT6borderS0__S0_">custom</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Other Borders</strong></p>
+
+<p><strong>Custom:</strong> example:</p>
+
+<pre class="highlight plaintext"><code>let attr = Ansi.Color.Foreground.yellow()
+
+let custom = TUIBox(
+  top: TUIBoxLine(left: "┌", middle: "┬", right: "┐"),
+  middle: TUIBoxLine(left: "├", middle: "┼", right: "┤"),
+  bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘"),
+  horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─"),
+  vertical: TUIBoxLine(left: "│", middle: "│", right: "│"))
+</code></pre>
+
+<p><strong>None:</strong> example: 
+- borderless view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">custom</span><span class="p">(</span><span class="nv">border</span><span class="p">:</span> <span class="kt">TUIBorder</span><span class="p">),</span> <span class="k">none</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO6TUIKit9TUIBorder4noneFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/none" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO6TUIKit9TUIBorder4noneFMS0_S0_">none</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><strong>Other Borders</strong></p>
+
+<p><strong>Custom:</strong> example:</p>
+
+<pre class="highlight plaintext"><code>let attr = Ansi.Color.Foreground.yellow()
+
+let custom = TUIBox(
+  top: TUIBoxLine(left: "┌", middle: "┬", right: "┐"),
+  middle: TUIBoxLine(left: "├", middle: "┼", right: "┤"),
+  bottom: TUIBoxLine(left: "└", middle: "┴", right: "┘"),
+  horizontal: TUIBoxHorizontal(top: "─", middle: "─", bottom: "─"),
+  vertical: TUIBoxLine(left: "│", middle: "│", right: "│"))
+</code></pre>
+
+<p><strong>None:</strong> example: 
+- borderless view</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">custom</span><span class="p">(</span><span class="nv">border</span><span class="p">:</span> <span class="kt">TUIBorder</span><span class="p">),</span> <span class="k">none</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-07-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

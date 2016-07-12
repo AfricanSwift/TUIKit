@@ -127,7 +127,7 @@ internal extension TUICharacter
   ///   - color: Ansi.Color value
   internal mutating func setPixel(x: Double, y: Double, action: SetAction, color: Ansi.Color)
   {
-    let offset = (x: round(x).toInt() % 2, y: round(y).toInt() % 4)
+    let offset = (x: Int(round(x)) % 2, y: Int(round(y)) % 4)
     let mapHex = braille.pixel[offset.y][offset.x]
     if self.type == .character
     {

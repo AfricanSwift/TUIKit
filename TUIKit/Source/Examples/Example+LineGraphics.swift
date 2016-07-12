@@ -41,8 +41,8 @@ public extension Example.LineGraphics
         composite: .first,
         style: .drawille)
       Ansi.Cursor.position(
-        row: view.origin.y.toInt(),
-        column: view.origin.x.toInt()).stdout()
+        row: Int(view.origin.y),
+        column: Int(view.origin.x)).stdout()
       view.draw(atOrigin: true, parameters: renderparm)
       view.clear()
     }
@@ -73,8 +73,8 @@ public extension Example.LineGraphics
       composite: .first,
       style: .drawille)
     Ansi.Cursor.position(
-      row: view.origin.y.toInt(),
-      column: view.origin.x.toInt()).stdout()
+      row: Int(view.origin.y),
+      column: Int(view.origin.x)).stdout()
     view.draw(atOrigin: true, parameters: renderparm)
   }
 }
@@ -103,8 +103,8 @@ public extension Example.LineGraphics
       composite: .first,
       style: .drawille)
     Ansi.Cursor.position(
-      row: view.origin.y.toInt(),
-      column: view.origin.x.toInt()).stdout()
+      row: Int(view.origin.y),
+      column: Int(view.origin.x)).stdout()
     view.draw(atOrigin: true, parameters: renderparm)
   }
 }

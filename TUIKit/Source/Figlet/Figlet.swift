@@ -147,7 +147,7 @@ internal extension Figlet
     }
     
     let noEndmark = scanline.replacingOccurrences(
-      of: header.endmark.toString(),
+      of: String(header.endmark),
       with: "",
       range: endmarkScanIndex)
     return noEndmark.replacingOccurrences(of: String(header.hardblank), with: " ")

@@ -215,9 +215,9 @@ public extension Ansi.Color
     public static func colorRGB256(red: Int, green: Int, blue: Int) -> Ansi
     {
       let colorIndex = Ansi.Color(
-        red: red.toDouble() / 255,
-        green: green.toDouble() / 255,
-        blue: blue.toDouble() / 255,
+        red: Double(red) / 255.0,
+        green: Double(green) / 255.0,
+        blue: Double(blue) / 255.0,
         alpha: 1).toAnsi256()
       return Ansi.Color.Foreground.color256(index: colorIndex)
     }
@@ -536,9 +536,9 @@ public extension Ansi.Color
     public static func colorRGB256(red: Int, green: Int, blue: Int) -> Ansi
     {
       let colorIndex = Ansi.Color(
-        red: red.toDouble() / 255,
-        green: green.toDouble() / 255,
-        blue: blue.toDouble() / 255,
+        red: Double(red) / 255.0,
+        green: Double(green) / 255.0,
+        blue: Double(blue) / 255.0,
         alpha: 1).toAnsi256()
       return Ansi.Color.Background.color256(index: colorIndex)
     }

@@ -148,7 +148,7 @@ internal extension FigletHeader
     var lastIndex = 0
     for idx in (0...lines.count - 1).reversed()
     {
-      if lines[idx].contains(endmark.toString())
+      if lines[idx].contains(String(endmark))
       {
         lastIndex = idx
         break

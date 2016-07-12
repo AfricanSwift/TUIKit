@@ -85,7 +85,7 @@ public enum RenderStyle
     character: TUICharacter,
               ramp: [String]) -> Ansi
   {
-    let intensity = character.pixelBase.toDouble() / 255.0
+    let intensity = Double(character.pixelBase) / 255.0
     return Ansi(ramp[Int(Double(ramp.count - 1) * intensity)])
   }
   

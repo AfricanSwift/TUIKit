@@ -33,8 +33,8 @@ public struct TUIWindow {
     self.buffer = TUIView(
       x: 0,
       y: 0,
-      width: size.pixel.width.toInt(),
-      height: size.pixel.width.toInt(),
+      width: Int(size.pixel.width),
+      height: Int(size.pixel.width),
       border: TUIBorder.none)
     
     self.backbuffer = self.buffer

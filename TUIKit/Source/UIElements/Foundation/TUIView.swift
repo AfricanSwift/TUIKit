@@ -43,8 +43,8 @@ public struct TUIView
   
   /// Flat array of active buffer cell indexes
   internal var activeIndex: [(x: Int, y: Int, type: TUICharacter.Category)] {
-    let rows = self.size.character.height.toInt()
-    let columns = self.size.character.width.toInt()
+    let rows = Int(self.size.character.height)
+    let columns = Int(self.size.character.width)
     let viewArray = (0..<rows)
       .map { r in (0..<columns)
         .map { c in (x: c, y: r, type: self.buffer[r][c].type) } }
@@ -69,15 +69,15 @@ public struct TUIView
     self.invalidate = true
     self.border = border
     self.buffer = init2D(
-      d1: self.size.character.height.toInt(),
-      d2: self.size.character.width.toInt(),
+      d1: Int(self.size.character.height),
+      d2: Int(self.size.character.width),
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
     self.borderColor = borderColor
     self.backgroundColor = backgroundColor
     
-    var cacheSize = self.size.character.height.toInt()
+    var cacheSize = Int(self.size.character.height)
     if case .none = border { } else { cacheSize += 2 }
     self.cache = [Ansi](repeating: Ansi(""), count: cacheSize)
   }
@@ -105,8 +105,8 @@ public extension TUIView
   public mutating func resize(width: Int, height: Int)
   {
     self = TUIView.init(
-      x: self.origin.x.toInt(),
-      y: self.origin.y.toInt(),
+      x: Int(self.origin.x),
+      y: Int(self.origin.y),
       width: width,
       height: height,
       border: self.border)
@@ -117,8 +117,8 @@ public extension TUIView
   public mutating func clear()
   {
     self.buffer = init2D(
-      d1: self.size.character.height.toInt(),
-      d2: self.size.character.width.toInt(),
+      d1: Int(self.size.character.height),
+      d2: Int(self.size.character.width),
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
@@ -205,7 +205,7 @@ public extension TUIView
   ///   - color: Ansi.Color
   public mutating func drawPixel(x: Double, y: Double, color: Ansi.Color)
   {
-    let char = (x: round(x).toInt() / 2, y: round(y).toInt() / 4)
+    let char = (x: Int(round(x)) / 2, y: Int(round(y)) / 4)
     self.buffer[char.y][char.x].setPixel(x: x, y: y, action: .on, color: color)
     self.invalidate = true
   }
@@ -254,13 +254,13 @@ public extension TUIView
     var index = 0
     for i in char.indices
     {
-      if position.x + index > self.size.character.width.toInt() - 1 && !linewrap
+      if position.x + index > Int(self.size.character.width) - 1 && !linewrap
       {
         break
       }
-      else if position.x + index > self.size.character.width.toInt() - 1 && linewrap
+      else if position.x + index > Int(self.size.character.width) - 1 && linewrap
       {
-        if position.y + 1 > self.size.character.height.toInt() - 1
+        if position.y + 1 > Int(self.size.character.height) - 1
         {
           break
         }
@@ -333,7 +333,6 @@ public extension TUIView
     self.invalidate = true
   }
   
-  
   private mutating func setAnsiText(text: String, y: Int, x: Int, xoffset: inout Int, ansi: Ansi, linewrap: Bool)
   {
 //    print("---> ", text, y, x)
@@ -344,14 +343,14 @@ public extension TUIView
     
     for index in chars.indices
     {
-      guard p.x + xoffset <= self.size.character.width.toInt() - 1 && !linewrap else { break }
+      guard p.x + xoffset <= Int(self.size.character.width) - 1 && !linewrap else { break }
       self.buffer[p.y][p.x + xoffset]
         .setAnsiCharacter(character: chars[index], ansi: isFirstChar ? ansi : "")
       xoffset += 1
       isFirstChar = false
-      if p.x + xoffset > self.size.character.width.toInt() - 1 && linewrap
+      if p.x + xoffset > Int(self.size.character.width) - 1 && linewrap
       {
-        if p.y + 1 > self.size.character.height.toInt() - 1 { break }
+        if p.y + 1 > Int(self.size.character.height) - 1 { break }
         p.x = 0
         p.y += 1
         xoffset = 0

@@ -33,8 +33,8 @@ public struct Example
         composite: .first,
         style: .block)
       Ansi.Cursor.position(
-        row: view.origin.y.toInt(),
-        column: view.origin.x.toInt()).stdout()
+        row: Int(view.origin.y),
+        column: Int(view.origin.x)).stdout()
       view.draw(atOrigin: true, parameters: renderparm)
     }
   }
@@ -47,9 +47,9 @@ public extension Example.WWDC
   internal static func generateRandomColor() -> Ansi
   {
     let limit = 0.3
-    let r = arc4random_uniform(255).toDouble() / 255
-    let g = arc4random_uniform(255).toDouble() / 255
-    let b = arc4random_uniform(255).toDouble() / 255
+    let r = Double(arc4random_uniform(255)) / 255.0
+    let g = Double(arc4random_uniform(255)) / 255.0
+    let b = Double(arc4random_uniform(255)) / 255.0
     
     func brightenColor(
       _ red: Double,
@@ -135,8 +135,8 @@ public extension Example.WWDC
       ".".attribute(.reset)
     
     view.drawAnsiText(
-      x: view.size.character.width.toInt() / 2 - 13,
-      y: view.size.character.height.toInt() / 4,
+      x: Int(view.size.character.width) / 2 - 13,
+      y: Int(view.size.character.height) / 4,
       text: coloredCode)
     draw(view: &view)
   }
