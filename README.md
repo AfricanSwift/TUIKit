@@ -15,21 +15,24 @@ Swift native UIKit for the terminal with functionality similar to ncurses.
 - Support multiple render modes: 
   - **Character:** ASCII, Unicode and Drawille (braille).
   - **Color:** Mono, 16 Color, 256 Color and RGB 
-- **UI Elements:** View , Button, Label, Rich Text Label
+- **UI Elements:** View, Button, Label, Rich Text Label
 - **Line graphics:** Pixel, Line, Arc, Ellipse, Rectangle, Rounded Rectangle, Pie, Polygon, Polyhedron, Star 
 
 > 
 ## TUICharacter ![View](https://img.shields.io/badge/Beta-Ready-29bb74.svg?style=flat)
-TUICharacter is a sub-element in the UI that is built to support:
+TUICharacter is a foundational UI element built to support:
 
-- Multiple symbols: ASCII, Unicode and Drawille (braille pixels).
-- Color: Mono, 16 Color, 256 Color and RGB.
-- Combination of Ansi Color and Attributes.
-- Render caching.  
+- **Multiple symbol types:** Unicode character or Drawille (braille pixels).
+- Rendering options:
+  - **Color:** Mono, 16 Color, 256 Color and RGB.
+  - **Character:** Color Intensity and Braille value character ramp (details below)
+- **"Rich Text" Support:** mix of Ansi Color and Attributes.
+- Caching of rendered Ansi. 
 
-Each character is designed around the braille patterning, which encodes 2x4 *(x, y)* pixels in a single character. TUICharacter accomodates either a fixed unicode character or braille value that represents a pixel. In this way collections of TUICharacters can intersperse a variety of braille pixels and unicode text.
+TUICharacter supports either a fixed unicode character or scalar value which encodes 2x4 *(x, y)* pixels as a single braille character. In this way collections of TUICharacters can intermix a variety of braille pixels with unicode text.
 
-> #### TUICharacter Rendering
+> 
+#### TUICharacter Rendering
 Multiple rendering styles are supported for braille pixel encoded values:
 
 - **Drawille**: Renders as braille pixels
@@ -43,9 +46,16 @@ Multiple rendering styles are supported for braille pixel encoded values:
 
 **Note**: Unicode text is unaffected by the rendering style.
 
-
 ### TUIView
-User interface view, built from a 2D array of TUICharacter
+UI view, built from a 2D array of TUICharacter. 
+- Two draw modes
+  - Draw at prompt
+  - Draw at origin
+- Caching of rendered Ansi.
+- Array of active characters to expedite draw, and to apply animation:
+  - dissolve
+  - materialize
+- Painters Algorithm 
 
 #### TUIProgress
 Flexible design allowing full customization using TUIBarBits:
