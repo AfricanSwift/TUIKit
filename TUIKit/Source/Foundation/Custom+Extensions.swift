@@ -116,19 +116,19 @@ internal func measure(_ title: String = "", closure: () -> Void)
 }
 
 // MARK: -
-// MARK: Loops -
+// MARK: C-Style Loop -
 
 /// Replacement for C Style For Loop for ;;
 ///
 /// ````
 /// var i: Int = 0 // initialization
-/// for i in Loop(i < 10, i += 1)
+/// for _ in CStyleLoop(i < 10, i += 1)
 /// {
-///     print(i)
+///   print(i)
 /// }
 /// ````
 /// - Author: Joe Groff (Apple)
-internal struct Loop: Sequence, IteratorProtocol
+internal struct CStyleLoop: Sequence, IteratorProtocol
 {
   let condition: () -> Bool
   let increment: () -> Void
@@ -142,7 +142,7 @@ internal struct Loop: Sequence, IteratorProtocol
     self.condition = condition
   }
   
-  internal func makeIterator() -> Loop
+  internal func makeIterator() -> CStyleLoop
   {
     return self
   }

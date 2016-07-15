@@ -29,8 +29,6 @@ public extension Example
         view.move(x: x, y: y)
         view.draw(atOrigin: true)
       }
-      Ansi.resetAll().stdout()
-      Thread.sleep(forTimeInterval: 1)
     }
   }
 }

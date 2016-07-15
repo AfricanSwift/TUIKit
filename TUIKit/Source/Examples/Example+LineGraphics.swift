@@ -10,7 +10,6 @@ public extension Example
   {
     public static func demo()
     {
-      Ansi.Set.cursorOff().stdout()
       let len = (w: 150, h: 150)
       var view = TUIView(x: 0, y: 0, width: len.w, height: len.h, border: .none)
       drawRectangles(view: &view)
@@ -18,8 +17,6 @@ public extension Example
       drawCircles(view: &view)
       Thread.sleep(forTimeInterval: 1)
       drawStar(view: &view)
-      Ansi.Color.resetAll().stdout()
-      Ansi.Set.cursorOn().stdout()
     }
   }
 }
@@ -62,12 +59,12 @@ public extension Example.LineGraphics
     let rect2 = TUIRectangle(
       origin: TUIPoint(x: 16, y: 16),
       size: TUISize(width: len.w - 30, height: len.h - 30))
+    let rect3 = TUIRectangle(
+      origin: TUIPoint(x: 4, y: 4),
+      size: TUISize(width: Double(len.w) * 0.4, height: Double(len.w) * 0.4))
     view.drawRectangle(rect: rect1, color: color1)
     view.drawRectangle(rect: rect2, color: color2)
-    let rect = TUIRectangle(x: 4, y: 4,
-                            width: Double(len.w) * 0.4,
-                            height: Double(len.w) * 0.4)
-    view.drawRoundedRectangle(rect: rect, radius: 10)
+    view.drawRoundedRectangle(rect: rect3, radius: 10)
     let renderparm = TUIRenderParameter(
       colorspace: .foreground256,
       composite: .first,

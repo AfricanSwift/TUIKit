@@ -249,10 +249,10 @@ public extension TUIView
   public mutating func drawText(
     x: Int, y: Int, text: String, color: Ansi.Color, linewrap: Bool = false)
   {
-    let char = text.characters
+    let chars = text.characters
     var position = (x: x, y: y)
     var index = 0
-    for i in char.indices
+    for i in chars.indices
     {
       if position.x + index > Int(self.size.character.width) - 1 && !linewrap
       {
@@ -269,7 +269,7 @@ public extension TUIView
         position.x = 0
       }
       self.buffer[position.y][position.x + index]
-        .setCharacter(character: char[i], color: color)
+        .setCharacter(character: chars[i], color: color)
       index += 1
     }
     self.invalidate = true
@@ -285,8 +285,7 @@ public extension TUIView
   ///   - y: Int
   ///   - text: String
   ///   - linewrap: Bool
-  public mutating func drawAnsiText(
-    x: Int, y: Int, text: String, linewrap: Bool = false)
+  public mutating func drawAnsiText(x: Int, y: Int, text: String, linewrap: Bool = false)
   {
     guard let tokens = try? Ansi.tokenizer(input: Ansi(text)) else {
       return

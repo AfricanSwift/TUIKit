@@ -185,7 +185,7 @@ internal extension Ansi
     }
     
     var index = 0
-    for _ in Loop(index < tokens.count, index += 1)
+    for _ in CStyleLoop(index < tokens.count, index += 1)
     {
       let token = tokens[index]
       

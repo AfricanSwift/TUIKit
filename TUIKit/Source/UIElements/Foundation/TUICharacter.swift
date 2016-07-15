@@ -194,7 +194,7 @@ internal extension TUICharacter
   ///   - ansi: Ansi value
   internal mutating func setAnsiCharacter(character: Character, ansi: Ansi)
   {
-    if character == Character(" ")
+    if character == Character(" ") && ansi == Ansi("")
     {
       self.setNone()
       return

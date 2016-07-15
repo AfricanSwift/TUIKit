@@ -22,8 +22,6 @@ public extension Example
       _ = try? renderAnsiShadow()
       
       print("".resetall)
-      
-      Thread.sleep(forTimeInterval: 2)
     }
   }
 }

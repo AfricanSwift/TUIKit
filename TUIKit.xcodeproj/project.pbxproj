@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70384E51D36F2BC00B65380 /* TUIStatus.swift */; };
 		D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D799B4791D1AC4A500FA7853 /* wwdc16_logo */; };
 		D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C561D243EB700BEC989 /* Whimsy.flf */; };
 		D71F845D1D347318004C9826 /* TUIBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84541D347318004C9826 /* TUIBorders.swift */; };
@@ -18,8 +19,6 @@
 		D71F84631D347318004C9826 /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845A1D347318004C9826 /* TUIView+Line.swift */; };
 		D71F84641D347318004C9826 /* TUIView+Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */; };
 		D71F84651D347318004C9826 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845C1D347318004C9826 /* TUIWindow.swift */; };
-		D71F84681D34732F004C9826 /* TUIBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84661D34732F004C9826 /* TUIBarStyle.swift */; };
-		D71F84691D34732F004C9826 /* TUIProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84671D34732F004C9826 /* TUIProgress.swift */; };
 		D71F846B1D347390004C9826 /* Example+ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F846A1D347390004C9826 /* Example+ProgressBars.swift */; };
 		D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C59E91D27727E004A300D /* Ansi+Terminal.swift */; };
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
@@ -49,6 +48,8 @@
 		D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A290B1D125BF600C56E49 /* Ansi+Window.swift */; };
 		D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */; };
 		D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */; };
+		D7B6130A1D3871FC002756EB /* TUIStatus+Spinners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */; };
+		D7B6130C1D38885F002756EB /* TUIStatus+Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B6130B1D38885F002756EB /* TUIStatus+Bars.swift */; };
 		D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DBE1D25D695000FFE2C /* Custom+String.swift */; };
 		D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */; };
 		D7E5BFD81D29B1F80000DF83 /* Example+LineGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */; };
@@ -58,7 +59,6 @@
 		D7FA17781D34A278003C0FCD /* Relief2.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C0C1D243EB700BEC989 /* Relief2.flf */; };
 		D7FA17791D34AB4F003C0FCD /* Banner3-D.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B611D243EB600BEC989 /* Banner3-D.flf */; };
 		D7FA177A1D34B5C6003C0FCD /* ANSI Shadow.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B5C1D243EB600BEC989 /* ANSI Shadow.flf */; };
-		D7FA177C1D34C888003C0FCD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D7FA177B1D34C888003C0FCD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D70384E51D36F2BC00B65380 /* TUIStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIStatus.swift; path = Source/UIElements/Widgets/TUIStatus.swift; sourceTree = "<group>"; };
 		D71F84541D347318004C9826 /* TUIBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBorders.swift; path = Source/UIElements/Foundation/TUIBorders.swift; sourceTree = "<group>"; };
 		D71F84551D347318004C9826 /* TUICharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUICharacter.swift; path = Source/UIElements/Foundation/TUICharacter.swift; sourceTree = "<group>"; };
 		D71F84561D347318004C9826 /* TUIGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIGeometry.swift; path = Source/UIElements/Foundation/TUIGeometry.swift; sourceTree = "<group>"; };
@@ -99,8 +100,6 @@
 		D71F845A1D347318004C9826 /* TUIView+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Line.swift"; path = "Source/UIElements/Foundation/TUIView+Line.swift"; sourceTree = "<group>"; };
 		D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Rectangle.swift"; path = "Source/UIElements/Foundation/TUIView+Rectangle.swift"; sourceTree = "<group>"; };
 		D71F845C1D347318004C9826 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/Foundation/TUIWindow.swift; sourceTree = "<group>"; };
-		D71F84661D34732F004C9826 /* TUIBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBarStyle.swift; path = Source/UIElements/Widgets/TUIBarStyle.swift; sourceTree = "<group>"; };
-		D71F84671D34732F004C9826 /* TUIProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIProgress.swift; path = Source/UIElements/Widgets/TUIProgress.swift; sourceTree = "<group>"; };
 		D71F846A1D347390004C9826 /* Example+ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+ProgressBars.swift"; path = "Source/Examples/Example+ProgressBars.swift"; sourceTree = "<group>"; };
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
@@ -418,6 +417,8 @@
 		D77A29321D12667800C56E49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D799B4791D1AC4A500FA7853 /* wwdc16_logo */ = {isa = PBXFileReference; lastKnownFileType = text; name = wwdc16_logo; path = Source/Examples/wwdc16_logo; sourceTree = "<group>"; };
 		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
+		D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIStatus+Spinners.swift"; path = "Source/UIElements/Widgets/TUIStatus+Spinners.swift"; sourceTree = "<group>"; };
+		D7B6130B1D38885F002756EB /* TUIStatus+Bars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIStatus+Bars.swift"; path = "Source/UIElements/Widgets/TUIStatus+Bars.swift"; sourceTree = "<group>"; };
 		D7E49DBE1D25D695000FFE2C /* Custom+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+String.swift"; path = "Source/Foundation/Custom+String.swift"; sourceTree = "<group>"; };
 		D7E49DC01D25D7AE000FFE2C /* Custom+Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Character.swift"; path = "Source/Foundation/Custom+Character.swift"; sourceTree = "<group>"; };
 		D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+LineGraphics.swift"; path = "Source/Examples/Example+LineGraphics.swift"; sourceTree = "<group>"; };
@@ -456,8 +457,9 @@
 		D71F84531D347087004C9826 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				D71F84661D34732F004C9826 /* TUIBarStyle.swift */,
-				D71F84671D34732F004C9826 /* TUIProgress.swift */,
+				D70384E51D36F2BC00B65380 /* TUIStatus.swift */,
+				D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */,
+				D7B6130B1D38885F002756EB /* TUIStatus+Bars.swift */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -969,9 +971,9 @@
 				D71F846B1D347390004C9826 /* Example+ProgressBars.swift in Sources */,
 				D77A29141D125BF600C56E49 /* Ansi+Color+RGB.swift in Sources */,
 				D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */,
-				D71F84691D34732F004C9826 /* TUIProgress.swift in Sources */,
+				D7B6130A1D3871FC002756EB /* TUIStatus+Spinners.swift in Sources */,
 				D77A29151D125BF600C56E49 /* Ansi+Color+Utility.swift in Sources */,
-				D71F84681D34732F004C9826 /* TUIBarStyle.swift in Sources */,
+				D7B6130C1D38885F002756EB /* TUIStatus+Bars.swift in Sources */,
 				D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */,
 				D71F845F1D347318004C9826 /* TUIGeometry.swift in Sources */,
 				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
@@ -983,6 +985,7 @@
 				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
 				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
 				D71F84601D347318004C9826 /* TUIRender.swift in Sources */,
+				D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */,
 				D77A290D1D125BF600C56E49 /* Ansi+Attribute.swift in Sources */,
 				D71F84621D347318004C9826 /* TUIView+Ellipse.swift in Sources */,
 				D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */,
@@ -1007,7 +1010,6 @@
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
 				D71F84611D347318004C9826 /* TUIView.swift in Sources */,
 				D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */,
-				D7FA177C1D34C888003C0FCD /* README.md in Sources */,
 				D77A29161D125BF600C56E49 /* Ansi+Color+XYZ.swift in Sources */,
 				D77A290E1D125BF600C56E49 /* Ansi+C0+C1.swift in Sources */,
 			);
