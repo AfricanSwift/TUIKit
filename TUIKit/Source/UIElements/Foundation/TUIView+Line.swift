@@ -6,17 +6,17 @@ import Darwin
 
 public extension TUIView
 {
-  ///  Drawille line iterator
+  /// Drawille line iterator
+  /// Based on Bresenham’s Line Drawing Algorithm
   private struct LineIterator: IteratorProtocol
   {
-    private let from: TUIPoint
-    private let to: TUIPoint
-    private let xDiff: Double
-    private let yDiff: Double
-    private let range: Double
-    private let xAddend: Double
-    private let yAddend: Double
-    private var index = Double(0)
+    private var from: (x: Int, y: Int)
+    private var to: (x: Int, y: Int)
+    private var distance: (x: Int, y: Int)
+    private var steep: Bool
+    private var error: Int
+    private let distanceError: Int
+    private var pixel: (x: Int, y: Int)
     
     /// Default initializer for line iterator
     ///
@@ -25,17 +25,27 @@ public extension TUIView
     ///   - to: TUIPoint
     init(from: TUIPoint, to: TUIPoint)
     {
-      precondition(!(from == to), "LineIterator: from/to are equivalent")
+      self.steep = false
+      self.from = (x: Int(from.x), y: Int(from.y))
+      self.to = (x: Int(to.x), y: Int(to.y))
+
+      if abs(self.from.x - self.to.x) < abs(self.from.y - self.to.y)
+      {
+        swap(&self.from.x, &self.from.y)
+        swap(&self.to.x, &self.to.y)
+        self.steep = true
+      }
       
-      self.from = TUIPoint(
-        x: LineIterator.normalize(from.x),
-        y: LineIterator.normalize(from.y))
-      self.to = to
-      self.xDiff = max(from.x, to.x) - min(from.x, to.x)
-      self.yDiff = max(from.y, to.y) - min(from.y, to.y)
-      self.range = max(self.xDiff, self.yDiff)
-      self.xAddend = self.from.x < self.to.x ? 1 : -1
-      self.yAddend = self.from.y < self.to.y ? 1 : -1
+      if self.from.x > self.to.x
+      {
+        swap(&self.from.x, &self.to.x)
+        swap(&self.from.y, &self.to.y)
+      }
+      
+      self.distance = (x: self.to.x - self.from.x, y: self.to.y - self.from.y)
+      self.distanceError = abs(self.distance.y) * 2
+      self.error = 0
+      self.pixel = (x: self.from.x, y: self.from.y)
     }
     
     /// Returns next pixel offset along draw path
@@ -43,26 +53,22 @@ public extension TUIView
     /// - returns: TUIPoint?
     mutating func next() -> TUIPoint?
     {
-      if self.index > self.range + 1
+      if self.pixel.x > self.to.x
       {
         return nil
       }
-      let x = self.from.x + (self.index * self.xDiff) / self.range * self.xAddend
-      let y = self.from.y + (self.index * self.yDiff) / self.range * self.yAddend
-      let point = TUIPoint(x: x, y: y)
-      self.index += 1
-      return point
-    }
-    
-    /// Normalize values by round up/down to nearest value and then
-    /// converting to Int e.g. Useful for trigonometric results
-    ///
-    /// - parameters:
-    ///   - coordinate: Double
-    /// - returns: Double
-    private static func normalize(_ coordinate: Double) -> Double
-    {
-      return round(coordinate)
+      
+      let result = steep ? TUIPoint(x: self.pixel.y, y: self.pixel.x) :
+        TUIPoint(x: self.pixel.x, y: self.pixel.y)
+      
+      self.error += self.distanceError
+      if self.error > self.distance.x
+      {
+        self.pixel.y += self.to.y > self.from.y ? 1 : -1
+        self.error -= self.distance.x * 2
+      }
+      self.pixel.x += 1
+      return result
     }
   }
 }

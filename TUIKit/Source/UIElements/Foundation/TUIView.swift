@@ -210,6 +210,16 @@ public extension TUIView
     self.invalidate = true
   }
   
+  public mutating func drawPixel(x: Int, y: Int, color: Ansi.Color)
+  {
+    self.drawPixel(x: Double(x), y: Double(y), color: color)
+  }
+  
+  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color)
+  {
+    self.drawPixel(x: at.x, y: at.y, color: color)
+  }
+  
   /// Draw Character
   ///
   /// - parameters:

@@ -12,8 +12,8 @@ import Darwin
 /// - y: vertical offset
 public struct TUIPoint
 {
-  public private(set) var x: Double
-  public private(set) var y: Double
+  public var x: Double
+  public var y: Double
   
   /// Default TUIPoint Initializer
   ///

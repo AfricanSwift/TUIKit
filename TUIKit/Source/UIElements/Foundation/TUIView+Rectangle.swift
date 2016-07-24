@@ -25,15 +25,15 @@ public extension TUIView
     
     let leftBottom = TUIPoint(
       x: rect.origin.x,
-      y: rect.origin.y + rect.size.height - 1.1)
+      y: rect.origin.y + rect.size.height)
     
     let rightTop = TUIPoint(
-      x: rect.origin.x + rect.size.width - 1.1,
+      x: rect.origin.x + rect.size.width,
       y: rect.origin.y)
     
     let rightBottom = TUIPoint(
-      x: rect.origin.x + rect.size.width - 1.1,
-      y: rect.origin.y + rect.size.height - 1.1)
+      x: rect.origin.x + rect.size.width,
+      y: rect.origin.y + rect.size.height)
     
     let edges = [
       (leftTop, leftBottom),
@@ -86,7 +86,7 @@ public extension TUIView
         y: rr.rect.origin.y + rr.radius)
       let to = TUIPoint(
         x: rr.rect.origin.x,
-        y: rr.rect.origin.y + rr.rect.size.height - 1.1 - rr.radius)
+        y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
@@ -98,11 +98,11 @@ public extension TUIView
     private static func rightLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let from = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1.1,
+        x: rr.rect.origin.x + rr.rect.size.width,
         y: rr.rect.origin.y + rr.radius)
       let to = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1.1,
-        y: rr.rect.origin.y + rr.rect.size.height - 1.1 - rr.radius)
+        x: rr.rect.origin.x + rr.rect.size.width,
+        y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
@@ -117,7 +117,7 @@ public extension TUIView
         x: rr.rect.origin.x + rr.radius,
         y: rr.rect.origin.y)
       let to = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1.1 - rr.radius,
+        x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y)
       view.drawLine(from: from, to: to, color: rr.color)
     }
@@ -131,10 +131,10 @@ public extension TUIView
     {
       let from = TUIPoint(
         x: rr.rect.origin.x + rr.radius,
-        y: rr.rect.origin.y + rr.rect.size.height - 1.1)
+        y: rr.rect.origin.y + rr.rect.size.height)
       let to = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1.1 - rr.radius,
-        y: rr.rect.origin.y + rr.rect.size.height - 1.1)
+        x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
+        y: rr.rect.origin.y + rr.rect.size.height)
       view.drawLine(from: from, to: to, color: rr.color)
     }
     
@@ -165,7 +165,7 @@ public extension TUIView
     private static func rightTopArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let rightTop = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1 - rr.radius,
+        x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y + rr.radius)
       view.drawEllipse(
         center: rightTop,
@@ -185,7 +185,7 @@ public extension TUIView
     {
       let leftBottom = TUIPoint(
         x: rr.rect.origin.x + rr.radius,
-        y: rr.rect.origin.y + rr.rect.size.height - 1 - rr.radius)
+        y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawEllipse(
         center: leftBottom,
         radiusX: rr.radius,
@@ -203,8 +203,8 @@ public extension TUIView
     private static func rightBottomArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
       let rightBottom = TUIPoint(
-        x: rr.rect.origin.x + rr.rect.size.width - 1 - rr.radius,
-        y: rr.rect.origin.y + rr.rect.size.height - 1 - rr.radius)
+        x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
+        y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawEllipse(
         center: rightBottom,
         radiusX: rr.radius,

@@ -60,7 +60,7 @@ public extension Example
       for i in 1...100
       {
         bar4.advance(message: "Hello world! : \(i)")
-        Thread.sleep(forTimeInterval: 0.1)
+        Thread.sleep(forTimeInterval: 0.05)
       }
     }
   }

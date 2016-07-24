@@ -118,6 +118,9 @@ internal extension TUICharacter
     case on, off, invert
   }
   
+  
+  // FIXME: Strange behavior in TUIView render for both action == .invert or .off
+  
   /// Set Pixel
   ///
   /// - parameters:

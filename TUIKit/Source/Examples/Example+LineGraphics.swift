@@ -55,7 +55,7 @@ public extension Example.LineGraphics
     let len = (w: Int(view.size.pixel.width), h: Int(view.size.pixel.height))
     let rect1 = TUIRectangle(
       origin: TUIPoint(x: 0, y: 0),
-      size: TUISize(width: len.w, height: len.h))
+      size: TUISize(width: len.w - 1, height: len.h - 1))
     let rect2 = TUIRectangle(
       origin: TUIPoint(x: 16, y: 16),
       size: TUISize(width: len.w - 30, height: len.h - 30))

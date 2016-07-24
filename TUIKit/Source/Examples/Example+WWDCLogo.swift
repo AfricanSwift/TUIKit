@@ -77,10 +77,7 @@ public extension Example.WWDC
     let partsColors = logoparts.map { ($0, generateRandomColor()) }
     for part in partsColors
     {
-      logoWWDC16 = logoWWDC16.replacingOccurrences(
-        of: part.0,
-        with: part.1.toString() + part.0,
-        options: .caseInsensitiveSearch)
+      logoWWDC16 = logoWWDC16.replacingOccurrences(of: part.0, with: part.1.toString() + part.0)
     }
     let lines = logoWWDC16.characters
       .split(separator: "\n", omittingEmptySubsequences: false)
