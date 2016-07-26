@@ -203,19 +203,19 @@ public extension TUIView
   ///   - x: Double
   ///   - y: Double
   ///   - color: Ansi.Color
-  public mutating func drawPixel(x: Double, y: Double, color: Ansi.Color)
+  public mutating func drawPixel(x: Double, y: Double, color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
     let char = (x: Int(round(x)) / 2, y: Int(round(y)) / 4)
-    self.buffer[char.y][char.x].setPixel(x: x, y: y, action: .on, color: color)
+    self.buffer[char.y][char.x].setPixel(x: x, y: y, action: action, color: color)
     self.invalidate = true
   }
   
-  public mutating func drawPixel(x: Int, y: Int, color: Ansi.Color)
+  public mutating func drawPixel(x: Int, y: Int, color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
     self.drawPixel(x: Double(x), y: Double(y), color: color)
   }
   
-  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color)
+  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
     self.drawPixel(x: at.x, y: at.y, color: color)
   }

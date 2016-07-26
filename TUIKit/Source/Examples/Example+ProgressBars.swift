@@ -34,10 +34,10 @@ public extension Example
          .text(" "), .complete(sequence: numbers, width: numbers.count, kern: nil),
          .incomplete(filler: ".", width: numbers.count, kern: nil),
          .text("> "), .remaining,
-         .text(" "), .scan(line: "0", filler: "-", width: 3, kern: nil),
+         .text(" "), .scan(line: "0", filler: "-", width: 4, kern: nil),
          .text(" "), .spinner(sequence: spinner, end: (success: "✔︎", failure: "╳"), kern: " "),
          .text("  "), .animate(sequence: numbers, filler: ".", kern: nil),
-         .text(" "), .cylon(eye: "0", filler: "-", width: 3, kern: nil),
+         .text(" "), .cylon(eye: "0", filler: "-", width: 4, kern: nil),
          .text(" "), .message]
       
       var bar3 = TUIStatus(format: bellsWhistles, message: "Hello world!")

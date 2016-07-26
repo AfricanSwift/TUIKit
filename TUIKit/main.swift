@@ -36,6 +36,11 @@ Thread.sleep(forTimeInterval: 1)
 print()
 Ansi.Display.Erase.all().stdout()
 
+// Wavefront
+Ansi.Set.cursorOff().stdout()
+try Example.Wavefront.demo()
+Thread.sleep(forTimeInterval: 3)
+Ansi.Display.Erase.all().stdout()
 
 Ansi.resetAll().stdout()
 Ansi.Set.cursorOn().stdout()

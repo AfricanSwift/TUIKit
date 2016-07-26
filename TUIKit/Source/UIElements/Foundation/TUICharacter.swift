@@ -106,14 +106,14 @@ public struct TUICharacter
 
 // MARK: -
 // MARK: setPixel and setCharacter Methods  -
-internal extension TUICharacter
+public extension TUICharacter
 {
   /// Pixel Set Action
   ///
   /// - on: turn pixel on
   /// - off: turn pixel off
   /// - invert: invert pixel
-  internal enum SetAction
+  public enum SetAction
   {
     case on, off, invert
   }
@@ -148,11 +148,25 @@ internal extension TUICharacter
         self.color.removeLast()
       }
     case .invert:
-      self.pixelBase ^= mapHex
-      if (self.pixelBase & mapHex) == 0
+      if self.pixelBase & mapHex != 0
       {
+        self.pixelBase &= ~mapHex
+        if self.color.count > 0
+        {
+          self.color.removeLast()
+        }
+      }
+      else
+      {
+        self.pixelBase |= mapHex
         self.color.append(color)
       }
+      
+//      self.pixelBase ^= mapHex
+//      if (self.pixelBase & mapHex) == 0
+//      {
+//        self.color.append(color)
+//      }
     }
     
     // set to .none when all pixels are off

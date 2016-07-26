@@ -20,10 +20,13 @@
 		D71F84641D347318004C9826 /* TUIView+Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */; };
 		D71F84651D347318004C9826 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845C1D347318004C9826 /* TUIWindow.swift */; };
 		D71F846B1D347390004C9826 /* Example+ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F846A1D347390004C9826 /* Example+ProgressBars.swift */; };
+		D73E78C91D475EDA00B00A9A /* Example+Wavefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */; };
 		D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C59E91D27727E004A300D /* Ansi+Terminal.swift */; };
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
+		D76239D21D4653910013069A /* dev-wavefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76239D11D4653910013069A /* dev-wavefront.swift */; };
+		D76239D31D46545F0013069A /* african_head.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735DC2C1D3C02CA00AE4E9E /* african_head.obj */; };
 		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
 		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
@@ -60,7 +63,8 @@
 		D7FA17781D34A278003C0FCD /* Relief2.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C0C1D243EB700BEC989 /* Relief2.flf */; };
 		D7FA17791D34AB4F003C0FCD /* Banner3-D.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B611D243EB600BEC989 /* Banner3-D.flf */; };
 		D7FA177A1D34B5C6003C0FCD /* ANSI Shadow.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518B5C1D243EB600BEC989 /* ANSI Shadow.flf */; };
-		D7FB5F841D4559FD008AE9F3 /* main2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5F831D4559FD008AE9F3 /* main2.swift */; };
+		D7FB5F841D4559FD008AE9F3 /* dev-graphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5F831D4559FD008AE9F3 /* dev-graphic.swift */; };
+		D7FB5F861D45A608008AE9F3 /* dev-barchart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FB5F851D45A608008AE9F3 /* dev-barchart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +74,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				D76239D31D46545F0013069A /* african_head.obj in CopyFiles */,
 				D7FA17771D34A24C003C0FCD /* Slant Relief.flf in CopyFiles */,
 				D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */,
 				D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */,
@@ -104,6 +109,7 @@
 		D71F845C1D347318004C9826 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/Foundation/TUIWindow.swift; sourceTree = "<group>"; };
 		D71F846A1D347390004C9826 /* Example+ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+ProgressBars.swift"; path = "Source/Examples/Example+ProgressBars.swift"; sourceTree = "<group>"; };
 		D735DC2C1D3C02CA00AE4E9E /* african_head.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = african_head.obj; path = Source/Examples/african_head.obj; sourceTree = "<group>"; };
+		D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Wavefront.swift"; path = "Source/Examples/Example+Wavefront.swift"; sourceTree = "<group>"; };
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
 		D74C59E91D27727E004A300D /* Ansi+Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Terminal.swift"; path = "Source/Ansi/Ansi+Terminal.swift"; sourceTree = "<group>"; };
@@ -391,6 +397,7 @@
 		D7518C561D243EB700BEC989 /* Whimsy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Whimsy.flf; path = Source/Figlet/Fonts/Whimsy.flf; sourceTree = "<group>"; };
 		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
 		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
+		D76239D11D4653910013069A /* dev-wavefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-wavefront.swift"; sourceTree = "<group>"; };
 		D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUIKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		D76581011D25446400FC4E8C /* Terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Terminal.c; path = Source/Helpers/Terminal.c; sourceTree = "<group>"; };
 		D76581021D25446400FC4E8C /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminal.h; path = Source/Helpers/Terminal.h; sourceTree = "<group>"; };
@@ -429,7 +436,8 @@
 		D7E5BFD91D29BA6C0000DF83 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+RandomViews.swift"; path = "Source/Examples/Example+RandomViews.swift"; sourceTree = "<group>"; };
 		D7FA177B1D34C888003C0FCD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D7FB5F831D4559FD008AE9F3 /* main2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main2.swift; sourceTree = "<group>"; };
+		D7FB5F831D4559FD008AE9F3 /* dev-graphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-graphic.swift"; sourceTree = "<group>"; };
+		D7FB5F851D45A608008AE9F3 /* dev-barchart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-barchart.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -841,7 +849,9 @@
 				D7518B3D1D243A4800BEC989 /* Reference */,
 				D73101331D1349AA0081072F /* UIElements */,
 				D77A28E81D124C4F00C56E49 /* main.swift */,
-				D7FB5F831D4559FD008AE9F3 /* main2.swift */,
+				D7FB5F831D4559FD008AE9F3 /* dev-graphic.swift */,
+				D76239D11D4653910013069A /* dev-wavefront.swift */,
+				D7FB5F851D45A608008AE9F3 /* dev-barchart.swift */,
 			);
 			path = TUIKit;
 			sourceTree = "<group>";
@@ -893,6 +903,7 @@
 				D7518C581D243F6900BEC989 /* Example+Figfont.swift */,
 				D7E5BFD71D29B1F80000DF83 /* Example+LineGraphics.swift */,
 				D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */,
+				D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */,
 				D71F846A1D347390004C9826 /* Example+ProgressBars.swift */,
 				D735DC2C1D3C02CA00AE4E9E /* african_head.obj */,
 			);
@@ -984,6 +995,7 @@
 				D7B6130C1D38885F002756EB /* TUIStatus+Bars.swift in Sources */,
 				D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */,
 				D71F845F1D347318004C9826 /* TUIGeometry.swift in Sources */,
+				D76239D21D4653910013069A /* dev-wavefront.swift in Sources */,
 				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
 				D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */,
 				D71F84651D347318004C9826 /* TUIWindow.swift in Sources */,
@@ -991,6 +1003,7 @@
 				D71F84641D347318004C9826 /* TUIView+Rectangle.swift in Sources */,
 				D77A290F1D125BF600C56E49 /* Ansi+Character.swift in Sources */,
 				D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */,
+				D7FB5F861D45A608008AE9F3 /* dev-barchart.swift in Sources */,
 				D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */,
 				D71F84601D347318004C9826 /* TUIRender.swift in Sources */,
 				D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */,
@@ -1020,8 +1033,9 @@
 				D71F84611D347318004C9826 /* TUIView.swift in Sources */,
 				D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */,
 				D77A29161D125BF600C56E49 /* Ansi+Color+XYZ.swift in Sources */,
+				D73E78C91D475EDA00B00A9A /* Example+Wavefront.swift in Sources */,
 				D77A290E1D125BF600C56E49 /* Ansi+C0+C1.swift in Sources */,
-				D7FB5F841D4559FD008AE9F3 /* main2.swift in Sources */,
+				D7FB5F841D4559FD008AE9F3 /* dev-graphic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

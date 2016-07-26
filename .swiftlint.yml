@@ -12,3 +12,4 @@ file_length:
   error: 1500
 function_body_length:
   warning: 60
+function_parameter_count: 12

@@ -86,14 +86,14 @@ public extension TUIView
   public mutating func drawLine(
     from: TUIPoint,
     to: TUIPoint,
-    color: Ansi.Color = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1))
+    color: Ansi.Color = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1), action: TUICharacter.SetAction = .on)
   {
     precondition(!(from == to), "drawLine: from/to are equivalent")
     
     var line = TUIView.LineIterator(from: from, to: to)
     while let point = line.next()
     {
-      self.drawPixel(x: point.x, y: point.y, color: color)
+      self.drawPixel(x: point.x, y: point.y, color: color, action: action)
     }
   }
 }
