@@ -177,8 +177,6 @@ public extension TUIView
     
     if hasBorder
     {
-//      self.cache[0] = self.borderParts.top + "\n"
-//      self.cache[self.cache.count - 1] = self.borderParts.bottom + "\n"
       self.cache[0] = self.borderParts.top
       self.cache[self.cache.count - 1] = self.borderParts.bottom
     }
@@ -191,35 +189,59 @@ public extension TUIView
       {
         lineBuffer += self.buffer[y][x].toAnsi(parameters: parameters)
       }
-//      self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right + "\n")
       self.cache[y + offset] = (left + self.backgroundColor + lineBuffer + right)
     }
     self.invalidate = false
   }
-  
+}
+
+// MARK: Draw Pixel
+public extension TUIView
+{
   /// Draw Pixel
   ///
   /// - parameters:
   ///   - x: Double
   ///   - y: Double
   ///   - color: Ansi.Color
-  public mutating func drawPixel(x: Double, y: Double, color: Ansi.Color, action: TUICharacter.SetAction = .on)
+  ///   - action: TUICharacter.SetAction
+  public mutating func drawPixel(x: Double, y: Double,
+                                 color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
     let char = (x: Int(round(x)) / 2, y: Int(round(y)) / 4)
     self.buffer[char.y][char.x].setPixel(x: x, y: y, action: action, color: color)
     self.invalidate = true
   }
   
-  public mutating func drawPixel(x: Int, y: Int, color: Ansi.Color, action: TUICharacter.SetAction = .on)
+  /// Draw Pixel
+  ///
+  /// - parameters:
+  ///   - x: Int
+  ///   - y: Int
+  ///   - color: Ansi.Color
+  ///   - action: TUICharacter.SetAction
+  public mutating func drawPixel(x: Int, y: Int,
+                                 color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
     self.drawPixel(x: Double(x), y: Double(y), color: color)
   }
   
-  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color, action: TUICharacter.SetAction = .on)
+  /// Draw Pixel
+  ///
+  /// - parameters:
+  ///   - at: TUIPoint
+  ///   - color: Ansi.Color
+  ///   - action: TUICharacter.SetAction
+  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color,
+                                 action: TUICharacter.SetAction = .on)
   {
     self.drawPixel(x: at.x, y: at.y, color: color)
   }
-  
+}
+
+// MARK: Draw Character
+public extension TUIView
+{
   /// Draw Character
   ///
   /// - parameters:
@@ -247,7 +269,11 @@ public extension TUIView
     self.buffer[y][x].setAnsiCharacter(character: character, ansi: ansi)
     self.invalidate = true
   }
-  
+}
+
+// MARK: Draw Text
+public extension TUIView
+{
   /// Draw Text
   ///
   /// - parameters:
@@ -285,10 +311,22 @@ public extension TUIView
     self.invalidate = true
   }
   
+  /// Draw Text
+  ///
+  /// - parameters:
+  ///   - at: TUIPoint
+  ///   - text: String
+  ///   - color: Ansi.Color
+  ///   - linewrap: Bool
+  public mutating func drawText(at: TUIPoint, text: String,
+                                color: Ansi.Color, linewrap: Bool = false)
+  {
+    self.drawText(x: Int(at.x), y: Int(at.y), text: text, color: color, linewrap: linewrap)
+  }
   
   // FIXME: Crashes when text is longer than view size, drawText has safe guards, this doesn't
   
-  /// Limited to SGR Control Codes (Attributes & Colors)
+  /// Draw Ansi text
   ///
   /// - parameters:
   ///   - x: Int
@@ -322,30 +360,16 @@ public extension TUIView
       {
         carryOverAnsi += Ansi(Ansi.C1.CSI + t.parameter + t.function)
       }
-
+      
       let ans = Ansi(Ansi.C1.CSI + t.parameter + t.function) + carryOverAnsi
       setAnsiText(text: t.suffix, y: y, x: x, xoffset: &xoffset, ansi: ans, linewrap: linewrap)
-      
-//      let char = t.suffix.characters
-//      var isFirstChar = true
-//      for i in char.indices
-//      {
-////        print("====>> ", t.suffix, position.y, position.x + xoffset)
-//        let ansi = isFirstChar ? Ansi(Ansi.C1.CSI + t.parameter + t.function) + carryOverAnsi : ""
-//        carryOverAnsi = Ansi("")
-//        self.buffer[position.y][position.x + xoffset]
-//          .setAnsiCharacter(character: char[i], ansi: ansi)
-//        xoffset += 1
-//        isFirstChar = false
-//      }
     }
     self.invalidate = true
   }
   
-  private mutating func setAnsiText(text: String, y: Int, x: Int, xoffset: inout Int, ansi: Ansi, linewrap: Bool)
+  private mutating func setAnsiText(text: String, y: Int, x: Int,
+                                    xoffset: inout Int, ansi: Ansi, linewrap: Bool)
   {
-//    print("---> ", text, y, x)
-//    var xoffset = 0
     var p = (x: x, y: y)
     var isFirstChar = true
     let chars = text.characters
@@ -364,6 +388,53 @@ public extension TUIView
         p.y += 1
         xoffset = 0
       }
+    }
+  }
+  
+  /// Draw Rotated Text
+  ///
+  /// - parameters:
+  ///   - at: TUIPoint
+  ///   - angle: Int
+  ///   - text: String
+  ///   - reverse: Bool
+  ///   - color: Ansi.Color
+  public mutating func drawRotatedText(at: TUIPoint, angle: Int, text: String,
+                                       reverse: Bool = false, color: Ansi.Color)
+  {
+    var pos = (x: Int(at.x), y: Int(at.y))
+    let value = reverse ? text.characters.reversed()
+      .map { String($0) }.joined(separator: "") : text
+    var inclination = (x: 1, y: 0)
+    
+    switch angle
+    {
+      case 0, 360:
+        inclination = (x: 0, y: -1)
+      case 45:
+        inclination = (x: 1, y: -1)
+      case 90:
+        self.drawText(at: at, text: value, color: color)
+        return
+      case 135:
+        inclination = (x: 1, y: 1)
+      case 180:
+        inclination = (x: 0, y: 1)
+      case 225:
+        inclination = (x: -1, y: 1)
+      case 270:
+        inclination = (x: -1, y: 0)
+      case 315:
+        inclination = (x: -1, y: -1)
+      default:
+        inclination = (x: 1, y: 0)
+    }
+    
+    for c in value.characters
+    {
+      self.drawCharacter(x: pos.x, y: pos.y, character: c, color: color)
+      pos.x += inclination.x
+      pos.y += inclination.y
     }
   }
   

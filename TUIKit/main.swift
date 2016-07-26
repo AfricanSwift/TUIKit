@@ -42,5 +42,8 @@ try Example.Wavefront.demo()
 Thread.sleep(forTimeInterval: 3)
 Ansi.Display.Erase.all().stdout()
 
+//alphaBar()
+//barTest()
+
 Ansi.resetAll().stdout()
 Ansi.Set.cursorOn().stdout()

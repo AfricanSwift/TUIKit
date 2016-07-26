@@ -25,7 +25,7 @@
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
-		D76239D21D4653910013069A /* dev-wavefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76239D11D4653910013069A /* dev-wavefront.swift */; };
+		D76239D21D4653910013069A /* dev-barchartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76239D11D4653910013069A /* dev-barchartTest.swift */; };
 		D76239D31D46545F0013069A /* african_head.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735DC2C1D3C02CA00AE4E9E /* african_head.obj */; };
 		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
@@ -397,7 +397,7 @@
 		D7518C561D243EB700BEC989 /* Whimsy.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Whimsy.flf; path = Source/Figlet/Fonts/Whimsy.flf; sourceTree = "<group>"; };
 		D7518C571D243EB700BEC989 /* Wow.flf */ = {isa = PBXFileReference; lastKnownFileType = text; name = Wow.flf; path = Source/Figlet/Fonts/Wow.flf; sourceTree = "<group>"; };
 		D7518C581D243F6900BEC989 /* Example+Figfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Figfont.swift"; path = "Source/Examples/Example+Figfont.swift"; sourceTree = "<group>"; };
-		D76239D11D4653910013069A /* dev-wavefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-wavefront.swift"; sourceTree = "<group>"; };
+		D76239D11D4653910013069A /* dev-barchartTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-barchartTest.swift"; sourceTree = "<group>"; };
 		D76581001D25446300FC4E8C /* TUIKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUIKit-Bridging-Header.h"; sourceTree = "<group>"; };
 		D76581011D25446400FC4E8C /* Terminal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Terminal.c; path = Source/Helpers/Terminal.c; sourceTree = "<group>"; };
 		D76581021D25446400FC4E8C /* Terminal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Terminal.h; path = Source/Helpers/Terminal.h; sourceTree = "<group>"; };
@@ -850,7 +850,7 @@
 				D73101331D1349AA0081072F /* UIElements */,
 				D77A28E81D124C4F00C56E49 /* main.swift */,
 				D7FB5F831D4559FD008AE9F3 /* dev-graphic.swift */,
-				D76239D11D4653910013069A /* dev-wavefront.swift */,
+				D76239D11D4653910013069A /* dev-barchartTest.swift */,
 				D7FB5F851D45A608008AE9F3 /* dev-barchart.swift */,
 			);
 			path = TUIKit;
@@ -995,7 +995,7 @@
 				D7B6130C1D38885F002756EB /* TUIStatus+Bars.swift in Sources */,
 				D7EA2E521D2DD0960078B3E2 /* Example+RandomViews.swift in Sources */,
 				D71F845F1D347318004C9826 /* TUIGeometry.swift in Sources */,
-				D76239D21D4653910013069A /* dev-wavefront.swift in Sources */,
+				D76239D21D4653910013069A /* dev-barchartTest.swift in Sources */,
 				D77A291B1D125BF600C56E49 /* Ansi+Line.swift in Sources */,
 				D77A291C1D125BF600C56E49 /* Ansi+Page.swift in Sources */,
 				D71F84651D347318004C9826 /* TUIWindow.swift in Sources */,
