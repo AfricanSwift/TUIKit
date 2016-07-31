@@ -10,6 +10,7 @@
 		D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70384E51D36F2BC00B65380 /* TUIStatus.swift */; };
 		D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D799B4791D1AC4A500FA7853 /* wwdc16_logo */; };
 		D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C561D243EB700BEC989 /* Whimsy.flf */; };
+		D70FE1521D4E830C009E408B /* dev-Termios-input .swift in Sources */ = {isa = PBXBuildFile; fileRef = D70FE1511D4E830C009E408B /* dev-Termios-input .swift */; };
 		D71F845D1D347318004C9826 /* TUIBorders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84541D347318004C9826 /* TUIBorders.swift */; };
 		D71F845E1D347318004C9826 /* TUICharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84551D347318004C9826 /* TUICharacter.swift */; };
 		D71F845F1D347318004C9826 /* TUIGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84561D347318004C9826 /* TUIGeometry.swift */; };
@@ -50,6 +51,7 @@
 		D77A291E1D125BF600C56E49 /* Ansi+Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29081D125BF600C56E49 /* Ansi+Tab.swift */; };
 		D77A29211D125BF600C56E49 /* Ansi+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A290B1D125BF600C56E49 /* Ansi+Window.swift */; };
 		D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */; };
+		D77D041D1D492FAF0060DA48 /* dev-piechart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77D041C1D492FAF0060DA48 /* dev-piechart.swift */; };
 		D799B47B1D1ACEB100FA7853 /* Example+WWDCLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */; };
 		D7B6130A1D3871FC002756EB /* TUIStatus+Spinners.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */; };
 		D7B6130C1D38885F002756EB /* TUIStatus+Bars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B6130B1D38885F002756EB /* TUIStatus+Bars.swift */; };
@@ -98,6 +100,7 @@
 
 /* Begin PBXFileReference section */
 		D70384E51D36F2BC00B65380 /* TUIStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIStatus.swift; path = Source/UIElements/Widgets/TUIStatus.swift; sourceTree = "<group>"; };
+		D70FE1511D4E830C009E408B /* dev-Termios-input .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-Termios-input .swift"; sourceTree = "<group>"; };
 		D71F84541D347318004C9826 /* TUIBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBorders.swift; path = Source/UIElements/Foundation/TUIBorders.swift; sourceTree = "<group>"; };
 		D71F84551D347318004C9826 /* TUICharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUICharacter.swift; path = Source/UIElements/Foundation/TUICharacter.swift; sourceTree = "<group>"; };
 		D71F84561D347318004C9826 /* TUIGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIGeometry.swift; path = Source/UIElements/Foundation/TUIGeometry.swift; sourceTree = "<group>"; };
@@ -425,6 +428,7 @@
 		D77A290B1D125BF600C56E49 /* Ansi+Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Window.swift"; path = "Source/Ansi/Ansi+Window.swift"; sourceTree = "<group>"; };
 		D77A29241D125FAD00C56E49 /* Custom+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Custom+Extensions.swift"; path = "Source/Foundation/Custom+Extensions.swift"; sourceTree = "<group>"; };
 		D77A29321D12667800C56E49 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D77D041C1D492FAF0060DA48 /* dev-piechart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-piechart.swift"; sourceTree = "<group>"; };
 		D799B4791D1AC4A500FA7853 /* wwdc16_logo */ = {isa = PBXFileReference; lastKnownFileType = text; name = wwdc16_logo; path = Source/Examples/wwdc16_logo; sourceTree = "<group>"; };
 		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
 		D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIStatus+Spinners.swift"; path = "Source/UIElements/Widgets/TUIStatus+Spinners.swift"; sourceTree = "<group>"; };
@@ -849,6 +853,8 @@
 				D7518B3D1D243A4800BEC989 /* Reference */,
 				D73101331D1349AA0081072F /* UIElements */,
 				D77A28E81D124C4F00C56E49 /* main.swift */,
+				D70FE1511D4E830C009E408B /* dev-Termios-input .swift */,
+				D77D041C1D492FAF0060DA48 /* dev-piechart.swift */,
 				D7FB5F831D4559FD008AE9F3 /* dev-graphic.swift */,
 				D76239D11D4653910013069A /* dev-barchartTest.swift */,
 				D7FB5F851D45A608008AE9F3 /* dev-barchart.swift */,
@@ -1017,6 +1023,7 @@
 				D77A29181D125BF600C56E49 /* Ansi+Cursor.swift in Sources */,
 				D7E49DBF1D25D695000FFE2C /* Custom+String.swift in Sources */,
 				D76581031D25446400FC4E8C /* Terminal.c in Sources */,
+				D77D041D1D492FAF0060DA48 /* dev-piechart.swift in Sources */,
 				D71F845E1D347318004C9826 /* TUICharacter.swift in Sources */,
 				D77A29191D125BF600C56E49 /* Ansi+Display.swift in Sources */,
 				D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */,
@@ -1028,6 +1035,7 @@
 				D77A29101D125BF600C56E49 /* Ansi+Color.swift in Sources */,
 				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
 				D71F84631D347318004C9826 /* TUIView+Line.swift in Sources */,
+				D70FE1521D4E830C009E408B /* dev-Termios-input .swift in Sources */,
 				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
 				D71F84611D347318004C9826 /* TUIView.swift in Sources */,

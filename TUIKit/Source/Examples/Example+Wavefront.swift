@@ -1,5 +1,5 @@
 //
-//          File:   Example+RandomViews.swift
+//          File:   Example+Wavefront.swift
 //    Created by:   African Swift
 
 import Foundation

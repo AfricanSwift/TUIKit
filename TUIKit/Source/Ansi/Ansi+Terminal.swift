@@ -11,6 +11,50 @@ public extension Ansi
 {
   public struct Terminal
   {
+//    public enum Program
+//    {
+//      // mac Terminal "Apple_Terminal"
+//      // mac iTerm "iTerm.app"
+//      case macTerminal, iTerm, linuxXterm
+//    }
+    
+    
+    
+    public static func hasUnicodeSupport() -> Bool
+    {
+      let value = [getenv("LANG"), getenv("LC_CTYPE"), getenv("LC_ALL")]
+        .flatMap { return $0 == nil ? nil : $0 }
+        .map { String(cString: $0) }.first ?? ""
+      return value.lowercased().contains("utf")
+    }
+    
+    public static func bell()
+    {
+      Ansi("\(Ansi.C0.BEL)").stdout()
+    }
+    
+    /// Soft Terminal Reset (DECSTR)
+    public static func softReset()
+    {
+      Ansi("\(Ansi.C1.CSI)!p").stdout()
+    }
+    
+    /// Hard Terminal Reset (RIS)
+    public static func hardReset()
+    {
+      Ansi("\(Ansi.C0.ESC)c").stdout()
+    }
+    
+    /// Adjustments (DECALN)
+    ///
+    /// The terminal has a screen alignment pattern that service personnel use to
+    /// adjust the screen. You can display the screen alignment pattern with the
+    /// DECALN sequence. This sequence fills the screen with uppercase E's.
+    public static func testPattern()
+    {
+      Ansi("\(Ansi.C0.ESC)#8").stdout()
+    }
+    
     /// Terminal Ansi command and expected response
     ///
     /// ````
@@ -42,7 +86,7 @@ public extension Ansi
     /// File descriptor for current TTY
     ///
     /// - returns: Int32
-    private static func currentTTY() -> Int32
+    internal static func currentTTY() -> Int32
     {
       if let device = ttyname(STDIN_FILENO)
       {
@@ -74,7 +118,7 @@ public extension Ansi.Terminal
   /// - parameters:
   ///   - tty: Int32
   /// - returns: Int32
-  private static func readValue(tty: Int32) -> Int32
+  internal static func readValue(tty: Int32) -> Int32
   {
     // Maximum time (ms) to allow read to block
     let maximumBlockDuration = 0.2
@@ -135,7 +179,7 @@ public extension Ansi.Terminal
   /// - parameters:
   ///   - tty: Int32
   /// - returns: termios?
-  private static func saveSettings(tty: Int32) -> termios?
+  internal static func saveSettings(tty: Int32) -> termios?
   {
     var result: Int32
     var settings = termios.init()
@@ -152,7 +196,7 @@ public extension Ansi.Terminal
   ///   - settings: inout termios
   ///   - index: Int32
   ///   - value: UInt8
-  private static func setc_cc(settings: inout termios, index: Int32, value: UInt8)
+  internal static func setc_cc(settings: inout termios, index: Int32, value: UInt8)
   {
     withUnsafeMutablePointer(&settings.c_cc) { tuplePointer -> Void in
       let c_ccPointer = UnsafeMutablePointer<cc_t>(tuplePointer)
@@ -166,7 +210,7 @@ public extension Ansi.Terminal
   ///   - tty: Int32
   ///   - settings: inout termios
   /// - returns: Bool
-  private static func enableNonCanon(tty: Int32, settings: inout termios) -> Bool
+  internal static func enableNonCanon(tty: Int32, settings: inout termios) -> Bool
   {
     settings.c_lflag &= ~UInt(ICANON)
     settings.c_lflag &= ~UInt(ECHO)
@@ -188,7 +232,7 @@ public extension Ansi.Terminal
   /// - parameters:
   ///   - tty: Int32
   ///   - settings: inout termios
-  private static func restoreSettings(tty: Int32, settings: inout termios)
+  internal static func restoreSettings(tty: Int32, settings: inout termios)
   {
     // Restore saved terminal settings`
     var result: Int32

@@ -129,3 +129,67 @@ public extension Ansi.Line
     }
   }
 }
+
+public extension Ansi.Line
+{
+  /// Lines attributes are display features that affect a complete display line.
+  /// The cursor selects the line affected by the attribute. The cursor stays in
+  /// the same character position when the attribute changes, unless the attribute
+  /// would move the cursor past the right margin. In that case, the cursor stops
+  /// at the right margin. When you move lines on the screen by scrolling, the
+  /// attribute moves with the line.
+  public struct Attributes
+  {
+    /// Double Height Line (DECDHL)
+    ///
+    /// These sequences make the line with the cursor the top or bottom half
+    /// of a double-height, double-width line. You must use these sequences
+    /// in pairs on adjacent lines. The same character must be used on both
+    /// lines to form a full character. If the line was previously single-width,
+    /// single-height, all characters to the right of center are lost.
+    public struct Height
+    {
+      /// Double Height Top Half (DECDHL)
+      ///
+      /// - returns: Ansi
+      public static func topHalf() -> Ansi
+      {
+        return Ansi("\(Ansi.C0.ESC)#3")
+      }
+      
+      /// Double Height Bottom Half (DECDHL)
+      ///
+      /// - returns: Ansi
+      public static func bottomHalf() -> Ansi
+      {
+        return Ansi("\(Ansi.C0.ESC)#4")
+      }
+    }
+      
+    /// Line Width (DECSWL & DECDWL)
+    ///
+    /// The DECSWL sequence makes the line with the cursor single-width, 
+    /// single-height. This is the line attribute for all new lines on the 
+    /// screen. The DECDWL sequence makes the line with the cursor double-width, 
+    /// single-height. If the line was previously single-width, single-height, 
+    /// all characters to the right of center screen are lost.
+    public struct Width
+    {
+      /// Single-Width Line (DECSWL)
+      ///
+      /// - returns: Ansi
+      public static func single() -> Ansi
+      {
+        return Ansi("\(Ansi.C0.ESC)#5")
+      }
+      
+      /// Double-Width Line (DECDWL)
+      ///
+      /// - returns: Ansi
+      public static func double() -> Ansi
+      {
+        return Ansi("\(Ansi.C0.ESC)#6")
+      }
+    }
+  }
+}

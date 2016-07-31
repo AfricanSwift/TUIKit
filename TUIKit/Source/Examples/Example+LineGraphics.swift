@@ -11,7 +11,8 @@ public extension Example
     public static func demo()
     {
       let len = (w: 150, h: 150)
-      var view = TUIView(x: 0, y: 0, width: len.w, height: len.h, border: .none)
+      let viewParam = TUIView.Parameter(border: .none)
+      var view = TUIView(x: 0, y: 0, width: len.w, height: len.h, parameters: viewParam)
       drawRectangles(view: &view)
       Thread.sleep(forTimeInterval: 1)
       drawCircles(view: &view)

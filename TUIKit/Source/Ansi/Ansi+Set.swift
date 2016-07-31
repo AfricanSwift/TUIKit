@@ -88,17 +88,21 @@ public extension Ansi
       return setL(20)
     }
     
-//    /// Ps = 1 -> Application Cursor Keys (DECCKM).
-//    public static func cursorKeysApplication() -> Ansi
-//    {
-//      return setHQ(1)
-//    }
-//    
-//    /// Ps = 1 -> Normal Cursor Keys (DECCKM).
-//    public static func cursorKeysNormal() -> Ansi
-//    {
-//      return setLQ(1)
-//    }
+    /// Application Cursor Keys (DECCKM)
+    /// 
+    /// Causes the cursor keys to send application control functions.
+    public static func cursorKeysApplication() -> Ansi
+    {
+      return setHQ(1)
+    }
+    
+    /// Normal Cursor Keys (DECCKM)
+    ///
+    /// Causes the cursor keys to generate ANSI cursor control sequences.
+    public static func cursorKeysNormal() -> Ansi
+    {
+      return setLQ(1)
+    }
     
 //    /// Ps = 2 -> Designate USASCII for character sets
 //    /// G0-G3 (DECANM), and set VT100 mode.
@@ -277,16 +281,18 @@ public extension Ansi
 //      return setLQ(19)
 //    }
     
-    /// Ps = 2 5  -> Show Cursor (DECTCEM)
+    /// Show Cursor (DECTCEM)
     ///
+    /// Makes the cursor visible
     /// - returns: Ansi
     public static func cursorOn() -> Ansi
     {
       return setHQ(25)
     }
     
-    /// Ps = 2 5  -> Hide Cursor (DECTCEM)
+    /// Hide Cursor (DECTCEM)
     ///
+    /// Makes the cursor not visible
     /// - returns: Ansi
     public static func cursorOff() -> Ansi
     {
@@ -490,7 +496,7 @@ public extension Ansi
     /// - returns: Ansi
     public static func sendMouseXYOnButtonPressX11Off() -> Ansi
     {
-      return setHQ(1000)
+      return setLQ(1000)
     }
     
     /// Ps = 1 0 0 0  -> Send Mouse X & Y on button press and release
@@ -498,7 +504,10 @@ public extension Ansi
     /// - returns: Ansi
     public static func sendMouseXYOnButtonPressX11On() -> Ansi
     {
-      return setLQ(1000)
+//      return Ansi("\(Ansi.C1.CSI)?1000h")
+      
+      
+      return setHQ(1000)
     }
     
     /// Ps = 1 0 0 1  -> Don't Use Hilite Mouse Tracking

@@ -82,7 +82,8 @@ public struct TUIStatus
     self.isActive = true
     
     guard let current = TUIWindow.ttysize()?.character else { exit(EXIT_FAILURE) }
-    self.view = TUIView(x: 0, y: 0, width: Int(current.width) * 2, height: 4, border: .none)
+    let viewParam = TUIView.Parameter(border: .none)
+    self.view = TUIView(x: 0, y: 0, width: Int(current.width) * 2, height: 4, parameters: viewParam)
     self.draw()
   }
   

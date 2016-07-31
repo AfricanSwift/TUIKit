@@ -20,6 +20,7 @@ public struct TUIView
   private var buffer: [[TUICharacter]]
   private let borderColor: Ansi
   public let backgroundColor: Ansi
+  public let attribute: Attribute
   
   /// View cache (rendered Ansi)
   /// Used for direct view draw, unused with TUIScreen
@@ -53,6 +54,53 @@ public struct TUIView
       .filter { $0.type != .none }
   }
   
+  public enum Attribute
+  {
+    case single, widthx2, heightx2
+  }
+  
+  /// Maximum Viewable size based on selected size Attribute
+  ///
+  /// - Parameters:
+  ///   - bordeer: bool
+  ///   - attribute: Attribute
+  /// - Returns: TUISize
+  internal static func maxSize(border: Bool, attribute: Attribute) -> TUISize
+  {
+    guard let size = TUIWindow.ttysize() else { exit(EXIT_FAILURE) }
+    let inset = border ? 2 : 0
+    let width = attribute == .single ? size.character.width : size.character.width / 2
+    let height = attribute == .heightx2 ? size.character.height / 2 : size.character.height
+    let columns = Int(width) - inset
+    let rows = Int(height) - inset
+    return TUISize(width: columns * 2, height: rows * 4)
+  }
+  
+
+  public struct Parameter
+  {
+    internal let border: TUIBorder
+    internal let color: Ansi
+    internal let attribute: Attribute
+    internal let background: Ansi
+    
+    /// Default initializer
+    ///
+    /// - parameters:
+    ///   - bordeer: TUIBorder
+    ///   - color: Ansi
+    ///   - background: Ansi
+    ///   - attribute: Attribute
+    public init(border: TUIBorder = .single, color: Ansi = "",
+         background: Ansi = "", attribute: Attribute = .single)
+    {
+      self.border = border
+      self.color = color
+      self.background = background
+      self.attribute = attribute
+    }
+  }
+  
   /// Default initializer
   ///
   /// - parameters:
@@ -60,26 +108,51 @@ public struct TUIView
   ///   - y: Int
   ///   - width: Int
   ///   - height: Int
-  ///   - border: TUIBorders
-  public init(x: Int, y: Int, width: Int, height: Int, border: TUIBorder = .single,
-              borderColor: Ansi = "", backgroundColor: Ansi = "")
+  ///   - parameters: Parameter
+  public init(x: Int, y: Int, width: Int, height: Int, parameters: Parameter = Parameter())
   {
-    self.origin = TUIPoint(x: x, y: y)
-    self.size = TUIWindowSize(width: width, height: height)
+    self.init(origin: TUIPoint(x: x, y: y), size: TUISize(width: width, height: height),
+              parameters: parameters)
+  }
+  
+  /// Default initializer
+  ///
+  /// - parameters:
+  ///   - origin: Int
+  ///   - size: Int
+  ///   - parameters: Parameter
+  public init(origin: TUIPoint, size: TUISize, parameters: Parameter = Parameter())
+  {
+    self.origin = origin
+    self.size = TUIWindowSize(width: size.width, height: size.height)
     self.invalidate = true
-    self.border = border
+    self.border = parameters.border
     self.buffer = init2D(
       d1: Int(self.size.character.height),
       d2: Int(self.size.character.width),
       repeatedValue: TUICharacter(
         character: " ",
         color: Ansi.Color(red: 0, green: 0, blue: 0, alpha: 0)))
-    self.borderColor = borderColor
-    self.backgroundColor = backgroundColor
+    self.borderColor = parameters.color
+    self.backgroundColor = parameters.background
+    self.attribute = parameters.attribute
     
     var cacheSize = Int(self.size.character.height)
     if case .none = border { } else { cacheSize += 2 }
     self.cache = [Ansi](repeating: Ansi(""), count: cacheSize)
+  }
+
+  /// Default initializer
+  ///
+  /// - parameters:
+  ///   - parameters: Parameter
+  public init(parameters: Parameter = Parameter())
+  {
+    var hasBorder = true
+    if case .none = parameters.border { hasBorder = false }
+    
+    let size = TUIView.maxSize(border: hasBorder, attribute: parameters.attribute)
+    self.init(origin: TUIPoint(x: 0, y: 0), size: size, parameters: parameters)
   }
 }
 
@@ -104,12 +177,13 @@ public extension TUIView
   ///   - height: Int
   public mutating func resize(width: Int, height: Int)
   {
+    let viewParam = Parameter(border: self.border, color: self.borderColor,
+                              background: self.backgroundColor,
+                              attribute: self.attribute)
     self = TUIView.init(
-      x: Int(self.origin.x),
-      y: Int(self.origin.y),
-      width: width,
-      height: height,
-      border: self.border)
+      origin: self.origin,
+      size: TUISize(width: width, height: height),
+      parameters: viewParam)
     self.invalidate = false
   }
   
@@ -150,8 +224,30 @@ public extension TUIView
     
     for line in self.cache
     {
+      var attr1: Ansi = ""
+      var attr2: Ansi = ""
+      var doubleLine = false
+      if self.attribute == .widthx2
+      {
+        attr1 = Ansi.Line.Attributes.Width.double()
+      }
+      else if self.attribute == .heightx2
+      {
+        attr1 = Ansi.Line.Attributes.Height.topHalf()
+        attr2 = Ansi.Line.Attributes.Height.bottomHalf()
+        doubleLine = true
+      }
+      
       _ = atOrigin ? Ansi.Cursor.position(row: y, column: x).stdout() : ()
-      _ = atOrigin ? line.stdout() : (line + "\n").stdout()
+      _ = atOrigin ? (attr1 + line).stdout() : (attr1 + line + "\n").stdout()
+      
+      if doubleLine
+      {
+        y += 1
+        _ = atOrigin ? Ansi.Cursor.position(row: y, column: x).stdout() : ()
+        _ = atOrigin ? (attr2 + line).stdout() : (attr2 + line + "\n").stdout()
+      }
+      
       y += 1
     }
     Ansi.resetAll().stdout()

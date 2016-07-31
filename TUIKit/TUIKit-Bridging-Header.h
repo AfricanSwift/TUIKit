@@ -13,3 +13,7 @@ extern const unsigned long S_TIOCGWINSZ;
 extern const unsigned long S_TIOCSWINSZ;
 
 struct termios saved;
+
+//static int terminal_init(void);
+
+void testme();

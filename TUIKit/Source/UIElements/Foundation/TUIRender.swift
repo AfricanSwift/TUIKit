@@ -18,6 +18,9 @@ public enum RenderStyle
 {
   case drawille, short, short2, long, ditherShort, ditherLong, block, block2, block3
   
+  public static var allCases: [RenderStyle] = [.drawille, .short, .short2, .long, .ditherShort,
+                                               .ditherLong, .block, .block2, .block3]
+  
   // http://paulbourke.net/dataformats/asciiart/
   private static let shortColorRamp = " .:-=+*#%@"
     .characters.map { String($0) }

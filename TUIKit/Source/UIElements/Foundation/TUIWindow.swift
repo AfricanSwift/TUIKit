@@ -30,12 +30,14 @@ public struct TUIWindow {
     self.size = size
     
     self.invalidate = true
+    
+    let viewParam = TUIView.Parameter(border: .none)
     self.buffer = TUIView(
       x: 0,
       y: 0,
       width: Int(size.pixel.width),
       height: Int(size.pixel.width),
-      border: TUIBorder.none)
+      parameters: viewParam)
     
     self.backbuffer = self.buffer
   }
@@ -64,6 +66,8 @@ public struct TUIWindow {
     S_ioctl(0, S_TIOCGWINSZ, ttySize)
     return UnsafeMutablePointer<TTYSize>(ttySize)[0].toTUIWindowSize()
   }
+  
+  
   
   public mutating func move(x: Int, y: Int)
   {

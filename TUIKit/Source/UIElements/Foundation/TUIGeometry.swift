@@ -133,12 +133,21 @@ public struct TUIWindowSize
   /// Default initializer
   ///
   /// - parameters:
+  ///   - width: Double (pixel width)
+  ///   - height: Double (pixel height)
+  public init(width: Double, height: Double)
+  {
+    self.init(width: Int(width), height: Int(height))
+  }
+  
+  /// Default initializer
+  ///
+  /// - parameters:
   ///   - columns: Int (character width)
   ///   - rows: Int (character height)
   public init(columns: Int, rows: Int)
   {
-    self.pixel = TUISize(width: columns * 2, height: rows * 4)
-    self.character = TUISize(width: columns, height: rows)
+    self.init(width: columns * 2, height: rows * 4)
   }
 }
 

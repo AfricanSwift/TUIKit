@@ -16,10 +16,9 @@ public struct Example
       let borderColor = Ansi.Color.Foreground.white()
         + Ansi.Color.Background.color256(index: 236)
       let backgroundColor = Ansi.Color.Background.color256(index: 232)
-      var view = TUIView(
-        x: 5, y: 2, width: 106, height: 160,
-        border: .halfblock, borderColor: borderColor,
-        backgroundColor: backgroundColor)
+      let viewParam = TUIView.Parameter(border: .halfblock, color: borderColor,
+                                        background: backgroundColor)
+      var view = TUIView(x: 5, y: 2, width: 106, height: 160, parameters: viewParam)
       WWDC.logoWWDC(view: &view)
       WWDC.richText(view: &view)
       Ansi.Set.cursorOn().stdout()
