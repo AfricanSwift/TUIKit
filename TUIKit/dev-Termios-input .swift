@@ -2,6 +2,7 @@
 //          File:   dev-Termios-input.swift
 //    Created by:   African Swift
 
+import Darwin
 import Foundation
 
 var terminal_descriptor: Int32 = -1
@@ -48,18 +49,25 @@ func devTermios()
       return errno
     }
     
+    print("stderr", isatty(STDERR_FILENO))
+    print("stdin", isatty(STDIN_FILENO))
+    print("stdout", isatty(STDOUT_FILENO))
+    
     // Which standard stream is connected to our TTY?
     if isatty(STDERR_FILENO) != 0
     {
       terminal_descriptor = STDERR_FILENO
+      print("stderr connected")
     }
     else if isatty(STDIN_FILENO) != 0
     {
       terminal_descriptor = STDIN_FILENO
+      print("stdin connected")
     }
     else if isatty(STDOUT_FILENO) != 0
     {
       terminal_descriptor = STDOUT_FILENO
+      print("stdout connected")
     }
     else
     {
@@ -93,37 +101,35 @@ func devTermios()
       return errno
     }
     
-    /// Set new "default" handlers for typical signals, so that if this process is
-    /// killed by a signal, the terminal settings will still be restored first.
+    // Set new "default" handlers for typical signals, so that if this process is
+    // killed by a signal, the terminal settings will still be restored first.
     sigemptyset(&act.sa_mask)
     act.__sigaction_u.__sa_handler = terminal_signal as (@convention(c) (Int32) -> Void)
     act.sa_flags = 0
     
-    var cond = sigaction(SIGHUP,  &act, nil) != 0 ||
+    // Break conditions
+    var condition = sigaction(SIGHUP,  &act, nil) != 0 ||
       sigaction(SIGINT,  &act, nil) != 0 ||
       sigaction(SIGQUIT, &act, nil) != 0 ||
       sigaction(SIGTERM, &act, nil) != 0 ||
       sigaction(SIGPIPE, &act, nil) != 0 ||
       sigaction(SIGALRM, &act, nil) != 0
-    
     #if SIGXCPU
-      cond =|| sigaction(SIGXCPU, &act, nil)
+      condition |= sigaction(SIGXCPU, &act, nil) != 0
     #endif
-    
     #if SIGXFSZ
-      cond =|| sigaction(SIGXFSZ, &act, nil)
+      condition |= sigaction(SIGXFSZ, &act, nil) != 0
     #endif
-    
     #if SIGIO
-      cond =|| sigaction(SIGIO, &act, nil)
+      condition |= sigaction(SIGIO, &act, nil) != 0
     #endif
-    
-    if cond
+
+    if condition
     {
       errno = ENOTSUP
       return errno
     }
-    
+
     // Let BREAK cause a SIGINT in input
     terminal_settings.c_iflag &= ~UInt(IGNBRK)
     terminal_settings.c_iflag |=  UInt(BRKINT)
@@ -151,8 +157,8 @@ func devTermios()
     // Enable receiver
     terminal_settings.c_cflag |= UInt(CREAD)
     
-    // Let INTR/QUIT/SUSP/DSUSP generate the corresponding signals
-    terminal_settings.c_lflag |= UInt(ISIG)
+    // Let INTR/QUIT/SUSP/DSUSP generate the corresponding signals (CTRL-C, ....)
+    terminal_settings.c_lflag &= ~UInt(ISIG)
     
     // Enable noncanonical mode.
     // This is the most important bit, as it disables line buffering etc
@@ -182,68 +188,98 @@ func devTermios()
     return errno
   }
   
-  
-  //testme()
-  
   Ansi.Set.sendMouseXYOnButtonPressX11On().stdout()
   Ansi.Set.sgrMouseModeOn().stdout()
   Ansi.flush()
   
   
-  let q = Int32("q".utf8.first!.hashValue)
-  let Q = Int32("Q".utf8.first!.hashValue)
-  
-  //terminal_init()
-  //print(q, Q)
   if terminal_init() != 0
   {
     if Darwin.errno == ENOTTY
     {
-      fputs("This program requires a terminal.\n", Darwin.stderr)
-      //    print("This program requires a terminal.\n")
+      fputs("This program requires a terminal.\n", stderr)
     }
     else
     {
-      fputs("Cannot initialize terminal: \(strerror(errno))\n", Darwin.stderr)
-      //    print("Cannot initialize terminal:")
+      fputs("Cannot initialize terminal: \(strerror(errno))\n", stderr)
     }
   }
+
   
-  var c: Int32 = getc(Darwin.stdin)
+  var readFDS = fd_set()
+  var timeValue = timeval()
   
-  while c != EOF
+  var result = ""
+  
+  while true
   {
-    if c >= 33 && c <= 126
+    // Watch stdin (fd 0) to see when it has input.
+    Swift_FD_ZERO(&readFDS)
+    Swift_FD_SET(0, &readFDS)
+    
+    // Wait up to 5 milliseconds.
+    timeValue.tv_sec = 0
+    timeValue.tv_usec = 5000
+    
+    let retval = select(1, &readFDS, nil, nil, &timeValue)
+    if retval == -1
     {
-      let format = String(format: "0x%02x = 0%03o = %3d = '%c'\n", c, c, c, c)
-      print(format)
+      perror("select()")
+      exit(EXIT_FAILURE)
+    }
+    else if retval != 0
+    {
+      let c = getc(stdin)
+      if c >= 33 && c <= 126
+      {
+//        let format = String(format: "0x%02x = 0%03o = %3d = '%c'\n", c, c, c, c)
+//        print(format)
+      }
+      else
+      {
+//        let format = String(format: "0x%02x = 0%03o = %3d\n", c, c, c)
+//        print(format)
+      }
+      result += String(UnicodeScalar(Int(c)))
+      
+//      print(result)
+      
+//      if c == 3 || c == Q || c == q
+      
+      // Exit on CTRL-C
+      if c == 3
+      {
+        Ansi.Set.sendMouseXYOnButtonPressX11Off().stdout()
+        Ansi.Set.sgrMouseModeOff().stdout()
+        break
+      }
     }
     else
     {
-      let format = String(format: "0x%02x = 0%03o = %3d\n", c, c, c)
-      print(format)
+      if result.characters.count > 0
+      {
+        if result.hasPrefix("\u{1b}")
+        {
+          debugPrint("\(result)")
+        }
+        else
+        {
+          print(result, terminator: "")
+        }
+        
+        result = ""
+      }
+      // Triggered when select timed out
+      // Add event code here: screen painting, etc...
+      Thread.sleep(forTimeInterval: 0.1)
     }
-    
-    //  if c == 3 || c == Q || c == q
-    //  {
-    //    break
-    //  }
-    
-    if c == 3
-    {
-      break
-    }
-    
-    c = getc(Darwin.stdin)
   }
-  
-  
   
   //Thread.sleep(forTimeInterval: 10)
   Ansi.Set.sendMouseXYOnButtonPressX11Off().stdout()
   Ansi.Set.sgrMouseModeOff().stdout()
   
   
-  print(Ansi.Terminal.hasUnicodeSupport())
+//  print(Ansi.Terminal.hasUnicodeSupport())
   Ansi.Terminal.bell()
 }

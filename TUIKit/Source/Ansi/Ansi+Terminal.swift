@@ -9,7 +9,7 @@ import Foundation
 // MARK: Command, fileDescriptor, currentTTY -
 public extension Ansi
 {
-  public struct Terminal
+  public enum Terminal
   {
 //    public enum Program
 //    {
@@ -105,9 +105,7 @@ public extension Ansi
   }
 }
 
-// TODO: Consider replacing reading values with a function that is based on select
-// example: http://stackoverflow.com/questions/6418232/how-to-use-select-to-read-input-from-keyboard-in-c
-// example: http://stackoverflow.com/questions/8101079/making-stdin-non-blocking
+// REPLACE with new termios code
 
 // MARK: -
 // MARK: readValue -

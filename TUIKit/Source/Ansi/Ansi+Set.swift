@@ -11,7 +11,7 @@ public extension Ansi
   ///
   /// Set Mode (SM) / Reset Mode (RM)
   /// - CSI Pm l ... CSI Pm h
-  public struct Set
+  public enum Set
   {
     private static let setH = {
       (function: Int) -> Ansi in

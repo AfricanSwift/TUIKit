@@ -9,7 +9,7 @@ import Darwin
 public extension Ansi
 {
   /// Tab
-  public struct Tab
+  public enum Tab
   {
     /// Cursor Forward Tabulation (CHT)
     ///
@@ -31,7 +31,7 @@ public extension Ansi
       return Ansi("\(Ansi.C1.CSI)\(quantity)Z")
     }
     
-    public struct Clear
+    public enum Clear
     {
       /// Tab Clear Current Column (TBC)
       ///

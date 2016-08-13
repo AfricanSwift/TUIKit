@@ -9,7 +9,7 @@ import Darwin
 internal extension Ansi
 {
   /// C0 (ASCII and derivatives) also referred to as Single Character
-  internal struct C0
+  internal enum C0
   {
     /// ESC CTRL-[
     /// The Esc key on the keyboard.
@@ -25,7 +25,7 @@ internal extension Ansi
   }
   
   /// C1 (8-Bit) Control Characters
-  internal struct C1
+  internal enum C1
   {
     /// CSI
     /// Control Sequence Introducer (CSI is 0x9b).

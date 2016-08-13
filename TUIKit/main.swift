@@ -5,42 +5,66 @@
 //import Darwin
 import Foundation
 
-// WWDC 2016 Logo Example
-Ansi.Set.cursorOff().stdout()
-Example.WWDC.demo()
-Ansi.Display.Erase.all().stdout()
 
-// Fig Font Example
-Ansi.Set.cursorOff().stdout()
-try Example.Figfont.demo()
-Thread.sleep(forTimeInterval: 2)
-Ansi.Display.Erase.all().stdout()
+//public class RunLoopDelegate
+//{
+//  @objc public func run()
+//  {
+//    let now = Date()
+//    print("fired \(now)")
+//  }
+//}
+//
+////var testFire = TestFire()
+//
+//var now = Date()
+//var timer = Timer(fireAt: now, interval: 0.01, target: RunLoopDelegate(),
+//                  selector: #selector(RunLoopDelegate.run), userInfo: nil, repeats: true)
+//
+//var runLoop = RunLoop.current()
+//runLoop.add(timer, forMode: .defaultRunLoopMode)
+//runLoop.run()
+///--------------------------------------
 
-// Demo of line graphics
-Ansi.Set.cursorOff().stdout()
-Example.LineGraphics.demo()
-Thread.sleep(forTimeInterval: 1)
-Ansi.Display.Erase.all().stdout()
 
-// Random views
-Ansi.Set.cursorOff().stdout()
-Example.RandomViews.demo()
-Thread.sleep(forTimeInterval: 1)
-Ansi.Display.Erase.all().stdout()
 
-// ProgressBars
-Ansi.Set.cursorOff().stdout()
-Ansi.Cursor.position().stdout()
-Example.ProgressBars.demo()
-Thread.sleep(forTimeInterval: 1)
-print()
-Ansi.Display.Erase.all().stdout()
 
-// Wavefront
-Ansi.Set.cursorOff().stdout()
-try Example.Wavefront.demo()
-Thread.sleep(forTimeInterval: 3)
-Ansi.Display.Erase.all().stdout()
+//// WWDC 2016 Logo Example
+//Ansi.Set.cursorOff().stdout()
+//Example.WWDC.demo()
+//Ansi.Display.Erase.all().stdout()
+
+//// Fig Font Example
+//Ansi.Set.cursorOff().stdout()
+//try Example.Figfont.demo()
+//Thread.sleep(forTimeInterval: 2)
+//Ansi.Display.Erase.all().stdout()
+//
+//// Demo of line graphics
+//Ansi.Set.cursorOff().stdout()
+//Example.LineGraphics.demo()
+//Thread.sleep(forTimeInterval: 1)
+//Ansi.Display.Erase.all().stdout()
+//
+//// Random views
+//Ansi.Set.cursorOff().stdout()
+//Example.RandomViews.demo()
+//Thread.sleep(forTimeInterval: 1)
+//Ansi.Display.Erase.all().stdout()
+//
+//// ProgressBars
+//Ansi.Set.cursorOff().stdout()
+//Ansi.Cursor.position().stdout()
+//Example.ProgressBars.demo()
+//Thread.sleep(forTimeInterval: 1)
+//print()
+//Ansi.Display.Erase.all().stdout()
+//
+//// Wavefront
+//Ansi.Set.cursorOff().stdout()
+//try Example.Wavefront.demo()
+//Thread.sleep(forTimeInterval: 3)
+//Ansi.Display.Erase.all().stdout()
 
 //alphaCode()
 //Thread.sleep(forTimeInterval: 2)
@@ -119,8 +143,47 @@ Ansi.Display.Erase.all().stdout()
 //Ansi.Set.sgrMouseModeOff().stdout()
 /// ---------------------
 
+//for h in stride(from: 0.0, through: 360, by: 15)
+//{
+//  let c1 = Ansi.Color2(hue: h, saturation: 0.8, lightness: 0.8, alpha: 1)
+//  let c2 = c1.invert().shade(by: 0.4)
+//  (c1.toAnsiColor().foreground256() + "██").stdout()
+//  (c2.toAnsiColor().foreground256() + "██").stdout()
+//  (c2.toAnsiColor().foreground256() + c1.toAnsiColor().background256() + " Hello World ").stdout()
+//  Ansi.Color.resetAll().stdout()
+//  for d in stride(from: 0.0, to: 2880.0, by: 45)
+//  {
+//    (c2.alterHue(by: d).toAnsiColor().foreground256() + "█").stdout()
+//  }
+//
+//  Ansi.Color.resetAll().stdout()
+//  print()
+//}
+
+
+//(c3.toAnsiColor().foregroundRGB() + "hello world\n").stdout()
+
+//for i in stride(from: 0, to: 360.0, by: 15)
+//{
+//  var c2 = Ansi.Color2(hue: i, saturation: 0.5, lightness: 0.5, alpha: 1)
+//  ((c2.toAnsiColor().foreground256() + " hello world ") +
+//  (c2.complement().toAnsiColor().foreground256() + " hello world\n")).stdout()
+//}
+
+
+var v = TUIView(x: 0, y: 0, width: 100, height: 60)
+let halfWidth = v.size.pixel.width / 2
+let halfHeight = v.size.pixel.height / 2
+let center = TUIPoint(x: halfWidth - 1, y: halfHeight - 1)
+v.drawEllipse(center: center, radiusX: halfWidth - 1, radiusY: (halfHeight - 1) + 20)
+v.drawEllipse(center: center, radiusX: halfWidth - 1 + 20, radiusY: (halfHeight - 1))
+v.draw()
 
 //devTermios()
+
+//let a = Ansi("\(Ansi.C1.CSI)22q")
+//a.stdout()
+Ansi.flush()
 
 //Ansi.Terminal.hardReset()
 

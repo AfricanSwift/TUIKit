@@ -8,7 +8,7 @@ import Darwin
 // MARK: Primary Cursor Movements -
 public extension Ansi
 {
-  public struct Cursor
+  public enum Cursor
   {
     /// Cursor Up (CUU)
     ///
@@ -162,7 +162,7 @@ public extension String
 public extension Ansi.Cursor
 {
   /// Column: Absolute, Relative
-  public struct Column
+  public enum Column
   {
     /// Horizontal Position Absolute (HPA)
     ///
@@ -190,7 +190,7 @@ public extension Ansi.Cursor
 // MARK: Row: Absolute, Relative -
 public extension Ansi.Cursor
 {
-  public struct Row
+  public enum Row
   {
     /// Line Position Absolute (VPA)
     ///
@@ -219,7 +219,7 @@ public extension Ansi.Cursor
 public extension Ansi.Cursor
 {
   /// Set cursor style (DECSCUSR, VT520).
-  public struct Style
+  public enum Style
   {
     /// Blinking block
     ///
@@ -275,7 +275,7 @@ public extension Ansi.Cursor
 // MARK: Set cursor style (DECSCUSR, VT520) -
 public extension Ansi.Cursor
 {
-  public struct Report
+  public enum Report
   {
     private static let statusCommand = Ansi.Terminal.Command(
       request: Ansi("\(Ansi.C1.CSI)5n"),

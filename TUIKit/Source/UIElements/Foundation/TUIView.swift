@@ -304,6 +304,10 @@ public extension TUIView
   public mutating func drawPixel(x: Double, y: Double,
                                  color: Ansi.Color, action: TUICharacter.SetAction = .on)
   {
+    // Do nothing if out of bounds
+    guard x < self.size.pixel.width && y < self.size.pixel.height else { return }
+    guard x >= 0 && y >= 0 else { return }
+    
     let char = (x: Int(round(x)) / 2, y: Int(round(y)) / 4)
     self.buffer[char.y][char.x].setPixel(x: x, y: y, action: action, color: color)
     self.invalidate = true

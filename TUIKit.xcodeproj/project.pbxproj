@@ -22,6 +22,7 @@
 		D71F84651D347318004C9826 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845C1D347318004C9826 /* TUIWindow.swift */; };
 		D71F846B1D347390004C9826 /* Example+ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F846A1D347390004C9826 /* Example+ProgressBars.swift */; };
 		D73E78C91D475EDA00B00A9A /* Example+Wavefront.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */; };
+		D740CD1D1D579B8200512661 /* Ansi+Color2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D740CD1C1D579B8200512661 /* Ansi+Color2.swift */; };
 		D74C59EA1D27727E004A300D /* Ansi+Terminal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C59E91D27727E004A300D /* Ansi+Terminal.swift */; };
 		D7518B3B1D24024300BEC989 /* Figlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B391D24024300BEC989 /* Figlet.swift */; };
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
@@ -113,6 +114,7 @@
 		D71F846A1D347390004C9826 /* Example+ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+ProgressBars.swift"; path = "Source/Examples/Example+ProgressBars.swift"; sourceTree = "<group>"; };
 		D735DC2C1D3C02CA00AE4E9E /* african_head.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = african_head.obj; path = Source/Examples/african_head.obj; sourceTree = "<group>"; };
 		D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Wavefront.swift"; path = "Source/Examples/Example+Wavefront.swift"; sourceTree = "<group>"; };
+		D740CD1C1D579B8200512661 /* Ansi+Color2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color2.swift"; path = "Source/Ansi/Ansi+Color2.swift"; sourceTree = "<group>"; };
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D746BB691D245F7300DFA8F7 /* pc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = pc.sh; sourceTree = "<group>"; };
 		D74C59E91D27727E004A300D /* Ansi+Terminal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Terminal.swift"; path = "Source/Ansi/Ansi+Terminal.swift"; sourceTree = "<group>"; };
@@ -431,6 +433,11 @@
 		D77D041C1D492FAF0060DA48 /* dev-piechart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-piechart.swift"; sourceTree = "<group>"; };
 		D799B4791D1AC4A500FA7853 /* wwdc16_logo */ = {isa = PBXFileReference; lastKnownFileType = text; name = wwdc16_logo; path = Source/Examples/wwdc16_logo; sourceTree = "<group>"; };
 		D799B47A1D1ACEB100FA7853 /* Example+WWDCLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+WWDCLogo.swift"; path = "Source/Examples/Example+WWDCLogo.swift"; sourceTree = "<group>"; };
+		D7A3BC131D4EE4C9007B82DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7A3BC151D4EE4CA007B82DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7A3BC181D4EE4CA007B82DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D7A3BC1A1D4EE4CA007B82DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7A3BC1F1D4EE54B007B82DD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		D7B613091D3871FC002756EB /* TUIStatus+Spinners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIStatus+Spinners.swift"; path = "Source/UIElements/Widgets/TUIStatus+Spinners.swift"; sourceTree = "<group>"; };
 		D7B6130B1D38885F002756EB /* TUIStatus+Bars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIStatus+Bars.swift"; path = "Source/UIElements/Widgets/TUIStatus+Bars.swift"; sourceTree = "<group>"; };
 		D7B6130D1D38D0B7002756EB /* TUITable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUITable.swift; path = Source/UIElements/Widgets/TUITable.swift; sourceTree = "<group>"; };
@@ -491,7 +498,7 @@
 			name = UIElements;
 			sourceTree = "<group>";
 		};
-		D73101361D135B2F0081072F /* Color */ = {
+		D73101361D135B2F0081072F /* Ansi.Color */ = {
 			isa = PBXGroup;
 			children = (
 				D77A28FA1D125BF600C56E49 /* Ansi+Color.swift */,
@@ -502,7 +509,15 @@
 				D77A28FF1D125BF600C56E49 /* Ansi+Color+Utility.swift */,
 				D77A29001D125BF600C56E49 /* Ansi+Color+XYZ.swift */,
 			);
-			name = Color;
+			name = Ansi.Color;
+			sourceTree = "<group>";
+		};
+		D740CD1B1D579B5100512661 /* Ansi.Color2 */ = {
+			isa = PBXGroup;
+			children = (
+				D740CD1C1D579B8200512661 /* Ansi+Color2.swift */,
+			);
+			name = Ansi.Color2;
 			sourceTree = "<group>";
 		};
 		D7518B381D24021E00BEC989 /* Figlet */ = {
@@ -829,7 +844,9 @@
 				D746BB681D245EE600DFA8F7 /* .gitignore */,
 				D746BB691D245F7300DFA8F7 /* pc.sh */,
 				D77A28E71D124C4F00C56E49 /* TUIKit */,
+				D7A3BC121D4EE4C9007B82DD /* testapp */,
 				D77A28E61D124C4F00C56E49 /* Products */,
+				D7A3BC1E1D4EE54B007B82DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -845,6 +862,8 @@
 			isa = PBXGroup;
 			children = (
 				D77A28F51D125BE300C56E49 /* Ansi */,
+				D73101361D135B2F0081072F /* Ansi.Color */,
+				D740CD1B1D579B5100512661 /* Ansi.Color2 */,
 				D77A292C1D1260E900C56E49 /* Documentation */,
 				D799B4781D1AC42B00FA7853 /* Examples */,
 				D7518B381D24021E00BEC989 /* Figlet */,
@@ -865,7 +884,6 @@
 		D77A28F51D125BE300C56E49 /* Ansi */ = {
 			isa = PBXGroup;
 			children = (
-				D73101361D135B2F0081072F /* Color */,
 				D77A28F61D125BF600C56E49 /* Ansi.swift */,
 				D77A28F71D125BF600C56E49 /* Ansi+Attribute.swift */,
 				D77A28F81D125BF600C56E49 /* Ansi+C0+C1.swift */,
@@ -916,6 +934,25 @@
 			name = Examples;
 			sourceTree = "<group>";
 		};
+		D7A3BC121D4EE4C9007B82DD /* testapp */ = {
+			isa = PBXGroup;
+			children = (
+				D7A3BC131D4EE4C9007B82DD /* AppDelegate.swift */,
+				D7A3BC151D4EE4CA007B82DD /* Assets.xcassets */,
+				D7A3BC171D4EE4CA007B82DD /* MainMenu.xib */,
+				D7A3BC1A1D4EE4CA007B82DD /* Info.plist */,
+			);
+			path = testapp;
+			sourceTree = "<group>";
+		};
+		D7A3BC1E1D4EE54B007B82DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7A3BC1F1D4EE54B007B82DD /* AppKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -944,7 +981,7 @@
 		D77A28DD1D124C4F00C56E49 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = africanswift;
 				TargetAttributes = {
@@ -960,6 +997,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D77A28DC1D124C4F00C56E49;
 			productRefGroup = D77A28E61D124C4F00C56E49 /* Products */;
@@ -1040,6 +1078,7 @@
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,
 				D71F84611D347318004C9826 /* TUIView.swift in Sources */,
 				D77A29271D125FAD00C56E49 /* Custom+Extensions.swift in Sources */,
+				D740CD1D1D579B8200512661 /* Ansi+Color2.swift in Sources */,
 				D77A29161D125BF600C56E49 /* Ansi+Color+XYZ.swift in Sources */,
 				D73E78C91D475EDA00B00A9A /* Example+Wavefront.swift in Sources */,
 				D77A290E1D125BF600C56E49 /* Ansi+C0+C1.swift in Sources */,
@@ -1048,6 +1087,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D7A3BC171D4EE4CA007B82DD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7A3BC181D4EE4CA007B82DD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D77A28EA1D124C4F00C56E49 /* Debug */ = {

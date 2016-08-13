@@ -30,7 +30,7 @@ public extension Ansi.Color
   }
   
   /// Foreground
-  public struct Foreground
+  public enum Foreground
   {
     private static let base = 30
     private static let extended = 90
@@ -351,7 +351,7 @@ public extension Ansi.Color
 {
   
   /// Background
-  public struct Background
+  public enum Background
   {
     private static let base = 40
     private static let extended = 100

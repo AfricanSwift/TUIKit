@@ -9,7 +9,7 @@ import Foundation
 public extension Ansi
 {
   /// Next and Previous Page
-  public struct Page
+  public enum Page
   {
     /// Scroll To Previous Page (PP)
     ///

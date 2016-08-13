@@ -9,7 +9,7 @@ import Darwin
 public extension Ansi
 {
   /// Character
-  public struct Character
+  public enum Character
   {
     /// Insert Character(s) (ICH)
     ///

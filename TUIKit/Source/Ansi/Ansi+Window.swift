@@ -9,7 +9,7 @@ import Darwin
 public extension Ansi
 {
   /// Window manipulation (from dtterm, as well as extensions).
-  public struct Window
+  public enum Window
   {
     /// Move window to x,y
     ///
@@ -107,7 +107,7 @@ public extension Ansi
 public extension Ansi.Window
 {
   /// Window Reports: state, position, pixelSize, ...
-  public struct Report
+  public enum Report
   {
     /// __State__
     ///
@@ -228,7 +228,7 @@ public extension Ansi.Window
 // MARK: Operating System Controls -
 public extension Ansi.Window
 {
-  public struct OSC
+  public enum OSC
   {
     /// Change Icon Name and Window Title
     ///

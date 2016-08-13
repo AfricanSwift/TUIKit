@@ -63,7 +63,7 @@ public struct TUIWindow {
     guard let ttySize = UnsafeMutablePointer<Int32>(malloc(sizeof(TTYSize)))
       else { return nil }
     defer { free(ttySize) }
-    S_ioctl(0, S_TIOCGWINSZ, ttySize)
+    Swift_ioctl(0, S_TIOCGWINSZ, ttySize)
     return UnsafeMutablePointer<TTYSize>(ttySize)[0].toTUIWindowSize()
   }
   

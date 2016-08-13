@@ -9,7 +9,7 @@ import Darwin
 public extension Ansi
 {
   /// Next and Previous Line
-  public struct Line
+  public enum Line
   {
     /// Cursor Next Line (CNL)
     ///
@@ -59,7 +59,7 @@ public extension Ansi.Line
 {
   /// Erase in Line (EL & DECSEL)
   /// Erase in Line (cursor does not move)
-  public struct Erase
+  public enum Erase
   {
     
     /// Erase to Right.
@@ -93,7 +93,7 @@ public extension Ansi.Line
 public extension Ansi.Line
 {
   /// Scroll
-  public struct Scroll
+  public enum Scroll
   {
     /// Scroll up lines (SU)
     ///
@@ -138,7 +138,7 @@ public extension Ansi.Line
   /// would move the cursor past the right margin. In that case, the cursor stops
   /// at the right margin. When you move lines on the screen by scrolling, the
   /// attribute moves with the line.
-  public struct Attributes
+  public enum Attributes
   {
     /// Double Height Line (DECDHL)
     ///
@@ -147,7 +147,7 @@ public extension Ansi.Line
     /// in pairs on adjacent lines. The same character must be used on both
     /// lines to form a full character. If the line was previously single-width,
     /// single-height, all characters to the right of center are lost.
-    public struct Height
+    public enum Height
     {
       /// Double Height Top Half (DECDHL)
       ///
@@ -173,7 +173,7 @@ public extension Ansi.Line
     /// screen. The DECDWL sequence makes the line with the cursor double-width, 
     /// single-height. If the line was previously single-width, single-height, 
     /// all characters to the right of center screen are lost.
-    public struct Width
+    public enum Width
     {
       /// Single-Width Line (DECSWL)
       ///

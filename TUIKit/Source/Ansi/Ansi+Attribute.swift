@@ -9,7 +9,7 @@ import Darwin
 public extension Ansi
 {
   /// Character Attributes (SGR).
-  public struct Attribute
+  public enum Attribute
   {
     private static let attribute = {
       (function: Int) -> Ansi in

@@ -9,11 +9,11 @@ import Darwin
 public extension Ansi
 {
   /// Display
-  public struct Display
+  public enum Display
   {
     /// __Erase in Display (ED & DECSED).__
     /// Erase in display (cursor does not move)
-    public struct Erase
+    public enum Erase
     {
       private static let erase =
       {
