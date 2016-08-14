@@ -130,12 +130,17 @@ public struct Ansi
     ///   - alpha: Double
     public init(red: Double, green: Double, blue: Double, alpha: Double)
     {
-      precondition(
-        red >= 0.0 && red <= 1.0 &&
-          green >= 0.0 && green <= 1.0 &&
-          blue >= 0.0 && blue <= 1.0 &&
-          alpha >= 0.0 && alpha <= 1.0,
-        "0 >= red, green, green, blue, alpha <= 1")
+//      precondition(
+//        red >= 0.0 && red <= 1.0 &&
+//          green >= 0.0 && green <= 1.0 &&
+//          blue >= 0.0 && blue <= 1.0 &&
+//          alpha >= 0.0 && alpha <= 1.0,
+//        "0 >= red, green, green, blue, alpha <= 1")
+      
+      let red = red > 1 ? 1 : red
+      let green = green > 1 ? 1 : green
+      let blue = blue > 1 ? 1 : blue
+      let alpha = alpha > 1 ? 1 : alpha
       
       self.RGB = RGBComponents(
         red: red,

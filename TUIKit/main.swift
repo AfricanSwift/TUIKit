@@ -60,12 +60,18 @@ Thread.sleep(forTimeInterval: 1)
 print()
 Ansi.Display.Erase.all().stdout()
 
-// Wavefront
+// Wireframe Wavefront
 Ansi.Set.cursorOff().stdout()
 try Example.Wavefront.demo()
 Thread.sleep(forTimeInterval: 3)
 Ansi.Display.Erase.all().stdout()
-//
+
+// Shaded Wavefront
+Ansi.Set.cursorOff().stdout()
+try Example.Wavefront.demo2()
+Thread.sleep(forTimeInterval: 3)
+Ansi.Display.Erase.all().stdout()
+
 //alphaCode()
 //Thread.sleep(forTimeInterval: 2)
 //alphaBar()
@@ -147,11 +153,11 @@ Ansi.Display.Erase.all().stdout()
 //{
 //  let c1 = Ansi.Color2(hue: h, saturation: 0.8, lightness: 0.8, alpha: 1)
 //  let c2 = c1.invert().shade(by: 0.4)
-//  (c1.toAnsiColor().foreground256() + "██").stdout()
-//  (c2.toAnsiColor().foreground256() + "██").stdout()
+//  (c1.toAnsiColor().foreground256() + "█████").stdout()
+//  (c2.toAnsiColor().foreground256() + "█████").stdout()
 //  (c2.toAnsiColor().foreground256() + c1.toAnsiColor().background256() + " Hello World ").stdout()
 //  Ansi.Color.resetAll().stdout()
-//  for d in stride(from: 0.0, to: 2880.0, by: 45)
+//  for d in stride(from: 0.0, to: 2880.0, by: 30)
 //  {
 //    (c2.alterHue(by: d).toAnsiColor().foreground256() + "█").stdout()
 //  }
@@ -216,6 +222,9 @@ Ansi.Display.Erase.all().stdout()
 //v.draw()
 
 //----------------------------------------------------------------
+
+
+
 
 //devTermios()
 

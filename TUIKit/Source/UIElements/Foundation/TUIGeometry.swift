@@ -119,6 +119,19 @@ public struct TUIVec3
   public var y: Double
   public var z: Double
   
+  /// Default TUIVec3 Initializer
+  ///
+  /// - parameters:
+  ///   - x: Double
+  ///   - y: Double
+  ///   - z: Double
+  public init(x: Double = 0, y: Double = 0, z: Double = 0)
+  {
+    self.x = x
+    self.y = y
+    self.z = z
+  }
+  
   private func norm() -> Double
   {
     return sqrt(self.x * self.x + self.y * self.y + self.z * self.z)
@@ -126,7 +139,7 @@ public struct TUIVec3
   
   public func normalize() -> TUIVec3
   {
-    return self * self.norm()
+    return self * (1 / self.norm())
   }
 }
 
