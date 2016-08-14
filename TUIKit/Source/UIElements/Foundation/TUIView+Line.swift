@@ -21,9 +21,9 @@ public extension TUIView
     /// Default initializer for line iterator
     ///
     /// - parameters:
-    ///   - from: TUIPoint
-    ///   - to: TUIPoint
-    init(from: TUIPoint, to: TUIPoint)
+    ///   - from: TUIVec2
+    ///   - to: TUIVec2
+    init(from: TUIVec2, to: TUIVec2)
     {
       self.steep = false
       self.from = (x: Int(from.x), y: Int(from.y))
@@ -50,16 +50,16 @@ public extension TUIView
     
     /// Returns next pixel offset along draw path
     ///
-    /// - returns: TUIPoint?
-    mutating func next() -> TUIPoint?
+    /// - returns: TUIVec2?
+    mutating func next() -> TUIVec2?
     {
       if self.pixel.x > self.to.x
       {
         return nil
       }
       
-      let result = steep ? TUIPoint(x: self.pixel.y, y: self.pixel.x) :
-        TUIPoint(x: self.pixel.x, y: self.pixel.y)
+      let result = steep ? TUIVec2(x: self.pixel.y, y: self.pixel.x) :
+        TUIVec2(x: self.pixel.x, y: self.pixel.y)
       
       self.error += self.distanceError
       if self.error > self.distance.x
@@ -80,12 +80,12 @@ public extension TUIView
   /// Draw line
   ///
   /// - parameters:
-  ///   - from: TUIPoint (originating pixel offset)
-  ///   - to: TUIPoint (destination pixel offset)
+  ///   - from: TUIVec2 (originating pixel offset)
+  ///   - to: TUIVec2 (destination pixel offset)
   ///   - color: Ansi.Color (Optional, default is white)
   public mutating func drawLine(
-    from: TUIPoint,
-    to: TUIPoint,
+    from: TUIVec2,
+    to: TUIVec2,
     color: Ansi.Color = Ansi.Color(red: 1, green: 1, blue: 1, alpha: 1), action: TUICharacter.SetAction = .on)
   {
     precondition(!(from == to), "drawLine: from/to are equivalent")

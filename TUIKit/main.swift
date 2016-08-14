@@ -29,43 +29,43 @@ import Foundation
 
 
 
-//// WWDC 2016 Logo Example
-//Ansi.Set.cursorOff().stdout()
-//Example.WWDC.demo()
-//Ansi.Display.Erase.all().stdout()
+// WWDC 2016 Logo Example
+Ansi.Set.cursorOff().stdout()
+Example.WWDC.demo()
+Ansi.Display.Erase.all().stdout()
 
-//// Fig Font Example
-//Ansi.Set.cursorOff().stdout()
-//try Example.Figfont.demo()
-//Thread.sleep(forTimeInterval: 2)
-//Ansi.Display.Erase.all().stdout()
-//
-//// Demo of line graphics
-//Ansi.Set.cursorOff().stdout()
-//Example.LineGraphics.demo()
-//Thread.sleep(forTimeInterval: 1)
-//Ansi.Display.Erase.all().stdout()
-//
-//// Random views
-//Ansi.Set.cursorOff().stdout()
-//Example.RandomViews.demo()
-//Thread.sleep(forTimeInterval: 1)
-//Ansi.Display.Erase.all().stdout()
-//
-//// ProgressBars
-//Ansi.Set.cursorOff().stdout()
-//Ansi.Cursor.position().stdout()
-//Example.ProgressBars.demo()
-//Thread.sleep(forTimeInterval: 1)
-//print()
-//Ansi.Display.Erase.all().stdout()
-//
-//// Wavefront
-//Ansi.Set.cursorOff().stdout()
-//try Example.Wavefront.demo()
-//Thread.sleep(forTimeInterval: 3)
-//Ansi.Display.Erase.all().stdout()
+// Fig Font Example
+Ansi.Set.cursorOff().stdout()
+try Example.Figfont.demo()
+Thread.sleep(forTimeInterval: 2)
+Ansi.Display.Erase.all().stdout()
 
+// Demo of line graphics
+Ansi.Set.cursorOff().stdout()
+Example.LineGraphics.demo()
+Thread.sleep(forTimeInterval: 1)
+Ansi.Display.Erase.all().stdout()
+
+// Random views
+Ansi.Set.cursorOff().stdout()
+Example.RandomViews.demo()
+Thread.sleep(forTimeInterval: 1)
+Ansi.Display.Erase.all().stdout()
+
+// ProgressBars
+Ansi.Set.cursorOff().stdout()
+Ansi.Cursor.position().stdout()
+Example.ProgressBars.demo()
+Thread.sleep(forTimeInterval: 1)
+print()
+Ansi.Display.Erase.all().stdout()
+
+// Wavefront
+Ansi.Set.cursorOff().stdout()
+try Example.Wavefront.demo()
+Thread.sleep(forTimeInterval: 3)
+Ansi.Display.Erase.all().stdout()
+//
 //alphaCode()
 //Thread.sleep(forTimeInterval: 2)
 //alphaBar()
@@ -118,18 +118,18 @@ import Foundation
 /// ------
 //var v = TUIView(parameters: TUIView.Parameter(attribute: .heightx2))
 //
-//v.drawLine(from: TUIPoint(x: 0, y: 0),
-//           to: TUIPoint(x: v.size.pixel.width / 3, y: v.size.pixel.height / 3))
-//v.drawCircle(center: TUIPoint(x: v.size.pixel.width / 2, y: v.size.pixel.height / 2),
+//v.drawLine(from: TUIVec2(x: 0, y: 0),
+//           to: TUIVec2(x: v.size.pixel.width / 3, y: v.size.pixel.height / 3))
+//v.drawCircle(center: TUIVec2(x: v.size.pixel.width / 2, y: v.size.pixel.height / 2),
 //             radius: v.size.pixel.height / 3)
-//v.drawText(at: TUIPoint(x: 0, y: 5), text: "Hello World",
+//v.drawText(at: TUIVec2(x: 0, y: 5), text: "Hello World",
 //           color: Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1))
 //
-//v.drawText(at: TUIPoint(x: 0, y: 7), text: "💊 ⭕️ 🔫 🌝 🌖 🌗 🌘 🌑 🌚 🌒 🌓 🌔 🌝 ",
+//v.drawText(at: TUIVec2(x: 0, y: 7), text: "💊 ⭕️ 🔫 🌝 🌖 🌗 🌘 🌑 🌚 🌒 🌓 🌔 🌝 ",
 //           color: Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1))
 //
 //v.drawAnsiText(x: 0, y: 8, text: "💊 ⭕️ 🔫 🌝 🌖 🌗 🌘 🌑 🌚 🌒 🌓 🌔 🌝 ".attribute(.blinkslow) + " ".attribute(.blinkslowoff))
-//v.drawRotatedText(at: TUIPoint(x: 25, y: 12), angle: 90, text: "Quick Move",
+//v.drawRotatedText(at: TUIVec2(x: 25, y: 12), angle: 90, text: "Quick Move",
 //                  color: Ansi.Color(red: 0.4, green: 1, blue: 0.5, alpha: 1))
 //v.draw()
 
@@ -170,14 +170,52 @@ import Foundation
 //  (c2.complement().toAnsiColor().foreground256() + " hello world\n")).stdout()
 //}
 
+//----------------------------------------------------------------
 
-var v = TUIView(x: 0, y: 0, width: 100, height: 60)
-let halfWidth = v.size.pixel.width / 2
-let halfHeight = v.size.pixel.height / 2
-let center = TUIPoint(x: halfWidth - 1, y: halfHeight - 1)
-v.drawEllipse(center: center, radiusX: halfWidth - 1, radiusY: (halfHeight - 1) + 20)
-v.drawEllipse(center: center, radiusX: halfWidth - 1 + 20, radiusY: (halfHeight - 1))
-v.draw()
+//func randomColor() -> Ansi.Color
+//{
+//  let limit = 0.3
+//  let r = Double(arc4random_uniform(255)) / 255.0
+//  let g = Double(arc4random_uniform(255)) / 255.0
+//  let b = Double(arc4random_uniform(255)) / 255.0
+//  
+//  func brightenColor(
+//    _ red: Double,
+//    green: Double,
+//    blue: Double) -> (r: Double, g: Double, b: Double)
+//  {
+//    return (r: r <= limit ? r + 0.2 : r,
+//            g: g <= limit ? g + 0.2 : g,
+//            b: b <= limit ? b + 0.2 : b)
+//  }
+//  let part = brightenColor(r, green: g, blue: b)
+//  return Ansi.Color(red: part.r, green: part.g, blue: part.b, alpha: 1)
+//}
+//
+//
+//let param = TUIView.Parameter(attribute: .single, invertYAxis: true)
+//
+////var v = TUIView(x: 0, y: 0, width: 268, height: 284, parameters: param)
+//
+//var v = TUIView(parameters: param)
+//let halfWidth = v.size.pixel.width / 2
+//let halfHeight = v.size.pixel.height / 2
+//let center = TUIVec2(x: halfWidth - 1, y: halfHeight - 1)
+//
+//v.drawEllipse(center: center, radiusX: halfWidth - 1, radiusY: (halfHeight - 1) + 20)
+//v.drawEllipse(center: center, radiusX: halfWidth - 1 + 20, radiusY: (halfHeight - 1))
+//
+//let t0 = [TUIVec2(x: 10, y: 70), TUIVec2(x: 50, y: 160), TUIVec2(x: 70, y: 80)]
+//let t1 = [TUIVec2(x: 180, y: 50), TUIVec2(x: 150, y: 1), TUIVec2(x: 70, y: 180)]
+//let t2 = [TUIVec2(x: 180, y: 150), TUIVec2(x: 120, y: 160), TUIVec2(x: 130, y: 180)]
+//
+//v.drawTriangle(vectors: t0, color: randomColor())
+//v.drawTriangle(vectors: t1, color: randomColor())
+//v.drawTriangle(vectors: t2, color: randomColor())
+//
+//v.draw()
+
+//----------------------------------------------------------------
 
 //devTermios()
 

@@ -44,28 +44,28 @@ func alphaPie()
   
   while interval < 512
   {
-    view.drawPieSlice(center: TUIPoint(x: width / 2, y: height / 2 - yOutset), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2, y: height / 2 - yOutset), radius: radius,
                       startAngle: 0, endAngle: 45, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 + xOutset, y: height / 2 - yOutset / 2), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 + xOutset, y: height / 2 - yOutset / 2), radius: radius,
                       startAngle: 45, endAngle: 90, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 + xOutset, y: height / 2 + yOutset / 2), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 + xOutset, y: height / 2 + yOutset / 2), radius: radius,
                       startAngle: 90, endAngle: 135, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2, y: height / 2 + yOutset), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2, y: height / 2 + yOutset), radius: radius,
                       startAngle: 135, endAngle: 180, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 - xOutset, y: height / 2 + yOutset), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 - xOutset, y: height / 2 + yOutset), radius: radius,
                       startAngle: 180, endAngle: 225, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 - xOutset - xOutset, y: height / 2 + yOutset / 2), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 - xOutset - xOutset, y: height / 2 + yOutset / 2), radius: radius,
                       startAngle: 225, endAngle: 270, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 - xOutset - xOutset, y: height / 2 - yOutset / 2), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 - xOutset - xOutset, y: height / 2 - yOutset / 2), radius: radius,
                       startAngle: 270, endAngle: 315, color: generateRandomColor1(), fill: fill)
     
-    view.drawPieSlice(center: TUIPoint(x: width / 2 - xOutset, y: height / 2 - yOutset), radius: radius,
+    view.drawPieSlice(center: TUIVec2(x: width / 2 - xOutset, y: height / 2 - yOutset), radius: radius,
                       startAngle: 315, endAngle: 360, color: generateRandomColor1(), fill: fill)
     
     if styleIndex > RenderStyle.allCases.count - 1 { styleIndex = 0 }

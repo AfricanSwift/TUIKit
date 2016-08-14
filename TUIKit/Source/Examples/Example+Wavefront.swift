@@ -70,7 +70,7 @@ public extension Example
       let width = Int(wSize.character.width * 2) - 4
       let height = Int(wSize.character.height * 4) - 8 - 2 - 8
       var view = TUIView(x: 0, y: 0, width: width, height: height)
-      let center = TUIPoint(x: width / 2, y: height / 2)
+      let center = TUIVec2(x: width / 2, y: height / 2)
       var polygons = [Polygon]()
       var vertices = [Vertice]()
       
@@ -100,9 +100,9 @@ public extension Example
           let v1 = vertices[polygon.indices[(j+1)%3].x - 1]
           if v0.z < -0.3 || v1.z < -0.3 { continue }
           
-          let pos0 = TUIPoint(x: (v0.x + 1) * center.x,
+          let pos0 = TUIVec2(x: (v0.x + 1) * center.x,
                               y: Double(height) - (v0.y + 1) * center.y)
-          let pos1 = TUIPoint(x: (v1.x + 1) * center.x,
+          let pos1 = TUIVec2(x: (v1.x + 1) * center.x,
                               y: Double(height) - (v1.y + 1) * center.y)
           view.drawLine(from: pos0, to: pos1, action: .on)
         }

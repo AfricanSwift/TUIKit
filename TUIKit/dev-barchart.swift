@@ -78,8 +78,8 @@ func alphaBar()
         color1: color1,
         color2: color2,
         percent: Double(y) / Double(height))
-      v.drawLine(from: TUIPoint(x: x, y: y),
-                 to: TUIPoint(x: x + width - 1, y: y), color: nc)
+      v.drawLine(from: TUIVec2(x: x, y: y),
+                 to: TUIVec2(x: x + width - 1, y: y), color: nc)
     }
   }
   
@@ -96,18 +96,18 @@ func alphaBar()
   let tickInterval = 8
   let axisWidth = 150
   
-  view.drawLine(from: TUIPoint(x: axisOffset + 2, y: 0),
-                to: TUIPoint(x: axisOffset + 2, y: maximum))
-  view.drawLine(from: TUIPoint(x: axisOffset + 2, y: maximum + 1),
-                to: TUIPoint(x: axisOffset + 2 + axisWidth, y: maximum + 1))
+  view.drawLine(from: TUIVec2(x: axisOffset + 2, y: 0),
+                to: TUIVec2(x: axisOffset + 2, y: maximum))
+  view.drawLine(from: TUIVec2(x: axisOffset + 2, y: maximum + 1),
+                to: TUIVec2(x: axisOffset + 2 + axisWidth, y: maximum + 1))
   
 //  for i in stride(from: 0, through: maximum, by: 1)
 //  {
 //    let tickWidth = i % tickInterval == 0 ? 2 : 0
 //    if tickWidth > 0
 //    {
-//      view.drawLine(from: TUIPoint(x: axisOffset + 2 - tickWidth, y: i + 1),
-//                    to: TUIPoint(x: axisOffset + 2, y: i + 1))
+//      view.drawLine(from: TUIVec2(x: axisOffset + 2 - tickWidth, y: i + 1),
+//                    to: TUIVec2(x: axisOffset + 2, y: i + 1))
 //    }
 //    if i % tickInterval == 0
 //    {
@@ -125,8 +125,8 @@ func alphaBar()
   
   for i in stride(from: 0, to: axisWidth, by: 16)
   {
-    let from = TUIPoint(x: axisOffset + 2 + i, y: maximum + 1)
-    let to = TUIPoint(x: axisOffset + 2 + i, y: maximum + 1 + 2)
+    let from = TUIVec2(x: axisOffset + 2 + i, y: maximum + 1)
+    let to = TUIVec2(x: axisOffset + 2 + i, y: maximum + 1 + 2)
     view.drawLine(from: from, to: to)
     let text = String(format: "%2d", idx)
     view.drawText(x: Int(to.x) / 2 - 1, y: Int(to.y) / 4 + 1, text: text, color: color)
@@ -143,7 +143,7 @@ func alphaBar()
     let color2 = generateRandomColor1()
 //    for x in stride(from: 0, to: axisWidth - reduce, by: 4)
 //    {
-//      let rect = TUIRectangle(origin: TUIPoint(x: axisOffset + 2 + x, y: maximum - 4 - (i * 8)),
+//      let rect = TUIRectangle(origin: TUIVec2(x: axisOffset + 2 + x, y: maximum - 4 - (i * 8)),
 //                              size: TUISize(width: axisOffset + 2 + axisWidth - reduce - x, height: 3))
 //      view.drawRectangle(rect: rect, color: color1)
 //    }
@@ -151,8 +151,8 @@ func alphaBar()
     
     for x in stride(from: 0, to: axisWidth - reduce, by: 1)
     {
-      let from = TUIPoint(x: axisOffset + 4 + x, y: maximum - 4 - (i * 8))
-      let to = TUIPoint(x: axisOffset + 4 + x, y: maximum - 1 - (i * 8))
+      let from = TUIVec2(x: axisOffset + 4 + x, y: maximum - 4 - (i * 8))
+      let to = TUIVec2(x: axisOffset + 4 + x, y: maximum - 1 - (i * 8))
       let nc = nextColor(color1: color1, color2: color2, percent: Double(x) / Double(width))
       view.drawLine(from: from, to: to, color: nc)
     }

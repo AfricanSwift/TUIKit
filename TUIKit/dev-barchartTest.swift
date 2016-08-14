@@ -81,8 +81,8 @@ func barTest()
         color1: color1,
         color2: color2,
         percent: Double(y1) / Double(height))
-      v.drawLine(from: TUIPoint(x: x, y: y1 + y),
-                 to: TUIPoint(x: x + width - 1, y: y1 + y), color: nc)
+      v.drawLine(from: TUIVec2(x: x, y: y1 + y),
+                 to: TUIVec2(x: x + width - 1, y: y1 + y), color: nc)
     }
   }
   
@@ -100,18 +100,18 @@ func barTest()
   let tickInterval = 8
   let axisWidth = 150
   
-  view.drawLine(from: TUIPoint(x: axisOffset + 2, y: 0),
-                to: TUIPoint(x: axisOffset + 2, y: maximum))
-  view.drawLine(from: TUIPoint(x: axisOffset + 2, y: maximum + 1),
-                to: TUIPoint(x: axisOffset + 2 + axisWidth, y: maximum + 1))
+  view.drawLine(from: TUIVec2(x: axisOffset + 2, y: 0),
+                to: TUIVec2(x: axisOffset + 2, y: maximum))
+  view.drawLine(from: TUIVec2(x: axisOffset + 2, y: maximum + 1),
+                to: TUIVec2(x: axisOffset + 2 + axisWidth, y: maximum + 1))
   
   for i in stride(from: 0, through: maximum, by: 1)
   {
     let tickWidth = i % tickInterval == 0 ? 2 : 0
     if tickWidth > 0
     {
-      view.drawLine(from: TUIPoint(x: axisOffset + 2 - tickWidth, y: i + 1),
-                    to: TUIPoint(x: axisOffset + 2, y: i + 1))
+      view.drawLine(from: TUIVec2(x: axisOffset + 2 - tickWidth, y: i + 1),
+                    to: TUIVec2(x: axisOffset + 2, y: i + 1))
     }
     if i % tickInterval == 0
     {
@@ -125,8 +125,8 @@ func barTest()
   
   for i in stride(from: 0, to: axisWidth, by: 8)
   {
-    view.drawLine(from: TUIPoint(x: axisOffset + 2 + i, y: maximum + 1),
-                  to: TUIPoint(x: axisOffset + 2 + i, y: maximum + 1 + 2))
+    view.drawLine(from: TUIVec2(x: axisOffset + 2 + i, y: maximum + 1),
+                  to: TUIVec2(x: axisOffset + 2 + i, y: maximum + 1 + 2))
   }
   let angle = 135
   let reverse = false
@@ -142,7 +142,7 @@ func barTest()
     let x = ((axisOffset + 2 - 2) / 2) + 3 + (4 * i)
     let y = maximum / 4 + 1
     view.drawRotatedText(
-      at: TUIPoint(x: x, y: y),
+      at: TUIVec2(x: x, y: y),
       angle: angle, text: texts[i], reverse: reverse, color: color)
   }
   

@@ -153,8 +153,8 @@ public extension Ansi.Window
     /// Report window position
     /// Result is CSI 3 ; x ; y t
     ///
-    /// - returns: TUIPoint?
-    public static func position() -> TUIPoint?
+    /// - returns: TUIVec2?
+    public static func position() -> TUIVec2?
     {
       guard let response = Ansi.Terminal.responseTTY(command: positionCommand)
         else { return nil }
@@ -162,7 +162,7 @@ public extension Ansi.Window
         .replacingOccurrences(of: Ansi.C1.CSI, with: "")
         .replacingOccurrences(of: "t", with: "")
         .characters.split(separator: ";").map {String($0)}
-      return TUIPoint(x: Int(values[1]) ?? 0, y: Int(values[2]) ?? 0)
+      return TUIVec2(x: Int(values[1]) ?? 0, y: Int(values[2]) ?? 0)
     }
     
     private static let pixelSizeCommand = Ansi.Terminal.Command(

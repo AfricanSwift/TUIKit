@@ -23,15 +23,15 @@ public extension TUIView
     
     let leftTop = rect.origin
     
-    let leftBottom = TUIPoint(
+    let leftBottom = TUIVec2(
       x: rect.origin.x,
       y: rect.origin.y + rect.size.height)
     
-    let rightTop = TUIPoint(
+    let rightTop = TUIVec2(
       x: rect.origin.x + rect.size.width,
       y: rect.origin.y)
     
-    let rightBottom = TUIPoint(
+    let rightBottom = TUIVec2(
       x: rect.origin.x + rect.size.width,
       y: rect.origin.y + rect.size.height)
     
@@ -81,10 +81,10 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func leftLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let from = TUIPoint(
+      let from = TUIVec2(
         x: rr.rect.origin.x,
         y: rr.rect.origin.y + rr.radius)
-      let to = TUIPoint(
+      let to = TUIVec2(
         x: rr.rect.origin.x,
         y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawLine(from: from, to: to, color: rr.color)
@@ -97,10 +97,10 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func rightLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let from = TUIPoint(
+      let from = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width,
         y: rr.rect.origin.y + rr.radius)
-      let to = TUIPoint(
+      let to = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width,
         y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawLine(from: from, to: to, color: rr.color)
@@ -113,10 +113,10 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func topLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let from = TUIPoint(
+      let from = TUIVec2(
         x: rr.rect.origin.x + rr.radius,
         y: rr.rect.origin.y)
-      let to = TUIPoint(
+      let to = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y)
       view.drawLine(from: from, to: to, color: rr.color)
@@ -129,10 +129,10 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func bottomLine(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let from = TUIPoint(
+      let from = TUIVec2(
         x: rr.rect.origin.x + rr.radius,
         y: rr.rect.origin.y + rr.rect.size.height)
-      let to = TUIPoint(
+      let to = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y + rr.rect.size.height)
       view.drawLine(from: from, to: to, color: rr.color)
@@ -145,7 +145,7 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func leftTopArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let leftTop = TUIPoint(
+      let leftTop = TUIVec2(
         x: rr.rect.origin.x + rr.radius,
         y: rr.rect.origin.y + rr.radius)
       view.drawEllipse(
@@ -164,7 +164,7 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func rightTopArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let rightTop = TUIPoint(
+      let rightTop = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y + rr.radius)
       view.drawEllipse(
@@ -183,7 +183,7 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func leftBottomArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let leftBottom = TUIPoint(
+      let leftBottom = TUIVec2(
         x: rr.rect.origin.x + rr.radius,
         y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawEllipse(
@@ -202,7 +202,7 @@ public extension TUIView
     ///   - view: inout TUIView
     private static func rightBottomArc(roundedRect rr: RoundedRectangle, view: inout TUIView)
     {
-      let rightBottom = TUIPoint(
+      let rightBottom = TUIVec2(
         x: rr.rect.origin.x + rr.rect.size.width - rr.radius,
         y: rr.rect.origin.y + rr.rect.size.height - rr.radius)
       view.drawEllipse(

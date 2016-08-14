@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D702C9E01D600C32002BCA8E /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C9DF1D600C32002BCA8E /* TUIView+Line.swift */; };
 		D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70384E51D36F2BC00B65380 /* TUIStatus.swift */; };
 		D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D799B4791D1AC4A500FA7853 /* wwdc16_logo */; };
 		D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C561D243EB700BEC989 /* Whimsy.flf */; };
@@ -17,7 +18,7 @@
 		D71F84601D347318004C9826 /* TUIRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84571D347318004C9826 /* TUIRender.swift */; };
 		D71F84611D347318004C9826 /* TUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84581D347318004C9826 /* TUIView.swift */; };
 		D71F84621D347318004C9826 /* TUIView+Ellipse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F84591D347318004C9826 /* TUIView+Ellipse.swift */; };
-		D71F84631D347318004C9826 /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845A1D347318004C9826 /* TUIView+Line.swift */; };
+		D71F84631D347318004C9826 /* TUIView+Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845A1D347318004C9826 /* TUIView+Triangle.swift */; };
 		D71F84641D347318004C9826 /* TUIView+Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */; };
 		D71F84651D347318004C9826 /* TUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F845C1D347318004C9826 /* TUIWindow.swift */; };
 		D71F846B1D347390004C9826 /* Example+ProgressBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F846A1D347390004C9826 /* Example+ProgressBars.swift */; };
@@ -100,6 +101,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D702C9DF1D600C32002BCA8E /* TUIView+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Line.swift"; path = "Source/UIElements/Foundation/TUIView+Line.swift"; sourceTree = "<group>"; };
 		D70384E51D36F2BC00B65380 /* TUIStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIStatus.swift; path = Source/UIElements/Widgets/TUIStatus.swift; sourceTree = "<group>"; };
 		D70FE1511D4E830C009E408B /* dev-Termios-input .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-Termios-input .swift"; sourceTree = "<group>"; };
 		D71F84541D347318004C9826 /* TUIBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBorders.swift; path = Source/UIElements/Foundation/TUIBorders.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		D71F84571D347318004C9826 /* TUIRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIRender.swift; path = Source/UIElements/Foundation/TUIRender.swift; sourceTree = "<group>"; };
 		D71F84581D347318004C9826 /* TUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIView.swift; path = Source/UIElements/Foundation/TUIView.swift; sourceTree = "<group>"; };
 		D71F84591D347318004C9826 /* TUIView+Ellipse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Ellipse.swift"; path = "Source/UIElements/Foundation/TUIView+Ellipse.swift"; sourceTree = "<group>"; };
-		D71F845A1D347318004C9826 /* TUIView+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Line.swift"; path = "Source/UIElements/Foundation/TUIView+Line.swift"; sourceTree = "<group>"; };
+		D71F845A1D347318004C9826 /* TUIView+Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Triangle.swift"; path = "Source/UIElements/Foundation/TUIView+Triangle.swift"; sourceTree = "<group>"; };
 		D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Rectangle.swift"; path = "Source/UIElements/Foundation/TUIView+Rectangle.swift"; sourceTree = "<group>"; };
 		D71F845C1D347318004C9826 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/Foundation/TUIWindow.swift; sourceTree = "<group>"; };
 		D71F846A1D347390004C9826 /* Example+ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+ProgressBars.swift"; path = "Source/Examples/Example+ProgressBars.swift"; sourceTree = "<group>"; };
@@ -471,7 +473,8 @@
 				D71F84571D347318004C9826 /* TUIRender.swift */,
 				D71F84581D347318004C9826 /* TUIView.swift */,
 				D71F84591D347318004C9826 /* TUIView+Ellipse.swift */,
-				D71F845A1D347318004C9826 /* TUIView+Line.swift */,
+				D71F845A1D347318004C9826 /* TUIView+Triangle.swift */,
+				D702C9DF1D600C32002BCA8E /* TUIView+Line.swift */,
 				D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */,
 				D71F845C1D347318004C9826 /* TUIWindow.swift */,
 			);
@@ -1067,12 +1070,13 @@
 				D7E49DC11D25D7AE000FFE2C /* Custom+Character.swift in Sources */,
 				D77A28E91D124C4F00C56E49 /* main.swift in Sources */,
 				D77A291D1D125BF600C56E49 /* Ansi+Set.swift in Sources */,
+				D702C9E01D600C32002BCA8E /* TUIView+Line.swift in Sources */,
 				D77A291A1D125BF600C56E49 /* Ansi+Extras.swift in Sources */,
 				D77A29111D125BF600C56E49 /* Ansi+Color+CMYK.swift in Sources */,
 				D77A291E1D125BF600C56E49 /* Ansi+Tab.swift in Sources */,
 				D77A29101D125BF600C56E49 /* Ansi+Color.swift in Sources */,
 				D77A29171D125BF600C56E49 /* Ansi+Compress.swift in Sources */,
-				D71F84631D347318004C9826 /* TUIView+Line.swift in Sources */,
+				D71F84631D347318004C9826 /* TUIView+Triangle.swift in Sources */,
 				D70FE1521D4E830C009E408B /* dev-Termios-input .swift in Sources */,
 				D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */,
 				D77A29121D125BF600C56E49 /* Ansi+Color+HSL.swift in Sources */,

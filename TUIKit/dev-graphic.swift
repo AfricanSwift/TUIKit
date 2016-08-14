@@ -67,28 +67,28 @@ public extension ClosedRange where Bound : Comparable
 
 private struct EllipseIterator
 {
-  private let center: TUIPoint
+  private let center: TUIVec2
   private let square: TUISize
   private let square4: TUISize
-  private var point1: TUIPoint
-  private var point2: TUIPoint
+  private var point1: TUIVec2
+  private var point2: TUIVec2
   private var sigma1: Int
   private var sigma2: Int
   private let arc: ClosedRange<Int>
 
-  private init(center: TUIPoint, size: TUISize, arc: ClosedRange<Int>)
+  private init(center: TUIVec2, size: TUISize, arc: ClosedRange<Int>)
   {
     self.center = center
     self.arc = arc
     self.square = TUISize(width: size.width * size.width, height: size.height * size.height)
     self.square4 = TUISize(width: square.width * 4, height: square.height * 4)
-    self.point1 = TUIPoint(x: 0, y: size.height)
-    self.point2 = TUIPoint(x: size.width, y: 0)
+    self.point1 = TUIVec2(x: 0, y: size.height)
+    self.point2 = TUIVec2(x: size.width, y: 0)
     self.sigma1 = 2 * Int(square.height) + Int(square.width) * (1 - 2 * Int(size.height))
     self.sigma2 = 2 * Int(square.width) + Int(square.height) * (1 - 2 * Int(size.width))
   }
 
-  private func calcQuads(at: TUIPoint) -> [(ClosedRange<Int>, ClosedRange<Int>, Int, Int)]
+  private func calcQuads(at: TUIVec2) -> [(ClosedRange<Int>, ClosedRange<Int>, Int, Int)]
   {
     let c = (x: Int(self.center.x), y: Int(self.center.y))
     let x = Int(at.x)
@@ -102,10 +102,10 @@ private struct EllipseIterator
 
 private extension EllipseIterator
 {
-  mutating func calcResult1(result: inout [TUIPoint])
+  mutating func calcResult1(result: inout [TUIVec2])
   {
     result = calcQuads(at: point1).flatMap {
-      return $0.0.isRange(within: self.arc) ? TUIPoint(x: $0.2, y: $0.3) : nil
+      return $0.0.isRange(within: self.arc) ? TUIVec2(x: $0.2, y: $0.3) : nil
     }
 
     if self.sigma1 >= 0
@@ -117,10 +117,10 @@ private extension EllipseIterator
     self.point1.x += 1
   }
 
-  mutating func calcResult2(result: inout [TUIPoint], check1: Bool)
+  mutating func calcResult2(result: inout [TUIVec2], check1: Bool)
   {
     let quads2 = calcQuads(at: point2).flatMap {
-      return $0.1.isRange(within: self.arc) ? TUIPoint(x: $0.2, y: $0.3) : nil
+      return $0.1.isRange(within: self.arc) ? TUIVec2(x: $0.2, y: $0.3) : nil
     }
     result = check1 ? result + quads2 : quads2
 
@@ -137,9 +137,9 @@ private extension EllipseIterator
 
 extension EllipseIterator: IteratorProtocol
 {
-  mutating func next() -> [TUIPoint]?
+  mutating func next() -> [TUIVec2]?
   {
-    var result = [TUIPoint()]
+    var result = [TUIVec2()]
     let check1 = Int(self.square.height * self.point1.x) <= Int(self.square.width * self.point1.y)
     let check2 = Int(square.width * self.point2.y) <= Int(self.square.height * self.point2.x)
 
@@ -161,7 +161,7 @@ extension EllipseIterator: IteratorProtocol
   }
 }
 
-func drawEllipse(center: TUIPoint, size: TUISize, arc: ClosedRange<Int>,
+func drawEllipse(center: TUIVec2, size: TUISize, arc: ClosedRange<Int>,
                  view: inout TUIView, fill: Bool = false)
 {
   let color = Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1)
@@ -175,7 +175,7 @@ func drawEllipse(center: TUIPoint, size: TUISize, arc: ClosedRange<Int>,
   }
 }
 
-func drawCircle(center: TUIPoint, radius: Double, arc: ClosedRange<Int>,
+func drawCircle(center: TUIVec2, radius: Double, arc: ClosedRange<Int>,
                 view: inout TUIView, fill: Bool = false)
 {
   let size = TUISize(width: radius, height: radius)
@@ -193,7 +193,7 @@ func drawCircle(center: TUIPoint, radius: Double, arc: ClosedRange<Int>,
 //Ansi.Cursor.column().stdout()
 //
 //var view = TUIView(x: 0, y: 0, width: width, height: height)
-//let center = TUIPoint(x: width / 2, y: height / 2)
+//let center = TUIVec2(x: width / 2, y: height / 2)
 //
 //var size = TUISize(width: width / 2 - 1, height: height / 2 - 2)
 //
@@ -221,19 +221,19 @@ func drawCircle(center: TUIPoint, radius: Double, arc: ClosedRange<Int>,
 //let rect2 = TUIRectangle(x: 1, y: 1, width: 197, height: 97)
 //view.drawRectangle(rect: rect2)
 //let lines = [
-//  (from: TUIPoint(x: 0, y: 0), to: TUIPoint(x: 0, y: 99)),
-//  (from: TUIPoint(x: 0, y: 0), to: TUIPoint(x: 199, y: 0)),
-//  (from: TUIPoint(x: 199, y: 0), to: TUIPoint(x: 199, y: 99)),
-//  (from: TUIPoint(x: 0, y: 99), to: TUIPoint(x: 199, y: 99)),
-//  (from: TUIPoint(x: 0, y: 0), to: TUIPoint(x: 199, y: 99)),
-//  (from: TUIPoint(x: 0, y: 99), to: TUIPoint(x: 199, y: 0))]
+//  (from: TUIVec2(x: 0, y: 0), to: TUIVec2(x: 0, y: 99)),
+//  (from: TUIVec2(x: 0, y: 0), to: TUIVec2(x: 199, y: 0)),
+//  (from: TUIVec2(x: 199, y: 0), to: TUIVec2(x: 199, y: 99)),
+//  (from: TUIVec2(x: 0, y: 99), to: TUIVec2(x: 199, y: 99)),
+//  (from: TUIVec2(x: 0, y: 0), to: TUIVec2(x: 199, y: 99)),
+//  (from: TUIVec2(x: 0, y: 99), to: TUIVec2(x: 199, y: 0))]
 //
 //lines.forEach {
 //  view.drawLine(from: $0.from, to: $0.to)
 //}
 
 
-//func plotLine(view: inout TUIView, from f: TUIPoint, to t: TUIPoint)
+//func plotLine(view: inout TUIView, from f: TUIVec2, to t: TUIVec2)
 //{
 //  let color = Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1.0)
 //  var from = (x: Int(f.x), y: Int(f.y))
@@ -269,7 +269,7 @@ func drawCircle(center: TUIPoint, radius: Double, arc: ClosedRange<Int>,
 //  }
 //}
 
-//func plotEllipse(view: inout TUIView, center c: TUIPoint, size: TUISize)
+//func plotEllipse(view: inout TUIView, center c: TUIVec2, size: TUISize)
 //{
 //  let radius = (width: Int(size.width), height: Int(size.height))
 //  let color = Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1.0)
@@ -307,7 +307,7 @@ func drawCircle(center: TUIPoint, radius: Double, arc: ClosedRange<Int>,
 ////  }
 //}
 
-func plotCircle(view: inout TUIView, center c: TUIPoint, radius: Int)
+func plotCircle(view: inout TUIView, center c: TUIVec2, radius: Int)
 {
   let color = Ansi.Color(red: 0.6, green: 0.2, blue: 0.4, alpha: 1.0)
   let center = (x: Int(c.x), y: Int(c.y))
@@ -345,8 +345,8 @@ func alphaCode()
   Ansi.Cursor.column().stdout()
   
   var view = TUIView(x: 0, y: 0, width: width, height: height)
-  let center = TUIPoint(x: width / 2, y: height / 2)
-  let center2 = TUIPoint(x: width / 2 + 4, y: height / 2 + 4)
+  let center = TUIVec2(x: width / 2, y: height / 2)
+  let center2 = TUIVec2(x: width / 2 + 4, y: height / 2 + 4)
   
   var size = TUISize(width: width / 2 - 1, height: height / 2 - 2)
   

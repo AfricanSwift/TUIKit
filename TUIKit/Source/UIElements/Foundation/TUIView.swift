@@ -8,7 +8,7 @@ import Darwin
 // MARK: TUIView -
 public struct TUIView
 {
-  public private(set) var origin: TUIPoint
+  public private(set) var origin: TUIVec2
   public private(set) var size: TUIWindowSize
   
   /// Flag indicating if the cache is invalid
@@ -21,6 +21,7 @@ public struct TUIView
   private let borderColor: Ansi
   public let backgroundColor: Ansi
   public let attribute: Attribute
+  public let invertYAxis: Bool
   
   /// View cache (rendered Ansi)
   /// Used for direct view draw, unused with TUIScreen
@@ -83,21 +84,23 @@ public struct TUIView
     internal let color: Ansi
     internal let attribute: Attribute
     internal let background: Ansi
+    internal let invertYAxis: Bool
     
     /// Default initializer
     ///
     /// - parameters:
-    ///   - bordeer: TUIBorder
+    ///   - border: TUIBorder
     ///   - color: Ansi
     ///   - background: Ansi
     ///   - attribute: Attribute
     public init(border: TUIBorder = .single, color: Ansi = "",
-         background: Ansi = "", attribute: Attribute = .single)
+                background: Ansi = "", attribute: Attribute = .single, invertYAxis: Bool = false)
     {
       self.border = border
       self.color = color
       self.background = background
       self.attribute = attribute
+      self.invertYAxis = invertYAxis
     }
   }
   
@@ -111,7 +114,7 @@ public struct TUIView
   ///   - parameters: Parameter
   public init(x: Int, y: Int, width: Int, height: Int, parameters: Parameter = Parameter())
   {
-    self.init(origin: TUIPoint(x: x, y: y), size: TUISize(width: width, height: height),
+    self.init(origin: TUIVec2(x: x, y: y), size: TUISize(width: width, height: height),
               parameters: parameters)
   }
   
@@ -121,7 +124,7 @@ public struct TUIView
   ///   - origin: Int
   ///   - size: Int
   ///   - parameters: Parameter
-  public init(origin: TUIPoint, size: TUISize, parameters: Parameter = Parameter())
+  public init(origin: TUIVec2, size: TUISize, parameters: Parameter = Parameter())
   {
     self.origin = origin
     self.size = TUIWindowSize(width: size.width, height: size.height)
@@ -136,6 +139,7 @@ public struct TUIView
     self.borderColor = parameters.color
     self.backgroundColor = parameters.background
     self.attribute = parameters.attribute
+    self.invertYAxis = parameters.invertYAxis
     
     var cacheSize = Int(self.size.character.height)
     if case .none = border { } else { cacheSize += 2 }
@@ -152,7 +156,7 @@ public struct TUIView
     if case .none = parameters.border { hasBorder = false }
     
     let size = TUIView.maxSize(border: hasBorder, attribute: parameters.attribute)
-    self.init(origin: TUIPoint(x: 0, y: 0), size: size, parameters: parameters)
+    self.init(origin: TUIVec2(x: 0, y: 0), size: size, parameters: parameters)
   }
 }
 
@@ -167,7 +171,7 @@ public extension TUIView
   ///   - y: Int
   public mutating func move(x: Int, y: Int)
   {
-    self.origin = TUIPoint(x: x, y: y)
+    self.origin = TUIVec2(x: x, y: y)
   }
   
   /// Resize View
@@ -308,8 +312,9 @@ public extension TUIView
     guard x < self.size.pixel.width && y < self.size.pixel.height else { return }
     guard x >= 0 && y >= 0 else { return }
     
-    let char = (x: Int(round(x)) / 2, y: Int(round(y)) / 4)
-    self.buffer[char.y][char.x].setPixel(x: x, y: y, action: action, color: color)
+    let y2 = self.invertYAxis ? self.size.pixel.height - (y + 1) : y
+    let char = (x: Int(round(x)) / 2, y: Int(round(y2)) / 4)
+    self.buffer[char.y][char.x].setPixel(x: x, y: y2, action: action, color: color)
     self.invalidate = true
   }
   
@@ -329,10 +334,10 @@ public extension TUIView
   /// Draw Pixel
   ///
   /// - parameters:
-  ///   - at: TUIPoint
+  ///   - at: TUIVec2
   ///   - color: Ansi.Color
   ///   - action: TUICharacter.SetAction
-  public mutating func drawPixel(at: TUIPoint, color: Ansi.Color,
+  public mutating func drawPixel(at: TUIVec2, color: Ansi.Color,
                                  action: TUICharacter.SetAction = .on)
   {
     self.drawPixel(x: at.x, y: at.y, color: color)
@@ -414,11 +419,11 @@ public extension TUIView
   /// Draw Text
   ///
   /// - parameters:
-  ///   - at: TUIPoint
+  ///   - at: TUIVec2
   ///   - text: String
   ///   - color: Ansi.Color
   ///   - linewrap: Bool
-  public mutating func drawText(at: TUIPoint, text: String,
+  public mutating func drawText(at: TUIVec2, text: String,
                                 color: Ansi.Color, linewrap: Bool = false)
   {
     self.drawText(x: Int(at.x), y: Int(at.y), text: text, color: color, linewrap: linewrap)
@@ -494,12 +499,12 @@ public extension TUIView
   /// Draw Rotated Text
   ///
   /// - parameters:
-  ///   - at: TUIPoint
+  ///   - at: TUIVec2
   ///   - angle: Int
   ///   - text: String
   ///   - reverse: Bool
   ///   - color: Ansi.Color
-  public mutating func drawRotatedText(at: TUIPoint, angle: Int, text: String,
+  public mutating func drawRotatedText(at: TUIVec2, angle: Int, text: String,
                                        reverse: Bool = false, color: Ansi.Color)
   {
     var pos = (x: Int(at.x), y: Int(at.y))

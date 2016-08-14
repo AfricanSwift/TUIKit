@@ -6,7 +6,7 @@ import Darwin
 
 public struct TUIWindow {
   /// TTY Window Origin
-  public private(set) var origin: TUIPoint
+  public private(set) var origin: TUIVec2
   
   /// Initialized size
   public private(set) var size: TUIWindowSize
@@ -72,6 +72,6 @@ public struct TUIWindow {
   public mutating func move(x: Int, y: Int)
   {
     Ansi.Window.move(x: x, y: y).stdout()
-    self.origin = TUIPoint(x: x, y: y)
+    self.origin = TUIVec2(x: x, y: y)
   }
 }
