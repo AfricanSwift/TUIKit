@@ -70,7 +70,7 @@ Ansi.Display.Erase.all().stdout()
 Ansi.Set.cursorOff().stdout()
 try Example.Wavefront.demo2()
 Thread.sleep(forTimeInterval: 3)
-//Ansi.Display.Erase.all().stdout()
+Ansi.Display.Erase.all().stdout()
 
 //alphaCode()
 //Thread.sleep(forTimeInterval: 2)
@@ -222,6 +222,8 @@ Thread.sleep(forTimeInterval: 3)
 //v.draw()
 
 //----------------------------------------------------------------
+
+
 
 
 //devTermios()

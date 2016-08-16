@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D702C9E01D600C32002BCA8E /* TUIView+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702C9DF1D600C32002BCA8E /* TUIView+Line.swift */; };
-		D702C9E31D60D6D9002BCA8E /* cow.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702C9E11D60D6C6002BCA8E /* cow.obj */; };
-		D702C9E41D60D6DC002BCA8E /* teddy.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702C9E21D60D6C6002BCA8E /* teddy.obj */; };
-		D702C9E81D6117EE002BCA8E /* teapot.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702C9E71D6117E8002BCA8E /* teapot.obj */; };
-		D702C9EE1D6121A5002BCA8E /* pitcher.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D702C9ED1D612198002BCA8E /* pitcher.obj */; };
 		D70384E61D36F2BC00B65380 /* TUIStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70384E51D36F2BC00B65380 /* TUIStatus.swift */; };
 		D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */ = {isa = PBXBuildFile; fileRef = D799B4791D1AC4A500FA7853 /* wwdc16_logo */; };
 		D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */ = {isa = PBXBuildFile; fileRef = D7518C561D243EB700BEC989 /* Whimsy.flf */; };
@@ -33,7 +29,7 @@
 		D7518B3C1D24024300BEC989 /* FigletHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518B3A1D24024300BEC989 /* FigletHeader.swift */; };
 		D7518C591D243F6900BEC989 /* Example+Figfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7518C581D243F6900BEC989 /* Example+Figfont.swift */; };
 		D76239D21D4653910013069A /* dev-barchartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76239D11D4653910013069A /* dev-barchartTest.swift */; };
-		D76239D31D46545F0013069A /* head.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735DC2C1D3C02CA00AE4E9E /* head.obj */; };
+		D76239D31D46545F0013069A /* african_head.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = D735DC2C1D3C02CA00AE4E9E /* african_head.obj */; };
 		D76581031D25446400FC4E8C /* Terminal.c in Sources */ = {isa = PBXBuildFile; fileRef = D76581011D25446400FC4E8C /* Terminal.c */; };
 		D77A28E91D124C4F00C56E49 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28E81D124C4F00C56E49 /* main.swift */; };
 		D77A290C1D125BF600C56E49 /* Ansi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A28F61D125BF600C56E49 /* Ansi.swift */; };
@@ -82,11 +78,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				D76239D31D46545F0013069A /* head.obj in CopyFiles */,
-				D702C9E31D60D6D9002BCA8E /* cow.obj in CopyFiles */,
-				D702C9EE1D6121A5002BCA8E /* pitcher.obj in CopyFiles */,
-				D702C9E81D6117EE002BCA8E /* teapot.obj in CopyFiles */,
-				D702C9E41D60D6DC002BCA8E /* teddy.obj in CopyFiles */,
+				D76239D31D46545F0013069A /* african_head.obj in CopyFiles */,
 				D7FA17771D34A24C003C0FCD /* Slant Relief.flf in CopyFiles */,
 				D7079E4D1D244E780088770E /* wwdc16_logo in CopyFiles */,
 				D7079E4E1D244F180088770E /* Whimsy.flf in CopyFiles */,
@@ -110,10 +102,6 @@
 
 /* Begin PBXFileReference section */
 		D702C9DF1D600C32002BCA8E /* TUIView+Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Line.swift"; path = "Source/UIElements/Foundation/TUIView+Line.swift"; sourceTree = "<group>"; };
-		D702C9E11D60D6C6002BCA8E /* cow.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = cow.obj; path = Source/Examples/cow.obj; sourceTree = "<group>"; };
-		D702C9E21D60D6C6002BCA8E /* teddy.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = teddy.obj; path = Source/Examples/teddy.obj; sourceTree = "<group>"; };
-		D702C9E71D6117E8002BCA8E /* teapot.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = teapot.obj; path = Source/Examples/teapot.obj; sourceTree = "<group>"; };
-		D702C9ED1D612198002BCA8E /* pitcher.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = pitcher.obj; path = Source/Examples/pitcher.obj; sourceTree = "<group>"; };
 		D70384E51D36F2BC00B65380 /* TUIStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIStatus.swift; path = Source/UIElements/Widgets/TUIStatus.swift; sourceTree = "<group>"; };
 		D70FE1511D4E830C009E408B /* dev-Termios-input .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "dev-Termios-input .swift"; sourceTree = "<group>"; };
 		D71F84541D347318004C9826 /* TUIBorders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIBorders.swift; path = Source/UIElements/Foundation/TUIBorders.swift; sourceTree = "<group>"; };
@@ -126,7 +114,7 @@
 		D71F845B1D347318004C9826 /* TUIView+Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TUIView+Rectangle.swift"; path = "Source/UIElements/Foundation/TUIView+Rectangle.swift"; sourceTree = "<group>"; };
 		D71F845C1D347318004C9826 /* TUIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TUIWindow.swift; path = Source/UIElements/Foundation/TUIWindow.swift; sourceTree = "<group>"; };
 		D71F846A1D347390004C9826 /* Example+ProgressBars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+ProgressBars.swift"; path = "Source/Examples/Example+ProgressBars.swift"; sourceTree = "<group>"; };
-		D735DC2C1D3C02CA00AE4E9E /* head.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = head.obj; path = Source/Examples/head.obj; sourceTree = "<group>"; };
+		D735DC2C1D3C02CA00AE4E9E /* african_head.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = african_head.obj; path = Source/Examples/african_head.obj; sourceTree = "<group>"; };
 		D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Example+Wavefront.swift"; path = "Source/Examples/Example+Wavefront.swift"; sourceTree = "<group>"; };
 		D740CD1C1D579B8200512661 /* Ansi+Color2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ansi+Color2.swift"; path = "Source/Ansi/Ansi+Color2.swift"; sourceTree = "<group>"; };
 		D746BB681D245EE600DFA8F7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -944,11 +932,7 @@
 				D7EA2E511D2DD0960078B3E2 /* Example+RandomViews.swift */,
 				D73E78C81D475EDA00B00A9A /* Example+Wavefront.swift */,
 				D71F846A1D347390004C9826 /* Example+ProgressBars.swift */,
-				D702C9E11D60D6C6002BCA8E /* cow.obj */,
-				D702C9E21D60D6C6002BCA8E /* teddy.obj */,
-				D702C9ED1D612198002BCA8E /* pitcher.obj */,
-				D702C9E71D6117E8002BCA8E /* teapot.obj */,
-				D735DC2C1D3C02CA00AE4E9E /* head.obj */,
+				D735DC2C1D3C02CA00AE4E9E /* african_head.obj */,
 			);
 			name = Examples;
 			sourceTree = "<group>";

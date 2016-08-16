@@ -313,7 +313,6 @@ public extension TUIView
     guard x >= 0 && y >= 0 else { return }
     
     let y2 = self.invertYAxis ? self.size.pixel.height - (y + 1) : y
-    guard y2 > 0 else { return }
     let char = (x: Int(round(x)) / 2, y: Int(round(y2)) / 4)
     self.buffer[char.y][char.x].setPixel(x: x, y: y2, action: action, color: color)
     self.invalidate = true

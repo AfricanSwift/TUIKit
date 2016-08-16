@@ -16,8 +16,7 @@ import Darwin
 /// - **block2**: Block ramp using color & braille value
 public enum RenderStyle
 {
-  case drawille, short, short2, long, ditherShort, ditherLong
-  case block, block2, block3, block4
+  case drawille, short, short2, long, ditherShort, ditherLong, block, block2, block3
   
   public static var allCases: [RenderStyle] = [.drawille, .short, .short2, .long, .ditherShort,
                                                .ditherLong, .block, .block2, .block3]
@@ -133,19 +132,6 @@ public enum RenderStyle
     return Ansi("△")
   }
   
-  /// Block4 Ramp
-  ///
-  /// - parameters:
-  ///   - color: Ansi.Color
-  ///   - character: TUICharacter
-  /// - returns: Ansi
-  private static func block4Ramp(
-    color: Ansi.Color,
-    character: TUICharacter) -> Ansi
-  {
-    return Ansi("\\")
-  }
-  
   /// rampGen
   ///
   /// - parameters:
@@ -182,10 +168,6 @@ public enum RenderStyle
         character: character)
     case .block3:
       return RenderStyle.block3Ramp(
-        color: color,
-        character: character)
-    case .block4:
-      return RenderStyle.block4Ramp(
         color: color,
         character: character)
     case .ditherShort:
